@@ -1,0 +1,9 @@
+#!/usr/bin/gplt ++ 
+-h3d  
+-pm3d  ''
+-U  '(2*0.1*sqrt(Ix**2+Iy**2)/(t2-t1)/0.1)(T,Omega)'
+-lbz
+ 'I'
+-sz 'sq'
+  'I_1.dat' 
+-to -fname='I_1.pdf' -termopt=None -preview=True -showcmd='' -margins='10' -head='' -usepackage='' -clear=True

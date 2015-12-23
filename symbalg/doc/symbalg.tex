@@ -1,0 +1,100 @@
+% -*- mode: LaTeX; coding: utf-8 -*-
+\documentclass[12pt]{article}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{eufrak}
+\usepackage{epsfig}
+\usepackage{psfrag}
+\usepackage{tabularx}
+\usepackage{wrapfig}
+\usepackage{subfig}
+\usepackage[TeXdef]{lev}
+\usepackage{listings}
+\usepackage{graphicx}
+\lstloadlanguages{ [ LaTeX ] TeX, bash, C++, make, python}
+\lstset{language=python, escapechar=|, extendedchars=true} 
+
+\usepackage[unicode,colorlinks]{hyperref}
+%\hypersetup{colorlinks=true, linkcolor=blue, filecolor=blue, pagecolor=blue, urlcolor=blue}
+\hypersetup{colorlinks=true, linkcolor=blue, filecolor=blue, urlcolor=blue,
+pdftitle={SYMBALG}, pdfauthor={Иванов А.В и Жданов С.А}}
+
+\def\nil{}
+
+%\def\sr#1{\left<#1\right>}
+%\def\srt#1{\partial\left<#1\right>/\partial t}
+%\def\srT#1{\dfdx{}{t}\left<#1\right>}
+%\def\dfdx#1#2{ \frac{\partial #1}{\partial #2} }
+%\def\pankrat{L}
+%\newcommand{\rot}{{\rm rot}~}
+%\renewcommand{\vec}[1]{{\mathbf #1}}
+%\def\s{m}
+%\def\S{\vec{\s}}
+%\def\sxi{\s_{\text{x}i}}
+%\def\syi{\s_{\text{y}i}}
+%\def\szi{\s_{\text{z}i}}
+%\def\H#1{\vec{H}^\text{#1}}
+
+%\def\sx#1{\s_{\text{x}#1}}
+%\def\sy#1{\s_{\text{y}#1}}
+%\def\sz#1{\s_{\text{z}#1}}
+
+%\def\r{\vec r}
+%\def\k{\vec k}
+%\def\h{\vec h}
+%\def\i{\vec i}
+%\def\o{\vec o}
+%\def\p{\vec p}
+
+%\usepackage{euscript}
+%\def\Ef{\EuScript{E}_F}
+%\def\nf{n_F}
+%\def\Uw{U_{\rm wall}}
+%\def\J{\EuScript{J}}
+
+%\def\RACS{{\tt RACS}} 
+%\def\racs{{\tt RACS}{ }} 
+%\def\CVS{{\tt CVS}} 
+%\def\opt#1{{\tt #1}} 
+%\def\env#1{{\tt \$#1}}
+%\def\Python{{\tt Python}}
+%\def\SWIG{{\tt SWIG }}
+%\def\CPP{{\tt C++ }}
+
+%\def\utext#1{^{\text{#1}}}
+%\def\dtext#1{_{\text{#1}}}
+%\def\Ref#1{(\ref{#1})}
+
+%\def\bibAuthorEmph{\it}
+%\def\bibTitleEmph{}
+%\def\bibDelim{\tire{}}
+%\def\bibJDelim{/\hskip-1mm/}
+%\def\bibNumSign{\No{}~}
+%\def\bibVolSign{Т.~}
+%\def\bibPageSign{С.~}
+%\def\bibPagesSign{С.~}
+%\def\bibNumSignRus{\No{}~}
+%\def\bibVolSignRus{Т.~}
+%\def\bibPageSignRus{С.~}
+%\def\bibPagesSignRus{С.~}
+%\def\bibBookEmph{\rm}
+%\def\NoDot#1{}
+
+%\def\baselinestretch{1.51}
+
+\def\sr#1{\left<#1\right>}
+
+\begin{document}
+\title{Система генерации исходного кода приложений численного моделирования SYMBALG}
+\author{
+Иванов А.В.и и Жданов С.А
+}
+
+\tableofcontents
+
+\input{AST}
+\input{Statements}
+\end{document}

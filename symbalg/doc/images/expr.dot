@@ -1,0 +1,18 @@
+digraph expr {
+plus[label="AddOp (+)"]
+call[label="CallOp (())"]
+mult[label="MulOp (*)"]
+a[label="a"]
+p1[label="1,0"]
+get[label="IndexOp ([])"]
+c[label="c"]
+b[label="b"]
+p2[label="1,2"]
+
+plus->call->a
+call->p1
+plus->mult->get->b
+get->p2
+mult->c
+
+}

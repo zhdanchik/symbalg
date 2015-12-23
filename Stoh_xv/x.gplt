@@ -1,0 +1,6 @@
+#!/usr/bin/gplt ++ 
+-U  'M1X M2X'
+-rx
+ '0:100'
+  'means.dat' 
+-to -fname='x.pdf' -termopt=None -preview=False -showcmd='' -margins='10' -head='' -usepackage='' -clear=True

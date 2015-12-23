@@ -1,0 +1,10 @@
+#!/usr/bin/gplt ++ 
+-h3d  
+-pm3d  'map'
+-U  'Ey**2+Bz**2+Bx**2'
+-rx
+ '1:50'
+-rz
+ '0:0.35'
+  'res/EB2D_CF_0055.dat' 
+-to -fname='55.png' -termopt=None -preview=False -showcmd='' -margins='10' -head='' -usepackage='' -clear=True

@@ -1,0 +1,41 @@
+digraph if {
+
+ rankdir =tb;
+
+if[label="If",shape = "rectangle"] 
+
+great[label="Op: (>)"]
+a[label="a"]
+zero[label="0"]
+
+set[label="Set (=)",shape = "rectangle"]
+lvalue[label="b"]
+add[label="Op: (+)"]
+c[label="c"]
+mult[label="Op: (*)"]
+d[label="d"]
+e[label="e"]
+
+set1[label="Set (=)",shape = "rectangle"]
+lvalue1[label="b"]
+rand[label="random()"]
+
+
+edge[penwidth=2.0]
+if->great[label="Cond"]
+great->a
+great->zero
+
+if->set[label="Then"]
+set->lvalue
+set->add
+add->c
+add->mult
+mult->d
+mult->e
+
+if->set1[label="Else"]
+set1->lvalue1
+set1->rand
+
+}

@@ -1,0 +1,4 @@
+#!/usr/bin/gplt ++ 
+-h3d  
+  'EB.dat' 
+-to -fname='EB.pdf' -termopt=None -preview=True -showcmd='' -margins='10' -head='' -usepackage='' -clear=True

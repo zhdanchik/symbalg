@@ -1,0 +1,4 @@
+#!/usr/bin/gplt ++ 
+-U  'M1V M2V'
+  'means.dat' 
+-to -fname='v.pdf' -termopt=None -preview=False -showcmd='' -margins='10' -head='' -usepackage='' -clear=True

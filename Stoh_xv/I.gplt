@@ -1,0 +1,3 @@
+#!/usr/bin/gplt ++ 
+  'I.dat' 
+-to -fname='I.pdf' -termopt=None -preview=False -showcmd='' -margins='10' -head='' -usepackage='' -clear=True
