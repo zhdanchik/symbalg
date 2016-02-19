@@ -13,49 +13,15 @@ def in_rec(indx, lb, rt):
 
 @statement
 def calc_sec1():
-    H[0,0,0] = 0
-    H[0,0,0]+=m[-1,0,0]
-    H[0,0,0]+=m[1,0,0]
-    H[0,0,0]+=m[0,-1,0]
-    H[0,0,0]+=m[0,1,0]
-    H[0,0,0]+=m[0,0,-1]
-    H[0,0,0]+=m[0,0,1]
-    H[0,0,0]*=J
-    H[0,0,0]+= H_ext
-    
-    # H[0,0,0] = J*(m[-1,0,0]+m[1,0,0]+m[0,-1,0]+m[0,1,0]+m[0,0,-1]+m[0,0,1]) + H_ext
+    H[0,0,0] = J*(m[-1,0,0]+m[1,0,0]+m[0,-1,0]+m[0,1,0]+m[0,0,-1]+m[0,0,1]) + H_ext
     m[0,0,0] = m[0,0,0] - h *( gamma*(m[0,0,0]%H[0,0,0])+alpha*(m[0,0,0]%(m[0,0,0]%H[0,0,0])))
     m[0,0,0] /= m[0,0,0].abs()
-def in_sec1(indx): return in_rec(indx,(0,0,Nz1),(Nx,Ny,Nz1+Nz2)) 
+def in_sec1(indx): return in_rec(indx,(0,0,Nz1+1),(Nx,Ny,Nz1+Nz2)) 
 
 @statement
 def calc_sec2():
-    H[0,0,0] = 0
-    H[0,0,0]+=m1[0,0,0]
-    H[0,0,0]+=m1[-1,0,0]
-    H[0,0,0]+=m1[0,0,-1]
-    H[0,0,0]+=m1[-1,0,-1]
-    H[0,0,0]+=m1[0,1,0]
-    H[0,0,0]+=m1[-1,1,0]
-    H[0,0,0]+=m1[0,1,-1]
-    H[0,0,0]+=m1[-1,1,-1]
-    H[0,0,0]*=J
-    H[0,0,0]+= H_ext
-
-    H1[0,0,0] = 0
-    H1[0,0,0]+=m[0,0,0]
-    H1[0,0,0]+=m[1,0,0]
-    H1[0,0,0]+=m[0,0,1]
-    H1[0,0,0]+=m[1,0,1]
-    H1[0,0,0]+=m[0,1,0]
-    H1[0,0,0]+=m[1,1,0]
-    H1[0,0,0]+=m[0,1,1]
-    H1[0,0,0]+=m[1,1,1]
-    H1[0,0,0]*=J
-    H1[0,0,0]+= H_ext
-    
-    # H[0,0,0] = J*(m1[0,0,0]+m1[-1,0,0]+m1[0,0,-1]+m1[-1,0,-1]+m1[0,1,0]+m1[-1,1,0]+m1[0,1,-1]+m1[-1,1,-1]) + H_ext
-    # H1[0,0,0] = J*(m[0,0,0]+m[1,0,0]+m[0,0,1]+m[1,0,1]+m[0,1,0]+m[1,1,0]+m[0,1,1]+m[1,1,1]) + H_ext
+    H[0,0,0] = J*(m1[0,0,-1] + m1[-1,0,-1] + m1[0,-1,-1] + m1[-1,-1,-1] + m1[0,0,0] + m1[-1,0,0] + m1[0,-1,0] + m1[-1,-1,0]) + H_ext
+    H1[0,0,0] = J*(m[0,0,0]+m[1,0,0]+m[0,0,1]+m[1,0,1]+m[0,1,0]+m[1,1,0]+m[0,1,1]+m[1,1,1]) + H_ext
 
     m[0,0,0] = m[0,0,0] - h *( gamma*(m[0,0,0]%H[0,0,0])+alpha*(m[0,0,0]%(m[0,0,0]%H[0,0,0])))
     m[0,0,0] /= m[0,0,0].abs()
@@ -63,7 +29,16 @@ def calc_sec2():
     m1[0,0,0] /= m1[0,0,0].abs()
 def in_sec2(indx): return in_rec(indx,(0,0,0),(Nx,Ny,Nz1)) 
 
-sections = (section(calc_sec1(),in_sec1,0),section(calc_sec2(),in_sec2,1))
+@statement
+def calc_sec3():
+    H[0,0,0] = J*(m[-1,0,0]+m[1,0,0]+m[0,-1,0]+m[0,1,0]+m[0,0,1] + m1[0,0,-1] + m1[-1,0,-1] + m1[0,-1,-1] + m1[-1,-1,-1]) + H_ext
+    m1[0,0,0] = 0
+    m[0,0,0] = m[0,0,0] - h *( gamma*(m[0,0,0]%H[0,0,0])+alpha*(m[0,0,0]%(m[0,0,0]%H[0,0,0])))
+    m[0,0,0] /= m[0,0,0].abs()
+def in_sec3(indx): return in_rec(indx,(0,0,Nz1),(Nx,Ny,Nz1+1)) 
+
+
+sections = (section(calc_sec1(),in_sec1,0),section(calc_sec2(),in_sec2,1),section(calc_sec3(),in_sec3,2))
 
 step_d=(1,1,1)
 Myscheme = scheme(sections, step_d)
@@ -87,7 +62,7 @@ cone2pdf(cone1,Myscheme.acts,"LL_magnet/sections/tmp1.pdf", "LR")
 
 print tile_1_calcH
 print tile_1_calcm
-mk_module("LL_tiles", globals())
+#mk_module("LL_tiles", globals())
 sys.exit(0)
 #Myscheme.diag()
 #-------------------------------
