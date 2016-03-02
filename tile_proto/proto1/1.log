@@ -1,0 +1,17 @@
+
+TARGET: model_wrap.cxx
+NEW: model.hpp
+ALL: model.i model.hpp
+swig -python -c++ -DPYTHON -DPYLIKE_PRINT_R  -I/usr/include model.i
+==== model.py patched for load shared library with RTLD_GLOBAL=0x00100 flag ====
+
+TARGET: model_wrap.o
+NEW: model_wrap.cxx model.hpp
+ALL: model_wrap.cxx model.hpp
+g++  -fopenmp -O3 -fPIC -g -std=c++0x  -DPYTHON -I/usr/include/python2.7 -c model_wrap.cxx
+In file included from model_wrap.cxx:3314:0:
+model.hpp: In member function ‘void Model::start()’:
+model.hpp:674:41: error: conversion from ‘Sec3_tale*’ to non-scalar type ‘Sec3_tale’ requested
+           Sec3_tale tmp = new Sec3_tale();
+                                         ^
+make: *** [model_wrap.o] Error 1
