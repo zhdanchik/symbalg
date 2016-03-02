@@ -46,4 +46,16 @@ public:
 	 void step_m();
 };
 typedef Base_tile* ptile;
+struct Model {
+public:
+	static aiv::vctr<3,double> H_ext;
+	static double J;
+	static aiv::vctr<3,double> m1_init;
+	static double time;
+	static aiv::vctr<3,double> m_init;
+	static double alpha;
+	static double h;
+	static double gamma;
+	static aiv::array<ptile,3> data;
+};
 #endif

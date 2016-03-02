@@ -39,7 +39,8 @@ class Base_tile:
 #     @function
 #     def start():
 #         pass
-
+class Model:
+    pass
 
 def mk_module(path, D):
     old_format,BaseOp._format = BaseOp._format,'cpp'
@@ -54,9 +55,6 @@ def mk_module(path, D):
 
     global_vars = (collect_vars(F)|default_vars)-(struct_vars|collect_not_vars(F)) 
 
-    
-    
-    
     print struct_vars
     print global_vars
 
@@ -78,6 +76,13 @@ def mk_module(path, D):
             MethodContainer("step_H", dict(tile)["step_H"], [Var(i+k+l,"ptile") for l in 'mzp' for k in 'mzp' for i in 'mzp'], preffixes= []),
             MethodContainer("step_m", dict(tile)["step_m"], [], preffixes= []),
             ], parents = ["Base_tile"], counter = cnt)
+    
+    for n,i in module.stuffs: 
+        if n=="Model": 
+            print [(v, "public", "static") for v in global_vars]
+            module.stuffs[(n,i)].fields+=[(v, "public", ["static"]) for v in global_vars]
+            module.stuffs[(n,i)].fields+=[(Var("data","aiv::array<ptile,3>"), "public", ["static"])]
+    Var.__cpp__ = lambda X: "Model::%s"%X._name if X in global_vars else X._name
     
 
     mk = """name=model
