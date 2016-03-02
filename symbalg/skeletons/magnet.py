@@ -53,13 +53,8 @@ def mk_module(path, D):
     
 
     F =  reduce(lambda a,b:a[1]()+b[1](),starts,[0,ListStm()]) + reduce(lambda a,b:a()+b(),sec_acts,ListStm())
-    _dim = 0
-    for a in F._list:
-        if isinstance(a,SetStm):
-            if isinstance(a.lvalue, IndexOp):
-                if _dim == 0 : _dim = len(a.lvalue._b)
-                if _dim != len(a.lvalue._b): raise SymbalgError("Error in left values in acts. Not all vars have equal dimension")
-
+    _dim = collect_dim(F)
+    
     mean_stms = reduce(lambda a,b:a[1]()+b[1](),means,[0,ListStm()])
 
     default_vars = set([Var('h','double'), Var('data','aiv::array<cell, %s>'%_dim)])

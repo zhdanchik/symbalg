@@ -103,12 +103,14 @@ class scheme():
         res_set, tmp_set = set(), set()
         for v in base: 
 
-            self.set_sct(v) #!!!!!
-
-            abs_v, delta_v = self.abs_n_delta(v)
+            self.set_sct(v) #Устанавливаем текущую секцию, соответствующуу очередному вару в цикле
+            abs_v, delta_v = self.abs_n_delta(v) #
             new_time = t_count-1 if dir==-1 else 0
-            tmp_set.update([(new_time, i[1], self.cur_sec, tup_sum(i[2],inv_tup(delta_v))) for i in self.tgtsD[self.cur_sec][abs_v]])
-
+            tmp_set.update([(new_time,      #t
+                             i[1],          #N
+                             self.cur_sec,  #sec_num
+                             tup_sum(i[2],inv_tup(delta_v))) for i in self.tgtsD[self.cur_sec][abs_v]]) #offset
+            print base,self.tgtsD[self.cur_sec]
         # act :  ( t, N, sec_num, offset )
         #        ( 0, 1,    2   ,   3    )
         #
@@ -151,8 +153,9 @@ class scheme():
         # return self.get_cone(bottom_base, 1, t_count) & self.get_cone(top_base, -1, t_count)
         # cone2pdf(bottom_cone,self.acts,"LRnLA/sections/FDTD_2D_CF_bottom.pdf", "BT")
         # cone2pdf(top_cone,self.acts,"LRnLA/sections/FDTD_2D_CF_top.pdf", "BT")
-        # print "-----------top_cone:\n",cone2obj(top_cone, self.acts, time = "time", h = "h")
-        # print "--------bottom_cone:\n",cone2obj(bottom_cone, self.acts, time = "time", h = "h")
+        print "-----------top_cone:\n",cone2obj(top_cone, self.acts, time = "time", h = "h")
+        print "--------bottom_cone:\n",cone2obj(bottom_cone, self.acts, time = "time", h = "h")
+        # print "--------top_bottom_cone:\n",cone2obj(top_cone&bottom_cone, self.acts, time = "time", h = "h")
         return top_cone&bottom_cone
         #return bottom_cone
 

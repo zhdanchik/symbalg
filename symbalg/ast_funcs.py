@@ -76,10 +76,19 @@ def offset(step):
         return x
     return _offset
 
-def filter(x, names):
+def filter_expr(x, names):
     NewList = ListStm()
     for c in x._list:
         if isinstance(c.lvalue,IndexOp):
             if c.lvalue._a._name in names:
                 NewList.append(c)
     return NewList
+
+def collect_dim(x):
+    _dim = 0
+    for a in x._list:
+        if isinstance(a,SetStm):
+            if isinstance(a.lvalue, IndexOp):
+                if _dim == 0 : _dim = len(a.lvalue._b)
+                if _dim != len(a.lvalue._b): raise SymbalgError("Error in left values in acts. Not all vars have equal dimension")
+    return _dim
