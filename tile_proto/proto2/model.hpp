@@ -11,6 +11,7 @@ struct BaseTile;
 struct SecTile1;
 struct SecTile2;
 struct SecTile3;
+struct EmptyTile;
 
 class Model{
 public:
@@ -25,7 +26,12 @@ public:
 	double alpha;
 	double h;
 	double gamma;
+	int Nx,Ny,Nz1,Nz2;
 	// инициализация и обход
+	Model(int nx,int ny,int nz1,int nz2);
+	~Model();
+	void start();
+	void step(int cnt);
 };
 
 
@@ -41,10 +47,17 @@ struct BaseTile{
 	virtual SecTile3* cast(SecTile3* buf, int &buf_sz, int sx, int sy, int sz) /*const ???*/ { raise("oops..."); }
 };
 
+struct EmptyTile: public BaseTile{
 
-// int a[3][3];
+	SecTile1* cast(SecTile1* buf, int &buf_sz, int sx, int sy, int sz);
+	SecTile2* cast(SecTile2* buf, int &buf_sz, int sx, int sy, int sz);
+	SecTile3* cast(SecTile3* buf, int &buf_sz, int sx, int sy, int sz);
 
+	void start(const Model& model) {};
+	void step_H(const Model& model, indx<3> pos) {} ;
+	void step_m(const Model& model, indx<3> pos) {};
 
+};
 
 
 struct SecTile1: public BaseTile{
@@ -56,29 +69,13 @@ struct SecTile1: public BaseTile{
 	vctr<3> H2[Nx][Ny][Nz];
 
 // функции для приведения типов наследников - должны определяться потом, в .cpp, после объявления всех SecTile!!!
-SecTile1* cast(SecTile1* buf, int &buf_sz, int sx, int sy, int sz);
-SecTile2* cast(SecTile2* buf, int &buf_sz, int sx, int sy, int sz);
+	SecTile1* cast(SecTile1* buf, int &buf_sz, int sx, int sy, int sz);
+	SecTile2* cast(SecTile2* buf, int &buf_sz, int sx, int sy, int sz);
 
 // интерфейсы для стадий и инициализации - могут определяться и здесь, но лучше в .cpp
-	void start(const Model& model){  
-		for (int ix = 0; ix < Nx; ++ix) for (int iy = 0; iy < Nx; ++iy)for (int iz = 0; iz < Nx; ++iz){
-			m1[ix][iy][ix] = model.m1_init;
-			m2[ix][iy][ix] = model.m2_init;
-			H1[ix][iy][ix] = Vctr(0.,0.,0.);
-			H2[ix][iy][ix] = Vctr(0.,0.,0.);
-		}
-	}
-	void step_H(const Model& model, indx<3> pos){
-		// ТОЛЬКО(!!!) если нам нужны соседи
-		SecTile1 *nb[3][3][3], buf[27]; int buf_sz = 0;
-		for(int ix=-1; ix<=1; ix++) for(int iy=-1; iy<=1; iy++) for(int iz=-1; iz<=1; iz++) // смотреть за границами области!!!
-			nb[ix][iy][iz] = model.data[pos+Indx(ix, iy, iz)]->cast(buf, buf_sz,ix,iy,iz);
-		// теперь в nb лежат акутальные пойнтеры
-
-			
-
-	}
-	void step_m(const Model& model, indx<3> pos){  }
+	void start(const Model& model);
+	void step_H(const Model& model, indx<3> pos);
+	void step_m(const Model& model, indx<3> pos);
 };
 
 struct SecTile2: public BaseTile{
@@ -90,28 +87,14 @@ struct SecTile2: public BaseTile{
 	vctr<3> H2[Nx][Ny][Nz];
 
 // функции для приведения типов наследников - должны определяться потом, в .cpp, после объявления всех SecTile!!!
-SecTile1* cast(SecTile1* buf, int &buf_sz, int sx, int sy, int sz);
-SecTile2* cast(SecTile2* buf, int &buf_sz, int sx, int sy, int sz);
-SecTile3* cast(SecTile3* buf, int &buf_sz, int sx, int sy, int sz);
+	SecTile1* cast(SecTile1* buf, int &buf_sz, int sx, int sy, int sz);
+	SecTile2* cast(SecTile2* buf, int &buf_sz, int sx, int sy, int sz);
+	SecTile3* cast(SecTile3* buf, int &buf_sz, int sx, int sy, int sz);
 
 // интерфейсы для стадий и инициализации - могут определяться и здесь, но лучше в .cpp
-	void start(const Model& model){ 
-		for (int ix = 0; ix < Nx; ++ix) for (int iy = 0; iy < Nx; ++iy)for (int iz = 0; iz < Nx; ++iz){
-			m1[ix][iy][ix] = model.m1_init;
-			m2[ix][iy][ix] = model.m2_init;
-			H1[ix][iy][ix] = Vctr(0.,0.,0.);
-			H2[ix][iy][ix] = Vctr(0.,0.,0.);
-		}
-	} 
-	void step_H(const Model& model, indx<3> pos){
-		// ТОЛЬКО(!!!) если нам нужны соседи
-		SecTile2 *nb[3][3][3], buf[26]; int buf_sz = 0;
-		for(int ix=-1; ix<=1; ix++) for(int iy=-1; iy<=1; iy++) for(int iz=-1; iz<=1; iz++) // смотреть за границами области!!!
-			nb[ix][iy][iz] = model.data[pos+Indx(ix, iy, iz)]->cast(buf, buf_sz,ix,iy,iz);
-		// теперь в nb лежат акутальные пойнтеры
-	}
-	void step_m(const Model& model, indx<3> pos){  }
-
+	void start(const Model& model);
+	void step_H(const Model& model, indx<3> pos);
+	void step_m(const Model& model, indx<3> pos);
 };
 
 struct SecTile3: public BaseTile{
@@ -123,35 +106,13 @@ struct SecTile3: public BaseTile{
 	vctr<3> H2[Nx][Ny][Nz];
 
 // функции для приведения типов наследников - должны определяться потом, в .cpp, после объявления всех SecTile!!!
-SecTile2* cast(SecTile2* buf, int &buf_sz, int sx, int sy, int sz);
-SecTile3* cast(SecTile3* buf, int &buf_sz, int sx, int sy, int sz);
+	SecTile2* cast(SecTile2* buf, int &buf_sz, int sx, int sy, int sz);
+	SecTile3* cast(SecTile3* buf, int &buf_sz, int sx, int sy, int sz);
 
 // интерфейсы для стадий и инициализации - могут определяться и здесь, но лучше в .cpp
-	void start(const Model& model){
-		for (int ix = 0; ix < Nx; ++ix) for (int iy = 0; iy < Nx; ++iy)for (int iz = 0; iz < Nx; ++iz){
-			m1[ix][iy][ix] = model.m1_init;
-			m2[ix][iy][ix] = model.m2_init;
-			H1[ix][iy][ix] = Vctr(0.,0.,0.);
-			H2[ix][iy][ix] = Vctr(0.,0.,0.);
-		}
-	}
-	void step_H(const Model& model, indx<3> pos){
-		// ТОЛЬКО(!!!) если нам нужны соседи
-		SecTile3 *nb[3][3][3], buf[26]; int buf_sz = 0;
-		for(int ix=-1; ix<=1; ix++) for(int iy=-1; iy<=1; iy++) for(int iz=-1; iz<=1; iz++) // смотреть за границами области!!!
-			nb[ix][iy][iz] = model.data[pos+Indx(ix, iy, iz)]->cast(buf, buf_sz,ix,iy,iz);
-		// теперь в nb лежат акутальные пойнтеры
-		for (int ix = 0; ix < Nx; ++ix) for (int iy = 0; iy < Nx; ++iy)for (int iz = 0; iz < Nx; ++iz){
-			H1[ix][iy][iz] = model.J*(
-				m1[ix-1][iy][iz] + m1[ix+1][iy][iz] +
-				m1[ix][iy-1][iz] + m1[ix][iy+1][iz] +
-				m1[ix][iy][iz+1] + m1[ix][iy][iz+1] ) +model.H_ext;
-
-			// m[-1,0,0]+m[1,0,0]+m[0,-1,0]+m[0,1,0]+m[0,0,-1]+m[0,0,1]) + H_ext
-		}
-
-	}
-	void step_m(const Model& model, indx<3> pos){  }
+	void start(const Model& model);
+	void step_H(const Model& model, indx<3> pos);
+	void step_m(const Model& model, indx<3> pos);
 };
 
 #endif
