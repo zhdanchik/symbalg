@@ -35,7 +35,7 @@ public:
 	~Model();
 	void start();
 	void step(int cnt);
-	void m1_av_calc();
+	// void m1_av_calc();
 };
 
 

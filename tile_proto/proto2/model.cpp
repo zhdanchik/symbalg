@@ -308,13 +308,14 @@ void Model::step(int cnt){
     }
 }
 
-void Model::m1_av_calc(){
-  m1_av
-for (int ix = 1; ix < Nx+1; ++ix) for (int iy = 1; iy < Ny+1; ++iy)for (int iz = 1; iz < Nz1+Nz2+2; ++iz){
-          data[Indx(ix,iy,iz)]->step_H(*this,Indx(ix,iy,iz));
-          data[Indx(ix,iy,iz)]->step_m(*this,Indx(ix,iy,iz));
-        }
-}
+// void Model::m1_av_calc(){
+//   m1_av=Vctr(0,0,0);
+//   cnt = 0;
+//   for (int ix = 1; ix < Nx+1; ++ix) for (int iy = 1; iy < Ny+1; ++iy)for (int iz = 1; iz < Nz1+Nz2+2; ++iz){
+//           data[Indx(ix,iy,iz)]->step_H(*this,Indx(ix,iy,iz));
+//           data[Indx(ix,iy,iz)]->step_m(*this,Indx(ix,iy,iz));
+//         }
+// }
 
 
 int main()
