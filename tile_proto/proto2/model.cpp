@@ -1,6 +1,5 @@
 #include "model.hpp"
 
-
 // функции для приведения типов наследников - должны определяться потом, в .cpp, после объявления всех SecTile!!!
 
 
@@ -12,25 +11,29 @@ SecTile1* EmptyTile::cast(SecTile1* buf, int &buf_sz, int sx, int sy, int sz) /*
     for(int ix=0; ix<SecTile1::Nx; ++ix) 
         for(int iy=0; iy<SecTile1::Ny; ++iy) 
             for(int iz=0; iz<SecTile1::Nz; ++iz) {
-                buf[buf_sz].m1[ix][iy][iz] = Vctr(0,0,0);
-                buf[buf_sz].m2[ix][iy][iz] = Vctr(0,0,0);
-    } 
+               buf[buf_sz].m1[ix][iy][iz] = Vctr(0.,0.,0.);
+               buf[buf_sz].m2[ix][iy][iz] = Vctr(0.,0.,0.);
+    }
+
+    return buf+buf_sz++; 
 }
 SecTile2* EmptyTile::cast(SecTile2* buf, int &buf_sz, int sx, int sy, int sz) /*const ???*/ { 
     for(int ix=0; ix<SecTile2::Nx; ++ix) 
         for(int iy=0; iy<SecTile2::Ny; ++iy) 
             for(int iz=0; iz<SecTile2::Nz; ++iz) {
-                buf[buf_sz].m1[ix][iy][iz] = Vctr(0,0,0);
-                buf[buf_sz].m2[ix][iy][iz] = Vctr(0,0,0);
-    } 
+                buf[buf_sz].m1[ix][iy][iz] = Vctr(0.,0.,0.);
+                buf[buf_sz].m2[ix][iy][iz] = Vctr(0.,0.,0.);
+    }
+    return buf+buf_sz++; 
 }
 SecTile3* EmptyTile::cast(SecTile3* buf, int &buf_sz, int sx, int sy, int sz) /*const ???*/ { 
     for(int ix=0; ix<SecTile3::Nx; ++ix) 
         for(int iy=0; iy<SecTile3::Ny; ++iy) 
             for(int iz=0; iz<SecTile3::Nz; ++iz) {
-                buf[buf_sz].m1[ix][iy][iz] = Vctr(0,0,0);
-                buf[buf_sz].m2[ix][iy][iz] = Vctr(0,0,0);
-    } 
+                buf[buf_sz].m1[ix][iy][iz] = Vctr(0.,0.,0.);
+                buf[buf_sz].m2[ix][iy][iz] = Vctr(0.,0.,0.);
+    }
+    return buf+buf_sz++; 
 } 
 
 
@@ -41,9 +44,7 @@ SecTile3* EmptyTile::cast(SecTile3* buf, int &buf_sz, int sx, int sy, int sz) /*
 
 SecTile1* SecTile1::cast(SecTile1* buf, int &buf_sz, int sx, int sy, int sz) /*const ???*/ { return this; } 
 SecTile2* SecTile1::cast(SecTile2* buf, int &buf_sz, int sx, int sy, int sz) /*const ???*/ { 
-
-    if ((sy+sz)*(Nx-SecTile2::Nx) + (sx+sz)*(Ny-SecTile2::Ny) + (sx+sy)*(Nz-SecTile2::Nz) != 0 ) {raise("Incorrect cast from SecTile1 to SecTile2")}
-    // копируем данные в buf[buf_sz]
+// копируем данные в buf[buf_sz]
     for(int ix=0; ix<SecTile2::Nx*(1 - abs(sx))+abs(sx); ++ix) 
         for(int iy=0; iy<SecTile2::Ny*(1 - abs(sy))+abs(sy); ++iy) 
             for(int iz=0; iz<SecTile2::Nz*(1 - abs(sz))+abs(sz); ++iz) {
@@ -67,10 +68,10 @@ SecTile2* SecTile1::cast(SecTile2* buf, int &buf_sz, int sx, int sy, int sz) /*c
 
   void SecTile1::start(const Model& model){  
     for (int ix = 0; ix < Nx; ++ix) for (int iy = 0; iy < Ny; ++iy)for (int iz = 0; iz < Nz; ++iz){
-      m1[ix][iy][ix] = model.m1_init;
-      m2[ix][iy][ix] = model.m2_init;
-      H1[ix][iy][ix] = Vctr(0.,0.,0.);
-      H2[ix][iy][ix] = Vctr(0.,0.,0.);
+      m1[ix][iy][iz] = model.m1_init;
+      m2[ix][iy][iz] = model.m2_init;
+      H1[ix][iy][iz] = Vctr(0.,0.,0.);
+      H2[ix][iy][iz] = Vctr(0.,0.,0.);
     }
   }
 
@@ -78,30 +79,30 @@ void SecTile1::step_H(const Model& model, indx<3> pos){
   // ТОЛЬКО(!!!) если нам нужны соседи
   SecTile1 *nb[3][3][3], buf[27]; int buf_sz = 0;
   for(int ix=-1; ix<=1; ix++) for(int iy=-1; iy<=1; iy++) for(int iz=-1; iz<=1; iz++) // смотреть за границами области!!!
-    nb[ix][iy][iz] = model.data[pos+Indx(ix, iy, iz)]->cast(buf, buf_sz,ix,iy,iz);
+      nb[ix+1][iy+1][iz+1] = model.data[pos+Indx(ix, iy, iz)]->cast(buf, buf_sz,ix,iy,iz);
   // теперь в nb лежат акутальные пойнтеры
 
   for (int ix = 0; ix < Nx; ++ix) for (int iy = 0; iy < Ny; ++iy)for (int iz = 0; iz < Nz; ++iz){
     H1[ix][iy][iz] = model.J*(
-      nb[0        ][0        ][(iz-1)/Nz] -> m2[ix       ][iy       ][(iz-1)%Nz] + 
-      nb[(ix-1)/Nx][0        ][(iz-1)/Nz] -> m2[(ix-1)%Nx][iy       ][(iz-1)%Nz] + 
-      nb[0        ][(iy-1)/Ny][(iz-1)/Nz] -> m2[ix       ][(iy-1)%Ny][(iz-1)%Nz] + 
-      nb[(ix-1)/Nx][(iy-1)/Ny][(iz-1)/Nz] -> m2[(ix-1)%Nx][(iy-1)%Ny][(iz-1)%Nz] +
-      nb[0        ][0        ][0        ] -> m2[ix       ][iy       ][iz       ] +
-      nb[(ix-1)/Nx][0        ][0        ] -> m2[(ix-1)%Nx][iy       ][iz       ] + 
-      nb[0        ][(iy-1)/Ny][0        ] -> m2[ix       ][(iy-1)%Ny][iz       ] + 
-      nb[(ix-1)/Nx][(iy-1)/Ny][0        ] -> m2[(ix-1)%Nx][(iy-1)%Ny][iz       ] ) + model.H_ext;
+      nb[1          ][1          ][(iz-1)/Nz+1] -> m2[ix       ][iy       ][(iz-1)%Nz] + 
+      nb[(ix-1)/Nx+1][1          ][(iz-1)/Nz+1] -> m2[(ix-1)%Nx][iy       ][(iz-1)%Nz] + 
+      nb[1          ][(iy-1)/Ny+1][(iz-1)/Nz+1] -> m2[ix       ][(iy-1)%Ny][(iz-1)%Nz] + 
+      nb[(ix-1)/Nx+1][(iy-1)/Ny+1][(iz-1)/Nz+1] -> m2[(ix-1)%Nx][(iy-1)%Ny][(iz-1)%Nz] +
+      nb[1          ][1          ][1          ] -> m2[ix       ][iy       ][iz       ] +
+      nb[(ix-1)/Nx+1][1          ][1          ] -> m2[(ix-1)%Nx][iy       ][iz       ] + 
+      nb[1          ][(iy-1)/Ny+1][1          ] -> m2[ix       ][(iy-1)%Ny][iz       ] + 
+      nb[(ix-1)/Nx+1][(iy-1)/Ny+1][1          ] -> m2[(ix-1)%Nx][(iy-1)%Ny][iz       ] ) + model.H_ext;
       //m1[0,0,-1] + m1[-1,0,-1] + m1[0,-1,-1] + m1[-1,-1,-1] + m1[0,0,0] + m1[-1,0,0] + m1[0,-1,0] + m1[-1,-1,0]
 
     H2[ix][iy][iz] = model.J*(
-      nb[0        ][0        ][0        ] -> m1[ix       ][iy       ][iz       ] +
-      nb[(ix+1)/Nx][0        ][0        ] -> m1[(ix+1)%Nx][iy       ][iz       ] +
-      nb[0        ][0        ][(iz+1)/Nz] -> m1[ix       ][iy       ][(iz+1)%Nz] + 
-      nb[(ix+1)/Nx][0        ][(iz+1)/Nz] -> m1[(ix+1)%Nx][iy       ][(iz+1)%Nz] +
-      nb[0        ][(iy+1)/Ny][0        ] -> m1[ix       ][(iy+1)%Ny][iz       ] +
-      nb[(ix+1)/Nx][(iy+1)/Ny][0        ] -> m1[(ix+1)%Nx][(iy+1)%Ny][iz       ] +
-      nb[0        ][(iy+1)/Ny][(iz+1)/Nz] -> m1[ix       ][(iy+1)%Ny][(iz+1)%Nz] + 
-      nb[(ix+1)/Nx][(iy+1)/Ny][(iz+1)/Nz] -> m1[(ix+1)%Nx][(iy+1)%Ny][(iz+1)%Nz] ) + model.H_ext;
+      nb[1          ][1          ][1          ] -> m1[ix       ][iy       ][iz       ] +
+      nb[(ix+1)/Nx+1][1          ][1          ] -> m1[(ix+1)%Nx][iy       ][iz       ] +
+      nb[1          ][1          ][(iz+1)/Nz+1] -> m1[ix       ][iy       ][(iz+1)%Nz] + 
+      nb[(ix+1)/Nx+1][1          ][(iz+1)/Nz+1] -> m1[(ix+1)%Nx][iy       ][(iz+1)%Nz] +
+      nb[1          ][(iy+1)/Ny+1][1          ] -> m1[ix       ][(iy+1)%Ny][iz       ] +
+      nb[(ix+1)/Nx+1][(iy+1)/Ny+1][1          ] -> m1[(ix+1)%Nx][(iy+1)%Ny][iz       ] +
+      nb[1          ][(iy+1)/Ny+1][(iz+1)/Nz+1] -> m1[ix       ][(iy+1)%Ny][(iz+1)%Nz] + 
+      nb[(ix+1)/Nx+1][(iy+1)/Ny+1][(iz+1)/Nz+1] -> m1[(ix+1)%Nx][(iy+1)%Ny][(iz+1)%Nz] ) + model.H_ext;
       //m[0,0,0]+m[1,0,0]+m[0,0,1]+m[1,0,1]+m[0,1,0]+m[1,1,0]+m[0,1,1]+m[1,1,1]
   }
 
@@ -121,7 +122,6 @@ void SecTile1::step_m(const Model& model, indx<3> pos){
 //----------------------------------------------------------------------
 
 SecTile1* SecTile2::cast(SecTile1* buf, int &buf_sz, int sx, int sy, int sz) /*const ???*/ { 
-    if ((sy+sz)*(Nx-SecTile1::Nx) + (sx+sz)*(Ny-SecTile1::Ny) + (sx+sy)*(Nz-SecTile1::Nz) != 0 ) {raise("Incorrect cast from SecTile2 to SecTile1")}
     // копируем данные в buf[buf_sz]
     for(int ix=0; ix<SecTile1::Nx*(1 - abs(sx))+abs(sx); ++ix) 
         for(int iy=0; iy<SecTile1::Ny*(1 - abs(sy))+abs(sy); ++iy) 
@@ -145,7 +145,6 @@ SecTile1* SecTile2::cast(SecTile1* buf, int &buf_sz, int sx, int sy, int sz) /*c
 SecTile2* SecTile2::cast(SecTile2* buf, int &buf_sz, int sx, int sy, int sz) /*const ???*/ { return this; } 
 SecTile3* SecTile2::cast(SecTile3* buf, int &buf_sz, int sx, int sy, int sz) /*const ???*/ { 
     // копируем данные в buf[buf_sz]
-    if ((sy+sz)*(Nx-SecTile3::Nx) + (sx+sz)*(Ny-SecTile3::Ny) + (sx+sy)*(Nz-SecTile3::Nz) != 0 ) {raise("Incorrect cast from SecTile2 to SecTile3")}
     for(int ix=0; ix<SecTile3::Nx*(1 - abs(sx))+abs(sx); ++ix) 
         for(int iy=0; iy<SecTile3::Ny*(1 - abs(sy))+abs(sy); ++iy) 
             for(int iz=0; iz<SecTile3::Nz*(1 - abs(sz))+abs(sz); ++iz) {
@@ -167,30 +166,31 @@ SecTile3* SecTile2::cast(SecTile3* buf, int &buf_sz, int sx, int sy, int sz) /*c
 }
 void SecTile2::start(const Model& model){ 
   for (int ix = 0; ix < Nx; ++ix) for (int iy = 0; iy < Ny; ++iy)for (int iz = 0; iz < Nz; ++iz){
-    m1[ix][iy][ix] = model.m1_init;
-    m2[ix][iy][ix] = model.m2_init;
-    H1[ix][iy][ix] = Vctr(0.,0.,0.);
-    H2[ix][iy][ix] = Vctr(0.,0.,0.);
+      m1[ix][iy][iz] = model.m1_init;
+      m2[ix][iy][iz] = model.m2_init;
+      H1[ix][iy][iz] = Vctr(0.,0.,0.);
+      H2[ix][iy][iz] = Vctr(0.,0.,0.);
   }
 } 
+
 void SecTile2::step_H(const Model& model, indx<3> pos){
   // ТОЛЬКО(!!!) если нам нужны соседи
   SecTile2 *nb[3][3][3], buf[27]; int buf_sz = 0;
   for(int ix=-1; ix<=1; ix++) for(int iy=-1; iy<=1; iy++) for(int iz=-1; iz<=1; iz++) // смотреть за границами области!!!
-    nb[ix][iy][iz] = model.data[pos+Indx(ix, iy, iz)]->cast(buf, buf_sz,ix,iy,iz);
+    nb[ix+1][iy+1][iz+1] = model.data[pos+Indx(ix, iy, iz)]->cast(buf, buf_sz,ix,iy,iz);
   // теперь в nb лежат акутальные пойнтеры
   for (int ix = 0; ix < Nx; ++ix) for (int iy = 0; iy < Ny; ++iy)for (int iz = 0; iz < Nz; ++iz){
     H1[ix][iy][iz] = model.J*(
-      nb[(ix-1)/Nx][0        ][0        ] -> m1[(ix-1)%Nx][iy       ][iz       ] + 
-      nb[(ix+1)/Nx][0        ][0        ] -> m1[(ix+1)%Nx][iy       ][iz       ] +
-      nb[0        ][(iy-1)/Ny][0        ] -> m1[ix       ][(iy-1)%Ny][iz       ] + 
-      nb[0        ][(iy+1)/Ny][0        ] -> m1[ix       ][(iy+1)%Ny][iz       ] +
-      nb[0        ][0        ][(iz+1)/Nz] -> m1[ix       ][iy       ][(iz+1)%Nz] + 
+      nb[(ix-1)/Nx+1][1          ][1          ] -> m1[(ix-1)%Nx][iy       ][iz       ] + 
+      nb[(ix+1)/Nx+1][1          ][1          ] -> m1[(ix+1)%Nx][iy       ][iz       ] +
+      nb[1          ][(iy-1)/Ny+1][1          ] -> m1[ix       ][(iy-1)%Ny][iz       ] + 
+      nb[1          ][(iy+1)/Ny+1][1          ] -> m1[ix       ][(iy+1)%Ny][iz       ] +
+      nb[1          ][1          ][(iz+1)/Nz+1] -> m1[ix       ][iy       ][(iz+1)%Nz] + 
       
-      nb[0        ][0        ][(iz-1)/Nz] -> m2[ix       ][iy       ][(iz-1)%Nz] + 
-      nb[(ix-1)/Nx][0        ][(iz-1)/Nz] -> m2[(ix-1)%Nx][iy       ][(iz-1)%Nz] + 
-      nb[0        ][(iy-1)/Ny][(iz-1)/Nz] -> m2[ix       ][(iy-1)%Ny][(iz-1)%Nz] + 
-      nb[(ix-1)/Nx][(iy-1)/Ny][(iz-1)/Nz] -> m2[(ix-1)%Nx][(iy-1)%Ny][(iz-1)%Nz] ) + model.H_ext;
+      nb[1          ][1          ][(iz-1)/Nz+1] -> m2[ix       ][iy       ][(iz-1)%Nz] + 
+      nb[(ix-1)/Nx+1][1          ][(iz-1)/Nz+1] -> m2[(ix-1)%Nx][iy       ][(iz-1)%Nz] + 
+      nb[1          ][(iy-1)/Ny+1][(iz-1)/Nz+1] -> m2[ix       ][(iy-1)%Ny][(iz-1)%Nz] + 
+      nb[(ix-1)/Nx+1][(iy-1)/Ny+1][(iz-1)/Nz+1] -> m2[(ix-1)%Nx][(iy-1)%Ny][(iz-1)%Nz] ) + model.H_ext;
       //m[-1,0,0]+m[1,0,0]+m[0,-1,0]+m[0,1,0]+m[0,0,1] + m1[0,0,-1] + m1[-1,0,-1] + m1[0,-1,-1] + m1[-1,-1,-1]
   }
 }
@@ -208,7 +208,6 @@ void SecTile2::step_m(const Model& model, indx<3> pos){
 
 SecTile2* SecTile3::cast(SecTile2* buf, int &buf_sz, int sx, int sy, int sz) /*const ???*/ { 
     // копируем данные в buf[buf_sz]
-    if ((sy+sz)*(Nx-SecTile2::Nx) + (sx+sz)*(Ny-SecTile2::Ny) + (sx+sy)*(Nz-SecTile2::Nz) != 0 ) {raise("Incorrect cast from SecTile3 to SecTile2")}
     for(int ix=0; ix<SecTile2::Nx*(1 - abs(sx))+abs(sx); ++ix) 
         for(int iy=0; iy<SecTile2::Ny*(1 - abs(sy))+abs(sy); ++iy) 
             for(int iz=0; iz<SecTile2::Nz*(1 - abs(sz))+abs(sz); ++iz) {
@@ -232,26 +231,26 @@ SecTile3* SecTile3::cast(SecTile3* buf, int &buf_sz, int sx, int sy, int sz) /*c
   
 void SecTile3::start(const Model& model){
   for (int ix = 0; ix < Nx; ++ix) for (int iy = 0; iy < Ny; ++iy)for (int iz = 0; iz < Nz; ++iz){
-    m1[ix][iy][ix] = model.m1_init;
-    m2[ix][iy][ix] = model.m2_init;
-    H1[ix][iy][ix] = Vctr(0.,0.,0.);
-    H2[ix][iy][ix] = Vctr(0.,0.,0.);
+      m1[ix][iy][iz] = model.m1_init;
+      m2[ix][iy][iz] = model.m2_init;
+      H1[ix][iy][iz] = Vctr(0.,0.,0.);
+      H2[ix][iy][iz] = Vctr(0.,0.,0.);
   }
 }
 void SecTile3::step_H(const Model& model, indx<3> pos){
   // ТОЛЬКО(!!!) если нам нужны соседи
   SecTile3 *nb[3][3][3], buf[27]; int buf_sz = 0;
   for(int ix=-1; ix<=1; ix++) for(int iy=-1; iy<=1; iy++) for(int iz=-1; iz<=1; iz++) // смотреть за границами области!!!
-    nb[ix][iy][iz] = model.data[pos+Indx(ix, iy, iz)]->cast(buf, buf_sz,ix,iy,iz);
+    nb[ix+1][iy+1][iz+1] = model.data[pos+Indx(ix, iy, iz)]->cast(buf, buf_sz,ix,iy,iz);
   // теперь в nb лежат акутальные пойнтеры
   for (int ix = 0; ix < Nx; ++ix) for (int iy = 0; iy < Ny; ++iy)for (int iz = 0; iz < Nz; ++iz){
     H1[ix][iy][iz] = model.J*(
-      nb[(ix-1)/Nx][0        ][0        ] -> m1[(ix-1)%Nx][iy       ][iz       ] + 
-      nb[(ix+1)/Nx][0        ][0        ] -> m1[(ix+1)%Nx][iy       ][iz       ] +
-      nb[0        ][(iy-1)/Ny][0        ] -> m1[ix       ][(iy-1)%Ny][iz       ] + 
-      nb[0        ][(iy+1)/Ny][0        ] -> m1[ix       ][(iy+1)%Ny][iz       ] +
-      nb[0        ][0        ][(iz-1)/Nz] -> m1[ix       ][iy       ][(iz-1)%Nz] + 
-      nb[0        ][0        ][(iz+1)/Nz] -> m1[ix       ][iy       ][(iz+1)%Nz] ) + model.H_ext;
+      nb[(ix-1)/Nx+1][1          ][1          ] -> m1[(ix-1)%Nx][iy       ][iz       ] + 
+      nb[(ix+1)/Nx+1][1          ][1          ] -> m1[(ix+1)%Nx][iy       ][iz       ] +
+      nb[1          ][(iy-1)/Ny+1][1          ] -> m1[ix       ][(iy-1)%Ny][iz       ] + 
+      nb[1          ][(iy+1)/Ny+1][1          ] -> m1[ix       ][(iy+1)%Ny][iz       ] +
+      nb[1          ][1          ][(iz-1)/Nz+1] -> m1[ix       ][iy       ][(iz-1)%Nz] + 
+      nb[1          ][1          ][(iz+1)/Nz+1] -> m1[ix       ][iy       ][(iz+1)%Nz] ) + model.H_ext;
   }
 
 }
@@ -273,15 +272,15 @@ Model::Model(int nx,int ny,int nz1,int nz2){
     data.init(Indx(Nx+2,Ny+2,Nz1+Nz2+3));
     for (int ix = 0; ix < Nx+2; ++ix) for (int iy = 0; iy < Ny+2; ++iy){
       for (int iz = 0; iz < Nz1+1; ++iz){
-        if ((ix==0)||(ix==Nx+1)||(iy==0)||(ix==Ny+1)||(iz==0)) { data[Indx(ix,iy,iz)] = new EmptyTile;} 
+        if ((ix==0)||(ix==Nx+1)||(iy==0)||(iy==Ny+1)||(iz==0)) { data[Indx(ix,iy,iz)] = new EmptyTile;} 
         else{data[Indx(ix,iy,iz)] = new SecTile1;}
       }
       for (int iz = Nz1+1; iz < Nz1+2; ++iz){
-        if ((ix==0)||(ix==Nx+1)||(iy==0)||(ix==Ny+1)) { data[Indx(ix,iy,iz)] = new EmptyTile;} 
+        if ((ix==0)||(ix==Nx+1)||(iy==0)||(iy==Ny+1)) { data[Indx(ix,iy,iz)] = new EmptyTile;} 
         else{data[Indx(ix,iy,iz)] = new SecTile2;}
       }
       for (int iz = Nz1+2; iz < Nz1+Nz2+3; ++iz){
-        if ((ix==0)||(ix==Nx+1)||(iy==0)||(ix==Ny+1)||(iz==Nz1+Nz2+2)) { data[Indx(ix,iy,iz)] = new EmptyTile;} 
+        if ((ix==0)||(ix==Nx+1)||(iy==0)||(iy==Ny+1)||(iz==Nz1+Nz2+2)) { data[Indx(ix,iy,iz)] = new EmptyTile;} 
         else{data[Indx(ix,iy,iz)] = new SecTile3;}
       }
     }   
@@ -309,11 +308,18 @@ void Model::step(int cnt){
     }
 }
 
+void Model::m1_av_calc(){
+  m1_av
+for (int ix = 1; ix < Nx+1; ++ix) for (int iy = 1; iy < Ny+1; ++iy)for (int iz = 1; iz < Nz1+Nz2+2; ++iz){
+          data[Indx(ix,iy,iz)]->step_H(*this,Indx(ix,iy,iz));
+          data[Indx(ix,iy,iz)]->step_m(*this,Indx(ix,iy,iz));
+        }
+}
+
 
 int main()
 {
     Model model(6,4,2,2);
-
     model.H_ext = Vctr(0.,0.,1.);
     model.m1_init = Vctr(1.,0.,0.);
     model.m2_init = Vctr(1.,0.,0.);

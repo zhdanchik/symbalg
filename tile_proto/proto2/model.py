@@ -291,13 +291,57 @@ class Model(_object):
     __swig_setmethods__["data"] = _model.Model_data_set
     __swig_getmethods__["data"] = _model.Model_data_get
     if _newclass:data = _swig_property(_model.Model_data_get, _model.Model_data_set)
-    def __init__(self): 
-        """__init__(Model self) -> Model"""
-        this = _model.new_Model()
+    __swig_setmethods__["H_ext"] = _model.Model_H_ext_set
+    __swig_getmethods__["H_ext"] = _model.Model_H_ext_get
+    if _newclass:H_ext = _swig_property(_model.Model_H_ext_get, _model.Model_H_ext_set)
+    __swig_setmethods__["m1_init"] = _model.Model_m1_init_set
+    __swig_getmethods__["m1_init"] = _model.Model_m1_init_get
+    if _newclass:m1_init = _swig_property(_model.Model_m1_init_get, _model.Model_m1_init_set)
+    __swig_setmethods__["m2_init"] = _model.Model_m2_init_set
+    __swig_getmethods__["m2_init"] = _model.Model_m2_init_get
+    if _newclass:m2_init = _swig_property(_model.Model_m2_init_get, _model.Model_m2_init_set)
+    __swig_setmethods__["J"] = _model.Model_J_set
+    __swig_getmethods__["J"] = _model.Model_J_get
+    if _newclass:J = _swig_property(_model.Model_J_get, _model.Model_J_set)
+    __swig_setmethods__["time"] = _model.Model_time_set
+    __swig_getmethods__["time"] = _model.Model_time_get
+    if _newclass:time = _swig_property(_model.Model_time_get, _model.Model_time_set)
+    __swig_setmethods__["alpha"] = _model.Model_alpha_set
+    __swig_getmethods__["alpha"] = _model.Model_alpha_get
+    if _newclass:alpha = _swig_property(_model.Model_alpha_get, _model.Model_alpha_set)
+    __swig_setmethods__["h"] = _model.Model_h_set
+    __swig_getmethods__["h"] = _model.Model_h_get
+    if _newclass:h = _swig_property(_model.Model_h_get, _model.Model_h_set)
+    __swig_setmethods__["gamma"] = _model.Model_gamma_set
+    __swig_getmethods__["gamma"] = _model.Model_gamma_get
+    if _newclass:gamma = _swig_property(_model.Model_gamma_get, _model.Model_gamma_set)
+    __swig_setmethods__["Nx"] = _model.Model_Nx_set
+    __swig_getmethods__["Nx"] = _model.Model_Nx_get
+    if _newclass:Nx = _swig_property(_model.Model_Nx_get, _model.Model_Nx_set)
+    __swig_setmethods__["Ny"] = _model.Model_Ny_set
+    __swig_getmethods__["Ny"] = _model.Model_Ny_get
+    if _newclass:Ny = _swig_property(_model.Model_Ny_get, _model.Model_Ny_set)
+    __swig_setmethods__["Nz1"] = _model.Model_Nz1_set
+    __swig_getmethods__["Nz1"] = _model.Model_Nz1_get
+    if _newclass:Nz1 = _swig_property(_model.Model_Nz1_get, _model.Model_Nz1_set)
+    __swig_setmethods__["Nz2"] = _model.Model_Nz2_set
+    __swig_getmethods__["Nz2"] = _model.Model_Nz2_get
+    if _newclass:Nz2 = _swig_property(_model.Model_Nz2_get, _model.Model_Nz2_set)
+    def __init__(self, *args): 
+        """__init__(Model self, int nx, int ny, int nz1, int nz2) -> Model"""
+        this = _model.new_Model(*args)
         try: self.this.append(this)
         except: self.this = this
     __swig_destroy__ = _model.delete_Model
     __del__ = lambda self : None;
+    def start(self):
+        """start(Model self)"""
+        return _model.Model_start(self)
+
+    def step(self, *args):
+        """step(Model self, int cnt)"""
+        return _model.Model_step(self, *args)
+
 Model_swigregister = _model.Model_swigregister
 Model_swigregister(Model)
 
@@ -333,6 +377,45 @@ class BaseTile(_object):
     __del__ = lambda self : None;
 BaseTile_swigregister = _model.BaseTile_swigregister
 BaseTile_swigregister(BaseTile)
+
+class EmptyTile(BaseTile):
+    """Proxy of C++ EmptyTile class"""
+    __swig_setmethods__ = {}
+    for _s in [BaseTile]: __swig_setmethods__.update(getattr(_s,'__swig_setmethods__',{}))
+    __setattr__ = lambda self, name, value: _swig_setattr(self, EmptyTile, name, value)
+    __swig_getmethods__ = {}
+    for _s in [BaseTile]: __swig_getmethods__.update(getattr(_s,'__swig_getmethods__',{}))
+    __getattr__ = lambda self, name: _swig_getattr(self, EmptyTile, name)
+    __repr__ = _swig_repr
+    def cast(self, *args):
+        """
+        cast(EmptyTile self, SecTile1 buf, int & buf_sz, int sx, int sy, int sz) -> SecTile1
+        cast(EmptyTile self, SecTile2 buf, int & buf_sz, int sx, int sy, int sz) -> SecTile2
+        cast(EmptyTile self, SecTile3 buf, int & buf_sz, int sx, int sy, int sz) -> SecTile3
+        """
+        return _model.EmptyTile_cast(self, *args)
+
+    def start(self, *args):
+        """start(EmptyTile self, Model model)"""
+        return _model.EmptyTile_start(self, *args)
+
+    def step_H(self, *args):
+        """step_H(EmptyTile self, Model model, indx3 pos)"""
+        return _model.EmptyTile_step_H(self, *args)
+
+    def step_m(self, *args):
+        """step_m(EmptyTile self, Model model, indx3 pos)"""
+        return _model.EmptyTile_step_m(self, *args)
+
+    def __init__(self): 
+        """__init__(EmptyTile self) -> EmptyTile"""
+        this = _model.new_EmptyTile()
+        try: self.this.append(this)
+        except: self.this = this
+    __swig_destroy__ = _model.delete_EmptyTile
+    __del__ = lambda self : None;
+EmptyTile_swigregister = _model.EmptyTile_swigregister
+EmptyTile_swigregister(EmptyTile)
 
 class SecTile1(BaseTile):
     """Proxy of C++ SecTile1 class"""

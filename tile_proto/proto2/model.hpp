@@ -5,6 +5,7 @@
 #include <aivlib/meshTD.hpp>
 #include <aivlib/dekart.hpp>
 #include <math.h>
+#include <typeinfo>
 using namespace aiv;
 
 struct BaseTile;
@@ -21,17 +22,20 @@ public:
 	aiv::vctr<3,double> H_ext;
 	aiv::vctr<3,double> m1_init;
 	aiv::vctr<3,double> m2_init;
+	aiv::vctr<3,double> m1_av;
 	double J;
 	double time;
 	double alpha;
 	double h;
 	double gamma;
+
 	int Nx,Ny,Nz1,Nz2;
 	// инициализация и обход
 	Model(int nx,int ny,int nz1,int nz2);
 	~Model();
 	void start();
 	void step(int cnt);
+	void m1_av_calc();
 };
 
 
@@ -40,7 +44,7 @@ struct BaseTile{
 	virtual void start(const Model& model) = 0;
 	virtual void step_H(const Model& model, indx<3> pos) = 0;
 	virtual void step_m(const Model& model, indx<3> pos) = 0;
-
+	
 // функции для приведения типов наследников
 	virtual SecTile1* cast(SecTile1* buf, int &buf_sz, int sx, int sy, int sz) /*const ???*/ { raise("oops..."); }
 	virtual SecTile2* cast(SecTile2* buf, int &buf_sz, int sx, int sy, int sz) /*const ???*/ { raise("oops..."); }

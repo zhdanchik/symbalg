@@ -2935,46 +2935,47 @@ SWIG_Python_NonDynamicSetAttr(PyObject *obj, PyObject *name, PyObject *value) {
 /* -------- TYPES TABLE (BEGIN) -------- */
 
 #define SWIGTYPE_p_BaseTile swig_types[0]
-#define SWIGTYPE_p_Model swig_types[1]
-#define SWIGTYPE_p_SecTile1 swig_types[2]
-#define SWIGTYPE_p_SecTile2 swig_types[3]
-#define SWIGTYPE_p_SecTile3 swig_types[4]
-#define SWIGTYPE_p_a_SecTile1__Ny__a_SecTile1__Nz__aiv__vctrT_3_double_t swig_types[5]
-#define SWIGTYPE_p_a_SecTile2__Ny__a_SecTile2__Nz__aiv__vctrT_3_double_t swig_types[6]
-#define SWIGTYPE_p_a_SecTile3__Ny__a_SecTile3__Nz__aiv__vctrT_3_double_t swig_types[7]
-#define SWIGTYPE_p_aiv__Istream swig_types[8]
-#define SWIGTYPE_p_aiv__Ostream swig_types[9]
-#define SWIGTYPE_p_aiv___base_mem swig_types[10]
-#define SWIGTYPE_p_aiv__arr_head swig_types[11]
-#define SWIGTYPE_p_aiv__arrayT_BaseTile_p_3_t swig_types[12]
-#define SWIGTYPE_p_aiv__arrayT_basetile_1_t swig_types[13]
-#define SWIGTYPE_p_aiv__arrayT_basetile_2_t swig_types[14]
-#define SWIGTYPE_p_aiv__arrayT_basetile_3_t swig_types[15]
-#define SWIGTYPE_p_aiv__base_data swig_types[16]
-#define SWIGTYPE_p_aiv__base_sphere swig_types[17]
-#define SWIGTYPE_p_aiv__data_header swig_types[18]
-#define SWIGTYPE_p_aiv__debug_info swig_types[19]
-#define SWIGTYPE_p_aiv__indxT_1_t swig_types[20]
-#define SWIGTYPE_p_aiv__indxT_3_t swig_types[21]
-#define SWIGTYPE_p_aiv__indxT_6_t swig_types[22]
-#define SWIGTYPE_p_aiv__indxT_D_t swig_types[23]
-#define SWIGTYPE_p_aiv__lrc_head swig_types[24]
-#define SWIGTYPE_p_aiv__meshT_basetile_1_t swig_types[25]
-#define SWIGTYPE_p_aiv__meshT_basetile_2_t swig_types[26]
-#define SWIGTYPE_p_aiv__meshT_basetile_3_t swig_types[27]
-#define SWIGTYPE_p_aiv__multiarrayT_aiv__arrayT_basetile_3_t_t swig_types[28]
-#define SWIGTYPE_p_aiv__vctrT_1_double_t swig_types[29]
-#define SWIGTYPE_p_aiv__vctrT_3_double_t swig_types[30]
-#define SWIGTYPE_p_basetile swig_types[31]
-#define SWIGTYPE_p_cell_type swig_types[32]
-#define SWIGTYPE_p_char swig_types[33]
-#define SWIGTYPE_p_double swig_types[34]
-#define SWIGTYPE_p_indx_type swig_types[35]
-#define SWIGTYPE_p_int swig_types[36]
-#define SWIGTYPE_p_long swig_types[37]
-#define SWIGTYPE_p_std__aiv_convert_for_compare_float swig_types[38]
-static swig_type_info *swig_types[40];
-static swig_module_info swig_module = {swig_types, 39, 0, 0, 0, 0};
+#define SWIGTYPE_p_EmptyTile swig_types[1]
+#define SWIGTYPE_p_Model swig_types[2]
+#define SWIGTYPE_p_SecTile1 swig_types[3]
+#define SWIGTYPE_p_SecTile2 swig_types[4]
+#define SWIGTYPE_p_SecTile3 swig_types[5]
+#define SWIGTYPE_p_a_SecTile1__Ny__a_SecTile1__Nz__aiv__vctrT_3_double_t swig_types[6]
+#define SWIGTYPE_p_a_SecTile2__Ny__a_SecTile2__Nz__aiv__vctrT_3_double_t swig_types[7]
+#define SWIGTYPE_p_a_SecTile3__Ny__a_SecTile3__Nz__aiv__vctrT_3_double_t swig_types[8]
+#define SWIGTYPE_p_aiv__Istream swig_types[9]
+#define SWIGTYPE_p_aiv__Ostream swig_types[10]
+#define SWIGTYPE_p_aiv___base_mem swig_types[11]
+#define SWIGTYPE_p_aiv__arr_head swig_types[12]
+#define SWIGTYPE_p_aiv__arrayT_BaseTile_p_3_t swig_types[13]
+#define SWIGTYPE_p_aiv__arrayT_basetile_1_t swig_types[14]
+#define SWIGTYPE_p_aiv__arrayT_basetile_2_t swig_types[15]
+#define SWIGTYPE_p_aiv__arrayT_basetile_3_t swig_types[16]
+#define SWIGTYPE_p_aiv__base_data swig_types[17]
+#define SWIGTYPE_p_aiv__base_sphere swig_types[18]
+#define SWIGTYPE_p_aiv__data_header swig_types[19]
+#define SWIGTYPE_p_aiv__debug_info swig_types[20]
+#define SWIGTYPE_p_aiv__indxT_1_t swig_types[21]
+#define SWIGTYPE_p_aiv__indxT_3_t swig_types[22]
+#define SWIGTYPE_p_aiv__indxT_6_t swig_types[23]
+#define SWIGTYPE_p_aiv__indxT_D_t swig_types[24]
+#define SWIGTYPE_p_aiv__lrc_head swig_types[25]
+#define SWIGTYPE_p_aiv__meshT_basetile_1_t swig_types[26]
+#define SWIGTYPE_p_aiv__meshT_basetile_2_t swig_types[27]
+#define SWIGTYPE_p_aiv__meshT_basetile_3_t swig_types[28]
+#define SWIGTYPE_p_aiv__multiarrayT_aiv__arrayT_basetile_3_t_t swig_types[29]
+#define SWIGTYPE_p_aiv__vctrT_1_double_t swig_types[30]
+#define SWIGTYPE_p_aiv__vctrT_3_double_t swig_types[31]
+#define SWIGTYPE_p_basetile swig_types[32]
+#define SWIGTYPE_p_cell_type swig_types[33]
+#define SWIGTYPE_p_char swig_types[34]
+#define SWIGTYPE_p_double swig_types[35]
+#define SWIGTYPE_p_indx_type swig_types[36]
+#define SWIGTYPE_p_int swig_types[37]
+#define SWIGTYPE_p_long swig_types[38]
+#define SWIGTYPE_p_std__aiv_convert_for_compare_float swig_types[39]
+static swig_type_info *swig_types[41];
+static swig_module_info swig_module = {swig_types, 40, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -5345,14 +5346,674 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_Model_H_ext_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Model *arg1 = (Model *) 0 ;
+  aiv::vctr< 3,double > *arg2 = (aiv::vctr< 3,double > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Model_H_ext_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Model, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Model_H_ext_set" "', argument " "1"" of type '" "Model *""'"); 
+  }
+  arg1 = reinterpret_cast< Model * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_aiv__vctrT_3_double_t, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Model_H_ext_set" "', argument " "2"" of type '" "aiv::vctr< 3,double > *""'"); 
+  }
+  arg2 = reinterpret_cast< aiv::vctr< 3,double > * >(argp2);
+  if (arg1) (arg1)->H_ext = *arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Model_H_ext_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Model *arg1 = (Model *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  aiv::vctr< 3,double > *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Model_H_ext_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Model, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Model_H_ext_get" "', argument " "1"" of type '" "Model *""'"); 
+  }
+  arg1 = reinterpret_cast< Model * >(argp1);
+  result = (aiv::vctr< 3,double > *)& ((arg1)->H_ext);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_aiv__vctrT_3_double_t, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Model_m1_init_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Model *arg1 = (Model *) 0 ;
+  aiv::vctr< 3,double > *arg2 = (aiv::vctr< 3,double > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Model_m1_init_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Model, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Model_m1_init_set" "', argument " "1"" of type '" "Model *""'"); 
+  }
+  arg1 = reinterpret_cast< Model * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_aiv__vctrT_3_double_t, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Model_m1_init_set" "', argument " "2"" of type '" "aiv::vctr< 3,double > *""'"); 
+  }
+  arg2 = reinterpret_cast< aiv::vctr< 3,double > * >(argp2);
+  if (arg1) (arg1)->m1_init = *arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Model_m1_init_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Model *arg1 = (Model *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  aiv::vctr< 3,double > *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Model_m1_init_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Model, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Model_m1_init_get" "', argument " "1"" of type '" "Model *""'"); 
+  }
+  arg1 = reinterpret_cast< Model * >(argp1);
+  result = (aiv::vctr< 3,double > *)& ((arg1)->m1_init);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_aiv__vctrT_3_double_t, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Model_m2_init_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Model *arg1 = (Model *) 0 ;
+  aiv::vctr< 3,double > *arg2 = (aiv::vctr< 3,double > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Model_m2_init_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Model, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Model_m2_init_set" "', argument " "1"" of type '" "Model *""'"); 
+  }
+  arg1 = reinterpret_cast< Model * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_aiv__vctrT_3_double_t, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Model_m2_init_set" "', argument " "2"" of type '" "aiv::vctr< 3,double > *""'"); 
+  }
+  arg2 = reinterpret_cast< aiv::vctr< 3,double > * >(argp2);
+  if (arg1) (arg1)->m2_init = *arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Model_m2_init_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Model *arg1 = (Model *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  aiv::vctr< 3,double > *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Model_m2_init_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Model, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Model_m2_init_get" "', argument " "1"" of type '" "Model *""'"); 
+  }
+  arg1 = reinterpret_cast< Model * >(argp1);
+  result = (aiv::vctr< 3,double > *)& ((arg1)->m2_init);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_aiv__vctrT_3_double_t, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Model_J_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Model *arg1 = (Model *) 0 ;
+  double arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Model_J_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Model, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Model_J_set" "', argument " "1"" of type '" "Model *""'"); 
+  }
+  arg1 = reinterpret_cast< Model * >(argp1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Model_J_set" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  if (arg1) (arg1)->J = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Model_J_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Model *arg1 = (Model *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Model_J_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Model, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Model_J_get" "', argument " "1"" of type '" "Model *""'"); 
+  }
+  arg1 = reinterpret_cast< Model * >(argp1);
+  result = (double) ((arg1)->J);
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Model_time_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Model *arg1 = (Model *) 0 ;
+  double arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Model_time_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Model, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Model_time_set" "', argument " "1"" of type '" "Model *""'"); 
+  }
+  arg1 = reinterpret_cast< Model * >(argp1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Model_time_set" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  if (arg1) (arg1)->time = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Model_time_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Model *arg1 = (Model *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Model_time_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Model, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Model_time_get" "', argument " "1"" of type '" "Model *""'"); 
+  }
+  arg1 = reinterpret_cast< Model * >(argp1);
+  result = (double) ((arg1)->time);
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Model_alpha_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Model *arg1 = (Model *) 0 ;
+  double arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Model_alpha_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Model, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Model_alpha_set" "', argument " "1"" of type '" "Model *""'"); 
+  }
+  arg1 = reinterpret_cast< Model * >(argp1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Model_alpha_set" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  if (arg1) (arg1)->alpha = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Model_alpha_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Model *arg1 = (Model *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Model_alpha_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Model, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Model_alpha_get" "', argument " "1"" of type '" "Model *""'"); 
+  }
+  arg1 = reinterpret_cast< Model * >(argp1);
+  result = (double) ((arg1)->alpha);
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Model_h_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Model *arg1 = (Model *) 0 ;
+  double arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Model_h_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Model, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Model_h_set" "', argument " "1"" of type '" "Model *""'"); 
+  }
+  arg1 = reinterpret_cast< Model * >(argp1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Model_h_set" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  if (arg1) (arg1)->h = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Model_h_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Model *arg1 = (Model *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Model_h_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Model, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Model_h_get" "', argument " "1"" of type '" "Model *""'"); 
+  }
+  arg1 = reinterpret_cast< Model * >(argp1);
+  result = (double) ((arg1)->h);
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Model_gamma_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Model *arg1 = (Model *) 0 ;
+  double arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Model_gamma_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Model, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Model_gamma_set" "', argument " "1"" of type '" "Model *""'"); 
+  }
+  arg1 = reinterpret_cast< Model * >(argp1);
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Model_gamma_set" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  if (arg1) (arg1)->gamma = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Model_gamma_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Model *arg1 = (Model *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  double result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Model_gamma_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Model, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Model_gamma_get" "', argument " "1"" of type '" "Model *""'"); 
+  }
+  arg1 = reinterpret_cast< Model * >(argp1);
+  result = (double) ((arg1)->gamma);
+  resultobj = SWIG_From_double(static_cast< double >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Model_Nx_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Model *arg1 = (Model *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Model_Nx_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Model, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Model_Nx_set" "', argument " "1"" of type '" "Model *""'"); 
+  }
+  arg1 = reinterpret_cast< Model * >(argp1);
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Model_Nx_set" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  if (arg1) (arg1)->Nx = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Model_Nx_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Model *arg1 = (Model *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Model_Nx_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Model, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Model_Nx_get" "', argument " "1"" of type '" "Model *""'"); 
+  }
+  arg1 = reinterpret_cast< Model * >(argp1);
+  result = (int) ((arg1)->Nx);
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Model_Ny_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Model *arg1 = (Model *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Model_Ny_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Model, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Model_Ny_set" "', argument " "1"" of type '" "Model *""'"); 
+  }
+  arg1 = reinterpret_cast< Model * >(argp1);
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Model_Ny_set" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  if (arg1) (arg1)->Ny = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Model_Ny_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Model *arg1 = (Model *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Model_Ny_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Model, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Model_Ny_get" "', argument " "1"" of type '" "Model *""'"); 
+  }
+  arg1 = reinterpret_cast< Model * >(argp1);
+  result = (int) ((arg1)->Ny);
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Model_Nz1_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Model *arg1 = (Model *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Model_Nz1_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Model, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Model_Nz1_set" "', argument " "1"" of type '" "Model *""'"); 
+  }
+  arg1 = reinterpret_cast< Model * >(argp1);
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Model_Nz1_set" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  if (arg1) (arg1)->Nz1 = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Model_Nz1_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Model *arg1 = (Model *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Model_Nz1_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Model, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Model_Nz1_get" "', argument " "1"" of type '" "Model *""'"); 
+  }
+  arg1 = reinterpret_cast< Model * >(argp1);
+  result = (int) ((arg1)->Nz1);
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Model_Nz2_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Model *arg1 = (Model *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Model_Nz2_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Model, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Model_Nz2_set" "', argument " "1"" of type '" "Model *""'"); 
+  }
+  arg1 = reinterpret_cast< Model * >(argp1);
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Model_Nz2_set" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  if (arg1) (arg1)->Nz2 = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Model_Nz2_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Model *arg1 = (Model *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Model_Nz2_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Model, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Model_Nz2_get" "', argument " "1"" of type '" "Model *""'"); 
+  }
+  arg1 = reinterpret_cast< Model * >(argp1);
+  result = (int) ((arg1)->Nz2);
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_new_Model(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
+  int arg1 ;
+  int arg2 ;
+  int arg3 ;
+  int arg4 ;
+  int val1 ;
+  int ecode1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  int val3 ;
+  int ecode3 = 0 ;
+  int val4 ;
+  int ecode4 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
   Model *result = 0 ;
   
-  if (!PyArg_ParseTuple(args,(char *)":new_Model")) SWIG_fail;
+  if (!PyArg_ParseTuple(args,(char *)"OOOO:new_Model",&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
+  ecode1 = SWIG_AsVal_int(obj0, &val1);
+  if (!SWIG_IsOK(ecode1)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode1), "in method '" "new_Model" "', argument " "1"" of type '" "int""'");
+  } 
+  arg1 = static_cast< int >(val1);
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "new_Model" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  ecode3 = SWIG_AsVal_int(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "new_Model" "', argument " "3"" of type '" "int""'");
+  } 
+  arg3 = static_cast< int >(val3);
+  ecode4 = SWIG_AsVal_int(obj3, &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "new_Model" "', argument " "4"" of type '" "int""'");
+  } 
+  arg4 = static_cast< int >(val4);
   {
     try{
-      result = (Model *)new Model(); 
+      result = (Model *)new Model(arg1,arg2,arg3,arg4); 
     }catch( const char *e ){
       PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
     }catch(...){
@@ -5382,6 +6043,73 @@ SWIGINTERN PyObject *_wrap_delete_Model(PyObject *SWIGUNUSEDPARM(self), PyObject
   {
     try{
       delete arg1; 
+    }catch( const char *e ){
+      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
+    }catch(...){
+      return NULL; 
+    } 
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Model_start(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Model *arg1 = (Model *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Model_start",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Model, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Model_start" "', argument " "1"" of type '" "Model *""'"); 
+  }
+  arg1 = reinterpret_cast< Model * >(argp1);
+  {
+    try{
+      (arg1)->start(); 
+    }catch( const char *e ){
+      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
+    }catch(...){
+      return NULL; 
+    } 
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Model_step(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Model *arg1 = (Model *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Model_step",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Model, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Model_step" "', argument " "1"" of type '" "Model *""'"); 
+  }
+  arg1 = reinterpret_cast< Model * >(argp1);
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Model_step" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  {
+    try{
+      (arg1)->step(arg2); 
     }catch( const char *e ){
       PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
     }catch(...){
@@ -5958,6 +6686,586 @@ SWIGINTERN PyObject *BaseTile_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObj
   PyObject *obj;
   if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
   SWIG_TypeNewClientData(SWIGTYPE_p_BaseTile, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
+SWIGINTERN PyObject *_wrap_EmptyTile_cast__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  EmptyTile *arg1 = (EmptyTile *) 0 ;
+  SecTile1 *arg2 = (SecTile1 *) 0 ;
+  int *arg3 = 0 ;
+  int arg4 ;
+  int arg5 ;
+  int arg6 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  void *argp3 = 0 ;
+  int res3 = 0 ;
+  int val4 ;
+  int ecode4 = 0 ;
+  int val5 ;
+  int ecode5 = 0 ;
+  int val6 ;
+  int ecode6 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
+  PyObject * obj5 = 0 ;
+  SecTile1 *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOOOO:EmptyTile_cast",&obj0,&obj1,&obj2,&obj3,&obj4,&obj5)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_EmptyTile, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "EmptyTile_cast" "', argument " "1"" of type '" "EmptyTile *""'"); 
+  }
+  arg1 = reinterpret_cast< EmptyTile * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_SecTile1, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "EmptyTile_cast" "', argument " "2"" of type '" "SecTile1 *""'"); 
+  }
+  arg2 = reinterpret_cast< SecTile1 * >(argp2);
+  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_int,  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "EmptyTile_cast" "', argument " "3"" of type '" "int &""'"); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "EmptyTile_cast" "', argument " "3"" of type '" "int &""'"); 
+  }
+  arg3 = reinterpret_cast< int * >(argp3);
+  ecode4 = SWIG_AsVal_int(obj3, &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "EmptyTile_cast" "', argument " "4"" of type '" "int""'");
+  } 
+  arg4 = static_cast< int >(val4);
+  ecode5 = SWIG_AsVal_int(obj4, &val5);
+  if (!SWIG_IsOK(ecode5)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "EmptyTile_cast" "', argument " "5"" of type '" "int""'");
+  } 
+  arg5 = static_cast< int >(val5);
+  ecode6 = SWIG_AsVal_int(obj5, &val6);
+  if (!SWIG_IsOK(ecode6)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode6), "in method '" "EmptyTile_cast" "', argument " "6"" of type '" "int""'");
+  } 
+  arg6 = static_cast< int >(val6);
+  {
+    try{
+      result = (SecTile1 *)(arg1)->cast(arg2,*arg3,arg4,arg5,arg6); 
+    }catch( const char *e ){
+      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
+    }catch(...){
+      return NULL; 
+    } 
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_SecTile1, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_EmptyTile_cast__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  EmptyTile *arg1 = (EmptyTile *) 0 ;
+  SecTile2 *arg2 = (SecTile2 *) 0 ;
+  int *arg3 = 0 ;
+  int arg4 ;
+  int arg5 ;
+  int arg6 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  void *argp3 = 0 ;
+  int res3 = 0 ;
+  int val4 ;
+  int ecode4 = 0 ;
+  int val5 ;
+  int ecode5 = 0 ;
+  int val6 ;
+  int ecode6 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
+  PyObject * obj5 = 0 ;
+  SecTile2 *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOOOO:EmptyTile_cast",&obj0,&obj1,&obj2,&obj3,&obj4,&obj5)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_EmptyTile, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "EmptyTile_cast" "', argument " "1"" of type '" "EmptyTile *""'"); 
+  }
+  arg1 = reinterpret_cast< EmptyTile * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_SecTile2, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "EmptyTile_cast" "', argument " "2"" of type '" "SecTile2 *""'"); 
+  }
+  arg2 = reinterpret_cast< SecTile2 * >(argp2);
+  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_int,  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "EmptyTile_cast" "', argument " "3"" of type '" "int &""'"); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "EmptyTile_cast" "', argument " "3"" of type '" "int &""'"); 
+  }
+  arg3 = reinterpret_cast< int * >(argp3);
+  ecode4 = SWIG_AsVal_int(obj3, &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "EmptyTile_cast" "', argument " "4"" of type '" "int""'");
+  } 
+  arg4 = static_cast< int >(val4);
+  ecode5 = SWIG_AsVal_int(obj4, &val5);
+  if (!SWIG_IsOK(ecode5)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "EmptyTile_cast" "', argument " "5"" of type '" "int""'");
+  } 
+  arg5 = static_cast< int >(val5);
+  ecode6 = SWIG_AsVal_int(obj5, &val6);
+  if (!SWIG_IsOK(ecode6)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode6), "in method '" "EmptyTile_cast" "', argument " "6"" of type '" "int""'");
+  } 
+  arg6 = static_cast< int >(val6);
+  {
+    try{
+      result = (SecTile2 *)(arg1)->cast(arg2,*arg3,arg4,arg5,arg6); 
+    }catch( const char *e ){
+      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
+    }catch(...){
+      return NULL; 
+    } 
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_SecTile2, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_EmptyTile_cast__SWIG_2(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  EmptyTile *arg1 = (EmptyTile *) 0 ;
+  SecTile3 *arg2 = (SecTile3 *) 0 ;
+  int *arg3 = 0 ;
+  int arg4 ;
+  int arg5 ;
+  int arg6 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  void *argp3 = 0 ;
+  int res3 = 0 ;
+  int val4 ;
+  int ecode4 = 0 ;
+  int val5 ;
+  int ecode5 = 0 ;
+  int val6 ;
+  int ecode6 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
+  PyObject * obj5 = 0 ;
+  SecTile3 *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOOOO:EmptyTile_cast",&obj0,&obj1,&obj2,&obj3,&obj4,&obj5)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_EmptyTile, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "EmptyTile_cast" "', argument " "1"" of type '" "EmptyTile *""'"); 
+  }
+  arg1 = reinterpret_cast< EmptyTile * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_SecTile3, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "EmptyTile_cast" "', argument " "2"" of type '" "SecTile3 *""'"); 
+  }
+  arg2 = reinterpret_cast< SecTile3 * >(argp2);
+  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_int,  0 );
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "EmptyTile_cast" "', argument " "3"" of type '" "int &""'"); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "EmptyTile_cast" "', argument " "3"" of type '" "int &""'"); 
+  }
+  arg3 = reinterpret_cast< int * >(argp3);
+  ecode4 = SWIG_AsVal_int(obj3, &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "EmptyTile_cast" "', argument " "4"" of type '" "int""'");
+  } 
+  arg4 = static_cast< int >(val4);
+  ecode5 = SWIG_AsVal_int(obj4, &val5);
+  if (!SWIG_IsOK(ecode5)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "EmptyTile_cast" "', argument " "5"" of type '" "int""'");
+  } 
+  arg5 = static_cast< int >(val5);
+  ecode6 = SWIG_AsVal_int(obj5, &val6);
+  if (!SWIG_IsOK(ecode6)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode6), "in method '" "EmptyTile_cast" "', argument " "6"" of type '" "int""'");
+  } 
+  arg6 = static_cast< int >(val6);
+  {
+    try{
+      result = (SecTile3 *)(arg1)->cast(arg2,*arg3,arg4,arg5,arg6); 
+    }catch( const char *e ){
+      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
+    }catch(...){
+      return NULL; 
+    } 
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_SecTile3, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_EmptyTile_cast(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[7];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 6) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 6) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_EmptyTile, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      void *vptr = 0;
+      int res = SWIG_ConvertPtr(argv[1], &vptr, SWIGTYPE_p_SecTile1, 0);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        void *vptr = 0;
+        int res = SWIG_ConvertPtr(argv[2], &vptr, SWIGTYPE_p_int, 0);
+        _v = SWIG_CheckState(res);
+        if (_v) {
+          {
+            int res = SWIG_AsVal_int(argv[3], NULL);
+            _v = SWIG_CheckState(res);
+          }
+          if (_v) {
+            {
+              int res = SWIG_AsVal_int(argv[4], NULL);
+              _v = SWIG_CheckState(res);
+            }
+            if (_v) {
+              {
+                int res = SWIG_AsVal_int(argv[5], NULL);
+                _v = SWIG_CheckState(res);
+              }
+              if (_v) {
+                return _wrap_EmptyTile_cast__SWIG_0(self, args);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  if (argc == 6) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_EmptyTile, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      void *vptr = 0;
+      int res = SWIG_ConvertPtr(argv[1], &vptr, SWIGTYPE_p_SecTile2, 0);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        void *vptr = 0;
+        int res = SWIG_ConvertPtr(argv[2], &vptr, SWIGTYPE_p_int, 0);
+        _v = SWIG_CheckState(res);
+        if (_v) {
+          {
+            int res = SWIG_AsVal_int(argv[3], NULL);
+            _v = SWIG_CheckState(res);
+          }
+          if (_v) {
+            {
+              int res = SWIG_AsVal_int(argv[4], NULL);
+              _v = SWIG_CheckState(res);
+            }
+            if (_v) {
+              {
+                int res = SWIG_AsVal_int(argv[5], NULL);
+                _v = SWIG_CheckState(res);
+              }
+              if (_v) {
+                return _wrap_EmptyTile_cast__SWIG_1(self, args);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  if (argc == 6) {
+    int _v;
+    void *vptr = 0;
+    int res = SWIG_ConvertPtr(argv[0], &vptr, SWIGTYPE_p_EmptyTile, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      void *vptr = 0;
+      int res = SWIG_ConvertPtr(argv[1], &vptr, SWIGTYPE_p_SecTile3, 0);
+      _v = SWIG_CheckState(res);
+      if (_v) {
+        void *vptr = 0;
+        int res = SWIG_ConvertPtr(argv[2], &vptr, SWIGTYPE_p_int, 0);
+        _v = SWIG_CheckState(res);
+        if (_v) {
+          {
+            int res = SWIG_AsVal_int(argv[3], NULL);
+            _v = SWIG_CheckState(res);
+          }
+          if (_v) {
+            {
+              int res = SWIG_AsVal_int(argv[4], NULL);
+              _v = SWIG_CheckState(res);
+            }
+            if (_v) {
+              {
+                int res = SWIG_AsVal_int(argv[5], NULL);
+                _v = SWIG_CheckState(res);
+              }
+              if (_v) {
+                return _wrap_EmptyTile_cast__SWIG_2(self, args);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'EmptyTile_cast'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    EmptyTile::cast(SecTile1 *,int &,int,int,int)\n"
+    "    EmptyTile::cast(SecTile2 *,int &,int,int,int)\n"
+    "    EmptyTile::cast(SecTile3 *,int &,int,int,int)\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_EmptyTile_start(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  EmptyTile *arg1 = (EmptyTile *) 0 ;
+  Model *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:EmptyTile_start",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_EmptyTile, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "EmptyTile_start" "', argument " "1"" of type '" "EmptyTile *""'"); 
+  }
+  arg1 = reinterpret_cast< EmptyTile * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_Model,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "EmptyTile_start" "', argument " "2"" of type '" "Model const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "EmptyTile_start" "', argument " "2"" of type '" "Model const &""'"); 
+  }
+  arg2 = reinterpret_cast< Model * >(argp2);
+  {
+    try{
+      (arg1)->start((Model const &)*arg2); 
+    }catch( const char *e ){
+      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
+    }catch(...){
+      return NULL; 
+    } 
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_EmptyTile_step_H(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  EmptyTile *arg1 = (EmptyTile *) 0 ;
+  Model *arg2 = 0 ;
+  aiv::indx< 3 > arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  void *argp3 ;
+  int res3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:EmptyTile_step_H",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_EmptyTile, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "EmptyTile_step_H" "', argument " "1"" of type '" "EmptyTile *""'"); 
+  }
+  arg1 = reinterpret_cast< EmptyTile * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_Model,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "EmptyTile_step_H" "', argument " "2"" of type '" "Model const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "EmptyTile_step_H" "', argument " "2"" of type '" "Model const &""'"); 
+  }
+  arg2 = reinterpret_cast< Model * >(argp2);
+  {
+    res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_aiv__indxT_3_t,  0  | 0);
+    if (!SWIG_IsOK(res3)) {
+      SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "EmptyTile_step_H" "', argument " "3"" of type '" "aiv::indx< 3 >""'"); 
+    }  
+    if (!argp3) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "EmptyTile_step_H" "', argument " "3"" of type '" "aiv::indx< 3 >""'");
+    } else {
+      aiv::indx< 3 > * temp = reinterpret_cast< aiv::indx< 3 > * >(argp3);
+      arg3 = *temp;
+      if (SWIG_IsNewObj(res3)) delete temp;
+    }
+  }
+  {
+    try{
+      (arg1)->step_H((Model const &)*arg2,arg3); 
+    }catch( const char *e ){
+      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
+    }catch(...){
+      return NULL; 
+    } 
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_EmptyTile_step_m(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  EmptyTile *arg1 = (EmptyTile *) 0 ;
+  Model *arg2 = 0 ;
+  aiv::indx< 3 > arg3 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  void *argp3 ;
+  int res3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:EmptyTile_step_m",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_EmptyTile, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "EmptyTile_step_m" "', argument " "1"" of type '" "EmptyTile *""'"); 
+  }
+  arg1 = reinterpret_cast< EmptyTile * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_Model,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "EmptyTile_step_m" "', argument " "2"" of type '" "Model const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "EmptyTile_step_m" "', argument " "2"" of type '" "Model const &""'"); 
+  }
+  arg2 = reinterpret_cast< Model * >(argp2);
+  {
+    res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_aiv__indxT_3_t,  0  | 0);
+    if (!SWIG_IsOK(res3)) {
+      SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "EmptyTile_step_m" "', argument " "3"" of type '" "aiv::indx< 3 >""'"); 
+    }  
+    if (!argp3) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "EmptyTile_step_m" "', argument " "3"" of type '" "aiv::indx< 3 >""'");
+    } else {
+      aiv::indx< 3 > * temp = reinterpret_cast< aiv::indx< 3 > * >(argp3);
+      arg3 = *temp;
+      if (SWIG_IsNewObj(res3)) delete temp;
+    }
+  }
+  {
+    try{
+      (arg1)->step_m((Model const &)*arg2,arg3); 
+    }catch( const char *e ){
+      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
+    }catch(...){
+      return NULL; 
+    } 
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_EmptyTile(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  EmptyTile *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)":new_EmptyTile")) SWIG_fail;
+  {
+    try{
+      result = (EmptyTile *)new EmptyTile(); 
+    }catch( const char *e ){
+      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
+    }catch(...){
+      return NULL; 
+    } 
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_EmptyTile, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_EmptyTile(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  EmptyTile *arg1 = (EmptyTile *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:delete_EmptyTile",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_EmptyTile, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_EmptyTile" "', argument " "1"" of type '" "EmptyTile *""'"); 
+  }
+  arg1 = reinterpret_cast< EmptyTile * >(argp1);
+  {
+    try{
+      delete arg1; 
+    }catch( const char *e ){
+      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
+    }catch(...){
+      return NULL; 
+    } 
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *EmptyTile_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_EmptyTile, SWIG_NewClientData(obj));
   return SWIG_Py_Void();
 }
 
@@ -36211,8 +37519,34 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"barecentr", _wrap_barecentr, METH_VARARGS, (char *)"barecentr(vctr3 x, vctr3 r) -> vctr3"},
 	 { (char *)"Model_data_set", _wrap_Model_data_set, METH_VARARGS, (char *)"Model_data_set(Model self, aiv::array< BaseTile *,3 > * data)"},
 	 { (char *)"Model_data_get", _wrap_Model_data_get, METH_VARARGS, (char *)"Model_data_get(Model self) -> aiv::array< BaseTile *,3 > *"},
-	 { (char *)"new_Model", _wrap_new_Model, METH_VARARGS, (char *)"new_Model() -> Model"},
+	 { (char *)"Model_H_ext_set", _wrap_Model_H_ext_set, METH_VARARGS, (char *)"Model_H_ext_set(Model self, vctr3 H_ext)"},
+	 { (char *)"Model_H_ext_get", _wrap_Model_H_ext_get, METH_VARARGS, (char *)"Model_H_ext_get(Model self) -> vctr3"},
+	 { (char *)"Model_m1_init_set", _wrap_Model_m1_init_set, METH_VARARGS, (char *)"Model_m1_init_set(Model self, vctr3 m1_init)"},
+	 { (char *)"Model_m1_init_get", _wrap_Model_m1_init_get, METH_VARARGS, (char *)"Model_m1_init_get(Model self) -> vctr3"},
+	 { (char *)"Model_m2_init_set", _wrap_Model_m2_init_set, METH_VARARGS, (char *)"Model_m2_init_set(Model self, vctr3 m2_init)"},
+	 { (char *)"Model_m2_init_get", _wrap_Model_m2_init_get, METH_VARARGS, (char *)"Model_m2_init_get(Model self) -> vctr3"},
+	 { (char *)"Model_J_set", _wrap_Model_J_set, METH_VARARGS, (char *)"Model_J_set(Model self, double J)"},
+	 { (char *)"Model_J_get", _wrap_Model_J_get, METH_VARARGS, (char *)"Model_J_get(Model self) -> double"},
+	 { (char *)"Model_time_set", _wrap_Model_time_set, METH_VARARGS, (char *)"Model_time_set(Model self, double time)"},
+	 { (char *)"Model_time_get", _wrap_Model_time_get, METH_VARARGS, (char *)"Model_time_get(Model self) -> double"},
+	 { (char *)"Model_alpha_set", _wrap_Model_alpha_set, METH_VARARGS, (char *)"Model_alpha_set(Model self, double alpha)"},
+	 { (char *)"Model_alpha_get", _wrap_Model_alpha_get, METH_VARARGS, (char *)"Model_alpha_get(Model self) -> double"},
+	 { (char *)"Model_h_set", _wrap_Model_h_set, METH_VARARGS, (char *)"Model_h_set(Model self, double h)"},
+	 { (char *)"Model_h_get", _wrap_Model_h_get, METH_VARARGS, (char *)"Model_h_get(Model self) -> double"},
+	 { (char *)"Model_gamma_set", _wrap_Model_gamma_set, METH_VARARGS, (char *)"Model_gamma_set(Model self, double gamma)"},
+	 { (char *)"Model_gamma_get", _wrap_Model_gamma_get, METH_VARARGS, (char *)"Model_gamma_get(Model self) -> double"},
+	 { (char *)"Model_Nx_set", _wrap_Model_Nx_set, METH_VARARGS, (char *)"Model_Nx_set(Model self, int Nx)"},
+	 { (char *)"Model_Nx_get", _wrap_Model_Nx_get, METH_VARARGS, (char *)"Model_Nx_get(Model self) -> int"},
+	 { (char *)"Model_Ny_set", _wrap_Model_Ny_set, METH_VARARGS, (char *)"Model_Ny_set(Model self, int Ny)"},
+	 { (char *)"Model_Ny_get", _wrap_Model_Ny_get, METH_VARARGS, (char *)"Model_Ny_get(Model self) -> int"},
+	 { (char *)"Model_Nz1_set", _wrap_Model_Nz1_set, METH_VARARGS, (char *)"Model_Nz1_set(Model self, int Nz1)"},
+	 { (char *)"Model_Nz1_get", _wrap_Model_Nz1_get, METH_VARARGS, (char *)"Model_Nz1_get(Model self) -> int"},
+	 { (char *)"Model_Nz2_set", _wrap_Model_Nz2_set, METH_VARARGS, (char *)"Model_Nz2_set(Model self, int Nz2)"},
+	 { (char *)"Model_Nz2_get", _wrap_Model_Nz2_get, METH_VARARGS, (char *)"Model_Nz2_get(Model self) -> int"},
+	 { (char *)"new_Model", _wrap_new_Model, METH_VARARGS, (char *)"new_Model(int nx, int ny, int nz1, int nz2) -> Model"},
 	 { (char *)"delete_Model", _wrap_delete_Model, METH_VARARGS, (char *)"delete_Model(Model self)"},
+	 { (char *)"Model_start", _wrap_Model_start, METH_VARARGS, (char *)"Model_start(Model self)"},
+	 { (char *)"Model_step", _wrap_Model_step, METH_VARARGS, (char *)"Model_step(Model self, int cnt)"},
 	 { (char *)"Model_swigregister", Model_swigregister, METH_VARARGS, NULL},
 	 { (char *)"BaseTile_start", _wrap_BaseTile_start, METH_VARARGS, (char *)"BaseTile_start(BaseTile self, Model model)"},
 	 { (char *)"BaseTile_step_H", _wrap_BaseTile_step_H, METH_VARARGS, (char *)"BaseTile_step_H(BaseTile self, Model model, indx3 pos)"},
@@ -36224,6 +37558,17 @@ static PyMethodDef SwigMethods[] = {
 		""},
 	 { (char *)"delete_BaseTile", _wrap_delete_BaseTile, METH_VARARGS, (char *)"delete_BaseTile(BaseTile self)"},
 	 { (char *)"BaseTile_swigregister", BaseTile_swigregister, METH_VARARGS, NULL},
+	 { (char *)"EmptyTile_cast", _wrap_EmptyTile_cast, METH_VARARGS, (char *)"\n"
+		"cast(SecTile1 buf, int & buf_sz, int sx, int sy, int sz) -> SecTile1\n"
+		"cast(SecTile2 buf, int & buf_sz, int sx, int sy, int sz) -> SecTile2\n"
+		"EmptyTile_cast(EmptyTile self, SecTile3 buf, int & buf_sz, int sx, int sy, int sz) -> SecTile3\n"
+		""},
+	 { (char *)"EmptyTile_start", _wrap_EmptyTile_start, METH_VARARGS, (char *)"EmptyTile_start(EmptyTile self, Model model)"},
+	 { (char *)"EmptyTile_step_H", _wrap_EmptyTile_step_H, METH_VARARGS, (char *)"EmptyTile_step_H(EmptyTile self, Model model, indx3 pos)"},
+	 { (char *)"EmptyTile_step_m", _wrap_EmptyTile_step_m, METH_VARARGS, (char *)"EmptyTile_step_m(EmptyTile self, Model model, indx3 pos)"},
+	 { (char *)"new_EmptyTile", _wrap_new_EmptyTile, METH_VARARGS, (char *)"new_EmptyTile() -> EmptyTile"},
+	 { (char *)"delete_EmptyTile", _wrap_delete_EmptyTile, METH_VARARGS, (char *)"delete_EmptyTile(EmptyTile self)"},
+	 { (char *)"EmptyTile_swigregister", EmptyTile_swigregister, METH_VARARGS, NULL},
 	 { (char *)"SecTile1_m1_set", _wrap_SecTile1_m1_set, METH_VARARGS, (char *)"SecTile1_m1_set(SecTile1 self, aiv::vctr< 3 > [SecTile1::Nx][SecTile1::Ny][SecTile1::Nz] m1)"},
 	 { (char *)"SecTile1_m1_get", _wrap_SecTile1_m1_get, METH_VARARGS, (char *)"SecTile1_m1_get(SecTile1 self) -> aiv::vctr< 3 > [SecTile1::Nx][SecTile1::Ny][SecTile1::Nz]"},
 	 { (char *)"SecTile1_m2_set", _wrap_SecTile1_m2_set, METH_VARARGS, (char *)"SecTile1_m2_set(SecTile1 self, aiv::vctr< 3 > [SecTile1::Nx][SecTile1::Ny][SecTile1::Nz] m2)"},
@@ -37040,6 +38385,9 @@ static void *_p_aiv__meshT_basetile_3_tTo_p_aiv__base_data(void *x, int *SWIGUNU
 static void *_p_aiv__meshT_basetile_3_tTo_p_aiv__arrayT_basetile_3_t(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((aiv::array< basetile,3 > *)  ((aiv::mesh< basetile,3 > *) x));
 }
+static void *_p_EmptyTileTo_p_BaseTile(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((BaseTile *)  ((EmptyTile *) x));
+}
 static void *_p_SecTile1To_p_BaseTile(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((BaseTile *)  ((SecTile1 *) x));
 }
@@ -37068,6 +38416,7 @@ static void *_p_aiv__base_dataTo_p_aiv__data_header(void *x, int *SWIGUNUSEDPARM
     return (void *)((aiv::data_header *)  ((aiv::base_data *) x));
 }
 static swig_type_info _swigt__p_BaseTile = {"_p_BaseTile", "BaseTile *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_EmptyTile = {"_p_EmptyTile", "EmptyTile *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_Model = {"_p_Model", "Model *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_SecTile1 = {"_p_SecTile1", "SecTile1 *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_SecTile2 = {"_p_SecTile2", "SecTile2 *", 0, 0, (void*)0, 0};
@@ -37109,6 +38458,7 @@ static swig_type_info _swigt__p_std__aiv_convert_for_compare_float = {"_p_std__a
 
 static swig_type_info *swig_type_initial[] = {
   &_swigt__p_BaseTile,
+  &_swigt__p_EmptyTile,
   &_swigt__p_Model,
   &_swigt__p_SecTile1,
   &_swigt__p_SecTile2,
@@ -37149,7 +38499,8 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_std__aiv_convert_for_compare_float,
 };
 
-static swig_cast_info _swigc__p_BaseTile[] = {  {&_swigt__p_BaseTile, 0, 0, 0},  {&_swigt__p_SecTile1, _p_SecTile1To_p_BaseTile, 0, 0},  {&_swigt__p_SecTile2, _p_SecTile2To_p_BaseTile, 0, 0},  {&_swigt__p_SecTile3, _p_SecTile3To_p_BaseTile, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_BaseTile[] = {  {&_swigt__p_EmptyTile, _p_EmptyTileTo_p_BaseTile, 0, 0},  {&_swigt__p_BaseTile, 0, 0, 0},  {&_swigt__p_SecTile1, _p_SecTile1To_p_BaseTile, 0, 0},  {&_swigt__p_SecTile2, _p_SecTile2To_p_BaseTile, 0, 0},  {&_swigt__p_SecTile3, _p_SecTile3To_p_BaseTile, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_EmptyTile[] = {  {&_swigt__p_EmptyTile, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Model[] = {  {&_swigt__p_Model, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_SecTile1[] = {  {&_swigt__p_SecTile1, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_SecTile2[] = {  {&_swigt__p_SecTile2, 0, 0, 0},{0, 0, 0, 0}};
@@ -37191,6 +38542,7 @@ static swig_cast_info _swigc__p_std__aiv_convert_for_compare_float[] = {  {&_swi
 
 static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_BaseTile,
+  _swigc__p_EmptyTile,
   _swigc__p_Model,
   _swigc__p_SecTile1,
   _swigc__p_SecTile2,
