@@ -117,6 +117,14 @@ void SecTile1::step_m(const Model& model, indx<3> pos){
     m2[ix][iy][iz]/=m2[ix][iy][iz].abs();
   }
  }
+
+aiv::vctr<3,double> SecTile1::M1(){
+  aiv::vctr<3,double> M1tmp = Vctr(0.,0.,0.);
+  for (int ix = 0; ix < Nx; ++ix) for (int iy = 0; iy < Ny; ++iy)for (int iz = 0; iz < Nz; ++iz){
+    M1tmp+=m1[ix][iy][iz]+m2[ix][iy][iz];
+  }
+  return M1tmp;
+}
 //----------------------------------------------------------------------
 //--------------------------SecTile2------------------------------------
 //----------------------------------------------------------------------
@@ -200,7 +208,13 @@ void SecTile2::step_m(const Model& model, indx<3> pos){
     m1[ix][iy][iz]/=m1[ix][iy][iz].abs();
   }
 }
-
+aiv::vctr<3,double> SecTile2::M1(){
+  aiv::vctr<3,double> M1tmp = Vctr(0.,0.,0.);
+  for (int ix = 0; ix < Nx; ++ix) for (int iy = 0; iy < Ny; ++iy)for (int iz = 0; iz < Nz; ++iz){
+    M1tmp+=m1[ix][iy][iz];
+  }
+  return M1tmp;
+}
 //----------------------------------------------------------------------
 //--------------------------SecTile3------------------------------------
 //----------------------------------------------------------------------
@@ -260,6 +274,13 @@ void SecTile3::step_m(const Model& model, indx<3> pos){
     m1[ix][iy][iz]/=m1[ix][iy][iz].abs();
   }
  }
+aiv::vctr<3,double> SecTile3::M1(){
+  aiv::vctr<3,double> M1tmp = Vctr(0.,0.,0.);
+  for (int ix = 0; ix < Nx; ++ix) for (int iy = 0; iy < Ny; ++iy)for (int iz = 0; iz < Nz; ++iz){
+    M1tmp+=m1[ix][iy][iz];
+  }
+  return M1tmp;
+}
 //----------------------------------------------------------------------
 //--------------------------Model---------------------------------------
 //----------------------------------------------------------------------
@@ -308,14 +329,16 @@ void Model::step(int cnt){
     }
 }
 
-// void Model::m1_av_calc(){
-//   m1_av=Vctr(0,0,0);
-//   cnt = 0;
-//   for (int ix = 1; ix < Nx+1; ++ix) for (int iy = 1; iy < Ny+1; ++iy)for (int iz = 1; iz < Nz1+Nz2+2; ++iz){
-//           data[Indx(ix,iy,iz)]->step_H(*this,Indx(ix,iy,iz));
-//           data[Indx(ix,iy,iz)]->step_m(*this,Indx(ix,iy,iz));
-//         }
-// }
+aiv::vctr<3,double> Model::M1(){
+  aiv::vctr<3,double> M1tmp = Vctr(0.,0.,0.);
+  int Np = 0;
+  for (int ix = 1; ix < Nx+1; ++ix) for (int iy = 1; iy < Ny+1; ++iy)for (int iz = 1; iz < Nz1+Nz2+2; ++iz){
+          M1tmp+=data[Indx(ix,iy,iz)]->M1();
+          Np+=data[Indx(ix,iy,iz)]->Np;
+        }
+  // WOUT(M1tmp, Np);
+  return M1tmp/Np;
+}
 
 
 int main()
@@ -331,8 +354,11 @@ int main()
     model.gamma= 0.1;
 
     model.start();
-    for (double t = 0; t<5; t+=model.h){
+    printf("#:t mx my mz\n");
+    for (double t = 0; t<500; t+=model.h){
         model.step(1);
+        aiv::vctr<3,double> M1 = model.M1()/model.M1().abs();
+        printf("%f %f %f %f\n",t, M1[0], M1[1], M1[2]);
     }
 
   return 0;
@@ -340,3 +366,4 @@ int main()
 
 
 //g++ --std=c++0x model.cpp -o model.x -laiv -lz
+// gplt -3d -U 'mz(mx,my)' res.dat -ur 0:pi -vr 0:2*pi -para=y -fn 'sin(u)*cos(v),sin(u)*sin(v),cos(u)' -raw 'set view equal'
