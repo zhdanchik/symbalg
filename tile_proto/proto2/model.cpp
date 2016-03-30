@@ -323,8 +323,12 @@ void Model::step(int cnt){
     for (int i=0;i<cnt;++i){
         for (int ix = 1; ix < Nx+1; ++ix) for (int iy = 1; iy < Ny+1; ++iy)for (int iz = 1; iz < Nz1+Nz2+2; ++iz){
           data[Indx(ix,iy,iz)]->step_H(*this,Indx(ix,iy,iz));
+        }
+        for (int ix = 1; ix < Nx+1; ++ix) for (int iy = 1; iy < Ny+1; ++iy)for (int iz = 1; iz < Nz1+Nz2+2; ++iz){
           data[Indx(ix,iy,iz)]->step_m(*this,Indx(ix,iy,iz));
         }
+
+
       time += h;   
     }
 }
@@ -355,9 +359,9 @@ int main()
 
     model.start();
     printf("#:t mx my mz\n");
-    for (double t = 0; t<500; t+=model.h){
+    for (double t = 0; t<200; t+=model.h){
         model.step(1);
-        aiv::vctr<3,double> M1 = model.M1()/model.M1().abs();
+        aiv::vctr<3,double> M1 = model.M1();///model.M1().abs();
         printf("%f %f %f %f\n",t, M1[0], M1[1], M1[2]);
     }
 

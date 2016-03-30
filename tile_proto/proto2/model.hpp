@@ -16,6 +16,7 @@ struct EmptyTile;
 class Model{
 public:
 	array<BaseTile*, 3> data;
+	void set_tile(BaseTile* tile, const aiv::indx<3> &pos){ data[pos] = tile; }
 	// здесь всякие параметры
 	aiv::vctr<3,double> H_ext;
 	aiv::vctr<3,double> m1_init;
@@ -39,7 +40,8 @@ public:
 struct BaseTile{
 	const int Np;
 
-	BaseTile(int np = 0): Np(np) {};
+	BaseTile(int np = 0): Np(np) {}
+	virtual ~BaseTile(){}
 // интерфейсы для стадий и инициализации
 	virtual void start(const Model& model) = 0;
 	virtual void step_H(const Model& model, indx<3> pos) = 0;
@@ -69,10 +71,12 @@ struct SecTile1: public BaseTile{
 // всякие данные
 	static const int Nx=2, Ny=2, Nz=4;
 
+#ifndef SWIG
 	vctr<3> m1[Nx][Ny][Nz];
 	vctr<3> m2[Nx][Ny][Nz];
 	vctr<3> H1[Nx][Ny][Nz];
 	vctr<3> H2[Nx][Ny][Nz];
+#endif	
 
 	SecTile1() : BaseTile(32) {};
 
@@ -91,10 +95,12 @@ struct SecTile2: public BaseTile{
 	static const int Nx=2, Ny=2, Nz=1;
 
 // всякие данные
+#ifndef SWIG
 	vctr<3> m1[Nx][Ny][Nz];
 	vctr<3> m2[Nx][Ny][Nz];
 	vctr<3> H1[Nx][Ny][Nz];
 	vctr<3> H2[Nx][Ny][Nz];
+#endif	
 
 	SecTile2() : BaseTile(4) {};
 // функции для приведения типов наследников - должны определяться потом, в .cpp, после объявления всех SecTile!!!
@@ -112,10 +118,12 @@ struct SecTile2: public BaseTile{
 struct SecTile3: public BaseTile{
 	static const int Nx=2, Ny=2, Nz=3;
 // всякие данные
+#ifndef SWIG
 	vctr<3> m1[Nx][Ny][Nz];
 	vctr<3> m2[Nx][Ny][Nz];
 	vctr<3> H1[Nx][Ny][Nz];
 	vctr<3> H2[Nx][Ny][Nz];
+#endif	
 
 	SecTile3() : BaseTile(12) {};
 // функции для приведения типов наследников - должны определяться потом, в .cpp, после объявления всех SecTile!!!
