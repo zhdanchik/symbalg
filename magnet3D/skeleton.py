@@ -53,8 +53,8 @@ step = np.array([0.5,0.5,0.5])
 
 
 scene.background = color.white
-scene.width = 1000
-scene.height = 800
+scene.width = 1400
+scene.height = 1000
 rad = 0.05
 
 colors = [color.magenta, color.red, color.blue, color.green]
@@ -157,10 +157,11 @@ def all(N, A=E, boxes = False):
 #all()
 # all(A=C.dot(B.dot(A)))
 
+#onecell(np.array([0,0,0]), A=A, boxes=boxes)
 
 all(2, A=C.dot(D2.dot(D1.dot(D.dot(B.dot(A))))))
 
-#all(8, A=E, boxes = False)
+#all(2, A=D.dot(A), boxes = False)
 
 boxes(2,2,3,size=np.array([1,1,1]))
 
