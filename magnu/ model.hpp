@@ -11,7 +11,7 @@ struct Atom{
 	%(atom_data)s; // здесь какие то данные, полностью генерятся из питона
 
 	// возвращает намагниченность атома в начале стадии stage
-	inline vctr<3> get_m(int stage) const { %(atom_get_m)s; }
+	inline vctr<3> get_m(int stage) const { %(atom_get_m)s; } 
 
 	inline void step(int stage, const Model &model, const vctr<3> &Hexch);
 };

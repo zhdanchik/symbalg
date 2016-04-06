@@ -68,7 +68,7 @@ class IfStm(BaseStm):
         if not self.mode: raise SymbalgError('If[%s].Else() denied!'%self.cond)
         self.mode = False
     def append(self, x): (self._then if self.mode else self._else).append(x)
-    def __str__(self): return  'if(%s){\n%s%s}'%(self.cond, self._then, '    '*self._level) + ( 'else{\n%s%s}\n'%(self._else, '    '*self._level) if self._else else '\n' )
+    def __str__(self): return  'if(%s){\n%s%s}'%(self.cond, self._then, '    '*self._level) + ( 'else{\n%s%s}\n'%(self._else, '    '*self._level) if self._else else '' )
 #-----------------------------------------------------------------------------------------------------------
 class ForStm(BaseStm):
     def __init__(self, init, cond, step, code): self.init, self.cond, self.step, self.code = init, cond, step, code
@@ -82,6 +82,12 @@ class ForStm(BaseStm):
         elif len(args)!=5: raise SymbalgError('Unexpected count of arguments')
         self.init, self.cond, self.step = DefVarStm(args[1], args[0], args[2]), args[3], args[4]
     def append(self, x):  self.code.append(x)
+#-----------------------------------------------------------------------------------------------------------
+class ReturnStm(BaseStm):
+    def __init__(self, retval): self.retval = retval
+    def __expand__(self, **kw_args): return ReturnStm(_st_expand(self.retval,**kw_args) )
+    def __getitem__(self, retval): self.retval = retval
+    def __str__(self): return 'return %s'%(self.retval)
 #-----------------------------------------------------------------------------------------------------------
 #   DEKORATOR
 #-----------------------------------------------------------------------------------------------------------
@@ -97,6 +103,7 @@ class NamespaceStm:
         if name=='If': return _mk_frame(self.stack, IfStm('', ListStm(), ListStm()))
         if name=='Else': self.stack[-1].Else(); return self.stack[-1]
         if name=='For': return _mk_frame(self.stack, ForStm('', '', '', ListStm()))
+        if name=='Return': return _mk_frame(self.stack, ReturnStm(ListStm()))
         if name in self.space: return self.space[name]
         if name in self.globalNS or name in __builtins__: raise KeyError(name)
         if name[0]!='_': v = Var(name); self.vars[name] = self.space[name] = v; return v
