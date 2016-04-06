@@ -58,41 +58,33 @@ def mk_module(path, D):
     print struct_vars
     print global_vars
 
-    module = ModuleContainer( eval(__name__))
+    module = Module( eval(__name__))
     for i,cell in enumerate(D["Cells"]):
         name = "cell%s"%i
         cnt = (16 + (float(i)/len(D["Cells"]))*(17-16)   )
-        module.stuffs[(name,cnt)]=ClassContainer(name, [(Var(c[0],c[1]),"public",[]) for c in cell] ,[], parents = ["Base_cell"], counter = cnt)
+        module.members[(name,cnt)]=Class(name, [(Var(c[0],c[1]),"public",[]) for c in cell] ,[], parents = ["Base_cell"], counter = cnt)
 
-    for n,i in module.stuffs: 
-        if n=="Base_tile": module.stuffs[(n,i)].stuffs.append(("typedef Base_tile* ptile",0,"public"))
+    for n,i in module.members: 
+        if n=="Base_tile": module.members[(n,i)].members.append(("typedef Base_tile* ptile",0,"public"))
 
-    print module.stuffs    
+    print module.members    
     for i,tile in enumerate(D["Tiles"]):
         name = "tile%s"%i
         cnt = (34 + (float(i)/len(D["Cells"]))*(35-34)   )
-        module.stuffs[(name,cnt)]=ClassContainer(name, [] ,[
-            MethodContainer("start", dict(tile)["start"], [], preffixes= []),
-            MethodContainer("step_H", dict(tile)["step_H"], [Var(i+k+l,"ptile") for l in 'mzp' for k in 'mzp' for i in 'mzp'], preffixes= []),
-            MethodContainer("step_m", dict(tile)["step_m"], [], preffixes= []),
+        module.members[(name,cnt)]=Class(name, [] ,[
+            Method("start", dict(tile)["start"], [], preffixes= []),
+            Method("step_H", dict(tile)["step_H"], [Var(i+k+l,"ptile") for l in 'mzp' for k in 'mzp' for i in 'mzp'], preffixes= []),
+            Method("step_m", dict(tile)["step_m"], [], preffixes= []),
             ], parents = ["Base_tile"], counter = cnt)
     
-    for n,i in module.stuffs: 
+    for n,i in module.members: 
         if n=="Model": 
             print [(v, "public", "static") for v in global_vars]
-            module.stuffs[(n,i)].fields+=[(v, "public", ["static"]) for v in global_vars]
-            module.stuffs[(n,i)].fields+=[(Var("data","aiv::array<ptile,3>"), "public", ["static"])]
+            module.members[(n,i)].fields+=[(v, "public", ["static"]) for v in global_vars]
+            module.members[(n,i)].fields+=[(Var("data","aiv::array<ptile,3>"), "public", ["static"])]
     Var.__cpp__ = lambda X: "Model::%s"%X._name if X in global_vars else X._name
     
 
-    mk = """name=model
-headers=model.hpp
-modules=model.cpp
-usedims=1 %(dim)s
-usearrs=PT%(dim)s-ptile-%(dim)s PC%(dim)s-pcell-%(dim)s
-
-include aivlib/Makefile"""%{"dim":_dim}
-    mk=''
-    generate_1_module(module,path,mk)
+    generate_1_module(module,path)
     BaseOp._format = old_format
  

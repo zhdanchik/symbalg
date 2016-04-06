@@ -71,17 +71,17 @@ def mk_module(path, D):
     # presub.append("auto data_crop = data")#.crop( offset, data.N, Indx(%s))"%(','.join("1"*_dim)))
     for i in range(_dim): presub.append("double %s = offset[%s]"%('XYZ'[i],i) )
 
-    module = ModuleContainer( eval(__name__))
+    module = Module( eval(__name__))
 
     # print cones
     module.classes['cell'].fields+=struct_vars
     module.classes['Model'].fields+=global_vars
 
-    module.classes['Model'].methods+=[VoidContainer(k, presub()+v(), [Var("offset","aiv::indx<%s>"%_dim)]) for k,v in starts]
+    module.classes['Model'].methods+=[Method(k, presub()+v(), [Var("offset","aiv::indx<%s>"%_dim)]) for k,v in starts]
 
     presub._list.insert(0,"double time = init_time")
     
-    module.classes['Model'].methods+=[VoidContainer(cone[0], presub()+cone[1], [Var("init_time","double"),Var("offset","aiv::indx<%s>"%_dim)]) for cone in cones]
+    module.classes['Model'].methods+=[Method(cone[0], presub()+cone[1], [Var("init_time","double"),Var("offset","aiv::indx<%s>"%_dim)]) for cone in cones]
     
     # print module.classes['Model'].methods[0].body._list[0].__class__
     hpp,cpp = (module.out('hpp'),module.out('cpp'))

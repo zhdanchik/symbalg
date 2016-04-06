@@ -80,20 +80,20 @@ def mk_module(path, D):
             meaninits.setdefault(k,ListStm()).append( SetStm(m.lvalue, "0" if m.lvalue._type == "double" else "Vctr(%s)"%','.join("0"*_dim) if m.lvalue._type == "aiv::vctr<%s>"%_dim else "0","=") )
             meannorms.setdefault(k,ListStm()).append( SetStm(m.lvalue, "data.N.volume()","/=") )
 
-    module = ModuleContainer( eval(__name__))
+    module = Module( eval(__name__))
 
     # print cones
     module.classes['cell'].fields+=struct_vars
     module.classes['Model'].fields+=global_vars
     module.classes['Model'].fields+=mean_vars
 
-    module.classes['Model'].methods+=[VoidContainer(k, presub()+v(), [Var("offset","aiv::indx<%s>"%_dim)]) for k,v in starts]
+    module.classes['Model'].methods+=[Method(k, presub()+v(), [Var("offset","aiv::indx<%s>"%_dim)]) for k,v in starts]
     
-    module.classes['Model'].methods+=[VoidContainer(k, meanpresub+meaninits[k]+ForStm("auto I=aiv::indx<%(dim)s>(0)"%{"dim":_dim}, "I.less(data.N)", "++I",v()) + 
+    module.classes['Model'].methods+=[Method(k, meanpresub+meaninits[k]+ForStm("auto I=aiv::indx<%(dim)s>(0)"%{"dim":_dim}, "I.less(data.N)", "++I",v()) + 
             meannorms[k], []) for k,v in means]
     presub._list.insert(0,"double time = init_time")
     
-    module.classes['Model'].methods+=[VoidContainer(cone[0], presub()+cone[1], [Var("init_time","double"),Var("offset","aiv::indx<%s>"%_dim)]) for cone in cones]
+    module.classes['Model'].methods+=[Method(cone[0], presub()+cone[1], [Var("init_time","double"),Var("offset","aiv::indx<%s>"%_dim)]) for cone in cones]
     
     # print module.classes['Model'].methods[0].body._list[0].__class__
     hpp,cpp = (module.out('hpp'),module.out('cpp'))

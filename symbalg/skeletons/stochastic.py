@@ -116,7 +116,7 @@ def mk_module(path, D, omp=False):
 
 
 
-    module = ModuleContainer( eval(__name__))
+    module = Module( eval(__name__))
 
     module.classes['part'].fields+=struct_vars
     module.classes['Model'].fields+=global_vars
