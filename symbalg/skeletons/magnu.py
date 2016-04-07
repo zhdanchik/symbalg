@@ -10,12 +10,15 @@ from symbalg.ast_funcs import *
 from symbalg.cone_funcs import *
 from symbalg.generating import *
 
+
 #:class Model;
 
 class Atom():
     @mymethod
     def get_m(_type = "vctr<3>", stage = "int"): #:inline const
         pass
+
+    inline vctr<3> get_m(int stage) const { %(atom_get_m)s; } 
     
     @mymethod
     def step(stage = "int", model = "const Model &", Hexch = "const vctr<3> &"): #:inline
@@ -47,22 +50,6 @@ class Atom():
         End
         End
         End
-# """for(int stage=0; stage<stage_count; ++stage)
-#     for(indx<3> pos; pos.less(data.N); ++pos){
-#         Cell &cell = data[pos];
-#         for(int l=0; l<cell_sz; ++l){ 
-#             Atom &atom = cell.atoms[l];
-#             if(!atom.usage) continue; 
-#             vctr<3> Hexch; 
-#             if(calc_exch&(1<<stage)) for(int i=0; i<nb_counts[l]; ++i){ 
-#                 const NbCR &nb = nb_arr[l][i];
-#                 const Cell &cell2 = periodic_bc<7>(data, pos+nb.dpos);
-#                 if(cell2.usage[nb.lattice]) Hexch += cell2.atoms[nb.lattice].get_m(stage)*arrJ[l][nb.lattice];
-#             }
-#             atom.step(stage, *this, Hexch);
-#         }
-#     }
-# """
 
 @myfield
 def cell_sz(_type = "int") : pass #:const

@@ -21,15 +21,16 @@ class Base_cell:
 #     pass
 
 class Base_tile:
-    tile_data="aiv::array<pcell,3>"
+    @myfield
+    def tile_data(_type = "aiv::array<pcell,3>") : pass
 
-    @function
+    @mymethod
     def start(): #:virtual
         pass
-    @function
+    @mymethod
     def step_H(mmm="ptile", zmm="ptile", pmm="ptile", mzm="ptile", zzm="ptile", pzm="ptile", mpm="ptile", zpm="ptile", ppm="ptile", mmz="ptile", zmz="ptile", pmz="ptile", mzz="ptile", zzz="ptile", pzz="ptile", mpz="ptile", zpz="ptile", ppz="ptile", mmp="ptile", zmp="ptile", pmp="ptile", mzp="ptile", zzp="ptile", pzp="ptile", mpp="ptile", zpp="ptile", ppp="ptile"): #:virtual
         pass
-    @function
+    @mymethod
     def step_m(): #:virtual
         pass
                 

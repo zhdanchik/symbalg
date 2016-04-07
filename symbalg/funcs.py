@@ -166,7 +166,6 @@ class Module(Container):
                 self.members.append( Stuff(line.strip()[2:],counter=i))
 
     def out(self,to):
-        old_format,BaseOp._format = BaseOp._format,'cpp'
         out_str = ''
         if to == 'cpp':    out_str += '#include "model.hpp"' + "%s"
         elif to == 'hpp':  out_str += '#ifndef MODEL_HPP\n#define MODEL_HPP\n'+'\n'.join(map(str,self.hashes))+'\nusing namespace aiv;\n' + "%s" + '\n#endif'
@@ -174,5 +173,4 @@ class Module(Container):
 
         out_str=out_str % '\n'.join([c.out(to) for c in get(self.members)])
                         
-        BaseOp._format = old_format
         return out_str
