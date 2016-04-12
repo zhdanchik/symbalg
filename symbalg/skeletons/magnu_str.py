@@ -10,6 +10,8 @@ from symbalg.generating import *
 templates_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "magnu_str")
 files = ["model.cpp","model.hpp","model.mk"]
 
+Atom = lambda **kw_args : kw_args
+
 # %(atom_data)s
 # %(atom_get_m)s
 # %(cell_sz)i // число атомов в ячейке
@@ -32,81 +34,106 @@ def mk_module(path, atom, **kw_args):
     model_methods = filter(lambda x : x[1].__class__.__name__=="list", kw_args.items())
 
 
-    atom_steps_heads = ""
-    atom_steps = ""
+    atom_stages_heads = ""
+    atom_stages = ""
     model_steps_heads = ""
     model_steps = ""
 
 
-    def getncheckH(myobj):
-        body = [None]
-        ifH = [False]
-        def ifHexch(x):
+    def getncheckHexch(myobj):
+        get_m = [None]
+        ifHexch = [False]
+        def _ifHexch(x):
             if isinstance(x,CallOp):
                 if str(x._a._name) == "Hexch":
-                    ifH[0]= True
-                    body[0] = x._b
+                    ifHexch[0]= True
+                    get_m[0] = x._b
                     return x._a
             return x    
-        return myobj(_conv=ifHexch), body[0], ifH[0]
+        return myobj(_conv=_ifHexch), get_m[0], ifHexch[0]
 
-    for m_m_name, m_methods in model_methods:
-        model_steps_heads+="\tvoid %s();\n"%m_m_name
-        model_steps+= "void Model::%s(){"%m_m_name
-        for a_m_name, a_methods in m_methods:
-            atom_steps_heads += "\tinline void %s(const Model &model, const vctr<3> &Hexch);\n"%(a_m_name)
+    for model_method_name, model_method in model_methods:
+        model_steps_heads+="\tvoid %s();\n"%model_method_name
+        model_steps+= "void Model::%s(){"%model_method_name
+        for atom_method_name, atom_method in model_method:
+           
+            
+            
+            sts, get_m, ifHexch  = getncheckHexch(atom_method())
+            if ifHexch:
+                atom_stages_heads += "\tinline void %s(const Model &model, const vctr<3> &Hexch);\n"%(atom_method_name)
+                atom_stages += "inline void Atom::%s(const Model &model, const vctr<3> &Hexch){\n"%(atom_method_name)
+            else: 
+                atom_stages_heads += "\tinline void %s(const Model &model);\n"%(atom_method_name)
+                atom_stages += "inline void Atom::%s(const Model &model){\n"%(atom_method_name)
 
-            tmp = getncheckH(a_methods())
-            print tmp
 
-            atom_steps += "inline void Atom::%s(const Model &model, const vctr<3> &Hexch){\n"%(a_m_name)
-            atom_steps += str(tmp[0])
-            atom_steps += "}\n"
+            Var.__cpp__ = lambda X: ("model."+X._name) if X._name in [a[0] for a in model_vars] else X._name
 
+            lvalues = []
+            for st in sts._list:
+                if isinstance(st,SetStm):
+                    if isinstance(st.lvalue,Var):
+                        if (st.lvalue._name not in lvalues) and (st.lvalue._name not in atom):
+                            atom_stages+= "auto "
+                            lvalues.append(st.lvalue._name)
+                atom_stages += str(st)+";\n"
+
+            atom_stages += "}\n"
+
+            
             model_steps+='''
     for(indx<3> pos; pos.less(data.N); ++pos){
         Cell &cell = data[pos];
         for(int l=0; l<cell_sz; ++l){ 
-            Atom &atom = cell.atoms[l];
             if(!cell.usage[l]) continue;
-            vctr<3> Hexch; 
-''' 
-            if tmp[2]:
+            Atom &atom = cell.atoms[l];''' 
+
+            if ifHexch:
+                Var.__cpp__ = lambda X: ("atom2."+X._name) if X._name in atom else X._name
                 model_steps+='''
+            vctr<3> Hexch;    
             for(int i=0; i<nb_counts[l]; ++i){ 
                 const NbCR &nb = nb_arr[l][i];
                 const Cell &cell2 = periodic_bc<7>(data, pos+nb.dpos);
-                if(cell2.usage[nb.lattice]) Hexch += cell2.atoms[nb.lattice].%s*arrJ[l][nb.lattice];
-            }
-'''%(tmp[1])
-            model_steps+='''
-            atom.%s(stage, *this, Hexch);
-        }
-}
-'''%a_m_name
+                if(cell2.usage[nb.lattice]) {
+                    const Atom &atom2 = cell2.atoms[nb.lattice];
+                    Hexch += (%s)*arrJ[l][nb.lattice];
+                }
+            }'''%get_m
+                model_steps+="\n\t\t\tatom.%s(*this, Hexch);"%atom_method_name
+            else:
+                model_steps+="\n\t\t\tatom.%s(*this);"%atom_method_name
 
-        model_steps+= "}\n"
+            model_steps+='''
+        }
+    }'''
+
+        model_steps+= "\n}\n"
 
     
     DD = {}   
 
     DD["atom_data"] = "\n".join(["\t%s %s;"%(v,k) for k,v in atom.items()])
-
-    DD["cell_sz"] = len(atom)
-
+    
     DD["model_params"] = "\n".join(["\t%s %s;"%(v,k) for k,v in model_vars])
 
-    DD["max_nb_count"] = 9
-    DD["nb_counts"] = "9"
-    DD["nb_arr"] = ""
-
-    DD["atom_steps_head"] = atom_steps_heads
-    DD["atom_steps"] = atom_steps
+    #---------------------Пока так. Нужна библиотека-----------------------------
+    DD["cell_sz"] = 1
+    DD["max_nb_count"] = 6
+    DD["nb_counts"] = "6"
+    DD["nb_arr"] = '''{{Indx(-1, 0, 0),0},
+                                             {Indx( 0,-1, 0),0},
+                                             {Indx( 0, 0,-1),0},
+                                             {Indx( 1, 0, 0),0},
+                                             {Indx( 0, 1, 0),0},
+                                             {Indx( 0, 0, 1),0}}'''
+    #--------------------------------------------------------------------------                                             
+    DD["atom_stages_heads"] = atom_stages_heads
+    DD["atom_stages"] = atom_stages
     DD["model_steps_heads"] = model_steps_heads
     DD["model_steps"] = model_steps
 
-
-
-    generate_1_module_from_str(DD, templates_path, files, path, False)
+    generate_1_module_from_str(DD, templates_path, files, path, True)
     BaseOp._format = old_format
  
