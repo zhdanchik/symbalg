@@ -12,19 +12,6 @@ files = ["model.cpp","model.hpp","model.mk"]
 
 Atom = lambda **kw_args : kw_args
 
-# %(atom_data)s
-# %(atom_get_m)s
-# %(cell_sz)i // число атомов в ячейке
-# %(stage_count)i // число стадий
-# %(calc_exch)i // битовая маска, указывающая на каких стадиях считать обменное поле
-# %(model_params)s // параметры модели
-# %(atom_steps)s
-
-# %(max_nb_count); // максимальное количество соседей у атома
-# %(nb_counts)i; // количество соседей у атомов различных подрешеток
-# %(nb_arr)s
-
-
 def mk_module(path, atom, **kw_args):
 
     old_format,BaseOp._format = BaseOp._format,'cpp'

@@ -3,6 +3,7 @@
 
 from symbalg.skeletons.magnu_str import *
 
+#---------one-step scheme-------------------
 @statement
 def stage1():
     Heff = Hext + Hexch(m0)
@@ -12,6 +13,31 @@ def stage1():
 @statement
 def stage2():
     m0 = m1
+# #---------one-step scheme-------------------
+# @statement
+# def rk_stage1():
+#     Heff = Hext + Hexch(m0)
+#     dm0 = -h * (gamma * (m0%Heff) + alpha*(m0%(m0%Heff)))
+#     m1 = m0 + 0.5*dm0
+
+# @statement
+# def rk_stage2():
+#     Heff = Hext + Hexch(m0)
+#     dm1 = -h * (gamma * (m1%Heff) + alpha*(m1%(m1%Heff)))
+#     m2 = m0 + 0.5*dm1
+
+# @statement
+# def rk_stage3():
+#     Heff = Hext + Hexch(m0)
+#     dm2 = -h * (gamma * (m2%Heff) + alpha*(m2%(m1%Heff)))
+#     m3 = m0 + dm2
+
+# @statement
+# def rk_stage3():
+#     Heff = Hext + Hexch(m0)
+#     dm2 = -h * (gamma * (m2%Heff) + alpha*(m2%(m1%Heff)))
+#     m3 = m0 + dm2
+
 
 @statement
 def foo():
@@ -35,7 +61,7 @@ M.h = 0.05
 
 M.set_J(0,0,1.)
 
-tcount = 10000
+tcount = 1000
 
 M.simplestart(Vctr(1.,0.,0.))
 

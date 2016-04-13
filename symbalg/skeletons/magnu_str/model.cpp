@@ -21,7 +21,6 @@ void Model::simplestart(const vctr<3> &mstart){
         Cell &cell = data[pos];
         for(int l=0; l<cell_sz; ++l){ 
             cell.usage[l] = true;
-            // if(!cell.usage[l]) continue;
             Atom &atom = cell.atoms[l];
             atom.m0 = mstart;
             atom.m1 = mstart;
