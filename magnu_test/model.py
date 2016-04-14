@@ -296,16 +296,12 @@ class Atom(_object):
     __swig_getmethods__["m0"] = _model.Atom_m0_get
     if _newclass:m0 = _swig_property(_model.Atom_m0_get, _model.Atom_m0_set)
     def stage1(self, *args):
-        """stage1(Atom self, Model model, aiv::vctr< 3 > const & Hexch)"""
+        """stage1(Atom self, Model model, aiv::vctr< 3 > const & Hexch, aiv::vctr< 3 > const & Haniso)"""
         return _model.Atom_stage1(self, *args)
 
     def stage2(self, *args):
         """stage2(Atom self, Model model)"""
         return _model.Atom_stage2(self, *args)
-
-    def foo(self, *args):
-        """foo(Atom self, Model model)"""
-        return _model.Atom_foo(self, *args)
 
     def __init__(self): 
         """__init__(Atom self) -> Atom"""
@@ -316,6 +312,100 @@ class Atom(_object):
     __del__ = lambda self : None;
 Atom_swigregister = _model.Atom_swigregister
 Atom_swigregister(Atom)
+
+class Aniso(_object):
+    """Proxy of C++ Aniso class"""
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, Aniso, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, Aniso, name)
+    __repr__ = _swig_repr
+    __swig_setmethods__["n"] = _model.Aniso_n_set
+    __swig_getmethods__["n"] = _model.Aniso_n_get
+    if _newclass:n = _swig_property(_model.Aniso_n_get, _model.Aniso_n_set)
+    __swig_setmethods__["K"] = _model.Aniso_K_set
+    __swig_getmethods__["K"] = _model.Aniso_K_get
+    if _newclass:K = _swig_property(_model.Aniso_K_get, _model.Aniso_K_set)
+    def __init__(self): 
+        """__init__(Aniso self) -> Aniso"""
+        this = _model.new_Aniso()
+        try: self.this.append(this)
+        except: self.this = this
+    __swig_destroy__ = _model.delete_Aniso
+    __del__ = lambda self : None;
+Aniso_swigregister = _model.Aniso_swigregister
+Aniso_swigregister(Aniso)
+
+class Model(_object):
+    """Proxy of C++ Model class"""
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, Model, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, Model, name)
+    __repr__ = _swig_repr
+    __swig_setmethods__["data"] = _model.Model_data_set
+    __swig_getmethods__["data"] = _model.Model_data_get
+    if _newclass:data = _swig_property(_model.Model_data_get, _model.Model_data_set)
+    __swig_setmethods__["h"] = _model.Model_h_set
+    __swig_getmethods__["h"] = _model.Model_h_get
+    if _newclass:h = _swig_property(_model.Model_h_get, _model.Model_h_set)
+    __swig_setmethods__["Hext"] = _model.Model_Hext_set
+    __swig_getmethods__["Hext"] = _model.Model_Hext_get
+    if _newclass:Hext = _swig_property(_model.Model_Hext_get, _model.Model_Hext_set)
+    __swig_setmethods__["gamma"] = _model.Model_gamma_set
+    __swig_getmethods__["gamma"] = _model.Model_gamma_get
+    if _newclass:gamma = _swig_property(_model.Model_gamma_get, _model.Model_gamma_set)
+    __swig_setmethods__["alpha"] = _model.Model_alpha_set
+    __swig_getmethods__["alpha"] = _model.Model_alpha_get
+    if _newclass:alpha = _swig_property(_model.Model_alpha_get, _model.Model_alpha_set)
+    __swig_setmethods__["time"] = _model.Model_time_set
+    __swig_getmethods__["time"] = _model.Model_time_get
+    if _newclass:time = _swig_property(_model.Model_time_get, _model.Model_time_set)
+    def get_J(self, *args):
+        """get_J(Model self, int l1, int l2) -> double"""
+        return _model.Model_get_J(self, *args)
+
+    def set_J(self, *args):
+        """set_J(Model self, int l1, int l2, double J)"""
+        return _model.Model_set_J(self, *args)
+
+    def add_K1(self, *args):
+        """add_K1(Model self, Aniso aniso, int lattice)"""
+        return _model.Model_add_K1(self, *args)
+
+    def add_K3(self, *args):
+        """add_K3(Model self, Aniso aniso, int lattice)"""
+        return _model.Model_add_K3(self, *args)
+
+    def step(self):
+        """step(Model self)"""
+        return _model.Model_step(self)
+
+    def dump_head(self, *args):
+        """dump_head(Model self, aiv::Ostream & S)"""
+        return _model.Model_dump_head(self, *args)
+
+    def dump_data(self, *args):
+        """dump_data(Model self, aiv::Ostream & S)"""
+        return _model.Model_dump_data(self, *args)
+
+    def M1(self):
+        """M1(Model self) -> aiv::vctr< 3 >"""
+        return _model.Model_M1(self)
+
+    def simplestart(self, *args):
+        """simplestart(Model self, aiv::vctr< 3 > const & mstart)"""
+        return _model.Model_simplestart(self, *args)
+
+    def __init__(self): 
+        """__init__(Model self) -> Model"""
+        this = _model.new_Model()
+        try: self.this.append(this)
+        except: self.this = this
+    __swig_destroy__ = _model.delete_Model
+    __del__ = lambda self : None;
+Model_swigregister = _model.Model_swigregister
+Model_swigregister(Model)
 
 class Cell(_object):
     """Proxy of C++ Cell class"""
@@ -339,63 +429,207 @@ class Cell(_object):
     __del__ = lambda self : None;
 Cell_swigregister = _model.Cell_swigregister
 Cell_swigregister(Cell)
-cell_sz = cvar.cell_sz
 
-class Model(_object):
-    """Proxy of C++ Model class"""
+class BaseFigure(_object):
+    """Proxy of C++ BaseFigure class"""
     __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, Model, name, value)
+    __setattr__ = lambda self, name, value: _swig_setattr(self, BaseFigure, name, value)
     __swig_getmethods__ = {}
-    __getattr__ = lambda self, name: _swig_getattr(self, Model, name)
+    __getattr__ = lambda self, name: _swig_getattr(self, BaseFigure, name)
+    def __init__(self, *args, **kwargs): raise AttributeError("No constructor defined - class is abstract")
     __repr__ = _swig_repr
-    __swig_setmethods__["data"] = _model.Model_data_set
-    __swig_getmethods__["data"] = _model.Model_data_get
-    if _newclass:data = _swig_property(_model.Model_data_get, _model.Model_data_set)
-    __swig_setmethods__["h"] = _model.Model_h_set
-    __swig_getmethods__["h"] = _model.Model_h_get
-    if _newclass:h = _swig_property(_model.Model_h_get, _model.Model_h_set)
-    __swig_setmethods__["alpha"] = _model.Model_alpha_set
-    __swig_getmethods__["alpha"] = _model.Model_alpha_get
-    if _newclass:alpha = _swig_property(_model.Model_alpha_get, _model.Model_alpha_set)
-    __swig_setmethods__["Hext"] = _model.Model_Hext_set
-    __swig_getmethods__["Hext"] = _model.Model_Hext_get
-    if _newclass:Hext = _swig_property(_model.Model_Hext_get, _model.Model_Hext_set)
-    __swig_setmethods__["gamma"] = _model.Model_gamma_set
-    __swig_getmethods__["gamma"] = _model.Model_gamma_get
-    if _newclass:gamma = _swig_property(_model.Model_gamma_get, _model.Model_gamma_set)
-    def get_J(self, *args):
-        """get_J(Model self, int l1, int l2) -> double"""
-        return _model.Model_get_J(self, *args)
+    def get_center(self):
+        """get_center(BaseFigure self) -> aiv::vctr< 3 >"""
+        return _model.BaseFigure_get_center(self)
 
-    def set_J(self, *args):
-        """set_J(Model self, int l1, int l2, double J)"""
-        return _model.Model_set_J(self, *args)
+    def get_max_size(self):
+        """get_max_size(BaseFigure self) -> double"""
+        return _model.BaseFigure_get_max_size(self)
 
-    def step(self):
-        """step(Model self)"""
-        return _model.Model_step(self)
+    def leak_check(self, *args):
+        """leak_check(BaseFigure self, vctr3 r, double delta) -> bool"""
+        return _model.BaseFigure_leak_check(self, *args)
 
-    def foo(self):
-        """foo(Model self)"""
-        return _model.Model_foo(self)
+    def check(self, *args):
+        """check(BaseFigure self, vctr3 r) -> bool"""
+        return _model.BaseFigure_check(self, *args)
 
-    def M1(self):
-        """M1(Model self) -> aiv::vctr< 3 >"""
-        return _model.Model_M1(self)
+    def cutcheck(self, *args):
+        """cutcheck(BaseFigure self, vctr3 r, int i) -> bool"""
+        return _model.BaseFigure_cutcheck(self, *args)
 
-    def simplestart(self, *args):
-        """simplestart(Model self, aiv::vctr< 3 > const & mstart)"""
-        return _model.Model_simplestart(self, *args)
+    __swig_destroy__ = _model.delete_BaseFigure
+    __del__ = lambda self : None;
+BaseFigure_swigregister = _model.BaseFigure_swigregister
+BaseFigure_swigregister(BaseFigure)
+
+class Cylinder(BaseFigure):
+    """Proxy of C++ Cylinder class"""
+    __swig_setmethods__ = {}
+    for _s in [BaseFigure]: __swig_setmethods__.update(getattr(_s,'__swig_setmethods__',{}))
+    __setattr__ = lambda self, name, value: _swig_setattr(self, Cylinder, name, value)
+    __swig_getmethods__ = {}
+    for _s in [BaseFigure]: __swig_getmethods__.update(getattr(_s,'__swig_getmethods__',{}))
+    __getattr__ = lambda self, name: _swig_getattr(self, Cylinder, name)
+    __repr__ = _swig_repr
+    __swig_setmethods__["center"] = _model.Cylinder_center_set
+    __swig_getmethods__["center"] = _model.Cylinder_center_get
+    if _newclass:center = _swig_property(_model.Cylinder_center_get, _model.Cylinder_center_set)
+    __swig_setmethods__["R"] = _model.Cylinder_R_set
+    __swig_getmethods__["R"] = _model.Cylinder_R_get
+    if _newclass:R = _swig_property(_model.Cylinder_R_get, _model.Cylinder_R_set)
+    __swig_setmethods__["H"] = _model.Cylinder_H_set
+    __swig_getmethods__["H"] = _model.Cylinder_H_get
+    if _newclass:H = _swig_property(_model.Cylinder_H_get, _model.Cylinder_H_set)
+    __swig_setmethods__["rmin"] = _model.Cylinder_rmin_set
+    __swig_getmethods__["rmin"] = _model.Cylinder_rmin_get
+    if _newclass:rmin = _swig_property(_model.Cylinder_rmin_get, _model.Cylinder_rmin_set)
+    __swig_setmethods__["rmax"] = _model.Cylinder_rmax_set
+    __swig_getmethods__["rmax"] = _model.Cylinder_rmax_get
+    if _newclass:rmax = _swig_property(_model.Cylinder_rmax_get, _model.Cylinder_rmax_set)
+    __swig_setmethods__["cut"] = _model.Cylinder_cut_set
+    __swig_getmethods__["cut"] = _model.Cylinder_cut_get
+    if _newclass:cut = _swig_property(_model.Cylinder_cut_get, _model.Cylinder_cut_set)
+    def get_center(self):
+        """get_center(Cylinder self) -> aiv::vctr< 3 >"""
+        return _model.Cylinder_get_center(self)
+
+    def get_max_size(self):
+        """get_max_size(Cylinder self) -> double"""
+        return _model.Cylinder_get_max_size(self)
+
+    def leak_check(self, *args):
+        """leak_check(Cylinder self, vctr3 r, double delta) -> bool"""
+        return _model.Cylinder_leak_check(self, *args)
+
+    def check(self, *args):
+        """check(Cylinder self, vctr3 r) -> bool"""
+        return _model.Cylinder_check(self, *args)
+
+    def cutcheck(self, *args):
+        """cutcheck(Cylinder self, vctr3 r, int i) -> bool"""
+        return _model.Cylinder_cutcheck(self, *args)
 
     def __init__(self): 
-        """__init__(Model self) -> Model"""
-        this = _model.new_Model()
+        """__init__(Cylinder self) -> Cylinder"""
+        this = _model.new_Cylinder()
         try: self.this.append(this)
         except: self.this = this
-    __swig_destroy__ = _model.delete_Model
+    __swig_destroy__ = _model.delete_Cylinder
     __del__ = lambda self : None;
-Model_swigregister = _model.Model_swigregister
-Model_swigregister(Model)
+Cylinder_swigregister = _model.Cylinder_swigregister
+Cylinder_swigregister(Cylinder)
+
+class Cube(BaseFigure):
+    """Proxy of C++ Cube class"""
+    __swig_setmethods__ = {}
+    for _s in [BaseFigure]: __swig_setmethods__.update(getattr(_s,'__swig_setmethods__',{}))
+    __setattr__ = lambda self, name, value: _swig_setattr(self, Cube, name, value)
+    __swig_getmethods__ = {}
+    for _s in [BaseFigure]: __swig_getmethods__.update(getattr(_s,'__swig_getmethods__',{}))
+    __getattr__ = lambda self, name: _swig_getattr(self, Cube, name)
+    __repr__ = _swig_repr
+    __swig_setmethods__["center"] = _model.Cube_center_set
+    __swig_getmethods__["center"] = _model.Cube_center_get
+    if _newclass:center = _swig_property(_model.Cube_center_get, _model.Cube_center_set)
+    __swig_setmethods__["A"] = _model.Cube_A_set
+    __swig_getmethods__["A"] = _model.Cube_A_get
+    if _newclass:A = _swig_property(_model.Cube_A_get, _model.Cube_A_set)
+    __swig_setmethods__["rmin"] = _model.Cube_rmin_set
+    __swig_getmethods__["rmin"] = _model.Cube_rmin_get
+    if _newclass:rmin = _swig_property(_model.Cube_rmin_get, _model.Cube_rmin_set)
+    __swig_setmethods__["rmax"] = _model.Cube_rmax_set
+    __swig_getmethods__["rmax"] = _model.Cube_rmax_get
+    if _newclass:rmax = _swig_property(_model.Cube_rmax_get, _model.Cube_rmax_set)
+    __swig_setmethods__["cut"] = _model.Cube_cut_set
+    __swig_getmethods__["cut"] = _model.Cube_cut_get
+    if _newclass:cut = _swig_property(_model.Cube_cut_get, _model.Cube_cut_set)
+    def get_center(self):
+        """get_center(Cube self) -> aiv::vctr< 3 >"""
+        return _model.Cube_get_center(self)
+
+    def get_max_size(self):
+        """get_max_size(Cube self) -> double"""
+        return _model.Cube_get_max_size(self)
+
+    def leak_check(self, *args):
+        """leak_check(Cube self, vctr3 r, double delta) -> bool"""
+        return _model.Cube_leak_check(self, *args)
+
+    def check(self, *args):
+        """check(Cube self, vctr3 r) -> bool"""
+        return _model.Cube_check(self, *args)
+
+    def cutcheck(self, *args):
+        """cutcheck(Cube self, vctr3 r, int i) -> bool"""
+        return _model.Cube_cutcheck(self, *args)
+
+    def __init__(self): 
+        """__init__(Cube self) -> Cube"""
+        this = _model.new_Cube()
+        try: self.this.append(this)
+        except: self.this = this
+    __swig_destroy__ = _model.delete_Cube
+    __del__ = lambda self : None;
+Cube_swigregister = _model.Cube_swigregister
+Cube_swigregister(Cube)
+
+class Box(BaseFigure):
+    """Proxy of C++ Box class"""
+    __swig_setmethods__ = {}
+    for _s in [BaseFigure]: __swig_setmethods__.update(getattr(_s,'__swig_setmethods__',{}))
+    __setattr__ = lambda self, name, value: _swig_setattr(self, Box, name, value)
+    __swig_getmethods__ = {}
+    for _s in [BaseFigure]: __swig_getmethods__.update(getattr(_s,'__swig_getmethods__',{}))
+    __getattr__ = lambda self, name: _swig_getattr(self, Box, name)
+    __repr__ = _swig_repr
+    __swig_setmethods__["center"] = _model.Box_center_set
+    __swig_getmethods__["center"] = _model.Box_center_get
+    if _newclass:center = _swig_property(_model.Box_center_get, _model.Box_center_set)
+    __swig_setmethods__["L"] = _model.Box_L_set
+    __swig_getmethods__["L"] = _model.Box_L_get
+    if _newclass:L = _swig_property(_model.Box_L_get, _model.Box_L_set)
+    __swig_setmethods__["H"] = _model.Box_H_set
+    __swig_getmethods__["H"] = _model.Box_H_get
+    if _newclass:H = _swig_property(_model.Box_H_get, _model.Box_H_set)
+    __swig_setmethods__["rmin"] = _model.Box_rmin_set
+    __swig_getmethods__["rmin"] = _model.Box_rmin_get
+    if _newclass:rmin = _swig_property(_model.Box_rmin_get, _model.Box_rmin_set)
+    __swig_setmethods__["rmax"] = _model.Box_rmax_set
+    __swig_getmethods__["rmax"] = _model.Box_rmax_get
+    if _newclass:rmax = _swig_property(_model.Box_rmax_get, _model.Box_rmax_set)
+    __swig_setmethods__["cut"] = _model.Box_cut_set
+    __swig_getmethods__["cut"] = _model.Box_cut_get
+    if _newclass:cut = _swig_property(_model.Box_cut_get, _model.Box_cut_set)
+    def get_center(self):
+        """get_center(Box self) -> aiv::vctr< 3 >"""
+        return _model.Box_get_center(self)
+
+    def get_max_size(self):
+        """get_max_size(Box self) -> double"""
+        return _model.Box_get_max_size(self)
+
+    def leak_check(self, *args):
+        """leak_check(Box self, vctr3 r, double delta) -> bool"""
+        return _model.Box_leak_check(self, *args)
+
+    def check(self, *args):
+        """check(Box self, vctr3 r) -> bool"""
+        return _model.Box_check(self, *args)
+
+    def cutcheck(self, *args):
+        """cutcheck(Box self, vctr3 r, int i) -> bool"""
+        return _model.Box_cutcheck(self, *args)
+
+    def __init__(self): 
+        """__init__(Box self) -> Box"""
+        this = _model.new_Box()
+        try: self.this.append(this)
+        except: self.this = this
+    __swig_destroy__ = _model.delete_Box
+    __del__ = lambda self : None;
+Box_swigregister = _model.Box_swigregister
+Box_swigregister(Box)
 
 class indx1(_object):
     """Proxy of C++ aiv::indx<(1)> class"""

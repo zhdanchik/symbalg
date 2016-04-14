@@ -4,6 +4,8 @@
 #include <aivlib/dekart.hpp>
 #include <math.h>
 #include <vector>
+#include "magnulib/lattice.hpp"
+#include "magnulib/geometry.hpp"
 using namespace aiv;
 
 class Model;
@@ -16,19 +18,16 @@ struct Atom{
 %(atom_stages_heads)s 
 };
 
-const int cell_sz = %(cell_sz)i; // число атомов в ячейке (число подрешеток)
+//const int cell_sz = %(cell_sz)i; // число атомов в ячейке (число подрешеток)
 
-struct Cell{
-	Atom atoms[cell_sz]; // атомы
-	bool usage[cell_sz]; // флаги использования атомов
-};
+struct Cell;
 
 struct Aniso{
 	vctr<3> n;
 	double K;
 };
 
-class Model{
+class Model: public %(lattice_name)s{
 
 	double arrJ[cell_sz][cell_sz];     // массив обменных интегралов
 	
@@ -50,17 +49,28 @@ public:
 
 // поля модели, передаются в mk_module
 %(model_params)s
-
+	
+	double time;
 	double get_J(int l1, int l2) const { return arrJ[l1][l2]; }
 	void set_J(int l1, int l2, double J) { arrJ[l1][l2] = arrJ[l2][l1] = J; }
 	void add_K1(Aniso aniso, int lattice){ arrK1[lattice].push_back(aniso); }
 	void add_K3(Aniso aniso, int lattice){ arrK3[lattice].push_back(aniso); }
 // методы модели, передаются в mk_module
-%(model_steps_heads)s
+%(model_steps_heads)s        
+	
+	void dump_head(aiv::Ostream& S); 
+    void dump_data(aiv::Ostream& S); 
+
     vctr<3> M1();
     void simplestart(const vctr<3> &mstart);
 };
+
+struct Cell{
+	Atom atoms[Model::cell_sz]; // атомы
+	bool usage[Model::cell_sz]; // флаги использования атомов
+};
+
 // тела методов атома - различных стадий.
 %(atom_stages)s
 
-#endif
+#endif //MODEL_HPP

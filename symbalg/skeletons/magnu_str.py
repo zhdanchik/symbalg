@@ -8,11 +8,13 @@ from symbalg.cone_funcs import *
 from symbalg.generating import *
 
 templates_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "magnu_str")
-files = ["model.cpp","model.hpp","model.mk"]
+
+folders = ["magnulib"]
+files = ["model.cpp","model.hpp","model.mk", "magnulib/lattice.hpp", "magnulib/geometry.hpp"]
 
 Atom = lambda **kw_args : kw_args
 
-def mk_module(path, atom, **kw_args):
+def mk_module(path, lattice_name, atom, **kw_args):
 
     old_format,BaseOp._format = BaseOp._format,'cpp'
     module = Module(eval(__name__))
@@ -27,17 +29,18 @@ def mk_module(path, atom, **kw_args):
     model_steps = ""
 
 
-    def getncheckHexch(myobj):
+    def getncheckH(myobj, target):
         get_m = [None]
-        ifHexch = [False]
+        ifH = [False]
         def _ifHexch(x):
             if isinstance(x,CallOp):
-                if str(x._a._name) == "Hexch":
-                    ifHexch[0]= True
-                    get_m[0] = x._b
-                    return x._a
+                if str(x._a._name) == target:
+                    if isinstance(x._a,Var):
+                        ifH[0]= True
+                        get_m[0] = x._b
+                        return x._a
             return x    
-        return myobj(_conv=_ifHexch), get_m[0], ifHexch[0]
+        return myobj(_conv=_ifHexch), get_m[0], ifH[0]
 
     for model_method_name, model_method in model_methods:
         model_steps_heads+="\tvoid %s();\n"%model_method_name
@@ -46,13 +49,19 @@ def mk_module(path, atom, **kw_args):
            
             
             
-            sts, get_m, ifHexch  = getncheckHexch(atom_method())
-            if ifHexch:
-                atom_stages_heads += "\tinline void %s(const Model &model, const vctr<3> &Hexch);\n"%(atom_method_name)
-                atom_stages += "inline void Atom::%s(const Model &model, const vctr<3> &Hexch){\n"%(atom_method_name)
-            else: 
-                atom_stages_heads += "\tinline void %s(const Model &model);\n"%(atom_method_name)
-                atom_stages += "inline void Atom::%s(const Model &model){\n"%(atom_method_name)
+            sts, get_m_exch, ifHexch  = getncheckH(atom_method(),"Hexch")
+            sts, get_m_aniso, ifHaniso  = getncheckH(sts,"Haniso")
+            
+            atom_stages_heads += "\tinline void %s(const Model &model"%atom_method_name
+            if ifHexch: atom_stages_heads += ", const vctr<3> &Hexch"
+            if ifHaniso: atom_stages_heads += ", const vctr<3> &Haniso"
+            atom_stages_heads += ");\n"
+
+
+            atom_stages += "\tinline void Atom::%s(const Model &model"%atom_method_name
+            if ifHexch: atom_stages += ", const vctr<3> &Hexch"
+            if ifHaniso: atom_stages += ", const vctr<3> &Haniso"
+            atom_stages += "){\n"
 
 
             Var.__cpp__ = lambda X: ("model."+X._name) if X._name in [a[0] for a in model_vars] else X._name
@@ -76,6 +85,8 @@ def mk_module(path, atom, **kw_args):
             if(!cell.usage[l]) continue;
             Atom &atom = cell.atoms[l];''' 
 
+            
+
             if ifHexch:
                 Var.__cpp__ = lambda X: ("atom2."+X._name) if X._name in atom else X._name
                 model_steps+='''
@@ -87,12 +98,17 @@ def mk_module(path, atom, **kw_args):
                     const Atom &atom2 = cell2.atoms[nb.lattice];
                     Hexch += (%s)*arrJ[l][nb.lattice];
                 }
-            }'''%get_m
-                model_steps+="\n\t\t\tatom.%s(*this, Hexch);"%atom_method_name
-            else:
-                model_steps+="\n\t\t\tatom.%s(*this);"%atom_method_name
+            }'''%get_m_exch
 
-            model_steps+='''
+            if ifHaniso:
+                Var.__cpp__ = lambda X: ("atom."+X._name) if X._name in atom else X._name
+                model_steps+='''
+            vctr<3> Haniso = calc_Haniso(%s, l);'''%get_m_aniso
+
+            model_steps+="\n\t\t\tatom.%s(*this"%atom_method_name
+            if ifHexch:  model_steps+=", Hexch"
+            if ifHaniso:  model_steps+=", Haniso"
+            model_steps+=''');
         }
     }'''
 
@@ -121,6 +137,8 @@ def mk_module(path, atom, **kw_args):
     DD["model_steps_heads"] = model_steps_heads
     DD["model_steps"] = model_steps
 
-    generate_1_module_from_str(DD, templates_path, files, path, True)
+
+    DD["lattice_name"] = lattice_name
+    generate_1_module_from_str(DD, templates_path, folders, files, path, True)
     BaseOp._format = old_format
  

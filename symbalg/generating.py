@@ -21,11 +21,14 @@ include aivlib/Makefile"""
         tmp = os.path.abspath(os.curdir)
         os.chdir(path); os.system("make -f model.mk -j8"); os.chdir(tmp)
 
-def generate_1_module_from_str(D, templates_path, files, path, make = True):
+def generate_1_module_from_str(D, templates_path, folders, files, path, make = True):
 
     try: os.makedirs(path)
     except : pass
     
+    for folder in folders:
+        try: os.makedirs(os.path.join(path,folder))
+        except:pass
     for fname in files:
         fstr = open(os.path.join(templates_path,fname), "r").read()%D
         if os.path.isfile(os.path.join(path,fname)):
