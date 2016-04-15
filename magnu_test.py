@@ -13,7 +13,7 @@ def stage1():
 @statement
 def stage2():
     m0 = m1
-# #---------one-step scheme-------------------
+# #---------RK4 scheme-------------------
 # @statement
 # def rk_stage1():
 #     Heff = Hext + Hexch(m0)
@@ -40,19 +40,41 @@ def stage2():
 
 
 mk_module("magnu_test", 
-          "Cubic",
+          "latCubic",
           Atom(m0='vctr<3>', m1='vctr<3>'),
+          "m0",
 	      h='double', Hext='vctr<3>', gamma='double', alpha='double', # opisanie poley Model
 	      step=[("stage1", stage1), ("stage2", stage2)] # opisanie metdow Model	
 )
 
 from magnu_test import *
 
-Geom = Cylinder()
+fig1 = Cylinder(Vctr(0.,0.,20.), 10., 40.)
+fig2 = Cube(Vctr(20.,20.,30.), 40.)
+
+fig3 = Box(Vctr(-20.,0.,0.), 20., 80., 20.)
+
+figs = SetFigures()
+#figs.add(Cylinder(Vctr(10.,10.,20.), 10., 40.)) # --- не работает :(
+
+figs.add(fig1)
+figs.add(fig2)
+figs.add(fig3)
 
 M = Model()
-Nx, Ny, Nz = 20, 20, 40
-M.data.init(Indx(Nx, Ny, Nz))
+
+M.init(figs)
+print "\n",
+print figs.get_max_size()
+print figs.get_center()
+print figs.get_minxyz()
+print figs.get_maxxyz()
+print "\n",
+print fig1.get_max_size()
+print fig1.get_center()
+print "\n",
+print fig2.get_max_size()
+print fig2.get_center()
 
 M.Hext = Indx(0.,0.,1.)
 M.alpha = 0.01
@@ -61,7 +83,7 @@ M.h = 0.05
 
 M.set_J(0,0,1.)
 
-tcount = 1000#1000
+tcount = 20#1000
 
 M.simplestart(Vctr(1.,0.,0.))
 
@@ -82,3 +104,5 @@ for t in range(tcount):
 #gplt -3d -U 'M1z(M1x,M1y)@:3' magnu_test/M1.dat -ur 0:pi -vr 0:2*pi -para=y -fn 'sin(u)*cos(v),sin(u)*sin(v),cos(u)' -raw 'set view equal' -raw 'set border 4095' -cu : { -k '' } -lbx '' -lby '' -lbz '' -xt.-fr ' ' -yt.-fr ' ' -zt.-fr ' ' -nk -to tM1.pdf showcmd=okular -pv=y
 
 #gplt -3d -U 'M1z(M1x,M1y)' magnu_test/M1.dat -ur 0:pi -vr 0:2*pi -para=y -fn 'sin(u)*cos(v),sin(u)*sin(v),cos(u)' -raw 'set view equal'
+
+#1.5GB

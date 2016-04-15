@@ -343,9 +343,6 @@ class Model(_object):
     __swig_getmethods__ = {}
     __getattr__ = lambda self, name: _swig_getattr(self, Model, name)
     __repr__ = _swig_repr
-    __swig_setmethods__["data"] = _model.Model_data_set
-    __swig_getmethods__["data"] = _model.Model_data_get
-    if _newclass:data = _swig_property(_model.Model_data_get, _model.Model_data_set)
     __swig_setmethods__["h"] = _model.Model_h_set
     __swig_getmethods__["h"] = _model.Model_h_get
     if _newclass:h = _swig_property(_model.Model_h_get, _model.Model_h_set)
@@ -361,6 +358,9 @@ class Model(_object):
     __swig_setmethods__["time"] = _model.Model_time_set
     __swig_getmethods__["time"] = _model.Model_time_get
     if _newclass:time = _swig_property(_model.Model_time_get, _model.Model_time_set)
+    __swig_setmethods__["Natoms"] = _model.Model_Natoms_set
+    __swig_getmethods__["Natoms"] = _model.Model_Natoms_get
+    if _newclass:Natoms = _swig_property(_model.Model_Natoms_get, _model.Model_Natoms_set)
     def get_J(self, *args):
         """get_J(Model self, int l1, int l2) -> double"""
         return _model.Model_get_J(self, *args)
@@ -380,6 +380,10 @@ class Model(_object):
     def step(self):
         """step(Model self)"""
         return _model.Model_step(self)
+
+    def init(self, *args):
+        """init(Model self, BaseFigure figure)"""
+        return _model.Model_init(self, *args)
 
     def dump_head(self, *args):
         """dump_head(Model self, aiv::Ostream & S)"""
@@ -446,17 +450,17 @@ class BaseFigure(_object):
         """get_max_size(BaseFigure self) -> double"""
         return _model.BaseFigure_get_max_size(self)
 
-    def leak_check(self, *args):
-        """leak_check(BaseFigure self, vctr3 r, double delta) -> bool"""
-        return _model.BaseFigure_leak_check(self, *args)
+    def get_minxyz(self):
+        """get_minxyz(BaseFigure self) -> aiv::vctr< 3 >"""
+        return _model.BaseFigure_get_minxyz(self)
+
+    def get_maxxyz(self):
+        """get_maxxyz(BaseFigure self) -> aiv::vctr< 3 >"""
+        return _model.BaseFigure_get_maxxyz(self)
 
     def check(self, *args):
         """check(BaseFigure self, vctr3 r) -> bool"""
         return _model.BaseFigure_check(self, *args)
-
-    def cutcheck(self, *args):
-        """cutcheck(BaseFigure self, vctr3 r, int i) -> bool"""
-        return _model.BaseFigure_cutcheck(self, *args)
 
     __swig_destroy__ = _model.delete_BaseFigure
     __del__ = lambda self : None;
@@ -481,15 +485,6 @@ class Cylinder(BaseFigure):
     __swig_setmethods__["H"] = _model.Cylinder_H_set
     __swig_getmethods__["H"] = _model.Cylinder_H_get
     if _newclass:H = _swig_property(_model.Cylinder_H_get, _model.Cylinder_H_set)
-    __swig_setmethods__["rmin"] = _model.Cylinder_rmin_set
-    __swig_getmethods__["rmin"] = _model.Cylinder_rmin_get
-    if _newclass:rmin = _swig_property(_model.Cylinder_rmin_get, _model.Cylinder_rmin_set)
-    __swig_setmethods__["rmax"] = _model.Cylinder_rmax_set
-    __swig_getmethods__["rmax"] = _model.Cylinder_rmax_get
-    if _newclass:rmax = _swig_property(_model.Cylinder_rmax_get, _model.Cylinder_rmax_set)
-    __swig_setmethods__["cut"] = _model.Cylinder_cut_set
-    __swig_getmethods__["cut"] = _model.Cylinder_cut_get
-    if _newclass:cut = _swig_property(_model.Cylinder_cut_get, _model.Cylinder_cut_set)
     def get_center(self):
         """get_center(Cylinder self) -> aiv::vctr< 3 >"""
         return _model.Cylinder_get_center(self)
@@ -498,21 +493,24 @@ class Cylinder(BaseFigure):
         """get_max_size(Cylinder self) -> double"""
         return _model.Cylinder_get_max_size(self)
 
-    def leak_check(self, *args):
-        """leak_check(Cylinder self, vctr3 r, double delta) -> bool"""
-        return _model.Cylinder_leak_check(self, *args)
+    def get_minxyz(self):
+        """get_minxyz(Cylinder self) -> aiv::vctr< 3 >"""
+        return _model.Cylinder_get_minxyz(self)
+
+    def get_maxxyz(self):
+        """get_maxxyz(Cylinder self) -> aiv::vctr< 3 >"""
+        return _model.Cylinder_get_maxxyz(self)
 
     def check(self, *args):
         """check(Cylinder self, vctr3 r) -> bool"""
         return _model.Cylinder_check(self, *args)
 
-    def cutcheck(self, *args):
-        """cutcheck(Cylinder self, vctr3 r, int i) -> bool"""
-        return _model.Cylinder_cutcheck(self, *args)
-
-    def __init__(self): 
-        """__init__(Cylinder self) -> Cylinder"""
-        this = _model.new_Cylinder()
+    def __init__(self, *args): 
+        """
+        __init__(Cylinder self) -> Cylinder
+        __init__(Cylinder self, aiv::vctr< 3 > c, double r, double h) -> Cylinder
+        """
+        this = _model.new_Cylinder(*args)
         try: self.this.append(this)
         except: self.this = this
     __swig_destroy__ = _model.delete_Cylinder
@@ -535,15 +533,6 @@ class Cube(BaseFigure):
     __swig_setmethods__["A"] = _model.Cube_A_set
     __swig_getmethods__["A"] = _model.Cube_A_get
     if _newclass:A = _swig_property(_model.Cube_A_get, _model.Cube_A_set)
-    __swig_setmethods__["rmin"] = _model.Cube_rmin_set
-    __swig_getmethods__["rmin"] = _model.Cube_rmin_get
-    if _newclass:rmin = _swig_property(_model.Cube_rmin_get, _model.Cube_rmin_set)
-    __swig_setmethods__["rmax"] = _model.Cube_rmax_set
-    __swig_getmethods__["rmax"] = _model.Cube_rmax_get
-    if _newclass:rmax = _swig_property(_model.Cube_rmax_get, _model.Cube_rmax_set)
-    __swig_setmethods__["cut"] = _model.Cube_cut_set
-    __swig_getmethods__["cut"] = _model.Cube_cut_get
-    if _newclass:cut = _swig_property(_model.Cube_cut_get, _model.Cube_cut_set)
     def get_center(self):
         """get_center(Cube self) -> aiv::vctr< 3 >"""
         return _model.Cube_get_center(self)
@@ -552,21 +541,24 @@ class Cube(BaseFigure):
         """get_max_size(Cube self) -> double"""
         return _model.Cube_get_max_size(self)
 
-    def leak_check(self, *args):
-        """leak_check(Cube self, vctr3 r, double delta) -> bool"""
-        return _model.Cube_leak_check(self, *args)
+    def get_minxyz(self):
+        """get_minxyz(Cube self) -> aiv::vctr< 3 >"""
+        return _model.Cube_get_minxyz(self)
+
+    def get_maxxyz(self):
+        """get_maxxyz(Cube self) -> aiv::vctr< 3 >"""
+        return _model.Cube_get_maxxyz(self)
 
     def check(self, *args):
         """check(Cube self, vctr3 r) -> bool"""
         return _model.Cube_check(self, *args)
 
-    def cutcheck(self, *args):
-        """cutcheck(Cube self, vctr3 r, int i) -> bool"""
-        return _model.Cube_cutcheck(self, *args)
-
-    def __init__(self): 
-        """__init__(Cube self) -> Cube"""
-        this = _model.new_Cube()
+    def __init__(self, *args): 
+        """
+        __init__(Cube self) -> Cube
+        __init__(Cube self, aiv::vctr< 3 > c, double a) -> Cube
+        """
+        this = _model.new_Cube(*args)
         try: self.this.append(this)
         except: self.this = this
     __swig_destroy__ = _model.delete_Cube
@@ -586,21 +578,15 @@ class Box(BaseFigure):
     __swig_setmethods__["center"] = _model.Box_center_set
     __swig_getmethods__["center"] = _model.Box_center_get
     if _newclass:center = _swig_property(_model.Box_center_get, _model.Box_center_set)
-    __swig_setmethods__["L"] = _model.Box_L_set
-    __swig_getmethods__["L"] = _model.Box_L_get
-    if _newclass:L = _swig_property(_model.Box_L_get, _model.Box_L_set)
+    __swig_setmethods__["A"] = _model.Box_A_set
+    __swig_getmethods__["A"] = _model.Box_A_get
+    if _newclass:A = _swig_property(_model.Box_A_get, _model.Box_A_set)
+    __swig_setmethods__["B"] = _model.Box_B_set
+    __swig_getmethods__["B"] = _model.Box_B_get
+    if _newclass:B = _swig_property(_model.Box_B_get, _model.Box_B_set)
     __swig_setmethods__["H"] = _model.Box_H_set
     __swig_getmethods__["H"] = _model.Box_H_get
     if _newclass:H = _swig_property(_model.Box_H_get, _model.Box_H_set)
-    __swig_setmethods__["rmin"] = _model.Box_rmin_set
-    __swig_getmethods__["rmin"] = _model.Box_rmin_get
-    if _newclass:rmin = _swig_property(_model.Box_rmin_get, _model.Box_rmin_set)
-    __swig_setmethods__["rmax"] = _model.Box_rmax_set
-    __swig_getmethods__["rmax"] = _model.Box_rmax_get
-    if _newclass:rmax = _swig_property(_model.Box_rmax_get, _model.Box_rmax_set)
-    __swig_setmethods__["cut"] = _model.Box_cut_set
-    __swig_getmethods__["cut"] = _model.Box_cut_get
-    if _newclass:cut = _swig_property(_model.Box_cut_get, _model.Box_cut_set)
     def get_center(self):
         """get_center(Box self) -> aiv::vctr< 3 >"""
         return _model.Box_get_center(self)
@@ -609,27 +595,76 @@ class Box(BaseFigure):
         """get_max_size(Box self) -> double"""
         return _model.Box_get_max_size(self)
 
-    def leak_check(self, *args):
-        """leak_check(Box self, vctr3 r, double delta) -> bool"""
-        return _model.Box_leak_check(self, *args)
+    def get_minxyz(self):
+        """get_minxyz(Box self) -> aiv::vctr< 3 >"""
+        return _model.Box_get_minxyz(self)
+
+    def get_maxxyz(self):
+        """get_maxxyz(Box self) -> aiv::vctr< 3 >"""
+        return _model.Box_get_maxxyz(self)
 
     def check(self, *args):
         """check(Box self, vctr3 r) -> bool"""
         return _model.Box_check(self, *args)
 
-    def cutcheck(self, *args):
-        """cutcheck(Box self, vctr3 r, int i) -> bool"""
-        return _model.Box_cutcheck(self, *args)
-
-    def __init__(self): 
-        """__init__(Box self) -> Box"""
-        this = _model.new_Box()
+    def __init__(self, *args): 
+        """
+        __init__(Box self) -> Box
+        __init__(Box self, aiv::vctr< 3 > c, double a, double b, double h) -> Box
+        """
+        this = _model.new_Box(*args)
         try: self.this.append(this)
         except: self.this = this
     __swig_destroy__ = _model.delete_Box
     __del__ = lambda self : None;
 Box_swigregister = _model.Box_swigregister
 Box_swigregister(Box)
+
+class SetFigures(BaseFigure):
+    """Proxy of C++ SetFigures class"""
+    __swig_setmethods__ = {}
+    for _s in [BaseFigure]: __swig_setmethods__.update(getattr(_s,'__swig_setmethods__',{}))
+    __setattr__ = lambda self, name, value: _swig_setattr(self, SetFigures, name, value)
+    __swig_getmethods__ = {}
+    for _s in [BaseFigure]: __swig_getmethods__.update(getattr(_s,'__swig_getmethods__',{}))
+    __getattr__ = lambda self, name: _swig_getattr(self, SetFigures, name)
+    __repr__ = _swig_repr
+    __swig_setmethods__["Figures"] = _model.SetFigures_Figures_set
+    __swig_getmethods__["Figures"] = _model.SetFigures_Figures_get
+    if _newclass:Figures = _swig_property(_model.SetFigures_Figures_get, _model.SetFigures_Figures_set)
+    def add(self, *args):
+        """add(SetFigures self, BaseFigure figure)"""
+        return _model.SetFigures_add(self, *args)
+
+    def get_minxyz(self):
+        """get_minxyz(SetFigures self) -> aiv::vctr< 3 >"""
+        return _model.SetFigures_get_minxyz(self)
+
+    def get_maxxyz(self):
+        """get_maxxyz(SetFigures self) -> aiv::vctr< 3 >"""
+        return _model.SetFigures_get_maxxyz(self)
+
+    def get_center(self):
+        """get_center(SetFigures self) -> aiv::vctr< 3 >"""
+        return _model.SetFigures_get_center(self)
+
+    def get_max_size(self):
+        """get_max_size(SetFigures self) -> double"""
+        return _model.SetFigures_get_max_size(self)
+
+    def check(self, *args):
+        """check(SetFigures self, vctr3 r) -> bool"""
+        return _model.SetFigures_check(self, *args)
+
+    def __init__(self): 
+        """__init__(SetFigures self) -> SetFigures"""
+        this = _model.new_SetFigures()
+        try: self.this.append(this)
+        except: self.this = this
+    __swig_destroy__ = _model.delete_SetFigures
+    __del__ = lambda self : None;
+SetFigures_swigregister = _model.SetFigures_swigregister
+SetFigures_swigregister(SetFigures)
 
 class indx1(_object):
     """Proxy of C++ aiv::indx<(1)> class"""

@@ -10,11 +10,11 @@ from symbalg.generating import *
 templates_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "magnu_str")
 
 folders = ["magnulib"]
-files = ["model.cpp","model.hpp","model.mk", "magnulib/lattice.hpp", "magnulib/geometry.hpp"]
+files = ["model.cpp","model.hpp","model.mk", "magnulib/lattice.hpp", "magnulib/geometry.hpp", "magnulib/diag.hpp"]
 
 Atom = lambda **kw_args : kw_args
 
-def mk_module(path, lattice_name, atom, **kw_args):
+def mk_module(path, lattice_name, atom, atom_m, **kw_args):
 
     old_format,BaseOp._format = BaseOp._format,'cpp'
     module = Module(eval(__name__))
@@ -28,7 +28,10 @@ def mk_module(path, lattice_name, atom, **kw_args):
     model_steps_heads = ""
     model_steps = ""
 
+    
 
+
+    atom_st_m = atom_m
     def getncheckH(myobj, target):
         get_m = [None]
         ifH = [False]
@@ -110,6 +113,7 @@ def mk_module(path, lattice_name, atom, **kw_args):
             if ifHaniso:  model_steps+=", Haniso"
             model_steps+=''');
         }
+        time+=h;
     }'''
 
         model_steps+= "\n}\n"
@@ -136,6 +140,11 @@ def mk_module(path, lattice_name, atom, **kw_args):
     DD["atom_stages"] = atom_stages
     DD["model_steps_heads"] = model_steps_heads
     DD["model_steps"] = model_steps
+
+    
+    DD["atom_m"] = "atom."+atom_m
+    DD["atom_st_m"] = "atom."+atom_st_m
+
 
 
     DD["lattice_name"] = lattice_name

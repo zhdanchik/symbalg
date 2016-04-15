@@ -30,11 +30,11 @@ struct Aniso{
 	double K;
 };
 
-class Model: public Cubic{
-
+class Model: public latCubic{
+    array<Cell, 3> data;               // массив ячеек
 	double arrJ[cell_sz][cell_sz];     // массив обменных интегралов
-	
 	std::vector<Aniso> arrK1[cell_sz],  arrK3[cell_sz];
+	vctr<3> minxyz;
 	inline vctr<3> calc_Haniso(const vctr<3> &m, int lattice){
 		vctr<3> H;
 		for(auto A=arrK1[lattice].begin(); A!=arrK1[lattice].end(); ++A) H += A->n*(A->n*m*A->K);
@@ -48,7 +48,6 @@ class Model: public Cubic{
 		return W;
 	}
 public:
-    array<Cell, 3> data;               // массив ячеек
 
 // поля модели, передаются в mk_module
 	double h;
@@ -57,6 +56,7 @@ public:
 	double alpha;
 	
 	double time;
+	int Natoms;
 	double get_J(int l1, int l2) const { return arrJ[l1][l2]; }
 	void set_J(int l1, int l2, double J) { arrJ[l1][l2] = arrJ[l2][l1] = J; }
 	void add_K1(Aniso aniso, int lattice){ arrK1[lattice].push_back(aniso); }
@@ -65,6 +65,9 @@ public:
 	void step();
         
 	
+	void init(BaseFigure &figure);
+
+	//Временная диагностика для тестирования
 	void dump_head(aiv::Ostream& S); 
     void dump_data(aiv::Ostream& S); 
 

@@ -14,7 +14,7 @@ struct NbCR{ // доступ к одному элементу
 };
 
 
-class Cubic{
+class latCubic{
 public:
     static const int cell_sz = 1; // число атомов в ячейке (число подрешеток)
     static const int max_nb_count = 6; // максимальное количество соседей у атома
