@@ -18,8 +18,6 @@ struct Atom{
 %(atom_stages_heads)s 
 };
 
-//const int cell_sz = %(cell_sz)i; // число атомов в ячейке (число подрешеток)
-
 struct Cell;
 
 struct Aniso{
@@ -44,6 +42,11 @@ class Model: public %(lattice_name)s{
 		for(auto A=arrK3[lattice].begin(); A!=arrK3[lattice].end(); ++A){ double nm = A->n*m; W += nm*nm*nm*nm*A->K*.25; }
 		return W;
 	}
+	/////////?????????///////////
+	inline double calc_Wexch(const vctr<3> &m, int lattice){ /////////?????????///////////
+		return 0;/////////?????????///////////
+	}/////////?????????///////////
+	/////////?????????///////////
 public:
 
 // поля модели, передаются в mk_module
@@ -64,7 +67,8 @@ public:
 	void dump_head(aiv::Ostream& S); 
     void dump_data(aiv::Ostream& S); 
 
-    vctr<3> M1();
+    void init_diag(aiv::Ostream& S);
+    void dump_diag(aiv::Ostream& S);
     void simplestart(const vctr<3> &mstart);
 };
 

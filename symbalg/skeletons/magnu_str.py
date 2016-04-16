@@ -113,28 +113,16 @@ def mk_module(path, lattice_name, atom, atom_m, **kw_args):
             if ifHaniso:  model_steps+=", Haniso"
             model_steps+=''');
         }
-        time+=h;
     }'''
 
-        model_steps+= "\n}\n"
+        model_steps+= "\n\ttime+=h;}\n"
 
     
     DD = {}   
 
     DD["atom_data"] = "\n".join(["\t%s %s;"%(v,k) for k,v in atom.items()])
-    
     DD["model_params"] = "\n".join(["\t%s %s;"%(v,k) for k,v in model_vars])
 
-    #---------------------Пока так. Нужна библиотека-----------------------------
-    DD["cell_sz"] = 1
-    DD["max_nb_count"] = 6
-    DD["nb_counts"] = "6"
-    DD["nb_arr"] = '''{{Indx(-1, 0, 0),0},
-                                             {Indx( 0,-1, 0),0},
-                                             {Indx( 0, 0,-1),0},
-                                             {Indx( 1, 0, 0),0},
-                                             {Indx( 0, 1, 0),0},
-                                             {Indx( 0, 0, 1),0}}'''
     #--------------------------------------------------------------------------                                             
     DD["atom_stages_heads"] = atom_stages_heads
     DD["atom_stages"] = atom_stages
@@ -144,8 +132,6 @@ def mk_module(path, lattice_name, atom, atom_m, **kw_args):
     
     DD["atom_m"] = "atom."+atom_m
     DD["atom_st_m"] = "atom."+atom_st_m
-
-
 
     DD["lattice_name"] = lattice_name
     generate_1_module_from_str(DD, templates_path, folders, files, path, True)

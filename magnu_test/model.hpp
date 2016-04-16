@@ -21,8 +21,6 @@ struct Atom{
  
 };
 
-//const int cell_sz = 1; // число атомов в ячейке (число подрешеток)
-
 struct Cell;
 
 struct Aniso{
@@ -30,7 +28,7 @@ struct Aniso{
 	double K;
 };
 
-class Model: public latCubic{
+class Model: public latFCC4{
     array<Cell, 3> data;               // массив ячеек
 	double arrJ[cell_sz][cell_sz];     // массив обменных интегралов
 	std::vector<Aniso> arrK1[cell_sz],  arrK3[cell_sz];
@@ -47,6 +45,11 @@ class Model: public latCubic{
 		for(auto A=arrK3[lattice].begin(); A!=arrK3[lattice].end(); ++A){ double nm = A->n*m; W += nm*nm*nm*nm*A->K*.25; }
 		return W;
 	}
+	/////////?????????///////////
+	inline double calc_Wexch(const vctr<3> &m, int lattice){ /////////?????????///////////
+		return 0;/////////?????????///////////
+	}/////////?????????///////////
+	/////////?????????///////////
 public:
 
 // поля модели, передаются в mk_module
@@ -71,7 +74,8 @@ public:
 	void dump_head(aiv::Ostream& S); 
     void dump_data(aiv::Ostream& S); 
 
-    vctr<3> M1();
+    void init_diag(aiv::Ostream& S);
+    void dump_diag(aiv::Ostream& S);
     void simplestart(const vctr<3> &mstart);
 };
 

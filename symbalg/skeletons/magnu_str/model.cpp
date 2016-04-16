@@ -1,19 +1,55 @@
 #include <math.h>
 #include "model.hpp"
 
-
-const NbCR latCubic::nb_arr[cell_sz][max_nb_count] = {{{Indx(-1, 0, 0),0},
-                                                 {Indx( 0,-1, 0),0},
-                                                 {Indx( 0, 0,-1),0},
-                                                 {Indx( 1, 0, 0),0},
-                                                 {Indx( 0, 1, 0),0},
-                                                 {Indx( 0, 0, 1),0}}}; 
-
+const int latCubic::nb_counts[cell_sz] = {6};
+const NbCR latCubic::nb_arr[cell_sz][max_nb_count] = {{{Indx(-1, 0, 0),0}, {Indx( 0,-1, 0),0}, {Indx( 0, 0,-1),0},
+                                                       {Indx( 1, 0, 0),0}, {Indx( 0, 1, 0),0}, {Indx( 0, 0, 1),0}}
+                                                     }; 
 const vctr<3> latCubic::coords[cell_sz] = {Vctr(0.,0.,0.)}; 
+const vctr<3> latCubic::cell_coord_size = Vctr(1.,1.,1.);
 
+const int latICC::nb_counts[cell_sz] = {8,8};
+const NbCR latICC::nb_arr[cell_sz][max_nb_count] = {{{Indx( 0, 0, 0),1}, {Indx(-1, 0, 0),1}, {Indx( 0,-1, 0),1}, {Indx(-1,-1, 0),1},
+                                                     {Indx( 0, 0,-1),1}, {Indx(-1, 0,-1),1}, {Indx( 0,-1,-1),1}, {Indx(-1,-1,-1),1}},
 
+                                                    {{Indx( 0, 0, 0),0}, {Indx( 1, 0, 0),0}, {Indx( 0, 1, 0),0}, {Indx( 1, 1, 0),0},
+                                                     {Indx( 0, 0, 1),0}, {Indx( 1, 0, 1),0}, {Indx( 0, 1, 1),0}, {Indx( 1, 1, 1),0}}
+                                                   }; 
+const vctr<3> latICC::coords[cell_sz] = {Vctr(0.,0.,0.), Vctr(1.,1.,1.)}; 
+const vctr<3> latICC::cell_coord_size = Vctr(2.,2.,2.);
 
+const int latFCC3::nb_counts[cell_sz] = {8,8,8};
+const NbCR latFCC3::nb_arr[cell_sz][max_nb_count] = {{{Indx( 0, 0, 0),1}, {Indx( 0, 1, 0),1}, {Indx( 0, 0,-1),1}, {Indx( 0, 1,-1),1},
+                                                      {Indx( 0, 0, 0),2}, {Indx( 1, 0, 0),2}, {Indx( 0, 0,-1),2}, {Indx( 1, 0,-1),2}},
 
+                                                     {{Indx( 0, 0, 0),0}, {Indx( 0, 0, 1),0}, {Indx( 0,-1, 0),0}, {Indx( 0,-1, 1),0},
+                                                      {Indx( 0, 0, 0),2}, {Indx( 1, 0, 0),2}, {Indx( 0,-1, 0),2}, {Indx( 1,-1, 0),2}},
+
+                                                     {{Indx( 0, 0, 0),0}, {Indx( 0, 0, 1),0}, {Indx(-1, 0, 0),0}, {Indx(-1, 0, 1),0},
+                                                      {Indx( 0, 0, 0),1}, {Indx( 0, 1, 0),1}, {Indx(-1, 0, 0),1}, {Indx(-1, 1, 0),1}}
+                                                   }; 
+const vctr<3> latFCC3::coords[cell_sz] = {Vctr(1.,1.,0.), Vctr(1.,0.,1.), Vctr(0.,1.,1.)}; 
+const vctr<3> latFCC3::cell_coord_size = Vctr(2.,2.,2.);
+
+const int latFCC4::nb_counts[cell_sz] = {12,12,12,12};
+const NbCR latFCC4::nb_arr[cell_sz][max_nb_count] = {{{Indx( 0, 0, 0),1}, {Indx(-1, 0, 0),1}, {Indx( 0,-1, 0),1}, {Indx(-1,-1, 0),1},
+                                                      {Indx( 0, 0, 0),2}, {Indx( 0, 0,-1),2}, {Indx(-1, 0, 0),2}, {Indx(-1, 0,-1),2},
+                                                      {Indx( 0, 0, 0),3}, {Indx( 0,-1, 0),3}, {Indx( 0, 0,-1),3}, {Indx( 0,-1,-1),3}},
+
+                                                     {{Indx( 0, 0, 0),0}, {Indx( 0, 1, 0),0}, {Indx( 1, 0, 0),0}, {Indx( 1, 1, 0),0},
+                                                      {Indx( 0, 0, 0),2}, {Indx( 0, 0,-1),2}, {Indx( 0, 1, 0),2}, {Indx( 0, 1,-1),2},
+                                                      {Indx( 0, 0, 0),3}, {Indx( 1, 0, 0),3}, {Indx( 0, 0,-1),3}, {Indx( 1, 0,-1),3}},
+
+                                                     {{Indx( 0, 0, 0),0}, {Indx( 1, 0, 0),0}, {Indx( 0, 0, 1),0}, {Indx( 1, 0, 1),0},
+                                                      {Indx( 0, 0, 0),1}, {Indx( 0, 0, 1),1}, {Indx( 0,-1, 0),1}, {Indx( 0,-1, 1),1},
+                                                      {Indx( 0, 0, 0),3}, {Indx( 0,-1, 0),3}, {Indx( 1, 0, 0),3}, {Indx( 1,-1, 0),3}},
+
+                                                     {{Indx( 0, 0, 0),0}, {Indx( 0, 1, 0),0}, {Indx( 0, 0, 1),0}, {Indx( 0, 1, 1),0},
+                                                      {Indx( 0, 0, 0),1}, {Indx( 0, 0, 1),1}, {Indx(-1, 0, 0),1}, {Indx(-1, 0, 1),1},
+                                                      {Indx( 0, 0, 0),2}, {Indx(-1, 0, 0),2}, {Indx( 0, 1, 0),2}, {Indx(-1, 1, 0),2}}
+                                                   }; 
+const vctr<3> latFCC4::coords[cell_sz] = {Vctr(0.,0.,0.), Vctr(1.,1.,0.), Vctr(1.,0.,1.), Vctr(0.,1.,1.)}; 
+const vctr<3> latFCC4::cell_coord_size = Vctr(2.,2.,2.);
 
 
 // тела методов модели
@@ -28,7 +64,7 @@ void Model::init(BaseFigure &figure){
     for(indx<3> pos; pos.less(data.N); ++pos){
         Cell &cell = data[pos];
         for(int l=0; l<cell_sz; ++l){ 
-            if (figure.check(coords[l]+(minxyz + pos*vctr<3>(1.)))){ 
+            if (figure.check(coords[l]+(minxyz + pos*cell_coord_size))){ 
                 cell.usage[l] = true;
                 Natoms++;
             }
@@ -48,7 +84,7 @@ void Model::dump_head( aiv::Ostream& S ){
             Cell &cell = data[pos];
             for(int l=0; l<cell_sz; ++l){ 
                 if(!cell.usage[l]) continue;
-                r = coords[l]+(minxyz + pos*vctr<3>(1.)); 
+                r = coords[l]+(minxyz + pos*cell_coord_size); 
                 S.fwrite( &r, sizeof(r) );
             }
         }
@@ -80,15 +116,21 @@ void Model::simplestart(const vctr<3> &mstart){
         }
     }
 }
-vctr<3> Model::M1(){
+
+void Model::init_diag(aiv::Ostream& S){S.printf("#:t M1x M1y M1z Wf W\n" );}
+
+void Model::dump_diag(aiv::Ostream& S){
     vctr<3> tmpM1 = Vctr(0.,0.,0.);
+    double W = 0.;
     for(indx<3> pos; pos.less(data.N); ++pos){
         Cell &cell = data[pos];
         for(int l=0; l<cell_sz; ++l){ 
             if(!cell.usage[l]) continue;
             const Atom &atom = cell.atoms[l];
             tmpM1+=%(atom_m)s/Natoms;
+            W+=-calc_Wexch(%(atom_m)s,l)-calc_Waniso(%(atom_m)s,l) - Hext*%(atom_m)s;
         }
     }
-    return tmpM1;
+    double W1 = W/Natoms;
+    S.printf("%%f %%f %%f %%f %%f %%f\n",time, tmpM1[0], tmpM1[1], tmpM1[2], W, W1);
 }

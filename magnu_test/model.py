@@ -393,9 +393,13 @@ class Model(_object):
         """dump_data(Model self, aiv::Ostream & S)"""
         return _model.Model_dump_data(self, *args)
 
-    def M1(self):
-        """M1(Model self) -> aiv::vctr< 3 >"""
-        return _model.Model_M1(self)
+    def init_diag(self, *args):
+        """init_diag(Model self, aiv::Ostream & S)"""
+        return _model.Model_init_diag(self, *args)
+
+    def dump_diag(self, *args):
+        """dump_diag(Model self, aiv::Ostream & S)"""
+        return _model.Model_dump_diag(self, *args)
 
     def simplestart(self, *args):
         """simplestart(Model self, aiv::vctr< 3 > const & mstart)"""
