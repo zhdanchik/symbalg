@@ -53,7 +53,7 @@ const vctr<3> latFCC4::cell_coord_size = Vctr(2.,2.,2.);
 
 
 // тела методов модели
-void Model::step(){
+void Model::stepRK4(){
     for(indx<3> pos; pos.less(data.N); ++pos){
         Cell &cell = data[pos];
         for(int l=0; l<cell_sz; ++l){ 
@@ -68,8 +68,7 @@ void Model::step(){
                     Hexch += (atom2.m0)*arrJ[l][nb.lattice];
                 }
             }
-            vctr<3> Haniso = calc_Haniso(atom.m0, l);
-			atom.stage1(*this, Hexch, Haniso);
+			atom.rk_stage1(*this, Hexch);
         }
     }
     for(indx<3> pos; pos.less(data.N); ++pos){
@@ -77,18 +76,62 @@ void Model::step(){
         for(int l=0; l<cell_sz; ++l){ 
             if(!cell.usage[l]) continue;
             Atom &atom = cell.atoms[l];
-			atom.stage2(*this);
+            vctr<3> Hexch;    
+            for(int i=0; i<nb_counts[l]; ++i){ 
+                const NbCR &nb = nb_arr[l][i];
+                const Cell &cell2 = periodic_bc<7>(data, pos+nb.dpos);
+                if(cell2.usage[nb.lattice]) {
+                    const Atom &atom2 = cell2.atoms[nb.lattice];
+                    Hexch += (atom2.m0)*arrJ[l][nb.lattice];
+                }
+            }
+			atom.rk_stage2(*this, Hexch);
+        }
+    }
+    for(indx<3> pos; pos.less(data.N); ++pos){
+        Cell &cell = data[pos];
+        for(int l=0; l<cell_sz; ++l){ 
+            if(!cell.usage[l]) continue;
+            Atom &atom = cell.atoms[l];
+            vctr<3> Hexch;    
+            for(int i=0; i<nb_counts[l]; ++i){ 
+                const NbCR &nb = nb_arr[l][i];
+                const Cell &cell2 = periodic_bc<7>(data, pos+nb.dpos);
+                if(cell2.usage[nb.lattice]) {
+                    const Atom &atom2 = cell2.atoms[nb.lattice];
+                    Hexch += (atom2.m0)*arrJ[l][nb.lattice];
+                }
+            }
+			atom.rk_stage3(*this, Hexch);
+        }
+    }
+    for(indx<3> pos; pos.less(data.N); ++pos){
+        Cell &cell = data[pos];
+        for(int l=0; l<cell_sz; ++l){ 
+            if(!cell.usage[l]) continue;
+            Atom &atom = cell.atoms[l];
+            vctr<3> Hexch;    
+            for(int i=0; i<nb_counts[l]; ++i){ 
+                const NbCR &nb = nb_arr[l][i];
+                const Cell &cell2 = periodic_bc<7>(data, pos+nb.dpos);
+                if(cell2.usage[nb.lattice]) {
+                    const Atom &atom2 = cell2.atoms[nb.lattice];
+                    Hexch += (atom2.m0)*arrJ[l][nb.lattice];
+                }
+            }
+			atom.rk_stage4(*this, Hexch);
         }
     }
 	time+=h;}
 
 
 void Model::init(BaseFigure &figure){
-    vctr<3> center = figure.get_center();
-    double out_radius = figure.get_max_size();
-    minxyz = center-vctr<3>(out_radius);
-    const int intrad = floor(2*out_radius)+1;
-    data.init(Indx(intrad,intrad,intrad)); // /Vctr(1.,1.,1.)
+
+    minxyz = figure.get_minxyz();
+    vctr<3> maxxyz = figure.get_maxxyz();
+    indx<3> iminxyz = Indx(floor(minxyz[0]),floor(minxyz[1]),floor(minxyz[2]));
+    indx<3> imaxxyz = Indx(ceil(maxxyz[0]),ceil(maxxyz[1]),ceil(maxxyz[2]));
+    data.init(imaxxyz-iminxyz); // /Vctr(1.,1.,1.)
     for(indx<3> pos; pos.less(data.N); ++pos){
         Cell &cell = data[pos];
         for(int l=0; l<cell_sz; ++l){ 

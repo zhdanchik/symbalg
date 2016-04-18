@@ -10,8 +10,8 @@ using namespace aiv;
 
 
 struct BaseFigure{
-    virtual vctr<3> get_center() const = 0;
-    virtual double get_max_size() const = 0;
+    // virtual vctr<3> get_center() const = 0;
+    // virtual double get_max_size() const = 0;
     virtual vctr<3> get_minxyz() const = 0;
     virtual vctr<3> get_maxxyz() const = 0;
     virtual bool check(const aiv::vctr<3> &r) const = 0;
@@ -20,8 +20,8 @@ struct BaseFigure{
 struct Cylinder: public BaseFigure{
     vctr<3> center; // центр нижней грани
     double R, H;    // радиус и высота
-    vctr<3> get_center() const { return center+vctr<3>(0, 0, .5*H); }
-    double get_max_size() const { return 2*sqrt(.25*H*H+R*R); }
+    // vctr<3> get_center() const { return center+vctr<3>(0, 0, .5*H); }
+    // double get_max_size() const { return 2*sqrt(.25*H*H+R*R); }
     vctr<3> get_minxyz() const { return center - Vctr(R,R,0);}
     vctr<3> get_maxxyz() const { return center + Vctr(R,R,H);}
     bool check(const aiv::vctr<3> &r) const {
@@ -34,8 +34,8 @@ struct Cylinder: public BaseFigure{
 struct Cube: public BaseFigure{
     vctr<3> center; // центр нижней грани
     double A;    // длина ребра
-    vctr<3> get_center() const { return center+vctr<3>(0, 0, .5*A); }
-    virtual double get_max_size() const { return 0.5*sqrt(3)*A; }
+    // vctr<3> get_center() const { return center+vctr<3>(0, 0, .5*A); }
+    // virtual double get_max_size() const { return 0.5*sqrt(3)*A; }
     vctr<3> get_minxyz() const { return center - Vctr(0.5*A,0.5*A,0);}
     vctr<3> get_maxxyz() const { return center + Vctr(0.5*A,0.5*A,A);}
     bool check(const aiv::vctr<3> &r) const {
@@ -48,8 +48,8 @@ struct Cube: public BaseFigure{
 struct Box: public BaseFigure{
     vctr<3> center; // центр нижней грани
     double A, B, H;    // длина ребер основания и высота
-    vctr<3> get_center() const { return center+vctr<3>(0, 0, .5*H); }
-    virtual double get_max_size() const { return 0.5*sqrt(H*H+A*A+B*B); }
+    // vctr<3> get_center() const { return center+vctr<3>(0, 0, .5*H); }
+    // virtual double get_max_size() const { return 0.5*sqrt(H*H+A*A+B*B); }
     vctr<3> get_minxyz() const { return center - Vctr(0.5*A,0.5*B,0);}
     vctr<3> get_maxxyz() const { return center + Vctr(0.5*A,0.5*B,H);}
     bool check(const aiv::vctr<3> &r) const {
@@ -87,17 +87,17 @@ struct SetFigures: public BaseFigure{
         return tmpmaxxyz;
     }
 
-    vctr<3> get_center() const {
-        if (Figures.empty()) raise("Figures is empty!\n");
-        return (get_maxxyz()+get_minxyz())*0.5;
-    };
-    double get_max_size() const {
-        if (Figures.empty()) raise("Figures is empty!\n");
-        vctr<3> minxyz = get_minxyz();
-        vctr<3> maxxyz = get_maxxyz();
+    // vctr<3> get_center() const {
+    //     if (Figures.empty()) raise("Figures is empty!\n");
+    //     return (get_maxxyz()+get_minxyz())*0.5;
+    // };
+    // double get_max_size() const {
+    //     if (Figures.empty()) raise("Figures is empty!\n");
+    //     vctr<3> minxyz = get_minxyz();
+    //     vctr<3> maxxyz = get_maxxyz();
 
-        return 0.5*sqrt((maxxyz[0]-minxyz[0])*(maxxyz[0]-minxyz[0]) + (maxxyz[1]-minxyz[1])*(maxxyz[1]-minxyz[1]) + (maxxyz[2]-minxyz[2])*(maxxyz[2]-minxyz[2]));
-    };
+    //     return 0.5*sqrt((maxxyz[0]-minxyz[0])*(maxxyz[0]-minxyz[0]) + (maxxyz[1]-minxyz[1])*(maxxyz[1]-minxyz[1]) + (maxxyz[2]-minxyz[2])*(maxxyz[2]-minxyz[2]));
+    // };
 
     bool check(const aiv::vctr<3> &r) const {
         if (Figures.empty()) raise("Figures is empty!\n");
