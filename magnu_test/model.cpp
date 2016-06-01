@@ -53,7 +53,7 @@ const vctr<3> latFCC4::cell_coord_size = Vctr(2.,2.,2.);
 
 
 // тела методов модели
-void Model::stepRK4(){
+void Model::step(){
     for(indx<3> pos; pos.less(data.N); ++pos){
         Cell &cell = data[pos];
         for(int l=0; l<cell_sz; ++l){ 
@@ -68,7 +68,8 @@ void Model::stepRK4(){
                     Hexch += (atom2.m0)*arrJ[l][nb.lattice];
                 }
             }
-			atom.rk_stage1(*this, Hexch);
+            vctr<3> Haniso = calc_Haniso(atom.m0, l);
+			atom.stage1(*this, Hexch, Haniso);
         }
     }
     for(indx<3> pos; pos.less(data.N); ++pos){
@@ -76,66 +77,33 @@ void Model::stepRK4(){
         for(int l=0; l<cell_sz; ++l){ 
             if(!cell.usage[l]) continue;
             Atom &atom = cell.atoms[l];
-            vctr<3> Hexch;    
-            for(int i=0; i<nb_counts[l]; ++i){ 
-                const NbCR &nb = nb_arr[l][i];
-                const Cell &cell2 = periodic_bc<7>(data, pos+nb.dpos);
-                if(cell2.usage[nb.lattice]) {
-                    const Atom &atom2 = cell2.atoms[nb.lattice];
-                    Hexch += (atom2.m0)*arrJ[l][nb.lattice];
-                }
-            }
-			atom.rk_stage2(*this, Hexch);
-        }
-    }
-    for(indx<3> pos; pos.less(data.N); ++pos){
-        Cell &cell = data[pos];
-        for(int l=0; l<cell_sz; ++l){ 
-            if(!cell.usage[l]) continue;
-            Atom &atom = cell.atoms[l];
-            vctr<3> Hexch;    
-            for(int i=0; i<nb_counts[l]; ++i){ 
-                const NbCR &nb = nb_arr[l][i];
-                const Cell &cell2 = periodic_bc<7>(data, pos+nb.dpos);
-                if(cell2.usage[nb.lattice]) {
-                    const Atom &atom2 = cell2.atoms[nb.lattice];
-                    Hexch += (atom2.m0)*arrJ[l][nb.lattice];
-                }
-            }
-			atom.rk_stage3(*this, Hexch);
-        }
-    }
-    for(indx<3> pos; pos.less(data.N); ++pos){
-        Cell &cell = data[pos];
-        for(int l=0; l<cell_sz; ++l){ 
-            if(!cell.usage[l]) continue;
-            Atom &atom = cell.atoms[l];
-            vctr<3> Hexch;    
-            for(int i=0; i<nb_counts[l]; ++i){ 
-                const NbCR &nb = nb_arr[l][i];
-                const Cell &cell2 = periodic_bc<7>(data, pos+nb.dpos);
-                if(cell2.usage[nb.lattice]) {
-                    const Atom &atom2 = cell2.atoms[nb.lattice];
-                    Hexch += (atom2.m0)*arrJ[l][nb.lattice];
-                }
-            }
-			atom.rk_stage4(*this, Hexch);
+			atom.stage2(*this);
         }
     }
 	time+=h;}
 
 
-void Model::init(BaseFigure &figure){
+void Model::init(BaseFigure &figure, GlobalTrans &tr){
+    trans=&tr; 
+    // Нужно перебрать все 4 диагонали прямоугольника! Пока работать будет не во всех случаях
+    vctr<3> tmp_minxyz = trans->trans_vec_back(figure.get_minxyz());
+    vctr<3> tmp_maxxyz = trans->trans_vec_back(figure.get_maxxyz());
+    vctr<3> C = 0.5*(tmp_maxxyz + tmp_minxyz);
+    double R = (C-tmp_minxyz).abs();
+    minxyz = C-R*Vctr(sqrt(3),sqrt(3),sqrt(3));
+    vctr<3> maxxyz = C+R*Vctr(sqrt(3),sqrt(3),sqrt(3));
 
-    minxyz = figure.get_minxyz();
-    vctr<3> maxxyz = figure.get_maxxyz();
     indx<3> iminxyz = Indx(floor(minxyz[0]),floor(minxyz[1]),floor(minxyz[2]));
     indx<3> imaxxyz = Indx(ceil(maxxyz[0]),ceil(maxxyz[1]),ceil(maxxyz[2]));
-    data.init(imaxxyz-iminxyz); // /Vctr(1.,1.,1.)
+    // printf("%s | %s | %s | %s\n",minxyz.c_str(),maxxyz.c_str(), iminxyz.c_str(), imaxxyz.c_str());
+    data.init(imaxxyz-iminxyz+Indx(1,1,1)); // /Vctr(1.,1.,1.)
     for(indx<3> pos; pos.less(data.N); ++pos){
         Cell &cell = data[pos];
         for(int l=0; l<cell_sz; ++l){ 
-            if (figure.check(coords[l]+(minxyz + pos*cell_coord_size))){ 
+            vctr<3> inv_cell_coord_size  = Vctr(1./cell_coord_size[0], 1./cell_coord_size[1], 1./cell_coord_size[2]);
+            vctr<3> new_vec = trans->trans_vec((coords[l]^inv_cell_coord_size)+(minxyz + pos*Vctr(1.,1.,1.)));
+            // printf("%d %s %s %d\n",l,pos.c_str(),new_vec.c_str(),figure.check(new_vec));
+            if (figure.check(new_vec)){ 
                 cell.usage[l] = true;
                 Natoms++;
             }
@@ -155,7 +123,8 @@ void Model::dump_head( aiv::Ostream& S ){
             Cell &cell = data[pos];
             for(int l=0; l<cell_sz; ++l){ 
                 if(!cell.usage[l]) continue;
-                r = coords[l]+(minxyz + pos*cell_coord_size); 
+                r = trans->trans_vec( ((minxyz + pos*Vctr(1.,1.,1.))^cell_coord_size) + coords[l] );
+
                 S.fwrite( &r, sizeof(r) );
             }
         }

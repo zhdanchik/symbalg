@@ -42,28 +42,29 @@ def rk_stage4():
 
 
 
-# mk_module("magnu_test", 
-#           "latCubic",
-#           Atom(m0='vctr<3>', m1='vctr<3>'),
-#           "m0",
-# 	      h='double', Hext='vctr<3>', gamma='double', alpha='double', # opisanie poley Model
-# 	      step=[("stage1", stage1), ("stage2", stage2)] # opisanie metdow Model	
-# )
-
 mk_module("magnu_test", 
-          "latCubic",
-          Atom(m0='vctr<3>', dm0='vctr<3>', m1='vctr<3>', dm1='vctr<3>', m2='vctr<3>', dm2='vctr<3>', m3='vctr<3>'),
+          "latFCC4",
+          Atom(m0='vctr<3>', m1='vctr<3>'),
           "m0",
-          h='double', Hext='vctr<3>', T='double', alpha='double', # opisanie poley Model
-          stepRK4=[("rk_stage1", rk_stage1), ("rk_stage2", rk_stage2), ("rk_stage3", rk_stage3), ("rk_stage4", rk_stage4)] # opisanie metdow Model 
+	      h='double', Hext='vctr<3>', gamma='double', alpha='double', # opisanie poley Model
+	      step=[("stage1", stage1), ("stage2", stage2)] # opisanie metdow Model	
 )
 
-from magnu_test import *
+# mk_module("magnu_test", 
+#           "latCubic",
+#           Atom(m0='vctr<3>', dm0='vctr<3>', m1='vctr<3>', dm1='vctr<3>', m2='vctr<3>', dm2='vctr<3>', m3='vctr<3>'),
+#           "m0",
+#           h='double', Hext='vctr<3>', T='double', alpha='double', # opisanie poley Model
+#           stepRK4=[("rk_stage1", rk_stage1), ("rk_stage2", rk_stage2), ("rk_stage3", rk_stage3), ("rk_stage4", rk_stage4)] # opisanie metdow Model 
+# )
 
-fig1 = Cylinder(Vctr(0.,0.,20.), 10., 40.)
+from magnu_test import *
+import math
+
+fig1 = Cylinder(Vctr(0.,0.,0.), 1., 10.)
 fig2 = Cube(Vctr(20.,20.,30.), 40.)
 
-fig3 = Box(Vctr(-20.,0.,0.), 20., 80., 20.)
+fig3 = Box(Vctr(0.,0.,0.), 1., 1., 1.)
 
 figs = SetFigures()
 #figs.add(Cylinder(Vctr(10.,10.,20.), 10., 40.)) # --- не работает :(
@@ -74,7 +75,14 @@ figs.add(fig3)
 
 M = Model()
 
-M.init(fig1)
+trans1 = GlobalTrans(Vctr(1.,1.,0.)/math.sqrt(2), Vctr(-1.,1.,0.)/math.sqrt(2), Vctr(0.,0.,1.))
+trans111 = GlobalTrans(Vctr(-math.sqrt(2./3.), 0., math.sqrt(1./3.)),
+                       Vctr(math.sqrt(1./6.), math.sqrt(1./2.), math.sqrt(1./3.)),
+                       Vctr(math.sqrt(1./6.), -math.sqrt(1./2.), math.sqrt(1./3.)))
+    
+#--------------------------------------------------
+
+M.init(fig1, trans111)
 
 M.Hext = Indx(0.,0.,1.)
 M.alpha = 0.01
@@ -83,7 +91,7 @@ M.h = 0.05
 M.T = 1
 M.set_J(0,0,1.)
 
-tcount = 1000
+tcount = 100
 
 M.simplestart(Vctr(1.,0.,0.))
 
@@ -95,7 +103,8 @@ Stext = Ofile("magnu_test/diag.dat")
 M.init_diag(Stext)
 M.dump_diag(Stext)
 for t in range(tcount):
-    M.stepRK4()
+    M.step()
+    # M.stepRK4()
     print '\r',"%s / %s" %(t+1, tcount), ;sys.stdout.flush()
     M.dump_diag(Stext)
     M.dump_data(S)

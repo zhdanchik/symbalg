@@ -7,7 +7,35 @@
 using namespace aiv;
 
 
+struct GlobalTrans{
+    vctr<3> I1,I2,I3;
 
+    GlobalTrans(){}
+    GlobalTrans(vctr<3> i1, vctr<3> i2, vctr<3> i3): I1(i1), I2(i2), I3(i3) {}
+
+    vctr<3> trans_vec (const aiv::vctr<3> &r){
+        if (fabs(I1 * (I2%I3)) <1e-6){raise("Transformation is incorrect");}
+        double x = r[0], y = r[1], z = r[2];
+        double x1 = I1[0], x2 = I2[0], x3 = I3[0];
+        double y1 = I1[1], y2 = I2[1], y3 = I3[1];
+        double z1 = I1[2], z2 = I2[2], z3 = I3[2];
+        return Vctr( ((x3*y2 - x2*y3)*z - (x3*y - x*y3)*z2 + (x2*y - x*y2)*z3),
+                    -((x3*y1 - x1*y3)*z - (x3*y - x*y3)*z1 + (x1*y - x*y1)*z3),
+                     ((x2*y1 - x1*y2)*z - (x2*y - x*y2)*z1 + (x1*y - x*y1)*z2) ) / ((x3*y2 - x2*y3)*z1 - (x3*y1 - x1*y3)*z2 + (x2*y1 - x1*y2)*z3);
+
+    }
+    vctr<3> trans_vec_back (const aiv::vctr<3> &r){
+        if (fabs(I1 * (I2%I3)) <1e-6){raise("Transformation is incorrect");}
+        double x = r[0], y = r[1], z = r[2];
+        double x1 = I1[0], x2 = I2[0], x3 = I3[0];
+        double y1 = I1[1], y2 = I2[1], y3 = I3[1];
+        double z1 = I1[2], z2 = I2[2], z3 = I3[2];
+        return Vctr(x*x1 + y*x2 + z*x3,
+                    x*y1 + y*y2 + z*y3,
+                    x*z1 + y*z2 + z*z3);
+
+    }
+};
 
 struct BaseFigure{
     // virtual vctr<3> get_center() const = 0;

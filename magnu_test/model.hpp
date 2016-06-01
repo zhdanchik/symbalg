@@ -12,19 +12,12 @@ class Model;
 
 struct Atom{  
 // поля атома. передаются в mk_module как Atom(field1 = "type1", ...)
-	vctr<3> dm0;
-	vctr<3> dm1;
-	vctr<3> dm2;
 	vctr<3> m1;
-	vctr<3> m0;
-	vctr<3> m3;
-	vctr<3> m2; 
+	vctr<3> m0; 
 
 // методы атома - различные стадии. Передаюся в mk_module 
-	inline void rk_stage1(const Model &model, const vctr<3> &Hexch);
-	inline void rk_stage2(const Model &model, const vctr<3> &Hexch);
-	inline void rk_stage3(const Model &model, const vctr<3> &Hexch);
-	inline void rk_stage4(const Model &model, const vctr<3> &Hexch);
+	inline void stage1(const Model &model, const vctr<3> &Hexch, const vctr<3> &Haniso);
+	inline void stage2(const Model &model);
  
 };
 
@@ -61,9 +54,9 @@ public:
 
 // поля модели, передаются в mk_module
 	double h;
-	double alpha;
 	vctr<3> Hext;
-	double T;
+	double gamma;
+	double alpha;
 	
 	double time;
 	int Natoms;
@@ -72,10 +65,10 @@ public:
 	void add_K1(Aniso aniso, int lattice){ arrK1[lattice].push_back(aniso); }
 	void add_K3(Aniso aniso, int lattice){ arrK3[lattice].push_back(aniso); }
 // методы модели, передаются в mk_module
-	void stepRK4();
+	void step();
         
-	
-	void init(BaseFigure &figure);
+	GlobalTrans *trans;
+	void init(BaseFigure &figure, GlobalTrans &trans);
 
 	//Временная диагностика для тестирования
 	void dump_head(aiv::Ostream& S); 
@@ -92,26 +85,13 @@ struct Cell{
 };
 
 // тела методов атома - различных стадий.
-	inline void Atom::rk_stage1(const Model &model, const vctr<3> &Hexch){
-auto Heff = model.Hext+Hexch;
-dm0 = -model.h*(m0%Heff+model.alpha*m0%(m0%Heff));
-m1 = m0+0.5*dm0;
+	inline void Atom::stage1(const Model &model, const vctr<3> &Hexch, const vctr<3> &Haniso){
+auto Heff = model.Hext+Hexch+Haniso;
+m1 = m0-model.h*(model.gamma*m0%Heff+model.alpha*m0%(m0%Heff));
+m1 /= m1.abs();
 }
-	inline void Atom::rk_stage2(const Model &model, const vctr<3> &Hexch){
-auto Heff = model.Hext+Hexch;
-dm1 = -model.h*(m1%Heff+model.alpha*m1%(m1%Heff));
-m2 = m0+0.5*dm1;
-}
-	inline void Atom::rk_stage3(const Model &model, const vctr<3> &Hexch){
-auto Heff = model.Hext+Hexch;
-dm2 = -model.h*(m2%Heff+model.alpha*m2%(m2%Heff));
-m3 = m0+dm2;
-}
-	inline void Atom::rk_stage4(const Model &model, const vctr<3> &Hexch){
-auto Heff = model.Hext+Hexch;
-auto dm4 = -model.h*(m3%Heff+model.alpha*m3%(m3%Heff));
-m0 += (dm0+dm4)/6+(dm1+dm2)/3;
-m0 /= m0.abs();
+	inline void Atom::stage2(const Model &model){
+m0 = m1;
 }
 
 

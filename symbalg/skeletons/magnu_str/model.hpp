@@ -60,8 +60,8 @@ public:
 	void add_K3(Aniso aniso, int lattice){ arrK3[lattice].push_back(aniso); }
 // методы модели, передаются в mk_module
 %(model_steps_heads)s        
-	
-	void init(BaseFigure &figure);
+	GlobalTrans *trans;
+	void init(BaseFigure &figure, GlobalTrans &trans);
 
 	//Временная диагностика для тестирования
 	void dump_head(aiv::Ostream& S); 
