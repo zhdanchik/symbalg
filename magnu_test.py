@@ -61,7 +61,7 @@ mk_module("magnu_test",
 from magnu_test import *
 import math
 
-fig1 = Cylinder(Vctr(0.,0.,0.), 1., 10.)
+fig1 = Cylinder(Vctr(0.,0.,0.), 0.5, 2.)
 fig2 = Cube(Vctr(20.,20.,30.), 40.)
 
 fig3 = Box(Vctr(0.,0.,0.), 1., 1., 1.)

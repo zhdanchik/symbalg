@@ -28,7 +28,7 @@ struct Aniso{
 	double K;
 };
 
-class Model: public latCubic{
+class Model: public latFCC4{
     array<Cell, 3> data;               // массив ячеек
 	double arrJ[cell_sz][cell_sz];     // массив обменных интегралов
 	std::vector<Aniso> arrK1[cell_sz],  arrK3[cell_sz];
