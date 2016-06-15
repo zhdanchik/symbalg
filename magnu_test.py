@@ -43,8 +43,8 @@ def rk_stage4():
 
 
 mk_module("magnu_test", 
-          "latFCC4", 
-          # "latFCC4_trans_1",
+          # "latFCC4", 
+          "latFCC4_trans_1",
           Atom(m0='vctr<3>', m1='vctr<3>'),
           "m0",
 	      h='double', Hext='vctr<3>', gamma='double', alpha='double', # opisanie poley Model
@@ -62,7 +62,7 @@ mk_module("magnu_test",
 from magnu_test import *
 import math
 
-fig1 = Cylinder(Vctr(0.,0.,0.), 1.2, (3)*math.sqrt(3) )#1*math.sqrt(3)-0.2)
+fig1 = Cylinder(Vctr(0.,0.,0.), 1.2, (50)*math.sqrt(3) )#1*math.sqrt(3)-0.2)
 
 fig2 = Cube(Vctr(20.,20.,30.), 40.)
 
@@ -77,13 +77,6 @@ M = Model()
 
 trans0 = GlobalTrans(Vctr(1.,0.,0.), Vctr(0.,1.,0.), Vctr(0.,0.,1.))
 trans1 = GlobalTrans(Vctr(1.,1.,0.)/math.sqrt(2), Vctr(-1.,1.,0.)/math.sqrt(2), Vctr(0.,0.,1.))
-# trans111 = GlobalTrans(Vctr(-math.sqrt(2./3.), 0., math.sqrt(1./3.)),
-#                        Vctr(math.sqrt(1./6.), math.sqrt(1./2.), math.sqrt(1./3.)),
-#                        Vctr(math.sqrt(1./6.), -math.sqrt(1./2.), math.sqrt(1./3.)))
-
-# trans111 = GlobalTrans(Vctr( -1.0/3*math.sqrt(3)*math.sqrt(2) , 1.0/6*math.sqrt(3)*(math.sqrt(6)*math.sqrt(3) - 2*math.sqrt(2)) , 1.0/6*math.sqrt(3)*(math.sqrt(6)*math.sqrt(3) - 2*math.sqrt(2)) ),
-#                        Vctr( 0 , -1.0/2*math.sqrt(2) , 1.0/2*math.sqrt(2) ),
-#                        Vctr( 1.0/3*math.sqrt(3) , 1.0/3*math.sqrt(3) , 1.0/3*math.sqrt(3) ))
 
 trans111 = GlobalTrans(math.sqrt(12)/12 *Vctr(2.0,-1.0,-1.0),
                         1./2            *Vctr(0.0,1.0,-1.0),
@@ -110,9 +103,10 @@ transfcc4 = GlobalTrans(math.sqrt(12)/6 * Vctr( 1.0, -1.0, 0.0 ),
 # #:h total totalx totaly totalz used Natoms
 # sys.exit(0)
 
-M.init(fig1, trans111)
-# M.init(fig1, transfcc4)
+# M.init(fig1, trans111)
+M.init(fig1, transfcc4)
 
+M.border_space()
 print "total cells:",M.total_cells();
 print "used  cells:",M.used_cells();
 

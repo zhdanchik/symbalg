@@ -120,8 +120,8 @@ void Model::init(BaseFigure &figure, GlobalTrans &tr){
     minxyz = tmp_minxyz_1;
     vctr<3> maxxyz = tmp_maxxyz_1;
 
-    indx<3> iminxyz = Indx(floor(minxyz[0]),floor(minxyz[1]),floor(minxyz[2]));
-    indx<3> imaxxyz = Indx(ceil(maxxyz[0]),ceil(maxxyz[1]),ceil(maxxyz[2]));
+    indx<3> iminxyz = Indx(floor(minxyz[0])-1,floor(minxyz[1])-1,floor(minxyz[2])-1);
+    indx<3> imaxxyz = Indx(ceil(maxxyz[0])+1,ceil(maxxyz[1])+1,ceil(maxxyz[2])+1);
     // printf("%s | %s | %s | %s | %s | %s\n",tmp_minxyz.c_str(),tmp_maxxyz.c_str(),tmp_minxyz_1.c_str(),tmp_maxxyz_1.c_str(), iminxyz.c_str(), imaxxyz.c_str());
     data.init(imaxxyz-iminxyz+Indx(1,1,1)); // /Vctr(1.,1.,1.)
     for(indx<3> pos; pos.less(data.N); ++pos){
@@ -234,4 +234,81 @@ void Model::text_dump(){
             printf("%s\n",atom.m0.c_str());
           }
       }
+}
+
+void Model::border_space(){
+  int sp = 0;
+  bool ss1 = false;
+  for (int i=0; i< data.N[0]; i++) {
+    for (int k=0; k<data.N[1]; k++) for (int l = 0; l<data.N[2]; l++) {
+      Cell &cell = data[Indx(i,k,l)];
+      for (int j=0; j<cell_sz; j++){
+        if (cell.usage[j]){ss1=true;}
+      }
+    }
+    if (ss1){break;}else{sp++;}
+  }
+  printf("X axis: total %d, left %d",data.N[0],sp);
+  sp = 0;
+  ss1 = false;  
+  for (int i=data.N[0]-1; i>=0; i--) {
+    for (int k=0; k<data.N[1]; k++) for (int l = 0; l<data.N[2]; l++) {
+      Cell &cell = data[Indx(i,k,l)];
+      for (int j=0; j<cell_sz; j++){
+        if (cell.usage[j]){ss1=true;}
+      }
+    }
+    if (ss1){break;}else{sp++;}
+  }
+  printf(", right %d\n",sp);
+
+  sp = 0;
+  ss1 = false;
+  for (int k=0; k< data.N[1]; k++) {
+    for (int i=0; i<data.N[0]; i++) for (int l = 0; l<data.N[2]; l++) {
+      Cell &cell = data[Indx(i,k,l)];
+      for (int j=0; j<cell_sz; j++){
+        if (cell.usage[j]){ss1=true;}
+      }
+    }
+    if (ss1){break;}else{sp++;}
+  }
+  printf("Y axis: total %d, left %d",data.N[1],sp);
+  sp = 0;
+  ss1 = false;  
+  for (int k=data.N[1]-1; k>=0; k--) {
+    for (int i=0; i<data.N[0]; i++) for (int l = 0; l<data.N[2]; l++) {
+      Cell &cell = data[Indx(i,k,l)];
+      for (int j=0; j<cell_sz; j++){
+        if (cell.usage[j]){ss1=true;}
+      }
+    }
+    if (ss1){break;}else{sp++;}
+  }
+  printf(", right %d\n",sp);
+
+  sp = 0;
+  ss1 = false;
+  for (int l=0; l< data.N[2]; l++) {
+    for (int i=0; i<data.N[0]; i++) for (int k = 0; k<data.N[1]; k++) {
+      Cell &cell = data[Indx(i,k,l)];
+      for (int j=0; j<cell_sz; j++){
+        if (cell.usage[j]){ss1=true;}
+      }
+    }
+    if (ss1){break;}else{sp++;}
+  }
+  printf("Z axis: total %d, left %d",data.N[2],sp);
+  sp = 0;
+  ss1 = false;  
+  for (int l=data.N[2]-1; l>=0; l--) {
+    for (int i=0; i<data.N[0]; i++) for (int k = 0; k<data.N[1]; k++) {
+      Cell &cell = data[Indx(i,k,l)];
+      for (int j=0; j<cell_sz; j++){
+        if (cell.usage[j]){ss1=true;}
+      }
+    }
+    if (ss1){break;}else{sp++;}
+  }
+  printf(", right %d\n",sp);
 }

@@ -28,7 +28,7 @@ struct Aniso{
 	double K;
 };
 
-class Model: public latFCC4{
+class Model: public latFCC4_trans_1{
     array<Cell, 3> data;               // массив ячеек
 	double arrJ[cell_sz][cell_sz];     // массив обменных интегралов
 	std::vector<Aniso> arrK1[cell_sz],  arrK3[cell_sz];
@@ -77,12 +77,13 @@ public:
     void init_diag(aiv::Ostream& S);
     void dump_diag(aiv::Ostream& S);
     void simplestart(const vctr<3> &mstart);
-    //занятые ячейки.
+    //диагностика на занятые ячейки.
     int total_cells();
     int total_cells_x();
     int total_cells_y();
     int total_cells_z();
     int used_cells();
+    void border_space();
     void text_dump();
 };
 
