@@ -160,6 +160,7 @@ def all(N, A=E, boxes = False):
 #onecell(np.array([0,0,0]), A=A, boxes=boxes)
 
 all(2, A=C.dot(D2.dot(D1.dot(D.dot(B.dot(A))))))
+# all(1, A=E)
 
 #all(2, A=D.dot(A), boxes = False)
 

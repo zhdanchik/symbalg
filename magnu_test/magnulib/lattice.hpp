@@ -54,5 +54,14 @@ public:
     static const vctr<3> cell_coord_size; // максимальное количество соседей у атома
 };
 
+class latFCC4_trans_1{
+public:
+    static const int cell_sz = 1; // число атомов в ячейке (число подрешеток)
+    static const int max_nb_count = 12; // максимальное количество соседей у атома
+    static const int nb_counts[cell_sz]; // количество соседей у атомов различных подрешеток
+    static const NbCR nb_arr[cell_sz][max_nb_count]; 
+    static const vctr<3> coords[cell_sz]; 
+    static const vctr<3> cell_coord_size; // максимальное количество соседей у атома
+};
 //-----------------------------------------------------------------------------
 #endif //MAGNU_LATTICE_HPP

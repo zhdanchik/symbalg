@@ -51,6 +51,17 @@ const NbCR latFCC4::nb_arr[cell_sz][max_nb_count] = {{{Indx( 0, 0, 0),1}, {Indx(
 const vctr<3> latFCC4::coords[cell_sz] = {Vctr(0.,0.,0.), Vctr(1.,1.,0.), Vctr(1.,0.,1.), Vctr(0.,1.,1.)}; 
 const vctr<3> latFCC4::cell_coord_size = Vctr(2.,2.,2.);
 
+const int latFCC4_trans_1::nb_counts[cell_sz] = {12};
+const NbCR latFCC4_trans_1::nb_arr[cell_sz][max_nb_count] = {{{Indx(-1, 0, 0),0}, {Indx( 0,-1, 0),0}, {Indx( 0, 0,-1),0},
+                                                              {Indx( 1, 0, 0),0}, {Indx( 0, 1, 0),0}, {Indx( 0, 0, 1),0},
+                                                              {Indx(-1,-1,-1),0}, {Indx(-1, 0,-1),0}, {Indx( 0,-1,-1),0}, 
+                                                              {Indx( 1, 1, 1),0}, {Indx( 1, 0, 1),0}, {Indx( 0, 1, 1),0}},
+                                                   }; 
+const vctr<3> latFCC4_trans_1::coords[cell_sz] = {Vctr(0.,0.,0.)}; 
+const vctr<3> latFCC4_trans_1::cell_coord_size = Vctr(1.,1.,1.);
+
+
+
 
 // тела методов модели
 %(model_steps)s
@@ -58,27 +69,43 @@ const vctr<3> latFCC4::cell_coord_size = Vctr(2.,2.,2.);
 void Model::init(BaseFigure &figure, GlobalTrans &tr){
     trans=&tr; 
     // Нужно перебрать все 4 диагонали прямоугольника! Пока работать будет не во всех случаях
-    vctr<3> tmp_minxyz = trans->trans_vec_back(figure.get_minxyz());
-    vctr<3> tmp_maxxyz = trans->trans_vec_back(figure.get_maxxyz());
+
+    vctr<3> tmp_minxyz = figure.get_minxyz(); // в новой системе координат
+    vctr<3> tmp_maxxyz = figure.get_maxxyz();
     vctr<3> C = 0.5*(tmp_maxxyz + tmp_minxyz);
-    double R = (C-tmp_minxyz).abs();
-    minxyz = C-R*Vctr(sqrt(3),sqrt(3),sqrt(3));
-    vctr<3> maxxyz = C+R*Vctr(sqrt(3),sqrt(3),sqrt(3));
+    vctr<3> dv = (tmp_maxxyz -tmp_minxyz)/2;
+
+    vctr<3> tmp_minxyz_1 = trans->trans_vec_back(C-dv);// в исходной системе координат
+    vctr<3> tmp_maxxyz_1 = trans->trans_vec_back(C-dv);
+
+    for (int ix=-1;ix<=1;ix+=2) for (int iy=-1;iy<=1;iy+=2) for (int iz=-1;iz<=1;iz+=2) {
+      vctr<3> new_corn = trans->trans_vec_back((dv^Vctr(ix,iy,iz))+C);
+      tmp_minxyz_1[0] = std::min(new_corn[0], tmp_minxyz_1[0]);
+      tmp_minxyz_1[1] = std::min(new_corn[1], tmp_minxyz_1[1]);
+      tmp_minxyz_1[2] = std::min(new_corn[2], tmp_minxyz_1[2]);
+
+      tmp_maxxyz_1[0] = std::max(new_corn[0], tmp_maxxyz_1[0]);
+      tmp_maxxyz_1[1] = std::max(new_corn[1], tmp_maxxyz_1[1]);
+      tmp_maxxyz_1[2] = std::max(new_corn[2], tmp_maxxyz_1[2]);
+    }
+    
+    minxyz = tmp_minxyz_1;
+    vctr<3> maxxyz = tmp_maxxyz_1;
 
     indx<3> iminxyz = Indx(floor(minxyz[0]),floor(minxyz[1]),floor(minxyz[2]));
     indx<3> imaxxyz = Indx(ceil(maxxyz[0]),ceil(maxxyz[1]),ceil(maxxyz[2]));
-    // printf("%%s | %%s | %%s | %%s\n",minxyz.c_str(),maxxyz.c_str(), iminxyz.c_str(), imaxxyz.c_str());
+    // printf("%%s | %%s | %%s | %%s | %%s | %%s\n",tmp_minxyz.c_str(),tmp_maxxyz.c_str(),tmp_minxyz_1.c_str(),tmp_maxxyz_1.c_str(), iminxyz.c_str(), imaxxyz.c_str());
     data.init(imaxxyz-iminxyz+Indx(1,1,1)); // /Vctr(1.,1.,1.)
     for(indx<3> pos; pos.less(data.N); ++pos){
         Cell &cell = data[pos];
         for(int l=0; l<cell_sz; ++l){ 
             vctr<3> inv_cell_coord_size  = Vctr(1./cell_coord_size[0], 1./cell_coord_size[1], 1./cell_coord_size[2]);
-            vctr<3> new_vec = trans->trans_vec((coords[l]^inv_cell_coord_size)+(minxyz + pos*Vctr(1.,1.,1.)));
+            vctr<3> new_vec = trans->trans_vec((coords[l]^inv_cell_coord_size)+(iminxyz + pos)*Vctr(1.,1.,1.));
             // printf("%%d %%s %%s %%d\n",l,pos.c_str(),new_vec.c_str(),figure.check(new_vec));
             if (figure.check(new_vec)){ 
                 cell.usage[l] = true;
                 Natoms++;
-            }
+            } else {cell.usage[l] = false;}
         }
     }
 }
@@ -87,19 +114,22 @@ void Model::init(BaseFigure &figure, GlobalTrans &tr){
 //Временная диагностика для тестирования
 
 void Model::dump_head( aiv::Ostream& S ){
-        int zero=0; 
-        S.fwrite( &zero, sizeof(int) ); 
-        S.fwrite( &Natoms, sizeof(int) );
-        vctr<3,float> r;
-        for(indx<3> pos; pos.less(data.N); ++pos){
-            Cell &cell = data[pos];
-            for(int l=0; l<cell_sz; ++l){ 
-                if(!cell.usage[l]) continue;
-                r = trans->trans_vec( ((minxyz + pos*Vctr(1.,1.,1.))^cell_coord_size) + coords[l] );
-
-                S.fwrite( &r, sizeof(r) );
-            }
+    int zero=0; 
+    S.fwrite( &zero, sizeof(int) ); 
+    S.fwrite( &Natoms, sizeof(int) );
+    vctr<3,float> r;
+    indx<3> iminxyz = Indx(floor(minxyz[0]),floor(minxyz[1]),floor(minxyz[2]));
+    for(indx<3> pos; pos.less(data.N); ++pos){
+        Cell &cell = data[pos];
+        for(int l=0; l<cell_sz; ++l){ 
+            if(!cell.usage[l]) continue;
+            vctr<3> inv_cell_coord_size  = Vctr(1./cell_coord_size[0], 1./cell_coord_size[1], 1./cell_coord_size[2]);
+            vctr<3> new_vec = trans->trans_vec((coords[l]^inv_cell_coord_size)+(iminxyz + pos)*Vctr(1.,1.,1.));
+            r = new_vec;
+            // r = trans->trans_vec( coords[l] + (((iminxyz + pos)*Vctr(1.,1.,1.))^cell_coord_size) );
+            S.fwrite( &r, sizeof(r) );
         }
+    }
 }
 //------------------------------------------------------------------------------
 void Model::dump_data( aiv::Ostream& S ){
@@ -145,4 +175,35 @@ void Model::dump_diag(aiv::Ostream& S){
     }
     double W1 = W/Natoms;
     S.printf("%%f %%f %%f %%f %%f %%f\n",time, tmpM1[0], tmpM1[1], tmpM1[2], W, W1);
+}
+
+
+int Model::total_cells(){return data.N.volume();}
+int Model::total_cells_x(){return data.N[0];}
+int Model::total_cells_y(){return data.N[1];}
+int Model::total_cells_z(){return data.N[2];}
+int Model::used_cells(){
+      int tmpN = 0;
+      for(indx<3> pos; pos.less(data.N); ++pos){
+          Cell &cell = data[pos];
+          for(int l=0; l<cell_sz; ++l){ 
+              if (cell.usage[l]){ 
+                  tmpN++;
+                  break;
+              }
+          }
+      }
+      return tmpN;
+}
+
+void Model::text_dump(){
+    for(indx<3> pos; pos.less(data.N); ++pos){
+      Cell &cell = data[pos];
+      printf("%%s ",pos.c_str());
+      for(int l=0; l<cell_sz; ++l){ 
+            printf("%%d %%4d ",l, cell.usage[l]);
+            const Atom &atom = cell.atoms[l];
+            printf("%%s\n",%(atom_m)s.c_str());
+          }
+      }
 }

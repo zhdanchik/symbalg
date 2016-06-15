@@ -43,7 +43,8 @@ def rk_stage4():
 
 
 mk_module("magnu_test", 
-          "latFCC4",
+          "latFCC4", 
+          # "latFCC4_trans_1",
           Atom(m0='vctr<3>', m1='vctr<3>'),
           "m0",
 	      h='double', Hext='vctr<3>', gamma='double', alpha='double', # opisanie poley Model
@@ -61,28 +62,59 @@ mk_module("magnu_test",
 from magnu_test import *
 import math
 
-fig1 = Cylinder(Vctr(0.,0.,0.), 0.5, 2.)
+fig1 = Cylinder(Vctr(0.,0.,0.), 1.2, (3)*math.sqrt(3) )#1*math.sqrt(3)-0.2)
+
 fig2 = Cube(Vctr(20.,20.,30.), 40.)
 
-fig3 = Box(Vctr(0.,0.,0.), 1., 1., 1.)
+fig3 = Box(Vctr(0.,0., 0.), 4., 4., 4.)
 
 figs = SetFigures()
 #figs.add(Cylinder(Vctr(10.,10.,20.), 10., 40.)) # --- не работает :(
 
 figs.add(fig1)
-figs.add(fig2)
-figs.add(fig3)
 
 M = Model()
 
+trans0 = GlobalTrans(Vctr(1.,0.,0.), Vctr(0.,1.,0.), Vctr(0.,0.,1.))
 trans1 = GlobalTrans(Vctr(1.,1.,0.)/math.sqrt(2), Vctr(-1.,1.,0.)/math.sqrt(2), Vctr(0.,0.,1.))
-trans111 = GlobalTrans(Vctr(-math.sqrt(2./3.), 0., math.sqrt(1./3.)),
-                       Vctr(math.sqrt(1./6.), math.sqrt(1./2.), math.sqrt(1./3.)),
-                       Vctr(math.sqrt(1./6.), -math.sqrt(1./2.), math.sqrt(1./3.)))
-    
+# trans111 = GlobalTrans(Vctr(-math.sqrt(2./3.), 0., math.sqrt(1./3.)),
+#                        Vctr(math.sqrt(1./6.), math.sqrt(1./2.), math.sqrt(1./3.)),
+#                        Vctr(math.sqrt(1./6.), -math.sqrt(1./2.), math.sqrt(1./3.)))
+
+# trans111 = GlobalTrans(Vctr( -1.0/3*math.sqrt(3)*math.sqrt(2) , 1.0/6*math.sqrt(3)*(math.sqrt(6)*math.sqrt(3) - 2*math.sqrt(2)) , 1.0/6*math.sqrt(3)*(math.sqrt(6)*math.sqrt(3) - 2*math.sqrt(2)) ),
+#                        Vctr( 0 , -1.0/2*math.sqrt(2) , 1.0/2*math.sqrt(2) ),
+#                        Vctr( 1.0/3*math.sqrt(3) , 1.0/3*math.sqrt(3) , 1.0/3*math.sqrt(3) ))
+
+trans111 = GlobalTrans(math.sqrt(12)/12 *Vctr(2.0,-1.0,-1.0),
+                        1./2            *Vctr(0.0,1.0,-1.0),
+                        math.sqrt(6)/3  *Vctr(1.0,1.0,1.0))
+
+transfcc4 = GlobalTrans(math.sqrt(12)/6 * Vctr( 1.0, -1.0, 0.0 ),
+                                          Vctr( 1.0 , 1.0 , 0.0 ),
+                        math.sqrt(6)/3  * Vctr( 1.0, 2.0, 3.0))
+
+
+
 #--------------------------------------------------
 
+# for i in range(100):
+#     fig1 = Cylinder(Vctr(0.,0.,0.), 1, (i+1)*math.sqrt(3)-0.2)
+#     M.init(fig1, trans111)
+#     print (i+1)*math.sqrt(3)-0.2, M.total_cells(),M.used_cells()
+
+# fig1 = Cylinder(Vctr(0.,0.,0.), 1.2, int(sys.argv[1])*math.sqrt(3))
+# # M.init(fig1, trans111)
+# M.init(fig1, transfcc4)
+# print int(sys.argv[1])*math.sqrt(3), M.total_cells(), M.total_cells_x(), M.total_cells_y(), M.total_cells_z(), M.used_cells(), M.Natoms
+
+# #:h total totalx totaly totalz used Natoms
+# sys.exit(0)
+
 M.init(fig1, trans111)
+# M.init(fig1, transfcc4)
+
+print "total cells:",M.total_cells();
+print "used  cells:",M.used_cells();
 
 M.Hext = Indx(0.,0.,1.)
 M.alpha = 0.01
@@ -92,6 +124,7 @@ M.T = 1
 M.set_J(0,0,1.)
 
 tcount = 100
+
 
 M.simplestart(Vctr(1.,0.,0.))
 
@@ -113,4 +146,5 @@ for t in range(tcount):
 
 #gplt -3d -U 'M1z(M1x,M1y)' magnu_test/M1.dat -ur 0:pi -vr 0:2*pi -para=y -fn 'sin(u)*cos(v),sin(u)*sin(v),cos(u)' -raw 'set view equal'
 
-#1.5GB
+# for i in `seq 1 100`; do python magnu_test.py $i >> fcc4_trans.dat; done
+# gplt -U 'total(Natoms)' fcc4.dat -U 'total(Natoms)/4' fcc4_trans.dat
