@@ -62,11 +62,11 @@ mk_module("magnu_test",
 from magnu_test import *
 import math
 
-fig1 = Cylinder(Vctr(0.,0.,0.), 1.2, (50)*math.sqrt(3) )#1*math.sqrt(3)-0.2)
+fig1 = Cylinder(Vctr(0.,0.,0.), 1.2, (10)*math.sqrt(3), Vctr(1.,0.,0.) )#1*math.sqrt(3)-0.2)
 
-fig2 = Cube(Vctr(20.,20.,30.), 40.)
+fig2 = Cube(Vctr(20.,20.,30.), 40., Vctr(0.,0.,1))
 
-fig3 = Box(Vctr(0.,0., 0.), 4., 4., 4.)
+fig3 = Box(Vctr(0.,0., 0.), 4., 4., 4., Vctr(0.,0.,1))
 
 figs = SetFigures()
 #figs.add(Cylinder(Vctr(10.,10.,20.), 10., 40.)) # --- не работает :(
@@ -117,7 +117,7 @@ M.h = 0.05
 M.T = 1
 M.set_J(0,0,1.)
 
-tcount = 100
+tcount = 10
 
 
 M.simplestart(Vctr(1.,0.,0.))

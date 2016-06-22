@@ -506,6 +506,10 @@ class GlobalTrans(_object):
 GlobalTrans_swigregister = _model.GlobalTrans_swigregister
 GlobalTrans_swigregister(GlobalTrans)
 
+
+def internal_trans_vec(*args):
+  """internal_trans_vec(vctr3 r, vctr3 center, vctr3 updirect) -> vctr3"""
+  return _model.internal_trans_vec(*args)
 class BaseFigure(_object):
     """Proxy of C++ BaseFigure class"""
     __swig_setmethods__ = {}
@@ -549,6 +553,9 @@ class Cylinder(BaseFigure):
     __swig_setmethods__["H"] = _model.Cylinder_H_set
     __swig_getmethods__["H"] = _model.Cylinder_H_get
     if _newclass:H = _swig_property(_model.Cylinder_H_get, _model.Cylinder_H_set)
+    __swig_setmethods__["updirect"] = _model.Cylinder_updirect_set
+    __swig_getmethods__["updirect"] = _model.Cylinder_updirect_get
+    if _newclass:updirect = _swig_property(_model.Cylinder_updirect_get, _model.Cylinder_updirect_set)
     def get_minxyz(self):
         """get_minxyz(Cylinder self) -> aiv::vctr< 3 >"""
         return _model.Cylinder_get_minxyz(self)
@@ -564,7 +571,7 @@ class Cylinder(BaseFigure):
     def __init__(self, *args): 
         """
         __init__(Cylinder self) -> Cylinder
-        __init__(Cylinder self, aiv::vctr< 3 > c, double r, double h) -> Cylinder
+        __init__(Cylinder self, aiv::vctr< 3 > c, double r, double h, aiv::vctr< 3 > u) -> Cylinder
         """
         this = _model.new_Cylinder(*args)
         try: self.this.append(this)
@@ -589,6 +596,9 @@ class Cube(BaseFigure):
     __swig_setmethods__["A"] = _model.Cube_A_set
     __swig_getmethods__["A"] = _model.Cube_A_get
     if _newclass:A = _swig_property(_model.Cube_A_get, _model.Cube_A_set)
+    __swig_setmethods__["updirect"] = _model.Cube_updirect_set
+    __swig_getmethods__["updirect"] = _model.Cube_updirect_get
+    if _newclass:updirect = _swig_property(_model.Cube_updirect_get, _model.Cube_updirect_set)
     def get_minxyz(self):
         """get_minxyz(Cube self) -> aiv::vctr< 3 >"""
         return _model.Cube_get_minxyz(self)
@@ -604,7 +614,7 @@ class Cube(BaseFigure):
     def __init__(self, *args): 
         """
         __init__(Cube self) -> Cube
-        __init__(Cube self, aiv::vctr< 3 > c, double a) -> Cube
+        __init__(Cube self, aiv::vctr< 3 > c, double a, aiv::vctr< 3 > u) -> Cube
         """
         this = _model.new_Cube(*args)
         try: self.this.append(this)
@@ -635,6 +645,9 @@ class Box(BaseFigure):
     __swig_setmethods__["H"] = _model.Box_H_set
     __swig_getmethods__["H"] = _model.Box_H_get
     if _newclass:H = _swig_property(_model.Box_H_get, _model.Box_H_set)
+    __swig_setmethods__["updirect"] = _model.Box_updirect_set
+    __swig_getmethods__["updirect"] = _model.Box_updirect_get
+    if _newclass:updirect = _swig_property(_model.Box_updirect_get, _model.Box_updirect_set)
     def get_minxyz(self):
         """get_minxyz(Box self) -> aiv::vctr< 3 >"""
         return _model.Box_get_minxyz(self)
@@ -650,7 +663,7 @@ class Box(BaseFigure):
     def __init__(self, *args): 
         """
         __init__(Box self) -> Box
-        __init__(Box self, aiv::vctr< 3 > c, double a, double b, double h) -> Box
+        __init__(Box self, aiv::vctr< 3 > c, double a, double b, double h, aiv::vctr< 3 > u) -> Box
         """
         this = _model.new_Box(*args)
         try: self.this.append(this)

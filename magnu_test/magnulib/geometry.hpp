@@ -6,6 +6,7 @@
 #include <algorithm>
 using namespace aiv;
 
+//https://en.wikipedia.org/wiki/Constructive_solid_geometry
 
 struct GlobalTrans{
     vctr<3> I1,I2,I3;
@@ -14,7 +15,7 @@ struct GlobalTrans{
     GlobalTrans(vctr<3> i1, vctr<3> i2, vctr<3> i3): I1(i1), I2(i2), I3(i3) {}
 
     vctr<3> trans_vec (const aiv::vctr<3> &r){
-        if (fabs(I1 * (I2%I3)) <1e-6){raise("Transformation is incorrect");}
+        if (fabs(I1 * (I2%I3)) <1e-16){raise("Transformation is incorrect");}
         double x = r[0], y = r[1], z = r[2];
         double x1 = I1[0], x2 = I2[0], x3 = I3[0];
         double y1 = I1[1], y2 = I2[1], y3 = I3[1];
@@ -22,25 +23,32 @@ struct GlobalTrans{
         return Vctr( ((x3*y2 - x2*y3)*z - (x3*y - x*y3)*z2 + (x2*y - x*y2)*z3),
                     -((x3*y1 - x1*y3)*z - (x3*y - x*y3)*z1 + (x1*y - x*y1)*z3),
                      ((x2*y1 - x1*y2)*z - (x2*y - x*y2)*z1 + (x1*y - x*y1)*z2) ) / ((x3*y2 - x2*y3)*z1 - (x3*y1 - x1*y3)*z2 + (x2*y1 - x1*y2)*z3);
-
-        // return Vctr(-((y3*y - y2*z)*z1 - (y3*x - y1*z)*z2 - (y1*y - y2*x)*z3),
-        //       ((x3*y - x2*z)*z1 - (x3*x - x1*z)*z2 + (x2*x - x1*y)*z3),
-        //      -((y1*x - y2*x)*x3 + (x*x2 - x1*y)*y3 - (x2*y1 - x1*y2)*z)) / ((x3*y2 - x2*y3)*z1 - (x3*y1 - x1*y3)*z2 + (x2*y1 - x1*y2)*z3);
     }
     vctr<3> trans_vec_back (const aiv::vctr<3> &r){
-        if (fabs(I1 * (I2%I3)) <1e-6){raise("Transformation is incorrect");}
+        if (fabs(I1 * (I2%I3)) <1e-16){raise("Transformation is incorrect");}
         double x = r[0], y = r[1], z = r[2];
         double x1 = I1[0], x2 = I2[0], x3 = I3[0];
         double y1 = I1[1], y2 = I2[1], y3 = I3[1];
         double z1 = I1[2], z2 = I2[2], z3 = I3[2];
-        // return Vctr(x*x1 + y*y1 + z*z1,
-        //             x*x2 + y*y2 + z*z2,
-        //             x*x3 + y*y3 + z*z3);
+
         return Vctr(x*x1 + x2*y + x3*z,
                     x*y1 + y*y2 + y3*z,
                     x*z1 + y*z2 + z*z3);
     }
 };
+
+inline vctr<3> internal_trans_vec(const aiv::vctr<3> &r, const aiv::vctr<3> &center, const aiv::vctr<3> &updirect){
+
+    if (updirect.abs() <1e-16) {raise("Transformation is incorrect");}
+    vctr<3> r0 = r-center;
+    double a = updirect[0];
+    double b = updirect[1];
+    double c = updirect[2];
+    if ((fabs(a)>1e-16)||(fabs(b)>1e-16)){
+        r0 = rotate(Vctr(-b, a, 0)/sqrt(a*a+b*b),acos(c/sqrt(a*a+b*b+c*c)) ,r0);
+    }
+    return r0;
+}
 
 struct BaseFigure{
     // virtual vctr<3> get_center() const = 0;
@@ -53,20 +61,23 @@ struct BaseFigure{
 struct Cylinder: public BaseFigure{
     vctr<3> center; // центр нижней грани
     double R, H;    // радиус и высота
+    vctr<3> updirect; // направляющая вдоль оси z
     // vctr<3> get_center() const { return center+vctr<3>(0, 0, .5*H); }
     // double get_max_size() const { return 2*sqrt(.25*H*H+R*R); }
     vctr<3> get_minxyz() const { return center - Vctr(R,R,0);}
     vctr<3> get_maxxyz() const { return center + Vctr(R,R,H);}
     bool check(const aiv::vctr<3> &r) const {
-        return center[2]<=r[2] && r[2]<=center[2]+H && ((r^2)-(center^2)).abs()<=R;
+        vctr<3> r0 = internal_trans_vec(r, center, updirect);
+        return r0[2]>0 && r0[2]<=H && (r0^2).abs()<=R;
     }
     Cylinder(){}
-    Cylinder(vctr<3> c, double r, double h): center(c), R(r), H(h) {}
+    Cylinder(vctr<3> c, double r, double h, vctr<3> u): center(c), R(r), H(h), updirect(u) {}
 };
 
 struct Cube: public BaseFigure{
     vctr<3> center; // центр нижней грани
     double A;    // длина ребра
+    vctr<3> updirect; // направляющая вдоль оси z
     // vctr<3> get_center() const { return center+vctr<3>(0, 0, .5*A); }
     // virtual double get_max_size() const { return 0.5*sqrt(3)*A; }
     vctr<3> get_minxyz() const { return center - Vctr(0.5*A,0.5*A,0);}
@@ -75,12 +86,13 @@ struct Cube: public BaseFigure{
         return center[2]<=r[2] && r[2]<=center[2]+A && center[1]-A*0.5<=r[1] && r[1]<=center[1]+A*0.5 && center[0]-A*0.5<=r[0] && r[0]<=center[0]+A*0.5;
     }   
     Cube(){}
-    Cube(vctr<3> c, double a): center(c), A(a) {}
+    Cube(vctr<3> c, double a, vctr<3> u): center(c), A(a), updirect(u) {}
 };
 
 struct Box: public BaseFigure{
     vctr<3> center; // центр нижней грани
     double A, B, H;    // длина ребер основания и высота
+    vctr<3> updirect; // направляющая вдоль оси z
     // vctr<3> get_center() const { return center+vctr<3>(0, 0, .5*H); }
     // virtual double get_max_size() const { return 0.5*sqrt(H*H+A*A+B*B); }
     vctr<3> get_minxyz() const { return center - Vctr(0.5*A,0.5*B,0);}
@@ -89,7 +101,7 @@ struct Box: public BaseFigure{
         return center[2]<=r[2] && r[2]<=center[2]+H && center[1]-B*0.5<=r[1] && r[1]<=center[1]+B*0.5 && center[0]-A*0.5<=r[0] && r[0]<=center[0]+A*0.5;
     }
     Box(){}
-    Box(vctr<3> c, double a, double b, double h): center(c), A(a), B(b), H(h) {}
+    Box(vctr<3> c, double a, double b, double h, vctr<3> u): center(c), A(a), B(b), H(h), updirect(u) {}
 };
 
 struct SetFigures: public BaseFigure{
