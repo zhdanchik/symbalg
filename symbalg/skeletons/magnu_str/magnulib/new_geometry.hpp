@@ -3,6 +3,7 @@
 
 #include <memory>
 #include <aivlib/vectorD.hpp>
+#include <aivlib/dekart.hpp>
 // #include <vector>
 // #include <algorithm>
 using namespace aiv;
@@ -10,9 +11,9 @@ using namespace aiv;
 
 #ifndef SWIG
 struct BaseFigure{
-    // virtual vctr<3> get_min() const = 0;
-    // virtual vctr<3> get_max() const = 0;
-    // virtual bool check(const aiv::vctr<3> &r) const = 0;
+    virtual vctr<3> get_min() const = 0;
+    virtual vctr<3> get_max() const = 0;
+    virtual bool check(const aiv::vctr<3> &r) const = 0;
     virtual ~BaseFigure(){}
 };
 #endif //SWIG
@@ -21,10 +22,13 @@ class Figure{
     std::shared_ptr<BaseFigure> figure;
 
     friend Figure cylinder(const aiv::vctr<3> bottom_origin_center, const aiv::vctr<3> &n, double R, double H);
+    friend Figure box(const aiv::vctr<3> bottom_origin_center, const aiv::vctr<3> &n, double phi, double A, double B, double H);
+    friend Figure cube(const aiv::vctr<3> bottom_origin_center, const aiv::vctr<3> &n, double phi, double A);
+
 public:
-    // vctr<3> get_min() const { return figure->get_min(); }
-    // vctr<3> get_max() const { return figure->get_max(); }
-    // bool check(const aiv::vctr<3> &r) const { return figure->check(r); }
+    vctr<3> get_min() const { return figure->get_min(); }
+    vctr<3> get_max() const { return figure->get_max(); }
+    bool check(const aiv::vctr<3> &r) const { return figure->check(r); }
 
     Figure transform(const aiv::vctr<3> &ox, const aiv::vctr<3> &oy, const aiv::vctr<3> &oz);
     Figure move(const aiv::vctr<3> &offset);
@@ -36,7 +40,8 @@ public:
 };
 
 Figure cylinder(const aiv::vctr<3> bottom_origin_center, const aiv::vctr<3> &n, double R, double H);
-//box
+Figure box(const aiv::vctr<3> bottom_origin_center, const aiv::vctr<3> &n, double phi, double A, double B, double H);
+Figure cube(const aiv::vctr<3> bottom_origin_center, const aiv::vctr<3> &n, double phi, double A);
 //sphere
 //ellipse
 
