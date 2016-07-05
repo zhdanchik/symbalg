@@ -66,12 +66,12 @@ const vctr<3> latFCC4_trans_1::cell_coord_size = Vctr(1.,1.,1.);
 // тела методов модели
 %(model_steps)s
 
-void Model::init(BaseFigure &figure, GlobalTrans &tr){
+void Model::init(Figure *figure, GlobalTrans &tr){
     trans=&tr; 
     // Нужно перебрать все 4 диагонали прямоугольника! Пока работать будет не во всех случаях
 
-    vctr<3> tmp_minxyz = figure.get_minxyz(); // в новой системе координат
-    vctr<3> tmp_maxxyz = figure.get_maxxyz();
+    vctr<3> tmp_minxyz = figure->get_min(); // в новой системе координат
+    vctr<3> tmp_maxxyz = figure->get_max();
     vctr<3> C = 0.5*(tmp_maxxyz + tmp_minxyz);
     vctr<3> dv = (tmp_maxxyz -tmp_minxyz)/2;
 
@@ -101,8 +101,8 @@ void Model::init(BaseFigure &figure, GlobalTrans &tr){
         for(int l=0; l<cell_sz; ++l){ 
             vctr<3> inv_cell_coord_size  = Vctr(1./cell_coord_size[0], 1./cell_coord_size[1], 1./cell_coord_size[2]);
             vctr<3> new_vec = trans->trans_vec((coords[l]^inv_cell_coord_size)+(iminxyz + pos)*Vctr(1.,1.,1.));
-            // printf("%%d %%s %%s %%d\n",l,pos.c_str(),new_vec.c_str(),figure.check(new_vec));
-            if (figure.check(new_vec)){ 
+            // printf("%%d %%s %%s %%d\n",l,pos.c_str(),new_vec.c_str(),figure->check(new_vec));
+            if (figure->check(new_vec)){ 
                 cell.usage[l] = true;
                 Natoms++;
             } else {cell.usage[l] = false;}

@@ -45,9 +45,11 @@ __makefile__='model.mk'
 %{
 #include "model.hpp"
 #include "magnulib/geometry.hpp"
+#include "magnulib/lattice.hpp"
 %}
 %include "model.hpp"
 %include "magnulib/geometry.hpp"
+%include "magnulib/lattice.hpp"
 %{
 #include <aivlib/indexD.hpp>
 %}

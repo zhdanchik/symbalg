@@ -43,8 +43,8 @@ def rk_stage4():
 
 
 mk_module("magnu_test", 
-          # "latFCC4", 
-          "latFCC4_trans_1",
+          "latFCC4", 
+          # "latFCC4_trans_1",
           Atom(m0='vctr<3>', m1='vctr<3>'),
           "m0",
 	      h='double', Hext='vctr<3>', gamma='double', alpha='double', # opisanie poley Model
@@ -62,16 +62,19 @@ mk_module("magnu_test",
 from magnu_test import *
 import math
 
-fig1 = Cylinder(Vctr(0.,0.,0.), 1.2, (10)*math.sqrt(3), Vctr(1.,0.,0.) )#1*math.sqrt(3)-0.2)
+fig1 = cylinder(Vctr(0.,0.,0.), Vctr(0., 1., 1.), 1.2, (10)*math.sqrt(3) )#1*math.sqrt(3)-0.2)
 
-fig2 = Cube(Vctr(20.,20.,30.), 40., Vctr(0.,0.,1))
+fig2 = cube(Vctr(20.,20.,30.), Vctr(0.,0.,1.), 0., 10.)
 
-fig3 = Box(Vctr(0.,0., 0.), 4., 4., 4., Vctr(0.,0.,1))
+fig3 = box(Vctr(0.,0., 0.), Vctr(0.,0.,1), 0. , 10., 10., 10.)
 
-figs = SetFigures()
-#figs.add(Cylinder(Vctr(10.,10.,20.), 10., 40.)) # --- не работает :(
+e_fig1 = cube(Vctr(0., 0., 0.), Vctr(0.,0.,1.), 0., 20)
+e_fig2 = spheroid(Vctr(0.,0., 10.), 10 * math.sqrt(2)*0.9)
+e_fig3 = cylinder(Vctr(0.,0.,0.), Vctr(0., 0., 1.), 6, 20 )
+e_fig4 = cylinder(Vctr(-10.,0.,10.), Vctr(1., 0., 0.), 6, 20 )
+e_fig5 = cylinder(Vctr(0.,-11.,10.), Vctr(0., 1., 0.), 6, 21 )
 
-figs.add(fig1)
+
 
 M = Model()
 
@@ -103,8 +106,12 @@ transfcc4 = GlobalTrans(math.sqrt(12)/6 * Vctr( 1.0, -1.0, 0.0 ),
 # #:h total totalx totaly totalz used Natoms
 # sys.exit(0)
 
-# M.init(fig1, trans111)
-M.init(fig1, transfcc4)
+# M.init(fig3-fig1, trans111) #!! куб с дыркой
+M.init(e_fig1*e_fig2-(e_fig3+e_fig4+e_fig5), trans111)
+# M.init(e_fig1*e_fig2-(e_fig3+e_fig4+e_fig5.move(Vctr(3.,0.,3.)).rotate(Vctr(3.,-11.,3.), Vctr(0.,0.,-0.2))), trans111)
+# M.init(e_fig3+e_fig4+e_fig5, trans111)
+
+# M.init(fig2, transfcc4)
 
 M.border_space()
 print "total cells:",M.total_cells();

@@ -2936,47 +2936,53 @@ SWIG_Python_NonDynamicSetAttr(PyObject *obj, PyObject *name, PyObject *value) {
 
 #define SWIGTYPE_p_Aniso swig_types[0]
 #define SWIGTYPE_p_Atom swig_types[1]
-#define SWIGTYPE_p_BaseFigure swig_types[2]
-#define SWIGTYPE_p_Box swig_types[3]
-#define SWIGTYPE_p_Cell swig_types[4]
-#define SWIGTYPE_p_Cube swig_types[5]
-#define SWIGTYPE_p_Cylinder swig_types[6]
-#define SWIGTYPE_p_GlobalTrans swig_types[7]
-#define SWIGTYPE_p_Model swig_types[8]
-#define SWIGTYPE_p_SetFigures swig_types[9]
-#define SWIGTYPE_p_aiv__Istream swig_types[10]
-#define SWIGTYPE_p_aiv__Ostream swig_types[11]
-#define SWIGTYPE_p_aiv___base_mem swig_types[12]
-#define SWIGTYPE_p_aiv__arr_head swig_types[13]
-#define SWIGTYPE_p_aiv__arrayT_Cell_1_t swig_types[14]
-#define SWIGTYPE_p_aiv__arrayT_Cell_2_t swig_types[15]
-#define SWIGTYPE_p_aiv__arrayT_Cell_3_t swig_types[16]
-#define SWIGTYPE_p_aiv__base_data swig_types[17]
-#define SWIGTYPE_p_aiv__base_sphere swig_types[18]
-#define SWIGTYPE_p_aiv__data_header swig_types[19]
-#define SWIGTYPE_p_aiv__debug_info swig_types[20]
-#define SWIGTYPE_p_aiv__indxT_1_t swig_types[21]
-#define SWIGTYPE_p_aiv__indxT_3_t swig_types[22]
-#define SWIGTYPE_p_aiv__indxT_6_t swig_types[23]
-#define SWIGTYPE_p_aiv__indxT_D_t swig_types[24]
-#define SWIGTYPE_p_aiv__lrc_head swig_types[25]
-#define SWIGTYPE_p_aiv__meshT_Cell_1_t swig_types[26]
-#define SWIGTYPE_p_aiv__meshT_Cell_2_t swig_types[27]
-#define SWIGTYPE_p_aiv__meshT_Cell_3_t swig_types[28]
-#define SWIGTYPE_p_aiv__multiarrayT_aiv__arrayT_Cell_3_t_t swig_types[29]
-#define SWIGTYPE_p_aiv__vctrT_1_double_t swig_types[30]
-#define SWIGTYPE_p_aiv__vctrT_3_double_t swig_types[31]
-#define SWIGTYPE_p_bool swig_types[32]
-#define SWIGTYPE_p_cell_type swig_types[33]
-#define SWIGTYPE_p_char swig_types[34]
-#define SWIGTYPE_p_double swig_types[35]
-#define SWIGTYPE_p_indx_type swig_types[36]
-#define SWIGTYPE_p_int swig_types[37]
-#define SWIGTYPE_p_long swig_types[38]
-#define SWIGTYPE_p_std__aiv_convert_for_compare_float swig_types[39]
-#define SWIGTYPE_p_std__vectorT_BaseFigure_p_t swig_types[40]
-static swig_type_info *swig_types[42];
-static swig_module_info swig_module = {swig_types, 41, 0, 0, 0, 0};
+#define SWIGTYPE_p_Cell swig_types[2]
+#define SWIGTYPE_p_Figure swig_types[3]
+#define SWIGTYPE_p_GlobalTrans swig_types[4]
+#define SWIGTYPE_p_Model swig_types[5]
+#define SWIGTYPE_p_NbCR swig_types[6]
+#define SWIGTYPE_p_a_latCubic__max_nb_count__NbCR swig_types[7]
+#define SWIGTYPE_p_a_latFCC3__max_nb_count__NbCR swig_types[8]
+#define SWIGTYPE_p_a_latFCC4__max_nb_count__NbCR swig_types[9]
+#define SWIGTYPE_p_a_latFCC4_trans_1__max_nb_count__NbCR swig_types[10]
+#define SWIGTYPE_p_a_latICC__max_nb_count__NbCR swig_types[11]
+#define SWIGTYPE_p_aiv__Istream swig_types[12]
+#define SWIGTYPE_p_aiv__Ostream swig_types[13]
+#define SWIGTYPE_p_aiv___base_mem swig_types[14]
+#define SWIGTYPE_p_aiv__arr_head swig_types[15]
+#define SWIGTYPE_p_aiv__arrayT_Cell_1_t swig_types[16]
+#define SWIGTYPE_p_aiv__arrayT_Cell_2_t swig_types[17]
+#define SWIGTYPE_p_aiv__arrayT_Cell_3_t swig_types[18]
+#define SWIGTYPE_p_aiv__base_data swig_types[19]
+#define SWIGTYPE_p_aiv__base_sphere swig_types[20]
+#define SWIGTYPE_p_aiv__data_header swig_types[21]
+#define SWIGTYPE_p_aiv__debug_info swig_types[22]
+#define SWIGTYPE_p_aiv__indxT_1_t swig_types[23]
+#define SWIGTYPE_p_aiv__indxT_3_t swig_types[24]
+#define SWIGTYPE_p_aiv__indxT_6_t swig_types[25]
+#define SWIGTYPE_p_aiv__indxT_D_t swig_types[26]
+#define SWIGTYPE_p_aiv__lrc_head swig_types[27]
+#define SWIGTYPE_p_aiv__meshT_Cell_1_t swig_types[28]
+#define SWIGTYPE_p_aiv__meshT_Cell_2_t swig_types[29]
+#define SWIGTYPE_p_aiv__meshT_Cell_3_t swig_types[30]
+#define SWIGTYPE_p_aiv__multiarrayT_aiv__arrayT_Cell_3_t_t swig_types[31]
+#define SWIGTYPE_p_aiv__vctrT_1_double_t swig_types[32]
+#define SWIGTYPE_p_aiv__vctrT_3_double_t swig_types[33]
+#define SWIGTYPE_p_bool swig_types[34]
+#define SWIGTYPE_p_cell_type swig_types[35]
+#define SWIGTYPE_p_char swig_types[36]
+#define SWIGTYPE_p_double swig_types[37]
+#define SWIGTYPE_p_indx_type swig_types[38]
+#define SWIGTYPE_p_int swig_types[39]
+#define SWIGTYPE_p_latCubic swig_types[40]
+#define SWIGTYPE_p_latFCC3 swig_types[41]
+#define SWIGTYPE_p_latFCC4 swig_types[42]
+#define SWIGTYPE_p_latFCC4_trans_1 swig_types[43]
+#define SWIGTYPE_p_latICC swig_types[44]
+#define SWIGTYPE_p_long swig_types[45]
+#define SWIGTYPE_p_std__aiv_convert_for_compare_float swig_types[46]
+static swig_type_info *swig_types[48];
+static swig_module_info swig_module = {swig_types, 47, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -3303,6 +3309,7 @@ SWIG_From_size_t  (size_t value)
 
 #include "model.hpp"
 #include "magnulib/geometry.hpp"
+#include "magnulib/lattice.hpp"
 
 
 SWIGINTERNINLINE PyObject*
@@ -6334,7 +6341,7 @@ fail:
 SWIGINTERN PyObject *_wrap_Model_init(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   Model *arg1 = (Model *) 0 ;
-  BaseFigure *arg2 = 0 ;
+  Figure *arg2 = (Figure *) 0 ;
   GlobalTrans *arg3 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
@@ -6352,14 +6359,11 @@ SWIGINTERN PyObject *_wrap_Model_init(PyObject *SWIGUNUSEDPARM(self), PyObject *
     SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Model_init" "', argument " "1"" of type '" "Model *""'"); 
   }
   arg1 = reinterpret_cast< Model * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_BaseFigure,  0 );
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_Figure, 0 |  0 );
   if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Model_init" "', argument " "2"" of type '" "BaseFigure &""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Model_init" "', argument " "2"" of type '" "Figure *""'"); 
   }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Model_init" "', argument " "2"" of type '" "BaseFigure &""'"); 
-  }
-  arg2 = reinterpret_cast< BaseFigure * >(argp2);
+  arg2 = reinterpret_cast< Figure * >(argp2);
   res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_GlobalTrans,  0 );
   if (!SWIG_IsOK(res3)) {
     SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "Model_init" "', argument " "3"" of type '" "GlobalTrans &""'"); 
@@ -6370,7 +6374,7 @@ SWIGINTERN PyObject *_wrap_Model_init(PyObject *SWIGUNUSEDPARM(self), PyObject *
   arg3 = reinterpret_cast< GlobalTrans * >(argp3);
   {
     try{
-      (arg1)->init(*arg2,*arg3); 
+      (arg1)->init(arg2,*arg3); 
     }catch( const char *e ){
       PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
     }catch(...){
@@ -7029,6 +7033,1557 @@ SWIGINTERN PyObject *Cell_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject 
   return SWIG_Py_Void();
 }
 
+SWIGINTERN PyObject *_wrap_cylinder(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  aiv::vctr< 3,double > arg1 ;
+  aiv::vctr< 3,double > *arg2 = 0 ;
+  double arg3 ;
+  double arg4 ;
+  void *argp1 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  double val4 ;
+  int ecode4 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  Figure result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOO:cylinder",&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
+  {
+    res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_aiv__vctrT_3_double_t,  0  | 0);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "cylinder" "', argument " "1"" of type '" "aiv::vctr< 3,double > const""'"); 
+    }  
+    if (!argp1) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "cylinder" "', argument " "1"" of type '" "aiv::vctr< 3,double > const""'");
+    } else {
+      aiv::vctr< 3,double > * temp = reinterpret_cast< aiv::vctr< 3,double > * >(argp1);
+      arg1 = *temp;
+      if (SWIG_IsNewObj(res1)) delete temp;
+    }
+  }
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_aiv__vctrT_3_double_t,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "cylinder" "', argument " "2"" of type '" "aiv::vctr< 3,double > const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "cylinder" "', argument " "2"" of type '" "aiv::vctr< 3,double > const &""'"); 
+  }
+  arg2 = reinterpret_cast< aiv::vctr< 3,double > * >(argp2);
+  ecode3 = SWIG_AsVal_double(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "cylinder" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  ecode4 = SWIG_AsVal_double(obj3, &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "cylinder" "', argument " "4"" of type '" "double""'");
+  } 
+  arg4 = static_cast< double >(val4);
+  {
+    try{
+      result = cylinder(arg1,(aiv::vctr< 3,double > const &)*arg2,arg3,arg4); 
+    }catch( const char *e ){
+      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
+    }catch(...){
+      return NULL; 
+    } 
+  }
+  resultobj = SWIG_NewPointerObj((new Figure(static_cast< const Figure& >(result))), SWIGTYPE_p_Figure, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_box(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  aiv::vctr< 3,double > arg1 ;
+  aiv::vctr< 3,double > *arg2 = 0 ;
+  double arg3 ;
+  double arg4 ;
+  double arg5 ;
+  double arg6 ;
+  void *argp1 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  double val4 ;
+  int ecode4 = 0 ;
+  double val5 ;
+  int ecode5 = 0 ;
+  double val6 ;
+  int ecode6 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  PyObject * obj4 = 0 ;
+  PyObject * obj5 = 0 ;
+  Figure result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOOOO:box",&obj0,&obj1,&obj2,&obj3,&obj4,&obj5)) SWIG_fail;
+  {
+    res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_aiv__vctrT_3_double_t,  0  | 0);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "box" "', argument " "1"" of type '" "aiv::vctr< 3,double > const""'"); 
+    }  
+    if (!argp1) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "box" "', argument " "1"" of type '" "aiv::vctr< 3,double > const""'");
+    } else {
+      aiv::vctr< 3,double > * temp = reinterpret_cast< aiv::vctr< 3,double > * >(argp1);
+      arg1 = *temp;
+      if (SWIG_IsNewObj(res1)) delete temp;
+    }
+  }
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_aiv__vctrT_3_double_t,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "box" "', argument " "2"" of type '" "aiv::vctr< 3,double > const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "box" "', argument " "2"" of type '" "aiv::vctr< 3,double > const &""'"); 
+  }
+  arg2 = reinterpret_cast< aiv::vctr< 3,double > * >(argp2);
+  ecode3 = SWIG_AsVal_double(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "box" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  ecode4 = SWIG_AsVal_double(obj3, &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "box" "', argument " "4"" of type '" "double""'");
+  } 
+  arg4 = static_cast< double >(val4);
+  ecode5 = SWIG_AsVal_double(obj4, &val5);
+  if (!SWIG_IsOK(ecode5)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode5), "in method '" "box" "', argument " "5"" of type '" "double""'");
+  } 
+  arg5 = static_cast< double >(val5);
+  ecode6 = SWIG_AsVal_double(obj5, &val6);
+  if (!SWIG_IsOK(ecode6)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode6), "in method '" "box" "', argument " "6"" of type '" "double""'");
+  } 
+  arg6 = static_cast< double >(val6);
+  {
+    try{
+      result = box(arg1,(aiv::vctr< 3,double > const &)*arg2,arg3,arg4,arg5,arg6); 
+    }catch( const char *e ){
+      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
+    }catch(...){
+      return NULL; 
+    } 
+  }
+  resultobj = SWIG_NewPointerObj((new Figure(static_cast< const Figure& >(result))), SWIGTYPE_p_Figure, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_cube(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  aiv::vctr< 3,double > arg1 ;
+  aiv::vctr< 3,double > *arg2 = 0 ;
+  double arg3 ;
+  double arg4 ;
+  void *argp1 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  double val3 ;
+  int ecode3 = 0 ;
+  double val4 ;
+  int ecode4 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  Figure result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOO:cube",&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
+  {
+    res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_aiv__vctrT_3_double_t,  0  | 0);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "cube" "', argument " "1"" of type '" "aiv::vctr< 3,double > const""'"); 
+    }  
+    if (!argp1) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "cube" "', argument " "1"" of type '" "aiv::vctr< 3,double > const""'");
+    } else {
+      aiv::vctr< 3,double > * temp = reinterpret_cast< aiv::vctr< 3,double > * >(argp1);
+      arg1 = *temp;
+      if (SWIG_IsNewObj(res1)) delete temp;
+    }
+  }
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_aiv__vctrT_3_double_t,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "cube" "', argument " "2"" of type '" "aiv::vctr< 3,double > const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "cube" "', argument " "2"" of type '" "aiv::vctr< 3,double > const &""'"); 
+  }
+  arg2 = reinterpret_cast< aiv::vctr< 3,double > * >(argp2);
+  ecode3 = SWIG_AsVal_double(obj2, &val3);
+  if (!SWIG_IsOK(ecode3)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "cube" "', argument " "3"" of type '" "double""'");
+  } 
+  arg3 = static_cast< double >(val3);
+  ecode4 = SWIG_AsVal_double(obj3, &val4);
+  if (!SWIG_IsOK(ecode4)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "cube" "', argument " "4"" of type '" "double""'");
+  } 
+  arg4 = static_cast< double >(val4);
+  {
+    try{
+      result = cube(arg1,(aiv::vctr< 3,double > const &)*arg2,arg3,arg4); 
+    }catch( const char *e ){
+      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
+    }catch(...){
+      return NULL; 
+    } 
+  }
+  resultobj = SWIG_NewPointerObj((new Figure(static_cast< const Figure& >(result))), SWIGTYPE_p_Figure, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_spheroid(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  aiv::vctr< 3,double > arg1 ;
+  double arg2 ;
+  void *argp1 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  Figure result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:spheroid",&obj0,&obj1)) SWIG_fail;
+  {
+    res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_aiv__vctrT_3_double_t,  0  | 0);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "spheroid" "', argument " "1"" of type '" "aiv::vctr< 3,double > const""'"); 
+    }  
+    if (!argp1) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "spheroid" "', argument " "1"" of type '" "aiv::vctr< 3,double > const""'");
+    } else {
+      aiv::vctr< 3,double > * temp = reinterpret_cast< aiv::vctr< 3,double > * >(argp1);
+      arg1 = *temp;
+      if (SWIG_IsNewObj(res1)) delete temp;
+    }
+  }
+  ecode2 = SWIG_AsVal_double(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "spheroid" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  {
+    try{
+      result = spheroid(arg1,arg2); 
+    }catch( const char *e ){
+      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
+    }catch(...){
+      return NULL; 
+    } 
+  }
+  resultobj = SWIG_NewPointerObj((new Figure(static_cast< const Figure& >(result))), SWIGTYPE_p_Figure, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Figure_get_min(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Figure *arg1 = (Figure *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  SwigValueWrapper< aiv::vctr< 3 > > result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Figure_get_min",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Figure, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Figure_get_min" "', argument " "1"" of type '" "Figure const *""'"); 
+  }
+  arg1 = reinterpret_cast< Figure * >(argp1);
+  {
+    try{
+      result = ((Figure const *)arg1)->get_min(); 
+    }catch( const char *e ){
+      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
+    }catch(...){
+      return NULL; 
+    } 
+  }
+  resultobj = SWIG_NewPointerObj((new aiv::vctr< 3 >(static_cast< const aiv::vctr< 3 >& >(result))), SWIGTYPE_p_aiv__vctrT_3_double_t, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Figure_get_max(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Figure *arg1 = (Figure *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  SwigValueWrapper< aiv::vctr< 3 > > result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:Figure_get_max",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Figure, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Figure_get_max" "', argument " "1"" of type '" "Figure const *""'"); 
+  }
+  arg1 = reinterpret_cast< Figure * >(argp1);
+  {
+    try{
+      result = ((Figure const *)arg1)->get_max(); 
+    }catch( const char *e ){
+      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
+    }catch(...){
+      return NULL; 
+    } 
+  }
+  resultobj = SWIG_NewPointerObj((new aiv::vctr< 3 >(static_cast< const aiv::vctr< 3 >& >(result))), SWIGTYPE_p_aiv__vctrT_3_double_t, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Figure_check(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Figure *arg1 = (Figure *) 0 ;
+  aiv::vctr< 3,double > *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  bool result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Figure_check",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Figure, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Figure_check" "', argument " "1"" of type '" "Figure const *""'"); 
+  }
+  arg1 = reinterpret_cast< Figure * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_aiv__vctrT_3_double_t,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Figure_check" "', argument " "2"" of type '" "aiv::vctr< 3,double > const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Figure_check" "', argument " "2"" of type '" "aiv::vctr< 3,double > const &""'"); 
+  }
+  arg2 = reinterpret_cast< aiv::vctr< 3,double > * >(argp2);
+  {
+    try{
+      result = (bool)((Figure const *)arg1)->check((aiv::vctr< 3,double > const &)*arg2); 
+    }catch( const char *e ){
+      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
+    }catch(...){
+      return NULL; 
+    } 
+  }
+  resultobj = SWIG_From_bool(static_cast< bool >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Figure_transform(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Figure *arg1 = (Figure *) 0 ;
+  aiv::vctr< 3,double > *arg2 = 0 ;
+  aiv::vctr< 3,double > *arg3 = 0 ;
+  aiv::vctr< 3,double > *arg4 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  void *argp3 = 0 ;
+  int res3 = 0 ;
+  void *argp4 = 0 ;
+  int res4 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  PyObject * obj3 = 0 ;
+  Figure result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOOO:Figure_transform",&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Figure, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Figure_transform" "', argument " "1"" of type '" "Figure *""'"); 
+  }
+  arg1 = reinterpret_cast< Figure * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_aiv__vctrT_3_double_t,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Figure_transform" "', argument " "2"" of type '" "aiv::vctr< 3,double > const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Figure_transform" "', argument " "2"" of type '" "aiv::vctr< 3,double > const &""'"); 
+  }
+  arg2 = reinterpret_cast< aiv::vctr< 3,double > * >(argp2);
+  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_aiv__vctrT_3_double_t,  0  | 0);
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "Figure_transform" "', argument " "3"" of type '" "aiv::vctr< 3,double > const &""'"); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Figure_transform" "', argument " "3"" of type '" "aiv::vctr< 3,double > const &""'"); 
+  }
+  arg3 = reinterpret_cast< aiv::vctr< 3,double > * >(argp3);
+  res4 = SWIG_ConvertPtr(obj3, &argp4, SWIGTYPE_p_aiv__vctrT_3_double_t,  0  | 0);
+  if (!SWIG_IsOK(res4)) {
+    SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "Figure_transform" "', argument " "4"" of type '" "aiv::vctr< 3,double > const &""'"); 
+  }
+  if (!argp4) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Figure_transform" "', argument " "4"" of type '" "aiv::vctr< 3,double > const &""'"); 
+  }
+  arg4 = reinterpret_cast< aiv::vctr< 3,double > * >(argp4);
+  {
+    try{
+      result = (arg1)->transform((aiv::vctr< 3,double > const &)*arg2,(aiv::vctr< 3,double > const &)*arg3,(aiv::vctr< 3,double > const &)*arg4); 
+    }catch( const char *e ){
+      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
+    }catch(...){
+      return NULL; 
+    } 
+  }
+  resultobj = SWIG_NewPointerObj((new Figure(static_cast< const Figure& >(result))), SWIGTYPE_p_Figure, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Figure_move(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Figure *arg1 = (Figure *) 0 ;
+  aiv::vctr< 3,double > *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  Figure result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Figure_move",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Figure, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Figure_move" "', argument " "1"" of type '" "Figure *""'"); 
+  }
+  arg1 = reinterpret_cast< Figure * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_aiv__vctrT_3_double_t,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Figure_move" "', argument " "2"" of type '" "aiv::vctr< 3,double > const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Figure_move" "', argument " "2"" of type '" "aiv::vctr< 3,double > const &""'"); 
+  }
+  arg2 = reinterpret_cast< aiv::vctr< 3,double > * >(argp2);
+  {
+    try{
+      result = (arg1)->move((aiv::vctr< 3,double > const &)*arg2); 
+    }catch( const char *e ){
+      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
+    }catch(...){
+      return NULL; 
+    } 
+  }
+  resultobj = SWIG_NewPointerObj((new Figure(static_cast< const Figure& >(result))), SWIGTYPE_p_Figure, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Figure_rotate(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Figure *arg1 = (Figure *) 0 ;
+  aiv::vctr< 3,double > *arg2 = 0 ;
+  aiv::vctr< 3,double > *arg3 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  void *argp3 = 0 ;
+  int res3 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  PyObject * obj2 = 0 ;
+  Figure result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OOO:Figure_rotate",&obj0,&obj1,&obj2)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Figure, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Figure_rotate" "', argument " "1"" of type '" "Figure *""'"); 
+  }
+  arg1 = reinterpret_cast< Figure * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_aiv__vctrT_3_double_t,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Figure_rotate" "', argument " "2"" of type '" "aiv::vctr< 3,double > const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Figure_rotate" "', argument " "2"" of type '" "aiv::vctr< 3,double > const &""'"); 
+  }
+  arg2 = reinterpret_cast< aiv::vctr< 3,double > * >(argp2);
+  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_aiv__vctrT_3_double_t,  0  | 0);
+  if (!SWIG_IsOK(res3)) {
+    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "Figure_rotate" "', argument " "3"" of type '" "aiv::vctr< 3,double > const &""'"); 
+  }
+  if (!argp3) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Figure_rotate" "', argument " "3"" of type '" "aiv::vctr< 3,double > const &""'"); 
+  }
+  arg3 = reinterpret_cast< aiv::vctr< 3,double > * >(argp3);
+  {
+    try{
+      result = (arg1)->rotate((aiv::vctr< 3,double > const &)*arg2,(aiv::vctr< 3,double > const &)*arg3); 
+    }catch( const char *e ){
+      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
+    }catch(...){
+      return NULL; 
+    } 
+  }
+  resultobj = SWIG_NewPointerObj((new Figure(static_cast< const Figure& >(result))), SWIGTYPE_p_Figure, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Figure___add__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Figure *arg1 = (Figure *) 0 ;
+  Figure *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  Figure result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Figure___add__",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Figure, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Figure___add__" "', argument " "1"" of type '" "Figure const *""'"); 
+  }
+  arg1 = reinterpret_cast< Figure * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_Figure,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Figure___add__" "', argument " "2"" of type '" "Figure const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Figure___add__" "', argument " "2"" of type '" "Figure const &""'"); 
+  }
+  arg2 = reinterpret_cast< Figure * >(argp2);
+  {
+    try{
+      result = ((Figure const *)arg1)->operator +((Figure const &)*arg2); 
+    }catch( const char *e ){
+      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
+    }catch(...){
+      return NULL; 
+    } 
+  }
+  resultobj = SWIG_NewPointerObj((new Figure(static_cast< const Figure& >(result))), SWIGTYPE_p_Figure, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Figure___sub__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Figure *arg1 = (Figure *) 0 ;
+  Figure *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  Figure result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Figure___sub__",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Figure, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Figure___sub__" "', argument " "1"" of type '" "Figure const *""'"); 
+  }
+  arg1 = reinterpret_cast< Figure * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_Figure,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Figure___sub__" "', argument " "2"" of type '" "Figure const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Figure___sub__" "', argument " "2"" of type '" "Figure const &""'"); 
+  }
+  arg2 = reinterpret_cast< Figure * >(argp2);
+  {
+    try{
+      result = ((Figure const *)arg1)->operator -((Figure const &)*arg2); 
+    }catch( const char *e ){
+      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
+    }catch(...){
+      return NULL; 
+    } 
+  }
+  resultobj = SWIG_NewPointerObj((new Figure(static_cast< const Figure& >(result))), SWIGTYPE_p_Figure, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_Figure___mul__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Figure *arg1 = (Figure *) 0 ;
+  Figure *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  Figure result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:Figure___mul__",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Figure, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Figure___mul__" "', argument " "1"" of type '" "Figure const *""'"); 
+  }
+  arg1 = reinterpret_cast< Figure * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_Figure,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Figure___mul__" "', argument " "2"" of type '" "Figure const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Figure___mul__" "', argument " "2"" of type '" "Figure const &""'"); 
+  }
+  arg2 = reinterpret_cast< Figure * >(argp2);
+  {
+    try{
+      result = ((Figure const *)arg1)->operator *((Figure const &)*arg2); 
+    }catch( const char *e ){
+      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
+    }catch(...){
+      return NULL; 
+    } 
+  }
+  resultobj = SWIG_NewPointerObj((new Figure(static_cast< const Figure& >(result))), SWIGTYPE_p_Figure, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_Figure(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Figure *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)":new_Figure")) SWIG_fail;
+  {
+    try{
+      result = (Figure *)new Figure(); 
+    }catch( const char *e ){
+      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
+    }catch(...){
+      return NULL; 
+    } 
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Figure, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_Figure(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  Figure *arg1 = (Figure *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:delete_Figure",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Figure, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_Figure" "', argument " "1"" of type '" "Figure *""'"); 
+  }
+  arg1 = reinterpret_cast< Figure * >(argp1);
+  {
+    try{
+      delete arg1; 
+    }catch( const char *e ){
+      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
+    }catch(...){
+      return NULL; 
+    } 
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *Figure_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_Figure, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
+SWIGINTERN PyObject *_wrap_NbCR_dpos_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  NbCR *arg1 = (NbCR *) 0 ;
+  aiv::indx< 3 > *arg2 = (aiv::indx< 3 > *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:NbCR_dpos_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_NbCR, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NbCR_dpos_set" "', argument " "1"" of type '" "NbCR *""'"); 
+  }
+  arg1 = reinterpret_cast< NbCR * >(argp1);
+  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_aiv__indxT_3_t, 0 |  0 );
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "NbCR_dpos_set" "', argument " "2"" of type '" "aiv::indx< 3 > *""'"); 
+  }
+  arg2 = reinterpret_cast< aiv::indx< 3 > * >(argp2);
+  if (arg1) (arg1)->dpos = *arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NbCR_dpos_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  NbCR *arg1 = (NbCR *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  aiv::indx< 3 > *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:NbCR_dpos_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_NbCR, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NbCR_dpos_get" "', argument " "1"" of type '" "NbCR *""'"); 
+  }
+  arg1 = reinterpret_cast< NbCR * >(argp1);
+  result = (aiv::indx< 3 > *)& ((arg1)->dpos);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_aiv__indxT_3_t, 0 |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NbCR_lattice_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  NbCR *arg1 = (NbCR *) 0 ;
+  int arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:NbCR_lattice_set",&obj0,&obj1)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_NbCR, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NbCR_lattice_set" "', argument " "1"" of type '" "NbCR *""'"); 
+  }
+  arg1 = reinterpret_cast< NbCR * >(argp1);
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "NbCR_lattice_set" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  if (arg1) (arg1)->lattice = arg2;
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_NbCR_lattice_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  NbCR *arg1 = (NbCR *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  int result;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:NbCR_lattice_get",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_NbCR, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "NbCR_lattice_get" "', argument " "1"" of type '" "NbCR *""'"); 
+  }
+  arg1 = reinterpret_cast< NbCR * >(argp1);
+  result = (int) ((arg1)->lattice);
+  resultobj = SWIG_From_int(static_cast< int >(result));
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_NbCR__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  NbCR *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)":new_NbCR")) SWIG_fail;
+  {
+    try{
+      result = (NbCR *)new NbCR(); 
+    }catch( const char *e ){
+      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
+    }catch(...){
+      return NULL; 
+    } 
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_NbCR, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_NbCR__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  aiv::indx< 3 > arg1 ;
+  int arg2 ;
+  void *argp1 ;
+  int res1 = 0 ;
+  int val2 ;
+  int ecode2 = 0 ;
+  PyObject * obj0 = 0 ;
+  PyObject * obj1 = 0 ;
+  NbCR *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"OO:new_NbCR",&obj0,&obj1)) SWIG_fail;
+  {
+    res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_aiv__indxT_3_t,  0  | 0);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_NbCR" "', argument " "1"" of type '" "aiv::indx< 3 >""'"); 
+    }  
+    if (!argp1) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_NbCR" "', argument " "1"" of type '" "aiv::indx< 3 >""'");
+    } else {
+      aiv::indx< 3 > * temp = reinterpret_cast< aiv::indx< 3 > * >(argp1);
+      arg1 = *temp;
+      if (SWIG_IsNewObj(res1)) delete temp;
+    }
+  }
+  ecode2 = SWIG_AsVal_int(obj1, &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "new_NbCR" "', argument " "2"" of type '" "int""'");
+  } 
+  arg2 = static_cast< int >(val2);
+  {
+    try{
+      result = (NbCR *)new NbCR(arg1,arg2); 
+    }catch( const char *e ){
+      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
+    }catch(...){
+      return NULL; 
+    } 
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_NbCR, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_NbCR(PyObject *self, PyObject *args) {
+  int argc;
+  PyObject *argv[3];
+  int ii;
+  
+  if (!PyTuple_Check(args)) SWIG_fail;
+  argc = args ? (int)PyObject_Length(args) : 0;
+  for (ii = 0; (ii < 2) && (ii < argc); ii++) {
+    argv[ii] = PyTuple_GET_ITEM(args,ii);
+  }
+  if (argc == 0) {
+    return _wrap_new_NbCR__SWIG_0(self, args);
+  }
+  if (argc == 2) {
+    int _v;
+    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_aiv__indxT_3_t, 0);
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      {
+        int res = SWIG_AsVal_int(argv[1], NULL);
+        _v = SWIG_CheckState(res);
+      }
+      if (_v) {
+        return _wrap_new_NbCR__SWIG_1(self, args);
+      }
+    }
+  }
+  
+fail:
+  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'new_NbCR'.\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    NbCR::NbCR()\n"
+    "    NbCR::NbCR(aiv::indx< 3 >,int)\n");
+  return 0;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_NbCR(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  NbCR *arg1 = (NbCR *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:delete_NbCR",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_NbCR, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_NbCR" "', argument " "1"" of type '" "NbCR *""'"); 
+  }
+  arg1 = reinterpret_cast< NbCR * >(argp1);
+  {
+    try{
+      delete arg1; 
+    }catch( const char *e ){
+      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
+    }catch(...){
+      return NULL; 
+    } 
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *NbCR_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_NbCR, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
+SWIGINTERN int Swig_var_latCubic_nb_counts_set(PyObject *) {
+  SWIG_Error(SWIG_AttributeError,"Variable latCubic_nb_counts is read-only.");
+  return 1;
+}
+
+
+SWIGINTERN PyObject *Swig_var_latCubic_nb_counts_get(void) {
+  PyObject *pyobj = 0;
+  
+  pyobj = SWIG_NewPointerObj(SWIG_as_voidptr(latCubic::nb_counts), SWIGTYPE_p_int,  0 );
+  return pyobj;
+}
+
+
+SWIGINTERN int Swig_var_latCubic_nb_arr_set(PyObject *) {
+  SWIG_Error(SWIG_AttributeError,"Variable latCubic_nb_arr is read-only.");
+  return 1;
+}
+
+
+SWIGINTERN PyObject *Swig_var_latCubic_nb_arr_get(void) {
+  PyObject *pyobj = 0;
+  
+  pyobj = SWIG_NewPointerObj(SWIG_as_voidptr(latCubic::nb_arr), SWIGTYPE_p_a_latCubic__max_nb_count__NbCR,  0 );
+  return pyobj;
+}
+
+
+SWIGINTERN PyObject *_wrap_latCubic_nb_arr_get(PyObject *SWIGUNUSEDPARM(self), PyObject *SWIGUNUSEDPARM(args)) {
+  return Swig_var_latCubic_nb_arr_get();
+}
+
+
+SWIGINTERN int Swig_var_latCubic_coords_set(PyObject *) {
+  SWIG_Error(SWIG_AttributeError,"Variable latCubic_coords is read-only.");
+  return 1;
+}
+
+
+SWIGINTERN PyObject *Swig_var_latCubic_coords_get(void) {
+  PyObject *pyobj = 0;
+  
+  pyobj = SWIG_NewPointerObj(SWIG_as_voidptr(latCubic::coords), SWIGTYPE_p_aiv__vctrT_3_double_t,  0 );
+  return pyobj;
+}
+
+
+SWIGINTERN int Swig_var_latCubic_cell_coord_size_set(PyObject *) {
+  SWIG_Error(SWIG_AttributeError,"Variable latCubic_cell_coord_size is read-only.");
+  return 1;
+}
+
+
+SWIGINTERN PyObject *Swig_var_latCubic_cell_coord_size_get(void) {
+  PyObject *pyobj = 0;
+  
+  pyobj = SWIG_NewPointerObj(SWIG_as_voidptr(&latCubic::cell_coord_size), SWIGTYPE_p_aiv__vctrT_3_double_t,  0 );
+  return pyobj;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_latCubic(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  latCubic *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)":new_latCubic")) SWIG_fail;
+  {
+    try{
+      result = (latCubic *)new latCubic(); 
+    }catch( const char *e ){
+      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
+    }catch(...){
+      return NULL; 
+    } 
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_latCubic, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_latCubic(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  latCubic *arg1 = (latCubic *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:delete_latCubic",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_latCubic, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_latCubic" "', argument " "1"" of type '" "latCubic *""'"); 
+  }
+  arg1 = reinterpret_cast< latCubic * >(argp1);
+  {
+    try{
+      delete arg1; 
+    }catch( const char *e ){
+      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
+    }catch(...){
+      return NULL; 
+    } 
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *latCubic_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_latCubic, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
+SWIGINTERN int Swig_var_latICC_nb_counts_set(PyObject *) {
+  SWIG_Error(SWIG_AttributeError,"Variable latICC_nb_counts is read-only.");
+  return 1;
+}
+
+
+SWIGINTERN PyObject *Swig_var_latICC_nb_counts_get(void) {
+  PyObject *pyobj = 0;
+  
+  pyobj = SWIG_NewPointerObj(SWIG_as_voidptr(latICC::nb_counts), SWIGTYPE_p_int,  0 );
+  return pyobj;
+}
+
+
+SWIGINTERN int Swig_var_latICC_nb_arr_set(PyObject *) {
+  SWIG_Error(SWIG_AttributeError,"Variable latICC_nb_arr is read-only.");
+  return 1;
+}
+
+
+SWIGINTERN PyObject *Swig_var_latICC_nb_arr_get(void) {
+  PyObject *pyobj = 0;
+  
+  pyobj = SWIG_NewPointerObj(SWIG_as_voidptr(latICC::nb_arr), SWIGTYPE_p_a_latICC__max_nb_count__NbCR,  0 );
+  return pyobj;
+}
+
+
+SWIGINTERN PyObject *_wrap_latICC_nb_arr_get(PyObject *SWIGUNUSEDPARM(self), PyObject *SWIGUNUSEDPARM(args)) {
+  return Swig_var_latICC_nb_arr_get();
+}
+
+
+SWIGINTERN int Swig_var_latICC_coords_set(PyObject *) {
+  SWIG_Error(SWIG_AttributeError,"Variable latICC_coords is read-only.");
+  return 1;
+}
+
+
+SWIGINTERN PyObject *Swig_var_latICC_coords_get(void) {
+  PyObject *pyobj = 0;
+  
+  pyobj = SWIG_NewPointerObj(SWIG_as_voidptr(latICC::coords), SWIGTYPE_p_aiv__vctrT_3_double_t,  0 );
+  return pyobj;
+}
+
+
+SWIGINTERN int Swig_var_latICC_cell_coord_size_set(PyObject *) {
+  SWIG_Error(SWIG_AttributeError,"Variable latICC_cell_coord_size is read-only.");
+  return 1;
+}
+
+
+SWIGINTERN PyObject *Swig_var_latICC_cell_coord_size_get(void) {
+  PyObject *pyobj = 0;
+  
+  pyobj = SWIG_NewPointerObj(SWIG_as_voidptr(&latICC::cell_coord_size), SWIGTYPE_p_aiv__vctrT_3_double_t,  0 );
+  return pyobj;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_latICC(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  latICC *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)":new_latICC")) SWIG_fail;
+  {
+    try{
+      result = (latICC *)new latICC(); 
+    }catch( const char *e ){
+      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
+    }catch(...){
+      return NULL; 
+    } 
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_latICC, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_latICC(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  latICC *arg1 = (latICC *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:delete_latICC",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_latICC, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_latICC" "', argument " "1"" of type '" "latICC *""'"); 
+  }
+  arg1 = reinterpret_cast< latICC * >(argp1);
+  {
+    try{
+      delete arg1; 
+    }catch( const char *e ){
+      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
+    }catch(...){
+      return NULL; 
+    } 
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *latICC_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_latICC, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
+SWIGINTERN int Swig_var_latFCC3_nb_counts_set(PyObject *) {
+  SWIG_Error(SWIG_AttributeError,"Variable latFCC3_nb_counts is read-only.");
+  return 1;
+}
+
+
+SWIGINTERN PyObject *Swig_var_latFCC3_nb_counts_get(void) {
+  PyObject *pyobj = 0;
+  
+  pyobj = SWIG_NewPointerObj(SWIG_as_voidptr(latFCC3::nb_counts), SWIGTYPE_p_int,  0 );
+  return pyobj;
+}
+
+
+SWIGINTERN int Swig_var_latFCC3_nb_arr_set(PyObject *) {
+  SWIG_Error(SWIG_AttributeError,"Variable latFCC3_nb_arr is read-only.");
+  return 1;
+}
+
+
+SWIGINTERN PyObject *Swig_var_latFCC3_nb_arr_get(void) {
+  PyObject *pyobj = 0;
+  
+  pyobj = SWIG_NewPointerObj(SWIG_as_voidptr(latFCC3::nb_arr), SWIGTYPE_p_a_latFCC3__max_nb_count__NbCR,  0 );
+  return pyobj;
+}
+
+
+SWIGINTERN PyObject *_wrap_latFCC3_nb_arr_get(PyObject *SWIGUNUSEDPARM(self), PyObject *SWIGUNUSEDPARM(args)) {
+  return Swig_var_latFCC3_nb_arr_get();
+}
+
+
+SWIGINTERN int Swig_var_latFCC3_coords_set(PyObject *) {
+  SWIG_Error(SWIG_AttributeError,"Variable latFCC3_coords is read-only.");
+  return 1;
+}
+
+
+SWIGINTERN PyObject *Swig_var_latFCC3_coords_get(void) {
+  PyObject *pyobj = 0;
+  
+  pyobj = SWIG_NewPointerObj(SWIG_as_voidptr(latFCC3::coords), SWIGTYPE_p_aiv__vctrT_3_double_t,  0 );
+  return pyobj;
+}
+
+
+SWIGINTERN int Swig_var_latFCC3_cell_coord_size_set(PyObject *) {
+  SWIG_Error(SWIG_AttributeError,"Variable latFCC3_cell_coord_size is read-only.");
+  return 1;
+}
+
+
+SWIGINTERN PyObject *Swig_var_latFCC3_cell_coord_size_get(void) {
+  PyObject *pyobj = 0;
+  
+  pyobj = SWIG_NewPointerObj(SWIG_as_voidptr(&latFCC3::cell_coord_size), SWIGTYPE_p_aiv__vctrT_3_double_t,  0 );
+  return pyobj;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_latFCC3(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  latFCC3 *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)":new_latFCC3")) SWIG_fail;
+  {
+    try{
+      result = (latFCC3 *)new latFCC3(); 
+    }catch( const char *e ){
+      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
+    }catch(...){
+      return NULL; 
+    } 
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_latFCC3, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_latFCC3(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  latFCC3 *arg1 = (latFCC3 *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:delete_latFCC3",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_latFCC3, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_latFCC3" "', argument " "1"" of type '" "latFCC3 *""'"); 
+  }
+  arg1 = reinterpret_cast< latFCC3 * >(argp1);
+  {
+    try{
+      delete arg1; 
+    }catch( const char *e ){
+      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
+    }catch(...){
+      return NULL; 
+    } 
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *latFCC3_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_latFCC3, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
+SWIGINTERN int Swig_var_latFCC4_nb_counts_set(PyObject *) {
+  SWIG_Error(SWIG_AttributeError,"Variable latFCC4_nb_counts is read-only.");
+  return 1;
+}
+
+
+SWIGINTERN PyObject *Swig_var_latFCC4_nb_counts_get(void) {
+  PyObject *pyobj = 0;
+  
+  pyobj = SWIG_NewPointerObj(SWIG_as_voidptr(latFCC4::nb_counts), SWIGTYPE_p_int,  0 );
+  return pyobj;
+}
+
+
+SWIGINTERN int Swig_var_latFCC4_nb_arr_set(PyObject *) {
+  SWIG_Error(SWIG_AttributeError,"Variable latFCC4_nb_arr is read-only.");
+  return 1;
+}
+
+
+SWIGINTERN PyObject *Swig_var_latFCC4_nb_arr_get(void) {
+  PyObject *pyobj = 0;
+  
+  pyobj = SWIG_NewPointerObj(SWIG_as_voidptr(latFCC4::nb_arr), SWIGTYPE_p_a_latFCC4__max_nb_count__NbCR,  0 );
+  return pyobj;
+}
+
+
+SWIGINTERN PyObject *_wrap_latFCC4_nb_arr_get(PyObject *SWIGUNUSEDPARM(self), PyObject *SWIGUNUSEDPARM(args)) {
+  return Swig_var_latFCC4_nb_arr_get();
+}
+
+
+SWIGINTERN int Swig_var_latFCC4_coords_set(PyObject *) {
+  SWIG_Error(SWIG_AttributeError,"Variable latFCC4_coords is read-only.");
+  return 1;
+}
+
+
+SWIGINTERN PyObject *Swig_var_latFCC4_coords_get(void) {
+  PyObject *pyobj = 0;
+  
+  pyobj = SWIG_NewPointerObj(SWIG_as_voidptr(latFCC4::coords), SWIGTYPE_p_aiv__vctrT_3_double_t,  0 );
+  return pyobj;
+}
+
+
+SWIGINTERN int Swig_var_latFCC4_cell_coord_size_set(PyObject *) {
+  SWIG_Error(SWIG_AttributeError,"Variable latFCC4_cell_coord_size is read-only.");
+  return 1;
+}
+
+
+SWIGINTERN PyObject *Swig_var_latFCC4_cell_coord_size_get(void) {
+  PyObject *pyobj = 0;
+  
+  pyobj = SWIG_NewPointerObj(SWIG_as_voidptr(&latFCC4::cell_coord_size), SWIGTYPE_p_aiv__vctrT_3_double_t,  0 );
+  return pyobj;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_latFCC4(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  latFCC4 *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)":new_latFCC4")) SWIG_fail;
+  {
+    try{
+      result = (latFCC4 *)new latFCC4(); 
+    }catch( const char *e ){
+      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
+    }catch(...){
+      return NULL; 
+    } 
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_latFCC4, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_latFCC4(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  latFCC4 *arg1 = (latFCC4 *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:delete_latFCC4",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_latFCC4, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_latFCC4" "', argument " "1"" of type '" "latFCC4 *""'"); 
+  }
+  arg1 = reinterpret_cast< latFCC4 * >(argp1);
+  {
+    try{
+      delete arg1; 
+    }catch( const char *e ){
+      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
+    }catch(...){
+      return NULL; 
+    } 
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *latFCC4_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_latFCC4, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
+SWIGINTERN int Swig_var_latFCC4_trans_1_nb_counts_set(PyObject *) {
+  SWIG_Error(SWIG_AttributeError,"Variable latFCC4_trans_1_nb_counts is read-only.");
+  return 1;
+}
+
+
+SWIGINTERN PyObject *Swig_var_latFCC4_trans_1_nb_counts_get(void) {
+  PyObject *pyobj = 0;
+  
+  pyobj = SWIG_NewPointerObj(SWIG_as_voidptr(latFCC4_trans_1::nb_counts), SWIGTYPE_p_int,  0 );
+  return pyobj;
+}
+
+
+SWIGINTERN int Swig_var_latFCC4_trans_1_nb_arr_set(PyObject *) {
+  SWIG_Error(SWIG_AttributeError,"Variable latFCC4_trans_1_nb_arr is read-only.");
+  return 1;
+}
+
+
+SWIGINTERN PyObject *Swig_var_latFCC4_trans_1_nb_arr_get(void) {
+  PyObject *pyobj = 0;
+  
+  pyobj = SWIG_NewPointerObj(SWIG_as_voidptr(latFCC4_trans_1::nb_arr), SWIGTYPE_p_a_latFCC4_trans_1__max_nb_count__NbCR,  0 );
+  return pyobj;
+}
+
+
+SWIGINTERN PyObject *_wrap_latFCC4_trans_1_nb_arr_get(PyObject *SWIGUNUSEDPARM(self), PyObject *SWIGUNUSEDPARM(args)) {
+  return Swig_var_latFCC4_trans_1_nb_arr_get();
+}
+
+
+SWIGINTERN int Swig_var_latFCC4_trans_1_coords_set(PyObject *) {
+  SWIG_Error(SWIG_AttributeError,"Variable latFCC4_trans_1_coords is read-only.");
+  return 1;
+}
+
+
+SWIGINTERN PyObject *Swig_var_latFCC4_trans_1_coords_get(void) {
+  PyObject *pyobj = 0;
+  
+  pyobj = SWIG_NewPointerObj(SWIG_as_voidptr(latFCC4_trans_1::coords), SWIGTYPE_p_aiv__vctrT_3_double_t,  0 );
+  return pyobj;
+}
+
+
+SWIGINTERN int Swig_var_latFCC4_trans_1_cell_coord_size_set(PyObject *) {
+  SWIG_Error(SWIG_AttributeError,"Variable latFCC4_trans_1_cell_coord_size is read-only.");
+  return 1;
+}
+
+
+SWIGINTERN PyObject *Swig_var_latFCC4_trans_1_cell_coord_size_get(void) {
+  PyObject *pyobj = 0;
+  
+  pyobj = SWIG_NewPointerObj(SWIG_as_voidptr(&latFCC4_trans_1::cell_coord_size), SWIGTYPE_p_aiv__vctrT_3_double_t,  0 );
+  return pyobj;
+}
+
+
+SWIGINTERN PyObject *_wrap_new_latFCC4_trans_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  latFCC4_trans_1 *result = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)":new_latFCC4_trans_1")) SWIG_fail;
+  {
+    try{
+      result = (latFCC4_trans_1 *)new latFCC4_trans_1(); 
+    }catch( const char *e ){
+      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
+    }catch(...){
+      return NULL; 
+    } 
+  }
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_latFCC4_trans_1, SWIG_POINTER_NEW |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_delete_latFCC4_trans_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  latFCC4_trans_1 *arg1 = (latFCC4_trans_1 *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject * obj0 = 0 ;
+  
+  if (!PyArg_ParseTuple(args,(char *)"O:delete_latFCC4_trans_1",&obj0)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_latFCC4_trans_1, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_latFCC4_trans_1" "', argument " "1"" of type '" "latFCC4_trans_1 *""'"); 
+  }
+  arg1 = reinterpret_cast< latFCC4_trans_1 * >(argp1);
+  {
+    try{
+      delete arg1; 
+    }catch( const char *e ){
+      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
+    }catch(...){
+      return NULL; 
+    } 
+  }
+  resultobj = SWIG_Py_Void();
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *latFCC4_trans_1_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *obj;
+  if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
+  SWIG_TypeNewClientData(SWIGTYPE_p_latFCC4_trans_1, SWIG_NewClientData(obj));
+  return SWIG_Py_Void();
+}
+
 SWIGINTERN PyObject *_wrap_GlobalTrans_I1_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   GlobalTrans *arg1 = (GlobalTrans *) 0 ;
@@ -7434,1911 +8989,6 @@ SWIGINTERN PyObject *GlobalTrans_swigregister(PyObject *SWIGUNUSEDPARM(self), Py
   PyObject *obj;
   if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
   SWIG_TypeNewClientData(SWIGTYPE_p_GlobalTrans, SWIG_NewClientData(obj));
-  return SWIG_Py_Void();
-}
-
-SWIGINTERN PyObject *_wrap_internal_trans_vec(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  aiv::vctr< 3,double > *arg1 = 0 ;
-  aiv::vctr< 3,double > *arg2 = 0 ;
-  aiv::vctr< 3,double > *arg3 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  void *argp3 = 0 ;
-  int res3 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  PyObject * obj2 = 0 ;
-  aiv::vctr< 3,double > result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OOO:internal_trans_vec",&obj0,&obj1,&obj2)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_aiv__vctrT_3_double_t,  0  | 0);
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "internal_trans_vec" "', argument " "1"" of type '" "aiv::vctr< 3,double > const &""'"); 
-  }
-  if (!argp1) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "internal_trans_vec" "', argument " "1"" of type '" "aiv::vctr< 3,double > const &""'"); 
-  }
-  arg1 = reinterpret_cast< aiv::vctr< 3,double > * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_aiv__vctrT_3_double_t,  0  | 0);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "internal_trans_vec" "', argument " "2"" of type '" "aiv::vctr< 3,double > const &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "internal_trans_vec" "', argument " "2"" of type '" "aiv::vctr< 3,double > const &""'"); 
-  }
-  arg2 = reinterpret_cast< aiv::vctr< 3,double > * >(argp2);
-  res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_aiv__vctrT_3_double_t,  0  | 0);
-  if (!SWIG_IsOK(res3)) {
-    SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "internal_trans_vec" "', argument " "3"" of type '" "aiv::vctr< 3,double > const &""'"); 
-  }
-  if (!argp3) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "internal_trans_vec" "', argument " "3"" of type '" "aiv::vctr< 3,double > const &""'"); 
-  }
-  arg3 = reinterpret_cast< aiv::vctr< 3,double > * >(argp3);
-  {
-    try{
-      result = internal_trans_vec((aiv::vctr< 3,double > const &)*arg1,(aiv::vctr< 3,double > const &)*arg2,(aiv::vctr< 3,double > const &)*arg3); 
-    }catch( const char *e ){
-      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
-    }catch(...){
-      return NULL; 
-    } 
-  }
-  resultobj = SWIG_NewPointerObj((new aiv::vctr< 3,double >(static_cast< const aiv::vctr< 3,double >& >(result))), SWIGTYPE_p_aiv__vctrT_3_double_t, SWIG_POINTER_OWN |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_BaseFigure_get_minxyz(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  BaseFigure *arg1 = (BaseFigure *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  SwigValueWrapper< aiv::vctr< 3 > > result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:BaseFigure_get_minxyz",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_BaseFigure, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "BaseFigure_get_minxyz" "', argument " "1"" of type '" "BaseFigure const *""'"); 
-  }
-  arg1 = reinterpret_cast< BaseFigure * >(argp1);
-  {
-    try{
-      result = ((BaseFigure const *)arg1)->get_minxyz(); 
-    }catch( const char *e ){
-      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
-    }catch(...){
-      return NULL; 
-    } 
-  }
-  resultobj = SWIG_NewPointerObj((new aiv::vctr< 3 >(static_cast< const aiv::vctr< 3 >& >(result))), SWIGTYPE_p_aiv__vctrT_3_double_t, SWIG_POINTER_OWN |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_BaseFigure_get_maxxyz(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  BaseFigure *arg1 = (BaseFigure *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  SwigValueWrapper< aiv::vctr< 3 > > result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:BaseFigure_get_maxxyz",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_BaseFigure, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "BaseFigure_get_maxxyz" "', argument " "1"" of type '" "BaseFigure const *""'"); 
-  }
-  arg1 = reinterpret_cast< BaseFigure * >(argp1);
-  {
-    try{
-      result = ((BaseFigure const *)arg1)->get_maxxyz(); 
-    }catch( const char *e ){
-      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
-    }catch(...){
-      return NULL; 
-    } 
-  }
-  resultobj = SWIG_NewPointerObj((new aiv::vctr< 3 >(static_cast< const aiv::vctr< 3 >& >(result))), SWIGTYPE_p_aiv__vctrT_3_double_t, SWIG_POINTER_OWN |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_BaseFigure_check(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  BaseFigure *arg1 = (BaseFigure *) 0 ;
-  aiv::vctr< 3,double > *arg2 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  bool result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:BaseFigure_check",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_BaseFigure, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "BaseFigure_check" "', argument " "1"" of type '" "BaseFigure const *""'"); 
-  }
-  arg1 = reinterpret_cast< BaseFigure * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_aiv__vctrT_3_double_t,  0  | 0);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "BaseFigure_check" "', argument " "2"" of type '" "aiv::vctr< 3,double > const &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "BaseFigure_check" "', argument " "2"" of type '" "aiv::vctr< 3,double > const &""'"); 
-  }
-  arg2 = reinterpret_cast< aiv::vctr< 3,double > * >(argp2);
-  {
-    try{
-      result = (bool)((BaseFigure const *)arg1)->check((aiv::vctr< 3,double > const &)*arg2); 
-    }catch( const char *e ){
-      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
-    }catch(...){
-      return NULL; 
-    } 
-  }
-  resultobj = SWIG_From_bool(static_cast< bool >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_delete_BaseFigure(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  BaseFigure *arg1 = (BaseFigure *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:delete_BaseFigure",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_BaseFigure, SWIG_POINTER_DISOWN |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_BaseFigure" "', argument " "1"" of type '" "BaseFigure *""'"); 
-  }
-  arg1 = reinterpret_cast< BaseFigure * >(argp1);
-  {
-    try{
-      delete arg1; 
-    }catch( const char *e ){
-      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
-    }catch(...){
-      return NULL; 
-    } 
-  }
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *BaseFigure_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *obj;
-  if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
-  SWIG_TypeNewClientData(SWIGTYPE_p_BaseFigure, SWIG_NewClientData(obj));
-  return SWIG_Py_Void();
-}
-
-SWIGINTERN PyObject *_wrap_Cylinder_center_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Cylinder *arg1 = (Cylinder *) 0 ;
-  aiv::vctr< 3 > *arg2 = (aiv::vctr< 3 > *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:Cylinder_center_set",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Cylinder, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Cylinder_center_set" "', argument " "1"" of type '" "Cylinder *""'"); 
-  }
-  arg1 = reinterpret_cast< Cylinder * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_aiv__vctrT_3_double_t, 0 |  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Cylinder_center_set" "', argument " "2"" of type '" "aiv::vctr< 3 > *""'"); 
-  }
-  arg2 = reinterpret_cast< aiv::vctr< 3 > * >(argp2);
-  if (arg1) (arg1)->center = *arg2;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Cylinder_center_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Cylinder *arg1 = (Cylinder *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  aiv::vctr< 3 > *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:Cylinder_center_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Cylinder, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Cylinder_center_get" "', argument " "1"" of type '" "Cylinder *""'"); 
-  }
-  arg1 = reinterpret_cast< Cylinder * >(argp1);
-  result = (aiv::vctr< 3 > *)& ((arg1)->center);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_aiv__vctrT_3_double_t, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Cylinder_R_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Cylinder *arg1 = (Cylinder *) 0 ;
-  double arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  double val2 ;
-  int ecode2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:Cylinder_R_set",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Cylinder, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Cylinder_R_set" "', argument " "1"" of type '" "Cylinder *""'"); 
-  }
-  arg1 = reinterpret_cast< Cylinder * >(argp1);
-  ecode2 = SWIG_AsVal_double(obj1, &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Cylinder_R_set" "', argument " "2"" of type '" "double""'");
-  } 
-  arg2 = static_cast< double >(val2);
-  if (arg1) (arg1)->R = arg2;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Cylinder_R_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Cylinder *arg1 = (Cylinder *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  double result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:Cylinder_R_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Cylinder, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Cylinder_R_get" "', argument " "1"" of type '" "Cylinder *""'"); 
-  }
-  arg1 = reinterpret_cast< Cylinder * >(argp1);
-  result = (double) ((arg1)->R);
-  resultobj = SWIG_From_double(static_cast< double >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Cylinder_H_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Cylinder *arg1 = (Cylinder *) 0 ;
-  double arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  double val2 ;
-  int ecode2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:Cylinder_H_set",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Cylinder, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Cylinder_H_set" "', argument " "1"" of type '" "Cylinder *""'"); 
-  }
-  arg1 = reinterpret_cast< Cylinder * >(argp1);
-  ecode2 = SWIG_AsVal_double(obj1, &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Cylinder_H_set" "', argument " "2"" of type '" "double""'");
-  } 
-  arg2 = static_cast< double >(val2);
-  if (arg1) (arg1)->H = arg2;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Cylinder_H_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Cylinder *arg1 = (Cylinder *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  double result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:Cylinder_H_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Cylinder, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Cylinder_H_get" "', argument " "1"" of type '" "Cylinder *""'"); 
-  }
-  arg1 = reinterpret_cast< Cylinder * >(argp1);
-  result = (double) ((arg1)->H);
-  resultobj = SWIG_From_double(static_cast< double >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Cylinder_updirect_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Cylinder *arg1 = (Cylinder *) 0 ;
-  aiv::vctr< 3 > *arg2 = (aiv::vctr< 3 > *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:Cylinder_updirect_set",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Cylinder, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Cylinder_updirect_set" "', argument " "1"" of type '" "Cylinder *""'"); 
-  }
-  arg1 = reinterpret_cast< Cylinder * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_aiv__vctrT_3_double_t, 0 |  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Cylinder_updirect_set" "', argument " "2"" of type '" "aiv::vctr< 3 > *""'"); 
-  }
-  arg2 = reinterpret_cast< aiv::vctr< 3 > * >(argp2);
-  if (arg1) (arg1)->updirect = *arg2;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Cylinder_updirect_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Cylinder *arg1 = (Cylinder *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  aiv::vctr< 3 > *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:Cylinder_updirect_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Cylinder, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Cylinder_updirect_get" "', argument " "1"" of type '" "Cylinder *""'"); 
-  }
-  arg1 = reinterpret_cast< Cylinder * >(argp1);
-  result = (aiv::vctr< 3 > *)& ((arg1)->updirect);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_aiv__vctrT_3_double_t, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Cylinder_get_minxyz(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Cylinder *arg1 = (Cylinder *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  SwigValueWrapper< aiv::vctr< 3 > > result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:Cylinder_get_minxyz",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Cylinder, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Cylinder_get_minxyz" "', argument " "1"" of type '" "Cylinder const *""'"); 
-  }
-  arg1 = reinterpret_cast< Cylinder * >(argp1);
-  {
-    try{
-      result = ((Cylinder const *)arg1)->get_minxyz(); 
-    }catch( const char *e ){
-      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
-    }catch(...){
-      return NULL; 
-    } 
-  }
-  resultobj = SWIG_NewPointerObj((new aiv::vctr< 3 >(static_cast< const aiv::vctr< 3 >& >(result))), SWIGTYPE_p_aiv__vctrT_3_double_t, SWIG_POINTER_OWN |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Cylinder_get_maxxyz(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Cylinder *arg1 = (Cylinder *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  SwigValueWrapper< aiv::vctr< 3 > > result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:Cylinder_get_maxxyz",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Cylinder, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Cylinder_get_maxxyz" "', argument " "1"" of type '" "Cylinder const *""'"); 
-  }
-  arg1 = reinterpret_cast< Cylinder * >(argp1);
-  {
-    try{
-      result = ((Cylinder const *)arg1)->get_maxxyz(); 
-    }catch( const char *e ){
-      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
-    }catch(...){
-      return NULL; 
-    } 
-  }
-  resultobj = SWIG_NewPointerObj((new aiv::vctr< 3 >(static_cast< const aiv::vctr< 3 >& >(result))), SWIGTYPE_p_aiv__vctrT_3_double_t, SWIG_POINTER_OWN |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Cylinder_check(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Cylinder *arg1 = (Cylinder *) 0 ;
-  aiv::vctr< 3,double > *arg2 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  bool result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:Cylinder_check",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Cylinder, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Cylinder_check" "', argument " "1"" of type '" "Cylinder const *""'"); 
-  }
-  arg1 = reinterpret_cast< Cylinder * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_aiv__vctrT_3_double_t,  0  | 0);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Cylinder_check" "', argument " "2"" of type '" "aiv::vctr< 3,double > const &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Cylinder_check" "', argument " "2"" of type '" "aiv::vctr< 3,double > const &""'"); 
-  }
-  arg2 = reinterpret_cast< aiv::vctr< 3,double > * >(argp2);
-  {
-    try{
-      result = (bool)((Cylinder const *)arg1)->check((aiv::vctr< 3,double > const &)*arg2); 
-    }catch( const char *e ){
-      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
-    }catch(...){
-      return NULL; 
-    } 
-  }
-  resultobj = SWIG_From_bool(static_cast< bool >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_new_Cylinder__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Cylinder *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)":new_Cylinder")) SWIG_fail;
-  {
-    try{
-      result = (Cylinder *)new Cylinder(); 
-    }catch( const char *e ){
-      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
-    }catch(...){
-      return NULL; 
-    } 
-  }
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Cylinder, SWIG_POINTER_NEW |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_new_Cylinder__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  SwigValueWrapper< aiv::vctr< 3 > > arg1 ;
-  double arg2 ;
-  double arg3 ;
-  SwigValueWrapper< aiv::vctr< 3 > > arg4 ;
-  void *argp1 ;
-  int res1 = 0 ;
-  double val2 ;
-  int ecode2 = 0 ;
-  double val3 ;
-  int ecode3 = 0 ;
-  void *argp4 ;
-  int res4 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  PyObject * obj2 = 0 ;
-  PyObject * obj3 = 0 ;
-  Cylinder *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OOOO:new_Cylinder",&obj0,&obj1,&obj2,&obj3)) SWIG_fail;
-  {
-    res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_aiv__vctrT_3_double_t,  0  | 0);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Cylinder" "', argument " "1"" of type '" "aiv::vctr< 3 >""'"); 
-    }  
-    if (!argp1) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Cylinder" "', argument " "1"" of type '" "aiv::vctr< 3 >""'");
-    } else {
-      aiv::vctr< 3 > * temp = reinterpret_cast< aiv::vctr< 3 > * >(argp1);
-      arg1 = *temp;
-      if (SWIG_IsNewObj(res1)) delete temp;
-    }
-  }
-  ecode2 = SWIG_AsVal_double(obj1, &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "new_Cylinder" "', argument " "2"" of type '" "double""'");
-  } 
-  arg2 = static_cast< double >(val2);
-  ecode3 = SWIG_AsVal_double(obj2, &val3);
-  if (!SWIG_IsOK(ecode3)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "new_Cylinder" "', argument " "3"" of type '" "double""'");
-  } 
-  arg3 = static_cast< double >(val3);
-  {
-    res4 = SWIG_ConvertPtr(obj3, &argp4, SWIGTYPE_p_aiv__vctrT_3_double_t,  0  | 0);
-    if (!SWIG_IsOK(res4)) {
-      SWIG_exception_fail(SWIG_ArgError(res4), "in method '" "new_Cylinder" "', argument " "4"" of type '" "aiv::vctr< 3 >""'"); 
-    }  
-    if (!argp4) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Cylinder" "', argument " "4"" of type '" "aiv::vctr< 3 >""'");
-    } else {
-      aiv::vctr< 3 > * temp = reinterpret_cast< aiv::vctr< 3 > * >(argp4);
-      arg4 = *temp;
-      if (SWIG_IsNewObj(res4)) delete temp;
-    }
-  }
-  {
-    try{
-      result = (Cylinder *)new Cylinder(arg1,arg2,arg3,arg4); 
-    }catch( const char *e ){
-      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
-    }catch(...){
-      return NULL; 
-    } 
-  }
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Cylinder, SWIG_POINTER_NEW |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_new_Cylinder(PyObject *self, PyObject *args) {
-  int argc;
-  PyObject *argv[5];
-  int ii;
-  
-  if (!PyTuple_Check(args)) SWIG_fail;
-  argc = args ? (int)PyObject_Length(args) : 0;
-  for (ii = 0; (ii < 4) && (ii < argc); ii++) {
-    argv[ii] = PyTuple_GET_ITEM(args,ii);
-  }
-  if (argc == 0) {
-    return _wrap_new_Cylinder__SWIG_0(self, args);
-  }
-  if (argc == 4) {
-    int _v;
-    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_aiv__vctrT_3_double_t, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      {
-        int res = SWIG_AsVal_double(argv[1], NULL);
-        _v = SWIG_CheckState(res);
-      }
-      if (_v) {
-        {
-          int res = SWIG_AsVal_double(argv[2], NULL);
-          _v = SWIG_CheckState(res);
-        }
-        if (_v) {
-          int res = SWIG_ConvertPtr(argv[3], 0, SWIGTYPE_p_aiv__vctrT_3_double_t, 0);
-          _v = SWIG_CheckState(res);
-          if (_v) {
-            return _wrap_new_Cylinder__SWIG_1(self, args);
-          }
-        }
-      }
-    }
-  }
-  
-fail:
-  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'new_Cylinder'.\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    Cylinder::Cylinder()\n"
-    "    Cylinder::Cylinder(aiv::vctr< 3 >,double,double,aiv::vctr< 3 >)\n");
-  return 0;
-}
-
-
-SWIGINTERN PyObject *_wrap_delete_Cylinder(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Cylinder *arg1 = (Cylinder *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:delete_Cylinder",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Cylinder, SWIG_POINTER_DISOWN |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_Cylinder" "', argument " "1"" of type '" "Cylinder *""'"); 
-  }
-  arg1 = reinterpret_cast< Cylinder * >(argp1);
-  {
-    try{
-      delete arg1; 
-    }catch( const char *e ){
-      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
-    }catch(...){
-      return NULL; 
-    } 
-  }
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *Cylinder_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *obj;
-  if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
-  SWIG_TypeNewClientData(SWIGTYPE_p_Cylinder, SWIG_NewClientData(obj));
-  return SWIG_Py_Void();
-}
-
-SWIGINTERN PyObject *_wrap_Cube_center_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Cube *arg1 = (Cube *) 0 ;
-  aiv::vctr< 3 > *arg2 = (aiv::vctr< 3 > *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:Cube_center_set",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Cube, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Cube_center_set" "', argument " "1"" of type '" "Cube *""'"); 
-  }
-  arg1 = reinterpret_cast< Cube * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_aiv__vctrT_3_double_t, 0 |  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Cube_center_set" "', argument " "2"" of type '" "aiv::vctr< 3 > *""'"); 
-  }
-  arg2 = reinterpret_cast< aiv::vctr< 3 > * >(argp2);
-  if (arg1) (arg1)->center = *arg2;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Cube_center_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Cube *arg1 = (Cube *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  aiv::vctr< 3 > *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:Cube_center_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Cube, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Cube_center_get" "', argument " "1"" of type '" "Cube *""'"); 
-  }
-  arg1 = reinterpret_cast< Cube * >(argp1);
-  result = (aiv::vctr< 3 > *)& ((arg1)->center);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_aiv__vctrT_3_double_t, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Cube_A_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Cube *arg1 = (Cube *) 0 ;
-  double arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  double val2 ;
-  int ecode2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:Cube_A_set",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Cube, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Cube_A_set" "', argument " "1"" of type '" "Cube *""'"); 
-  }
-  arg1 = reinterpret_cast< Cube * >(argp1);
-  ecode2 = SWIG_AsVal_double(obj1, &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Cube_A_set" "', argument " "2"" of type '" "double""'");
-  } 
-  arg2 = static_cast< double >(val2);
-  if (arg1) (arg1)->A = arg2;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Cube_A_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Cube *arg1 = (Cube *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  double result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:Cube_A_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Cube, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Cube_A_get" "', argument " "1"" of type '" "Cube *""'"); 
-  }
-  arg1 = reinterpret_cast< Cube * >(argp1);
-  result = (double) ((arg1)->A);
-  resultobj = SWIG_From_double(static_cast< double >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Cube_updirect_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Cube *arg1 = (Cube *) 0 ;
-  aiv::vctr< 3 > *arg2 = (aiv::vctr< 3 > *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:Cube_updirect_set",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Cube, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Cube_updirect_set" "', argument " "1"" of type '" "Cube *""'"); 
-  }
-  arg1 = reinterpret_cast< Cube * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_aiv__vctrT_3_double_t, 0 |  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Cube_updirect_set" "', argument " "2"" of type '" "aiv::vctr< 3 > *""'"); 
-  }
-  arg2 = reinterpret_cast< aiv::vctr< 3 > * >(argp2);
-  if (arg1) (arg1)->updirect = *arg2;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Cube_updirect_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Cube *arg1 = (Cube *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  aiv::vctr< 3 > *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:Cube_updirect_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Cube, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Cube_updirect_get" "', argument " "1"" of type '" "Cube *""'"); 
-  }
-  arg1 = reinterpret_cast< Cube * >(argp1);
-  result = (aiv::vctr< 3 > *)& ((arg1)->updirect);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_aiv__vctrT_3_double_t, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Cube_get_minxyz(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Cube *arg1 = (Cube *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  SwigValueWrapper< aiv::vctr< 3 > > result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:Cube_get_minxyz",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Cube, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Cube_get_minxyz" "', argument " "1"" of type '" "Cube const *""'"); 
-  }
-  arg1 = reinterpret_cast< Cube * >(argp1);
-  {
-    try{
-      result = ((Cube const *)arg1)->get_minxyz(); 
-    }catch( const char *e ){
-      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
-    }catch(...){
-      return NULL; 
-    } 
-  }
-  resultobj = SWIG_NewPointerObj((new aiv::vctr< 3 >(static_cast< const aiv::vctr< 3 >& >(result))), SWIGTYPE_p_aiv__vctrT_3_double_t, SWIG_POINTER_OWN |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Cube_get_maxxyz(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Cube *arg1 = (Cube *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  SwigValueWrapper< aiv::vctr< 3 > > result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:Cube_get_maxxyz",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Cube, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Cube_get_maxxyz" "', argument " "1"" of type '" "Cube const *""'"); 
-  }
-  arg1 = reinterpret_cast< Cube * >(argp1);
-  {
-    try{
-      result = ((Cube const *)arg1)->get_maxxyz(); 
-    }catch( const char *e ){
-      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
-    }catch(...){
-      return NULL; 
-    } 
-  }
-  resultobj = SWIG_NewPointerObj((new aiv::vctr< 3 >(static_cast< const aiv::vctr< 3 >& >(result))), SWIGTYPE_p_aiv__vctrT_3_double_t, SWIG_POINTER_OWN |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Cube_check(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Cube *arg1 = (Cube *) 0 ;
-  aiv::vctr< 3,double > *arg2 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  bool result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:Cube_check",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Cube, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Cube_check" "', argument " "1"" of type '" "Cube const *""'"); 
-  }
-  arg1 = reinterpret_cast< Cube * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_aiv__vctrT_3_double_t,  0  | 0);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Cube_check" "', argument " "2"" of type '" "aiv::vctr< 3,double > const &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Cube_check" "', argument " "2"" of type '" "aiv::vctr< 3,double > const &""'"); 
-  }
-  arg2 = reinterpret_cast< aiv::vctr< 3,double > * >(argp2);
-  {
-    try{
-      result = (bool)((Cube const *)arg1)->check((aiv::vctr< 3,double > const &)*arg2); 
-    }catch( const char *e ){
-      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
-    }catch(...){
-      return NULL; 
-    } 
-  }
-  resultobj = SWIG_From_bool(static_cast< bool >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_new_Cube__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Cube *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)":new_Cube")) SWIG_fail;
-  {
-    try{
-      result = (Cube *)new Cube(); 
-    }catch( const char *e ){
-      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
-    }catch(...){
-      return NULL; 
-    } 
-  }
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Cube, SWIG_POINTER_NEW |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_new_Cube__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  SwigValueWrapper< aiv::vctr< 3 > > arg1 ;
-  double arg2 ;
-  SwigValueWrapper< aiv::vctr< 3 > > arg3 ;
-  void *argp1 ;
-  int res1 = 0 ;
-  double val2 ;
-  int ecode2 = 0 ;
-  void *argp3 ;
-  int res3 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  PyObject * obj2 = 0 ;
-  Cube *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OOO:new_Cube",&obj0,&obj1,&obj2)) SWIG_fail;
-  {
-    res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_aiv__vctrT_3_double_t,  0  | 0);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Cube" "', argument " "1"" of type '" "aiv::vctr< 3 >""'"); 
-    }  
-    if (!argp1) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Cube" "', argument " "1"" of type '" "aiv::vctr< 3 >""'");
-    } else {
-      aiv::vctr< 3 > * temp = reinterpret_cast< aiv::vctr< 3 > * >(argp1);
-      arg1 = *temp;
-      if (SWIG_IsNewObj(res1)) delete temp;
-    }
-  }
-  ecode2 = SWIG_AsVal_double(obj1, &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "new_Cube" "', argument " "2"" of type '" "double""'");
-  } 
-  arg2 = static_cast< double >(val2);
-  {
-    res3 = SWIG_ConvertPtr(obj2, &argp3, SWIGTYPE_p_aiv__vctrT_3_double_t,  0  | 0);
-    if (!SWIG_IsOK(res3)) {
-      SWIG_exception_fail(SWIG_ArgError(res3), "in method '" "new_Cube" "', argument " "3"" of type '" "aiv::vctr< 3 >""'"); 
-    }  
-    if (!argp3) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Cube" "', argument " "3"" of type '" "aiv::vctr< 3 >""'");
-    } else {
-      aiv::vctr< 3 > * temp = reinterpret_cast< aiv::vctr< 3 > * >(argp3);
-      arg3 = *temp;
-      if (SWIG_IsNewObj(res3)) delete temp;
-    }
-  }
-  {
-    try{
-      result = (Cube *)new Cube(arg1,arg2,arg3); 
-    }catch( const char *e ){
-      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
-    }catch(...){
-      return NULL; 
-    } 
-  }
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Cube, SWIG_POINTER_NEW |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_new_Cube(PyObject *self, PyObject *args) {
-  int argc;
-  PyObject *argv[4];
-  int ii;
-  
-  if (!PyTuple_Check(args)) SWIG_fail;
-  argc = args ? (int)PyObject_Length(args) : 0;
-  for (ii = 0; (ii < 3) && (ii < argc); ii++) {
-    argv[ii] = PyTuple_GET_ITEM(args,ii);
-  }
-  if (argc == 0) {
-    return _wrap_new_Cube__SWIG_0(self, args);
-  }
-  if (argc == 3) {
-    int _v;
-    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_aiv__vctrT_3_double_t, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      {
-        int res = SWIG_AsVal_double(argv[1], NULL);
-        _v = SWIG_CheckState(res);
-      }
-      if (_v) {
-        int res = SWIG_ConvertPtr(argv[2], 0, SWIGTYPE_p_aiv__vctrT_3_double_t, 0);
-        _v = SWIG_CheckState(res);
-        if (_v) {
-          return _wrap_new_Cube__SWIG_1(self, args);
-        }
-      }
-    }
-  }
-  
-fail:
-  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'new_Cube'.\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    Cube::Cube()\n"
-    "    Cube::Cube(aiv::vctr< 3 >,double,aiv::vctr< 3 >)\n");
-  return 0;
-}
-
-
-SWIGINTERN PyObject *_wrap_delete_Cube(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Cube *arg1 = (Cube *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:delete_Cube",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Cube, SWIG_POINTER_DISOWN |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_Cube" "', argument " "1"" of type '" "Cube *""'"); 
-  }
-  arg1 = reinterpret_cast< Cube * >(argp1);
-  {
-    try{
-      delete arg1; 
-    }catch( const char *e ){
-      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
-    }catch(...){
-      return NULL; 
-    } 
-  }
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *Cube_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *obj;
-  if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
-  SWIG_TypeNewClientData(SWIGTYPE_p_Cube, SWIG_NewClientData(obj));
-  return SWIG_Py_Void();
-}
-
-SWIGINTERN PyObject *_wrap_Box_center_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Box *arg1 = (Box *) 0 ;
-  aiv::vctr< 3 > *arg2 = (aiv::vctr< 3 > *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:Box_center_set",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Box, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Box_center_set" "', argument " "1"" of type '" "Box *""'"); 
-  }
-  arg1 = reinterpret_cast< Box * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_aiv__vctrT_3_double_t, 0 |  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Box_center_set" "', argument " "2"" of type '" "aiv::vctr< 3 > *""'"); 
-  }
-  arg2 = reinterpret_cast< aiv::vctr< 3 > * >(argp2);
-  if (arg1) (arg1)->center = *arg2;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Box_center_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Box *arg1 = (Box *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  aiv::vctr< 3 > *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:Box_center_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Box, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Box_center_get" "', argument " "1"" of type '" "Box *""'"); 
-  }
-  arg1 = reinterpret_cast< Box * >(argp1);
-  result = (aiv::vctr< 3 > *)& ((arg1)->center);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_aiv__vctrT_3_double_t, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Box_A_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Box *arg1 = (Box *) 0 ;
-  double arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  double val2 ;
-  int ecode2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:Box_A_set",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Box, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Box_A_set" "', argument " "1"" of type '" "Box *""'"); 
-  }
-  arg1 = reinterpret_cast< Box * >(argp1);
-  ecode2 = SWIG_AsVal_double(obj1, &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Box_A_set" "', argument " "2"" of type '" "double""'");
-  } 
-  arg2 = static_cast< double >(val2);
-  if (arg1) (arg1)->A = arg2;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Box_A_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Box *arg1 = (Box *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  double result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:Box_A_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Box, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Box_A_get" "', argument " "1"" of type '" "Box *""'"); 
-  }
-  arg1 = reinterpret_cast< Box * >(argp1);
-  result = (double) ((arg1)->A);
-  resultobj = SWIG_From_double(static_cast< double >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Box_B_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Box *arg1 = (Box *) 0 ;
-  double arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  double val2 ;
-  int ecode2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:Box_B_set",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Box, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Box_B_set" "', argument " "1"" of type '" "Box *""'"); 
-  }
-  arg1 = reinterpret_cast< Box * >(argp1);
-  ecode2 = SWIG_AsVal_double(obj1, &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Box_B_set" "', argument " "2"" of type '" "double""'");
-  } 
-  arg2 = static_cast< double >(val2);
-  if (arg1) (arg1)->B = arg2;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Box_B_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Box *arg1 = (Box *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  double result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:Box_B_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Box, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Box_B_get" "', argument " "1"" of type '" "Box *""'"); 
-  }
-  arg1 = reinterpret_cast< Box * >(argp1);
-  result = (double) ((arg1)->B);
-  resultobj = SWIG_From_double(static_cast< double >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Box_H_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Box *arg1 = (Box *) 0 ;
-  double arg2 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  double val2 ;
-  int ecode2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:Box_H_set",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Box, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Box_H_set" "', argument " "1"" of type '" "Box *""'"); 
-  }
-  arg1 = reinterpret_cast< Box * >(argp1);
-  ecode2 = SWIG_AsVal_double(obj1, &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "Box_H_set" "', argument " "2"" of type '" "double""'");
-  } 
-  arg2 = static_cast< double >(val2);
-  if (arg1) (arg1)->H = arg2;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Box_H_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Box *arg1 = (Box *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  double result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:Box_H_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Box, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Box_H_get" "', argument " "1"" of type '" "Box *""'"); 
-  }
-  arg1 = reinterpret_cast< Box * >(argp1);
-  result = (double) ((arg1)->H);
-  resultobj = SWIG_From_double(static_cast< double >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Box_updirect_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Box *arg1 = (Box *) 0 ;
-  aiv::vctr< 3 > *arg2 = (aiv::vctr< 3 > *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:Box_updirect_set",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Box, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Box_updirect_set" "', argument " "1"" of type '" "Box *""'"); 
-  }
-  arg1 = reinterpret_cast< Box * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_aiv__vctrT_3_double_t, 0 |  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Box_updirect_set" "', argument " "2"" of type '" "aiv::vctr< 3 > *""'"); 
-  }
-  arg2 = reinterpret_cast< aiv::vctr< 3 > * >(argp2);
-  if (arg1) (arg1)->updirect = *arg2;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Box_updirect_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Box *arg1 = (Box *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  aiv::vctr< 3 > *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:Box_updirect_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Box, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Box_updirect_get" "', argument " "1"" of type '" "Box *""'"); 
-  }
-  arg1 = reinterpret_cast< Box * >(argp1);
-  result = (aiv::vctr< 3 > *)& ((arg1)->updirect);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_aiv__vctrT_3_double_t, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Box_get_minxyz(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Box *arg1 = (Box *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  SwigValueWrapper< aiv::vctr< 3 > > result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:Box_get_minxyz",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Box, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Box_get_minxyz" "', argument " "1"" of type '" "Box const *""'"); 
-  }
-  arg1 = reinterpret_cast< Box * >(argp1);
-  {
-    try{
-      result = ((Box const *)arg1)->get_minxyz(); 
-    }catch( const char *e ){
-      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
-    }catch(...){
-      return NULL; 
-    } 
-  }
-  resultobj = SWIG_NewPointerObj((new aiv::vctr< 3 >(static_cast< const aiv::vctr< 3 >& >(result))), SWIGTYPE_p_aiv__vctrT_3_double_t, SWIG_POINTER_OWN |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Box_get_maxxyz(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Box *arg1 = (Box *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  SwigValueWrapper< aiv::vctr< 3 > > result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:Box_get_maxxyz",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Box, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Box_get_maxxyz" "', argument " "1"" of type '" "Box const *""'"); 
-  }
-  arg1 = reinterpret_cast< Box * >(argp1);
-  {
-    try{
-      result = ((Box const *)arg1)->get_maxxyz(); 
-    }catch( const char *e ){
-      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
-    }catch(...){
-      return NULL; 
-    } 
-  }
-  resultobj = SWIG_NewPointerObj((new aiv::vctr< 3 >(static_cast< const aiv::vctr< 3 >& >(result))), SWIGTYPE_p_aiv__vctrT_3_double_t, SWIG_POINTER_OWN |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_Box_check(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Box *arg1 = (Box *) 0 ;
-  aiv::vctr< 3,double > *arg2 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  bool result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:Box_check",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Box, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "Box_check" "', argument " "1"" of type '" "Box const *""'"); 
-  }
-  arg1 = reinterpret_cast< Box * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_aiv__vctrT_3_double_t,  0  | 0);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "Box_check" "', argument " "2"" of type '" "aiv::vctr< 3,double > const &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "Box_check" "', argument " "2"" of type '" "aiv::vctr< 3,double > const &""'"); 
-  }
-  arg2 = reinterpret_cast< aiv::vctr< 3,double > * >(argp2);
-  {
-    try{
-      result = (bool)((Box const *)arg1)->check((aiv::vctr< 3,double > const &)*arg2); 
-    }catch( const char *e ){
-      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
-    }catch(...){
-      return NULL; 
-    } 
-  }
-  resultobj = SWIG_From_bool(static_cast< bool >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_new_Box__SWIG_0(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Box *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)":new_Box")) SWIG_fail;
-  {
-    try{
-      result = (Box *)new Box(); 
-    }catch( const char *e ){
-      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
-    }catch(...){
-      return NULL; 
-    } 
-  }
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Box, SWIG_POINTER_NEW |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_new_Box__SWIG_1(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  SwigValueWrapper< aiv::vctr< 3 > > arg1 ;
-  double arg2 ;
-  double arg3 ;
-  double arg4 ;
-  SwigValueWrapper< aiv::vctr< 3 > > arg5 ;
-  void *argp1 ;
-  int res1 = 0 ;
-  double val2 ;
-  int ecode2 = 0 ;
-  double val3 ;
-  int ecode3 = 0 ;
-  double val4 ;
-  int ecode4 = 0 ;
-  void *argp5 ;
-  int res5 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  PyObject * obj2 = 0 ;
-  PyObject * obj3 = 0 ;
-  PyObject * obj4 = 0 ;
-  Box *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OOOOO:new_Box",&obj0,&obj1,&obj2,&obj3,&obj4)) SWIG_fail;
-  {
-    res1 = SWIG_ConvertPtr(obj0, &argp1, SWIGTYPE_p_aiv__vctrT_3_double_t,  0  | 0);
-    if (!SWIG_IsOK(res1)) {
-      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_Box" "', argument " "1"" of type '" "aiv::vctr< 3 >""'"); 
-    }  
-    if (!argp1) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Box" "', argument " "1"" of type '" "aiv::vctr< 3 >""'");
-    } else {
-      aiv::vctr< 3 > * temp = reinterpret_cast< aiv::vctr< 3 > * >(argp1);
-      arg1 = *temp;
-      if (SWIG_IsNewObj(res1)) delete temp;
-    }
-  }
-  ecode2 = SWIG_AsVal_double(obj1, &val2);
-  if (!SWIG_IsOK(ecode2)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "new_Box" "', argument " "2"" of type '" "double""'");
-  } 
-  arg2 = static_cast< double >(val2);
-  ecode3 = SWIG_AsVal_double(obj2, &val3);
-  if (!SWIG_IsOK(ecode3)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode3), "in method '" "new_Box" "', argument " "3"" of type '" "double""'");
-  } 
-  arg3 = static_cast< double >(val3);
-  ecode4 = SWIG_AsVal_double(obj3, &val4);
-  if (!SWIG_IsOK(ecode4)) {
-    SWIG_exception_fail(SWIG_ArgError(ecode4), "in method '" "new_Box" "', argument " "4"" of type '" "double""'");
-  } 
-  arg4 = static_cast< double >(val4);
-  {
-    res5 = SWIG_ConvertPtr(obj4, &argp5, SWIGTYPE_p_aiv__vctrT_3_double_t,  0  | 0);
-    if (!SWIG_IsOK(res5)) {
-      SWIG_exception_fail(SWIG_ArgError(res5), "in method '" "new_Box" "', argument " "5"" of type '" "aiv::vctr< 3 >""'"); 
-    }  
-    if (!argp5) {
-      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_Box" "', argument " "5"" of type '" "aiv::vctr< 3 >""'");
-    } else {
-      aiv::vctr< 3 > * temp = reinterpret_cast< aiv::vctr< 3 > * >(argp5);
-      arg5 = *temp;
-      if (SWIG_IsNewObj(res5)) delete temp;
-    }
-  }
-  {
-    try{
-      result = (Box *)new Box(arg1,arg2,arg3,arg4,arg5); 
-    }catch( const char *e ){
-      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
-    }catch(...){
-      return NULL; 
-    } 
-  }
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_Box, SWIG_POINTER_NEW |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_new_Box(PyObject *self, PyObject *args) {
-  int argc;
-  PyObject *argv[6];
-  int ii;
-  
-  if (!PyTuple_Check(args)) SWIG_fail;
-  argc = args ? (int)PyObject_Length(args) : 0;
-  for (ii = 0; (ii < 5) && (ii < argc); ii++) {
-    argv[ii] = PyTuple_GET_ITEM(args,ii);
-  }
-  if (argc == 0) {
-    return _wrap_new_Box__SWIG_0(self, args);
-  }
-  if (argc == 5) {
-    int _v;
-    int res = SWIG_ConvertPtr(argv[0], 0, SWIGTYPE_p_aiv__vctrT_3_double_t, 0);
-    _v = SWIG_CheckState(res);
-    if (_v) {
-      {
-        int res = SWIG_AsVal_double(argv[1], NULL);
-        _v = SWIG_CheckState(res);
-      }
-      if (_v) {
-        {
-          int res = SWIG_AsVal_double(argv[2], NULL);
-          _v = SWIG_CheckState(res);
-        }
-        if (_v) {
-          {
-            int res = SWIG_AsVal_double(argv[3], NULL);
-            _v = SWIG_CheckState(res);
-          }
-          if (_v) {
-            int res = SWIG_ConvertPtr(argv[4], 0, SWIGTYPE_p_aiv__vctrT_3_double_t, 0);
-            _v = SWIG_CheckState(res);
-            if (_v) {
-              return _wrap_new_Box__SWIG_1(self, args);
-            }
-          }
-        }
-      }
-    }
-  }
-  
-fail:
-  SWIG_SetErrorMsg(PyExc_NotImplementedError,"Wrong number or type of arguments for overloaded function 'new_Box'.\n"
-    "  Possible C/C++ prototypes are:\n"
-    "    Box::Box()\n"
-    "    Box::Box(aiv::vctr< 3 >,double,double,double,aiv::vctr< 3 >)\n");
-  return 0;
-}
-
-
-SWIGINTERN PyObject *_wrap_delete_Box(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  Box *arg1 = (Box *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:delete_Box",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_Box, SWIG_POINTER_DISOWN |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_Box" "', argument " "1"" of type '" "Box *""'"); 
-  }
-  arg1 = reinterpret_cast< Box * >(argp1);
-  {
-    try{
-      delete arg1; 
-    }catch( const char *e ){
-      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
-    }catch(...){
-      return NULL; 
-    } 
-  }
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *Box_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *obj;
-  if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
-  SWIG_TypeNewClientData(SWIGTYPE_p_Box, SWIG_NewClientData(obj));
-  return SWIG_Py_Void();
-}
-
-SWIGINTERN PyObject *_wrap_SetFigures_Figures_set(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  SetFigures *arg1 = (SetFigures *) 0 ;
-  std::vector< BaseFigure * > *arg2 = (std::vector< BaseFigure * > *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:SetFigures_Figures_set",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_SetFigures, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SetFigures_Figures_set" "', argument " "1"" of type '" "SetFigures *""'"); 
-  }
-  arg1 = reinterpret_cast< SetFigures * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_std__vectorT_BaseFigure_p_t, 0 |  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "SetFigures_Figures_set" "', argument " "2"" of type '" "std::vector< BaseFigure * > *""'"); 
-  }
-  arg2 = reinterpret_cast< std::vector< BaseFigure * > * >(argp2);
-  if (arg1) (arg1)->Figures = *arg2;
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_SetFigures_Figures_get(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  SetFigures *arg1 = (SetFigures *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  std::vector< BaseFigure * > *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:SetFigures_Figures_get",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_SetFigures, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SetFigures_Figures_get" "', argument " "1"" of type '" "SetFigures *""'"); 
-  }
-  arg1 = reinterpret_cast< SetFigures * >(argp1);
-  result = (std::vector< BaseFigure * > *)& ((arg1)->Figures);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_std__vectorT_BaseFigure_p_t, 0 |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_SetFigures_add(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  SetFigures *arg1 = (SetFigures *) 0 ;
-  BaseFigure *arg2 = (BaseFigure *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:SetFigures_add",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_SetFigures, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SetFigures_add" "', argument " "1"" of type '" "SetFigures *""'"); 
-  }
-  arg1 = reinterpret_cast< SetFigures * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2,SWIGTYPE_p_BaseFigure, 0 |  0 );
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "SetFigures_add" "', argument " "2"" of type '" "BaseFigure *""'"); 
-  }
-  arg2 = reinterpret_cast< BaseFigure * >(argp2);
-  {
-    try{
-      (arg1)->add(arg2); 
-    }catch( const char *e ){
-      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
-    }catch(...){
-      return NULL; 
-    } 
-  }
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_SetFigures_get_minxyz(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  SetFigures *arg1 = (SetFigures *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  SwigValueWrapper< aiv::vctr< 3 > > result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:SetFigures_get_minxyz",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_SetFigures, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SetFigures_get_minxyz" "', argument " "1"" of type '" "SetFigures const *""'"); 
-  }
-  arg1 = reinterpret_cast< SetFigures * >(argp1);
-  {
-    try{
-      result = ((SetFigures const *)arg1)->get_minxyz(); 
-    }catch( const char *e ){
-      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
-    }catch(...){
-      return NULL; 
-    } 
-  }
-  resultobj = SWIG_NewPointerObj((new aiv::vctr< 3 >(static_cast< const aiv::vctr< 3 >& >(result))), SWIGTYPE_p_aiv__vctrT_3_double_t, SWIG_POINTER_OWN |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_SetFigures_get_maxxyz(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  SetFigures *arg1 = (SetFigures *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  SwigValueWrapper< aiv::vctr< 3 > > result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:SetFigures_get_maxxyz",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_SetFigures, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SetFigures_get_maxxyz" "', argument " "1"" of type '" "SetFigures const *""'"); 
-  }
-  arg1 = reinterpret_cast< SetFigures * >(argp1);
-  {
-    try{
-      result = ((SetFigures const *)arg1)->get_maxxyz(); 
-    }catch( const char *e ){
-      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
-    }catch(...){
-      return NULL; 
-    } 
-  }
-  resultobj = SWIG_NewPointerObj((new aiv::vctr< 3 >(static_cast< const aiv::vctr< 3 >& >(result))), SWIGTYPE_p_aiv__vctrT_3_double_t, SWIG_POINTER_OWN |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_SetFigures_check(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  SetFigures *arg1 = (SetFigures *) 0 ;
-  aiv::vctr< 3,double > *arg2 = 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  PyObject * obj0 = 0 ;
-  PyObject * obj1 = 0 ;
-  bool result;
-  
-  if (!PyArg_ParseTuple(args,(char *)"OO:SetFigures_check",&obj0,&obj1)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_SetFigures, 0 |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "SetFigures_check" "', argument " "1"" of type '" "SetFigures const *""'"); 
-  }
-  arg1 = reinterpret_cast< SetFigures * >(argp1);
-  res2 = SWIG_ConvertPtr(obj1, &argp2, SWIGTYPE_p_aiv__vctrT_3_double_t,  0  | 0);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "SetFigures_check" "', argument " "2"" of type '" "aiv::vctr< 3,double > const &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "SetFigures_check" "', argument " "2"" of type '" "aiv::vctr< 3,double > const &""'"); 
-  }
-  arg2 = reinterpret_cast< aiv::vctr< 3,double > * >(argp2);
-  {
-    try{
-      result = (bool)((SetFigures const *)arg1)->check((aiv::vctr< 3,double > const &)*arg2); 
-    }catch( const char *e ){
-      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
-    }catch(...){
-      return NULL; 
-    } 
-  }
-  resultobj = SWIG_From_bool(static_cast< bool >(result));
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_new_SetFigures(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  SetFigures *result = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)":new_SetFigures")) SWIG_fail;
-  {
-    try{
-      result = (SetFigures *)new SetFigures(); 
-    }catch( const char *e ){
-      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
-    }catch(...){
-      return NULL; 
-    } 
-  }
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_SetFigures, SWIG_POINTER_NEW |  0 );
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *_wrap_delete_SetFigures(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *resultobj = 0;
-  SetFigures *arg1 = (SetFigures *) 0 ;
-  void *argp1 = 0 ;
-  int res1 = 0 ;
-  PyObject * obj0 = 0 ;
-  
-  if (!PyArg_ParseTuple(args,(char *)"O:delete_SetFigures",&obj0)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(obj0, &argp1,SWIGTYPE_p_SetFigures, SWIG_POINTER_DISOWN |  0 );
-  if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "delete_SetFigures" "', argument " "1"" of type '" "SetFigures *""'"); 
-  }
-  arg1 = reinterpret_cast< SetFigures * >(argp1);
-  {
-    try{
-      delete arg1; 
-    }catch( const char *e ){
-      PyErr_SetString( PyExc_RuntimeError, e ); return NULL; 
-    }catch(...){
-      return NULL; 
-    } 
-  }
-  resultobj = SWIG_Py_Void();
-  return resultobj;
-fail:
-  return NULL;
-}
-
-
-SWIGINTERN PyObject *SetFigures_swigregister(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
-  PyObject *obj;
-  if (!PyArg_ParseTuple(args,(char*)"O:swigregister", &obj)) return NULL;
-  SWIG_TypeNewClientData(SWIGTYPE_p_SetFigures, SWIG_NewClientData(obj));
   return SWIG_Py_Void();
 }
 
@@ -37309,7 +36959,7 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"Model_step", _wrap_Model_step, METH_VARARGS, (char *)"Model_step(Model self)"},
 	 { (char *)"Model_trans_set", _wrap_Model_trans_set, METH_VARARGS, (char *)"Model_trans_set(Model self, GlobalTrans trans)"},
 	 { (char *)"Model_trans_get", _wrap_Model_trans_get, METH_VARARGS, (char *)"Model_trans_get(Model self) -> GlobalTrans"},
-	 { (char *)"Model_init", _wrap_Model_init, METH_VARARGS, (char *)"Model_init(Model self, BaseFigure figure, GlobalTrans trans)"},
+	 { (char *)"Model_init", _wrap_Model_init, METH_VARARGS, (char *)"Model_init(Model self, Figure figure, GlobalTrans trans)"},
 	 { (char *)"Model_dump_head", _wrap_Model_dump_head, METH_VARARGS, (char *)"Model_dump_head(Model self, aiv::Ostream & S)"},
 	 { (char *)"Model_dump_data", _wrap_Model_dump_data, METH_VARARGS, (char *)"Model_dump_data(Model self, aiv::Ostream & S)"},
 	 { (char *)"Model_init_diag", _wrap_Model_init_diag, METH_VARARGS, (char *)"Model_init_diag(Model self, aiv::Ostream & S)"},
@@ -37332,6 +36982,52 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"new_Cell", _wrap_new_Cell, METH_VARARGS, (char *)"new_Cell() -> Cell"},
 	 { (char *)"delete_Cell", _wrap_delete_Cell, METH_VARARGS, (char *)"delete_Cell(Cell self)"},
 	 { (char *)"Cell_swigregister", Cell_swigregister, METH_VARARGS, NULL},
+	 { (char *)"cylinder", _wrap_cylinder, METH_VARARGS, (char *)"cylinder(vctr3 bottom_origin_center, vctr3 n, double R, double H) -> Figure"},
+	 { (char *)"box", _wrap_box, METH_VARARGS, (char *)"box(vctr3 bottom_origin_center, vctr3 n, double phi, double A, double B, double H) -> Figure"},
+	 { (char *)"cube", _wrap_cube, METH_VARARGS, (char *)"cube(vctr3 bottom_origin_center, vctr3 n, double phi, double A) -> Figure"},
+	 { (char *)"spheroid", _wrap_spheroid, METH_VARARGS, (char *)"spheroid(vctr3 center, double R) -> Figure"},
+	 { (char *)"Figure_get_min", _wrap_Figure_get_min, METH_VARARGS, (char *)"Figure_get_min(Figure self) -> aiv::vctr< 3 >"},
+	 { (char *)"Figure_get_max", _wrap_Figure_get_max, METH_VARARGS, (char *)"Figure_get_max(Figure self) -> aiv::vctr< 3 >"},
+	 { (char *)"Figure_check", _wrap_Figure_check, METH_VARARGS, (char *)"Figure_check(Figure self, vctr3 r) -> bool"},
+	 { (char *)"Figure_transform", _wrap_Figure_transform, METH_VARARGS, (char *)"Figure_transform(Figure self, vctr3 ox, vctr3 oy, vctr3 oz) -> Figure"},
+	 { (char *)"Figure_move", _wrap_Figure_move, METH_VARARGS, (char *)"Figure_move(Figure self, vctr3 offset) -> Figure"},
+	 { (char *)"Figure_rotate", _wrap_Figure_rotate, METH_VARARGS, (char *)"Figure_rotate(Figure self, vctr3 center, vctr3 n_phi) -> Figure"},
+	 { (char *)"Figure___add__", _wrap_Figure___add__, METH_VARARGS, (char *)"Figure___add__(Figure self, Figure other) -> Figure"},
+	 { (char *)"Figure___sub__", _wrap_Figure___sub__, METH_VARARGS, (char *)"Figure___sub__(Figure self, Figure other) -> Figure"},
+	 { (char *)"Figure___mul__", _wrap_Figure___mul__, METH_VARARGS, (char *)"Figure___mul__(Figure self, Figure other) -> Figure"},
+	 { (char *)"new_Figure", _wrap_new_Figure, METH_VARARGS, (char *)"new_Figure() -> Figure"},
+	 { (char *)"delete_Figure", _wrap_delete_Figure, METH_VARARGS, (char *)"delete_Figure(Figure self)"},
+	 { (char *)"Figure_swigregister", Figure_swigregister, METH_VARARGS, NULL},
+	 { (char *)"NbCR_dpos_set", _wrap_NbCR_dpos_set, METH_VARARGS, (char *)"NbCR_dpos_set(NbCR self, indx3 dpos)"},
+	 { (char *)"NbCR_dpos_get", _wrap_NbCR_dpos_get, METH_VARARGS, (char *)"NbCR_dpos_get(NbCR self) -> indx3"},
+	 { (char *)"NbCR_lattice_set", _wrap_NbCR_lattice_set, METH_VARARGS, (char *)"NbCR_lattice_set(NbCR self, int lattice)"},
+	 { (char *)"NbCR_lattice_get", _wrap_NbCR_lattice_get, METH_VARARGS, (char *)"NbCR_lattice_get(NbCR self) -> int"},
+	 { (char *)"new_NbCR", _wrap_new_NbCR, METH_VARARGS, (char *)"\n"
+		"NbCR()\n"
+		"new_NbCR(indx3 d, int l) -> NbCR\n"
+		""},
+	 { (char *)"delete_NbCR", _wrap_delete_NbCR, METH_VARARGS, (char *)"delete_NbCR(NbCR self)"},
+	 { (char *)"NbCR_swigregister", NbCR_swigregister, METH_VARARGS, NULL},
+	 { (char *)"latCubic_nb_arr_get", _wrap_latCubic_nb_arr_get, METH_VARARGS, NULL},
+	 { (char *)"new_latCubic", _wrap_new_latCubic, METH_VARARGS, (char *)"new_latCubic() -> latCubic"},
+	 { (char *)"delete_latCubic", _wrap_delete_latCubic, METH_VARARGS, (char *)"delete_latCubic(latCubic self)"},
+	 { (char *)"latCubic_swigregister", latCubic_swigregister, METH_VARARGS, NULL},
+	 { (char *)"latICC_nb_arr_get", _wrap_latICC_nb_arr_get, METH_VARARGS, NULL},
+	 { (char *)"new_latICC", _wrap_new_latICC, METH_VARARGS, (char *)"new_latICC() -> latICC"},
+	 { (char *)"delete_latICC", _wrap_delete_latICC, METH_VARARGS, (char *)"delete_latICC(latICC self)"},
+	 { (char *)"latICC_swigregister", latICC_swigregister, METH_VARARGS, NULL},
+	 { (char *)"latFCC3_nb_arr_get", _wrap_latFCC3_nb_arr_get, METH_VARARGS, NULL},
+	 { (char *)"new_latFCC3", _wrap_new_latFCC3, METH_VARARGS, (char *)"new_latFCC3() -> latFCC3"},
+	 { (char *)"delete_latFCC3", _wrap_delete_latFCC3, METH_VARARGS, (char *)"delete_latFCC3(latFCC3 self)"},
+	 { (char *)"latFCC3_swigregister", latFCC3_swigregister, METH_VARARGS, NULL},
+	 { (char *)"latFCC4_nb_arr_get", _wrap_latFCC4_nb_arr_get, METH_VARARGS, NULL},
+	 { (char *)"new_latFCC4", _wrap_new_latFCC4, METH_VARARGS, (char *)"new_latFCC4() -> latFCC4"},
+	 { (char *)"delete_latFCC4", _wrap_delete_latFCC4, METH_VARARGS, (char *)"delete_latFCC4(latFCC4 self)"},
+	 { (char *)"latFCC4_swigregister", latFCC4_swigregister, METH_VARARGS, NULL},
+	 { (char *)"latFCC4_trans_1_nb_arr_get", _wrap_latFCC4_trans_1_nb_arr_get, METH_VARARGS, NULL},
+	 { (char *)"new_latFCC4_trans_1", _wrap_new_latFCC4_trans_1, METH_VARARGS, (char *)"new_latFCC4_trans_1() -> latFCC4_trans_1"},
+	 { (char *)"delete_latFCC4_trans_1", _wrap_delete_latFCC4_trans_1, METH_VARARGS, (char *)"delete_latFCC4_trans_1(latFCC4_trans_1 self)"},
+	 { (char *)"latFCC4_trans_1_swigregister", latFCC4_trans_1_swigregister, METH_VARARGS, NULL},
 	 { (char *)"GlobalTrans_I1_set", _wrap_GlobalTrans_I1_set, METH_VARARGS, (char *)"GlobalTrans_I1_set(GlobalTrans self, aiv::vctr< 3 > * I1)"},
 	 { (char *)"GlobalTrans_I1_get", _wrap_GlobalTrans_I1_get, METH_VARARGS, (char *)"GlobalTrans_I1_get(GlobalTrans self) -> aiv::vctr< 3 > *"},
 	 { (char *)"GlobalTrans_I2_set", _wrap_GlobalTrans_I2_set, METH_VARARGS, (char *)"GlobalTrans_I2_set(GlobalTrans self, aiv::vctr< 3 > * I2)"},
@@ -37346,72 +37042,6 @@ static PyMethodDef SwigMethods[] = {
 	 { (char *)"GlobalTrans_trans_vec_back", _wrap_GlobalTrans_trans_vec_back, METH_VARARGS, (char *)"GlobalTrans_trans_vec_back(GlobalTrans self, vctr3 r) -> aiv::vctr< 3 >"},
 	 { (char *)"delete_GlobalTrans", _wrap_delete_GlobalTrans, METH_VARARGS, (char *)"delete_GlobalTrans(GlobalTrans self)"},
 	 { (char *)"GlobalTrans_swigregister", GlobalTrans_swigregister, METH_VARARGS, NULL},
-	 { (char *)"internal_trans_vec", _wrap_internal_trans_vec, METH_VARARGS, (char *)"internal_trans_vec(vctr3 r, vctr3 center, vctr3 updirect) -> vctr3"},
-	 { (char *)"BaseFigure_get_minxyz", _wrap_BaseFigure_get_minxyz, METH_VARARGS, (char *)"BaseFigure_get_minxyz(BaseFigure self) -> aiv::vctr< 3 >"},
-	 { (char *)"BaseFigure_get_maxxyz", _wrap_BaseFigure_get_maxxyz, METH_VARARGS, (char *)"BaseFigure_get_maxxyz(BaseFigure self) -> aiv::vctr< 3 >"},
-	 { (char *)"BaseFigure_check", _wrap_BaseFigure_check, METH_VARARGS, (char *)"BaseFigure_check(BaseFigure self, vctr3 r) -> bool"},
-	 { (char *)"delete_BaseFigure", _wrap_delete_BaseFigure, METH_VARARGS, (char *)"delete_BaseFigure(BaseFigure self)"},
-	 { (char *)"BaseFigure_swigregister", BaseFigure_swigregister, METH_VARARGS, NULL},
-	 { (char *)"Cylinder_center_set", _wrap_Cylinder_center_set, METH_VARARGS, (char *)"Cylinder_center_set(Cylinder self, aiv::vctr< 3 > * center)"},
-	 { (char *)"Cylinder_center_get", _wrap_Cylinder_center_get, METH_VARARGS, (char *)"Cylinder_center_get(Cylinder self) -> aiv::vctr< 3 > *"},
-	 { (char *)"Cylinder_R_set", _wrap_Cylinder_R_set, METH_VARARGS, (char *)"Cylinder_R_set(Cylinder self, double R)"},
-	 { (char *)"Cylinder_R_get", _wrap_Cylinder_R_get, METH_VARARGS, (char *)"Cylinder_R_get(Cylinder self) -> double"},
-	 { (char *)"Cylinder_H_set", _wrap_Cylinder_H_set, METH_VARARGS, (char *)"Cylinder_H_set(Cylinder self, double H)"},
-	 { (char *)"Cylinder_H_get", _wrap_Cylinder_H_get, METH_VARARGS, (char *)"Cylinder_H_get(Cylinder self) -> double"},
-	 { (char *)"Cylinder_updirect_set", _wrap_Cylinder_updirect_set, METH_VARARGS, (char *)"Cylinder_updirect_set(Cylinder self, aiv::vctr< 3 > * updirect)"},
-	 { (char *)"Cylinder_updirect_get", _wrap_Cylinder_updirect_get, METH_VARARGS, (char *)"Cylinder_updirect_get(Cylinder self) -> aiv::vctr< 3 > *"},
-	 { (char *)"Cylinder_get_minxyz", _wrap_Cylinder_get_minxyz, METH_VARARGS, (char *)"Cylinder_get_minxyz(Cylinder self) -> aiv::vctr< 3 >"},
-	 { (char *)"Cylinder_get_maxxyz", _wrap_Cylinder_get_maxxyz, METH_VARARGS, (char *)"Cylinder_get_maxxyz(Cylinder self) -> aiv::vctr< 3 >"},
-	 { (char *)"Cylinder_check", _wrap_Cylinder_check, METH_VARARGS, (char *)"Cylinder_check(Cylinder self, vctr3 r) -> bool"},
-	 { (char *)"new_Cylinder", _wrap_new_Cylinder, METH_VARARGS, (char *)"\n"
-		"Cylinder()\n"
-		"new_Cylinder(aiv::vctr< 3 > c, double r, double h, aiv::vctr< 3 > u) -> Cylinder\n"
-		""},
-	 { (char *)"delete_Cylinder", _wrap_delete_Cylinder, METH_VARARGS, (char *)"delete_Cylinder(Cylinder self)"},
-	 { (char *)"Cylinder_swigregister", Cylinder_swigregister, METH_VARARGS, NULL},
-	 { (char *)"Cube_center_set", _wrap_Cube_center_set, METH_VARARGS, (char *)"Cube_center_set(Cube self, aiv::vctr< 3 > * center)"},
-	 { (char *)"Cube_center_get", _wrap_Cube_center_get, METH_VARARGS, (char *)"Cube_center_get(Cube self) -> aiv::vctr< 3 > *"},
-	 { (char *)"Cube_A_set", _wrap_Cube_A_set, METH_VARARGS, (char *)"Cube_A_set(Cube self, double A)"},
-	 { (char *)"Cube_A_get", _wrap_Cube_A_get, METH_VARARGS, (char *)"Cube_A_get(Cube self) -> double"},
-	 { (char *)"Cube_updirect_set", _wrap_Cube_updirect_set, METH_VARARGS, (char *)"Cube_updirect_set(Cube self, aiv::vctr< 3 > * updirect)"},
-	 { (char *)"Cube_updirect_get", _wrap_Cube_updirect_get, METH_VARARGS, (char *)"Cube_updirect_get(Cube self) -> aiv::vctr< 3 > *"},
-	 { (char *)"Cube_get_minxyz", _wrap_Cube_get_minxyz, METH_VARARGS, (char *)"Cube_get_minxyz(Cube self) -> aiv::vctr< 3 >"},
-	 { (char *)"Cube_get_maxxyz", _wrap_Cube_get_maxxyz, METH_VARARGS, (char *)"Cube_get_maxxyz(Cube self) -> aiv::vctr< 3 >"},
-	 { (char *)"Cube_check", _wrap_Cube_check, METH_VARARGS, (char *)"Cube_check(Cube self, vctr3 r) -> bool"},
-	 { (char *)"new_Cube", _wrap_new_Cube, METH_VARARGS, (char *)"\n"
-		"Cube()\n"
-		"new_Cube(aiv::vctr< 3 > c, double a, aiv::vctr< 3 > u) -> Cube\n"
-		""},
-	 { (char *)"delete_Cube", _wrap_delete_Cube, METH_VARARGS, (char *)"delete_Cube(Cube self)"},
-	 { (char *)"Cube_swigregister", Cube_swigregister, METH_VARARGS, NULL},
-	 { (char *)"Box_center_set", _wrap_Box_center_set, METH_VARARGS, (char *)"Box_center_set(Box self, aiv::vctr< 3 > * center)"},
-	 { (char *)"Box_center_get", _wrap_Box_center_get, METH_VARARGS, (char *)"Box_center_get(Box self) -> aiv::vctr< 3 > *"},
-	 { (char *)"Box_A_set", _wrap_Box_A_set, METH_VARARGS, (char *)"Box_A_set(Box self, double A)"},
-	 { (char *)"Box_A_get", _wrap_Box_A_get, METH_VARARGS, (char *)"Box_A_get(Box self) -> double"},
-	 { (char *)"Box_B_set", _wrap_Box_B_set, METH_VARARGS, (char *)"Box_B_set(Box self, double B)"},
-	 { (char *)"Box_B_get", _wrap_Box_B_get, METH_VARARGS, (char *)"Box_B_get(Box self) -> double"},
-	 { (char *)"Box_H_set", _wrap_Box_H_set, METH_VARARGS, (char *)"Box_H_set(Box self, double H)"},
-	 { (char *)"Box_H_get", _wrap_Box_H_get, METH_VARARGS, (char *)"Box_H_get(Box self) -> double"},
-	 { (char *)"Box_updirect_set", _wrap_Box_updirect_set, METH_VARARGS, (char *)"Box_updirect_set(Box self, aiv::vctr< 3 > * updirect)"},
-	 { (char *)"Box_updirect_get", _wrap_Box_updirect_get, METH_VARARGS, (char *)"Box_updirect_get(Box self) -> aiv::vctr< 3 > *"},
-	 { (char *)"Box_get_minxyz", _wrap_Box_get_minxyz, METH_VARARGS, (char *)"Box_get_minxyz(Box self) -> aiv::vctr< 3 >"},
-	 { (char *)"Box_get_maxxyz", _wrap_Box_get_maxxyz, METH_VARARGS, (char *)"Box_get_maxxyz(Box self) -> aiv::vctr< 3 >"},
-	 { (char *)"Box_check", _wrap_Box_check, METH_VARARGS, (char *)"Box_check(Box self, vctr3 r) -> bool"},
-	 { (char *)"new_Box", _wrap_new_Box, METH_VARARGS, (char *)"\n"
-		"Box()\n"
-		"new_Box(aiv::vctr< 3 > c, double a, double b, double h, aiv::vctr< 3 > u) -> Box\n"
-		""},
-	 { (char *)"delete_Box", _wrap_delete_Box, METH_VARARGS, (char *)"delete_Box(Box self)"},
-	 { (char *)"Box_swigregister", Box_swigregister, METH_VARARGS, NULL},
-	 { (char *)"SetFigures_Figures_set", _wrap_SetFigures_Figures_set, METH_VARARGS, (char *)"SetFigures_Figures_set(SetFigures self, std::vector< BaseFigure * > * Figures)"},
-	 { (char *)"SetFigures_Figures_get", _wrap_SetFigures_Figures_get, METH_VARARGS, (char *)"SetFigures_Figures_get(SetFigures self) -> std::vector< BaseFigure * > *"},
-	 { (char *)"SetFigures_add", _wrap_SetFigures_add, METH_VARARGS, (char *)"SetFigures_add(SetFigures self, BaseFigure figure)"},
-	 { (char *)"SetFigures_get_minxyz", _wrap_SetFigures_get_minxyz, METH_VARARGS, (char *)"SetFigures_get_minxyz(SetFigures self) -> aiv::vctr< 3 >"},
-	 { (char *)"SetFigures_get_maxxyz", _wrap_SetFigures_get_maxxyz, METH_VARARGS, (char *)"SetFigures_get_maxxyz(SetFigures self) -> aiv::vctr< 3 >"},
-	 { (char *)"SetFigures_check", _wrap_SetFigures_check, METH_VARARGS, (char *)"SetFigures_check(SetFigures self, vctr3 r) -> bool"},
-	 { (char *)"new_SetFigures", _wrap_new_SetFigures, METH_VARARGS, (char *)"new_SetFigures() -> SetFigures"},
-	 { (char *)"delete_SetFigures", _wrap_delete_SetFigures, METH_VARARGS, (char *)"delete_SetFigures(SetFigures self)"},
-	 { (char *)"SetFigures_swigregister", SetFigures_swigregister, METH_VARARGS, NULL},
 	 { (char *)"indx1_volume", _wrap_indx1_volume, METH_VARARGS, (char *)"indx1_volume(indx1 self) -> long"},
 	 { (char *)"indx1___lt__", _wrap_indx1___lt__, METH_VARARGS, (char *)"\n"
 		"__lt__(indx1 r) -> bool\n"
@@ -38164,23 +37794,14 @@ static PyMethodDef SwigMethods[] = {
 
 /* -------- TYPE CONVERSION AND EQUIVALENCE RULES (BEGIN) -------- */
 
+static void *_p_aiv__meshT_Cell_3_tTo_p_aiv__arrayT_Cell_3_t(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((aiv::array< Cell,3 > *)  ((aiv::mesh< Cell,3 > *) x));
+}
 static void *_p_aiv__arrayT_Cell_3_tTo_p_aiv__base_data(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((aiv::base_data *)  ((aiv::array< Cell,3 > *) x));
 }
 static void *_p_aiv__meshT_Cell_3_tTo_p_aiv__base_data(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((aiv::base_data *) (aiv::array< Cell,3 > *) ((aiv::mesh< Cell,3 > *) x));
-}
-static void *_p_SetFiguresTo_p_BaseFigure(void *x, int *SWIGUNUSEDPARM(newmemory)) {
-    return (void *)((BaseFigure *)  ((SetFigures *) x));
-}
-static void *_p_CubeTo_p_BaseFigure(void *x, int *SWIGUNUSEDPARM(newmemory)) {
-    return (void *)((BaseFigure *)  ((Cube *) x));
-}
-static void *_p_BoxTo_p_BaseFigure(void *x, int *SWIGUNUSEDPARM(newmemory)) {
-    return (void *)((BaseFigure *)  ((Box *) x));
-}
-static void *_p_CylinderTo_p_BaseFigure(void *x, int *SWIGUNUSEDPARM(newmemory)) {
-    return (void *)((BaseFigure *)  ((Cylinder *) x));
 }
 static void *_p_aiv__arr_headTo_p_aiv__data_header(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((aiv::data_header *)  ((aiv::arr_head *) x));
@@ -38200,19 +37821,18 @@ static void *_p_aiv__lrc_headTo_p_aiv__data_header(void *x, int *SWIGUNUSEDPARM(
 static void *_p_aiv__base_dataTo_p_aiv__data_header(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((aiv::data_header *)  ((aiv::base_data *) x));
 }
-static void *_p_aiv__meshT_Cell_3_tTo_p_aiv__arrayT_Cell_3_t(void *x, int *SWIGUNUSEDPARM(newmemory)) {
-    return (void *)((aiv::array< Cell,3 > *)  ((aiv::mesh< Cell,3 > *) x));
-}
 static swig_type_info _swigt__p_Aniso = {"_p_Aniso", "Aniso *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_Atom = {"_p_Atom", "Atom *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_BaseFigure = {"_p_BaseFigure", "BaseFigure *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_Box = {"_p_Box", "Box *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_Cell = {"_p_Cell", "aiv::array< Cell,3 >::cell_type *|Cell *|aiv::multiarray< aiv::array< Cell,3 > >::cell_type *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_Cube = {"_p_Cube", "Cube *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_Cylinder = {"_p_Cylinder", "Cylinder *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_Figure = {"_p_Figure", "Figure *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_GlobalTrans = {"_p_GlobalTrans", "GlobalTrans *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_Model = {"_p_Model", "Model *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_SetFigures = {"_p_SetFigures", "SetFigures *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_NbCR = {"_p_NbCR", "NbCR *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_a_latCubic__max_nb_count__NbCR = {"_p_a_latCubic__max_nb_count__NbCR", "NbCR (*)[latCubic::max_nb_count]", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_a_latFCC3__max_nb_count__NbCR = {"_p_a_latFCC3__max_nb_count__NbCR", "NbCR (*)[latFCC3::max_nb_count]", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_a_latFCC4__max_nb_count__NbCR = {"_p_a_latFCC4__max_nb_count__NbCR", "NbCR (*)[latFCC4::max_nb_count]", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_a_latFCC4_trans_1__max_nb_count__NbCR = {"_p_a_latFCC4_trans_1__max_nb_count__NbCR", "NbCR (*)[latFCC4_trans_1::max_nb_count]", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_a_latICC__max_nb_count__NbCR = {"_p_a_latICC__max_nb_count__NbCR", "NbCR (*)[latICC::max_nb_count]", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_aiv__Istream = {"_p_aiv__Istream", "aiv::Istream *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_aiv__Ostream = {"_p_aiv__Ostream", "aiv::Ostream *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_aiv___base_mem = {"_p_aiv___base_mem", "aiv::_base_mem *", 0, 0, (void*)0, 0};
@@ -38241,21 +37861,27 @@ static swig_type_info _swigt__p_char = {"_p_char", "char *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_double = {"_p_double", "double *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_indx_type = {"_p_indx_type", "indx_type *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_int = {"_p_int", "int *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_latCubic = {"_p_latCubic", "latCubic *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_latFCC3 = {"_p_latFCC3", "latFCC3 *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_latFCC4 = {"_p_latFCC4", "latFCC4 *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_latFCC4_trans_1 = {"_p_latFCC4_trans_1", "latFCC4_trans_1 *", 0, 0, (void*)0, 0};
+static swig_type_info _swigt__p_latICC = {"_p_latICC", "latICC *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_long = {"_p_long", "long *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_std__aiv_convert_for_compare_float = {"_p_std__aiv_convert_for_compare_float", "std::aiv_convert_for_compare_float *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_std__vectorT_BaseFigure_p_t = {"_p_std__vectorT_BaseFigure_p_t", "std::vector< BaseFigure * > *", 0, 0, (void*)0, 0};
 
 static swig_type_info *swig_type_initial[] = {
   &_swigt__p_Aniso,
   &_swigt__p_Atom,
-  &_swigt__p_BaseFigure,
-  &_swigt__p_Box,
   &_swigt__p_Cell,
-  &_swigt__p_Cube,
-  &_swigt__p_Cylinder,
+  &_swigt__p_Figure,
   &_swigt__p_GlobalTrans,
   &_swigt__p_Model,
-  &_swigt__p_SetFigures,
+  &_swigt__p_NbCR,
+  &_swigt__p_a_latCubic__max_nb_count__NbCR,
+  &_swigt__p_a_latFCC3__max_nb_count__NbCR,
+  &_swigt__p_a_latFCC4__max_nb_count__NbCR,
+  &_swigt__p_a_latFCC4_trans_1__max_nb_count__NbCR,
+  &_swigt__p_a_latICC__max_nb_count__NbCR,
   &_swigt__p_aiv__Istream,
   &_swigt__p_aiv__Ostream,
   &_swigt__p_aiv___base_mem,
@@ -38284,21 +37910,27 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_double,
   &_swigt__p_indx_type,
   &_swigt__p_int,
+  &_swigt__p_latCubic,
+  &_swigt__p_latFCC3,
+  &_swigt__p_latFCC4,
+  &_swigt__p_latFCC4_trans_1,
+  &_swigt__p_latICC,
   &_swigt__p_long,
   &_swigt__p_std__aiv_convert_for_compare_float,
-  &_swigt__p_std__vectorT_BaseFigure_p_t,
 };
 
 static swig_cast_info _swigc__p_Aniso[] = {  {&_swigt__p_Aniso, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Atom[] = {  {&_swigt__p_Atom, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_BaseFigure[] = {  {&_swigt__p_SetFigures, _p_SetFiguresTo_p_BaseFigure, 0, 0},  {&_swigt__p_Cube, _p_CubeTo_p_BaseFigure, 0, 0},  {&_swigt__p_BaseFigure, 0, 0, 0},  {&_swigt__p_Cylinder, _p_CylinderTo_p_BaseFigure, 0, 0},  {&_swigt__p_Box, _p_BoxTo_p_BaseFigure, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_Box[] = {  {&_swigt__p_Box, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Cell[] = {  {&_swigt__p_Cell, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_Cube[] = {  {&_swigt__p_Cube, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_Cylinder[] = {  {&_swigt__p_Cylinder, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_Figure[] = {  {&_swigt__p_Figure, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_GlobalTrans[] = {  {&_swigt__p_GlobalTrans, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_Model[] = {  {&_swigt__p_Model, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_SetFigures[] = {  {&_swigt__p_SetFigures, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_NbCR[] = {  {&_swigt__p_NbCR, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_a_latCubic__max_nb_count__NbCR[] = {  {&_swigt__p_a_latCubic__max_nb_count__NbCR, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_a_latFCC3__max_nb_count__NbCR[] = {  {&_swigt__p_a_latFCC3__max_nb_count__NbCR, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_a_latFCC4__max_nb_count__NbCR[] = {  {&_swigt__p_a_latFCC4__max_nb_count__NbCR, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_a_latFCC4_trans_1__max_nb_count__NbCR[] = {  {&_swigt__p_a_latFCC4_trans_1__max_nb_count__NbCR, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_a_latICC__max_nb_count__NbCR[] = {  {&_swigt__p_a_latICC__max_nb_count__NbCR, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_aiv__Istream[] = {  {&_swigt__p_aiv__Istream, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_aiv__Ostream[] = {  {&_swigt__p_aiv__Ostream, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_aiv___base_mem[] = {  {&_swigt__p_aiv___base_mem, 0, 0, 0},{0, 0, 0, 0}};
@@ -38327,21 +37959,27 @@ static swig_cast_info _swigc__p_char[] = {  {&_swigt__p_char, 0, 0, 0},{0, 0, 0,
 static swig_cast_info _swigc__p_double[] = {  {&_swigt__p_double, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_indx_type[] = {  {&_swigt__p_indx_type, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_int[] = {  {&_swigt__p_int, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_latCubic[] = {  {&_swigt__p_latCubic, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_latFCC3[] = {  {&_swigt__p_latFCC3, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_latFCC4[] = {  {&_swigt__p_latFCC4, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_latFCC4_trans_1[] = {  {&_swigt__p_latFCC4_trans_1, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_latICC[] = {  {&_swigt__p_latICC, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_long[] = {  {&_swigt__p_long, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_std__aiv_convert_for_compare_float[] = {  {&_swigt__p_std__aiv_convert_for_compare_float, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_std__vectorT_BaseFigure_p_t[] = {  {&_swigt__p_std__vectorT_BaseFigure_p_t, 0, 0, 0},{0, 0, 0, 0}};
 
 static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_Aniso,
   _swigc__p_Atom,
-  _swigc__p_BaseFigure,
-  _swigc__p_Box,
   _swigc__p_Cell,
-  _swigc__p_Cube,
-  _swigc__p_Cylinder,
+  _swigc__p_Figure,
   _swigc__p_GlobalTrans,
   _swigc__p_Model,
-  _swigc__p_SetFigures,
+  _swigc__p_NbCR,
+  _swigc__p_a_latCubic__max_nb_count__NbCR,
+  _swigc__p_a_latFCC3__max_nb_count__NbCR,
+  _swigc__p_a_latFCC4__max_nb_count__NbCR,
+  _swigc__p_a_latFCC4_trans_1__max_nb_count__NbCR,
+  _swigc__p_a_latICC__max_nb_count__NbCR,
   _swigc__p_aiv__Istream,
   _swigc__p_aiv__Ostream,
   _swigc__p_aiv___base_mem,
@@ -38370,9 +38008,13 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_double,
   _swigc__p_indx_type,
   _swigc__p_int,
+  _swigc__p_latCubic,
+  _swigc__p_latFCC3,
+  _swigc__p_latFCC4,
+  _swigc__p_latFCC4_trans_1,
+  _swigc__p_latICC,
   _swigc__p_long,
   _swigc__p_std__aiv_convert_for_compare_float,
-  _swigc__p_std__vectorT_BaseFigure_p_t,
 };
 
 
@@ -39059,6 +38701,36 @@ SWIG_init(void) {
   
   PyDict_SetItemString(md,(char*)"cvar", SWIG_globals());
   SWIG_addvarlink(SWIG_globals(),(char*)"MAX_RANK",Swig_var_MAX_RANK_get, Swig_var_MAX_RANK_set);
+  SWIG_Python_SetConstant(d, "latCubic_cell_sz",SWIG_From_int(static_cast< int >(latCubic::cell_sz)));
+  SWIG_Python_SetConstant(d, "latCubic_max_nb_count",SWIG_From_int(static_cast< int >(latCubic::max_nb_count)));
+  SWIG_addvarlink(SWIG_globals(),(char*)"latCubic_nb_counts",Swig_var_latCubic_nb_counts_get, Swig_var_latCubic_nb_counts_set);
+  SWIG_addvarlink(SWIG_globals(),(char*)"latCubic_nb_arr",Swig_var_latCubic_nb_arr_get, Swig_var_latCubic_nb_arr_set);
+  SWIG_addvarlink(SWIG_globals(),(char*)"latCubic_coords",Swig_var_latCubic_coords_get, Swig_var_latCubic_coords_set);
+  SWIG_addvarlink(SWIG_globals(),(char*)"latCubic_cell_coord_size",Swig_var_latCubic_cell_coord_size_get, Swig_var_latCubic_cell_coord_size_set);
+  SWIG_Python_SetConstant(d, "latICC_cell_sz",SWIG_From_int(static_cast< int >(latICC::cell_sz)));
+  SWIG_Python_SetConstant(d, "latICC_max_nb_count",SWIG_From_int(static_cast< int >(latICC::max_nb_count)));
+  SWIG_addvarlink(SWIG_globals(),(char*)"latICC_nb_counts",Swig_var_latICC_nb_counts_get, Swig_var_latICC_nb_counts_set);
+  SWIG_addvarlink(SWIG_globals(),(char*)"latICC_nb_arr",Swig_var_latICC_nb_arr_get, Swig_var_latICC_nb_arr_set);
+  SWIG_addvarlink(SWIG_globals(),(char*)"latICC_coords",Swig_var_latICC_coords_get, Swig_var_latICC_coords_set);
+  SWIG_addvarlink(SWIG_globals(),(char*)"latICC_cell_coord_size",Swig_var_latICC_cell_coord_size_get, Swig_var_latICC_cell_coord_size_set);
+  SWIG_Python_SetConstant(d, "latFCC3_cell_sz",SWIG_From_int(static_cast< int >(latFCC3::cell_sz)));
+  SWIG_Python_SetConstant(d, "latFCC3_max_nb_count",SWIG_From_int(static_cast< int >(latFCC3::max_nb_count)));
+  SWIG_addvarlink(SWIG_globals(),(char*)"latFCC3_nb_counts",Swig_var_latFCC3_nb_counts_get, Swig_var_latFCC3_nb_counts_set);
+  SWIG_addvarlink(SWIG_globals(),(char*)"latFCC3_nb_arr",Swig_var_latFCC3_nb_arr_get, Swig_var_latFCC3_nb_arr_set);
+  SWIG_addvarlink(SWIG_globals(),(char*)"latFCC3_coords",Swig_var_latFCC3_coords_get, Swig_var_latFCC3_coords_set);
+  SWIG_addvarlink(SWIG_globals(),(char*)"latFCC3_cell_coord_size",Swig_var_latFCC3_cell_coord_size_get, Swig_var_latFCC3_cell_coord_size_set);
+  SWIG_Python_SetConstant(d, "latFCC4_cell_sz",SWIG_From_int(static_cast< int >(latFCC4::cell_sz)));
+  SWIG_Python_SetConstant(d, "latFCC4_max_nb_count",SWIG_From_int(static_cast< int >(latFCC4::max_nb_count)));
+  SWIG_addvarlink(SWIG_globals(),(char*)"latFCC4_nb_counts",Swig_var_latFCC4_nb_counts_get, Swig_var_latFCC4_nb_counts_set);
+  SWIG_addvarlink(SWIG_globals(),(char*)"latFCC4_nb_arr",Swig_var_latFCC4_nb_arr_get, Swig_var_latFCC4_nb_arr_set);
+  SWIG_addvarlink(SWIG_globals(),(char*)"latFCC4_coords",Swig_var_latFCC4_coords_get, Swig_var_latFCC4_coords_set);
+  SWIG_addvarlink(SWIG_globals(),(char*)"latFCC4_cell_coord_size",Swig_var_latFCC4_cell_coord_size_get, Swig_var_latFCC4_cell_coord_size_set);
+  SWIG_Python_SetConstant(d, "latFCC4_trans_1_cell_sz",SWIG_From_int(static_cast< int >(latFCC4_trans_1::cell_sz)));
+  SWIG_Python_SetConstant(d, "latFCC4_trans_1_max_nb_count",SWIG_From_int(static_cast< int >(latFCC4_trans_1::max_nb_count)));
+  SWIG_addvarlink(SWIG_globals(),(char*)"latFCC4_trans_1_nb_counts",Swig_var_latFCC4_trans_1_nb_counts_get, Swig_var_latFCC4_trans_1_nb_counts_set);
+  SWIG_addvarlink(SWIG_globals(),(char*)"latFCC4_trans_1_nb_arr",Swig_var_latFCC4_trans_1_nb_arr_get, Swig_var_latFCC4_trans_1_nb_arr_set);
+  SWIG_addvarlink(SWIG_globals(),(char*)"latFCC4_trans_1_coords",Swig_var_latFCC4_trans_1_coords_get, Swig_var_latFCC4_trans_1_coords_set);
+  SWIG_addvarlink(SWIG_globals(),(char*)"latFCC4_trans_1_cell_coord_size",Swig_var_latFCC4_trans_1_cell_coord_size_get, Swig_var_latFCC4_trans_1_cell_coord_size_set);
   SWIG_Python_SetConstant(d, "arrC3_dim",SWIG_From_int(static_cast< int >(aiv::array< Cell,3 >::dim)));
   SWIG_Python_SetConstant(d, "arrC3_dump_dim",SWIG_From_int(static_cast< int >(aiv::array< Cell,3 >::dump_dim)));
   SWIG_Python_SetConstant(d, "mult_arrC3_dim",SWIG_From_int(static_cast< int >(aiv::multiarray< aiv::array< Cell,3 > >::dim)));

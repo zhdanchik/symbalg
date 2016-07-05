@@ -61,7 +61,7 @@ public:
 // методы модели, передаются в mk_module
 %(model_steps_heads)s        
 	GlobalTrans *trans;
-	void init(BaseFigure &figure, GlobalTrans &trans);
+	void init(Figure *figure, GlobalTrans &trans);
 
 	//Временная диагностика для тестирования
 	void dump_head(aiv::Ostream& S); 

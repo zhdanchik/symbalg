@@ -288,6 +288,18 @@ class Figure(_object):
     __swig_getmethods__ = {}
     __getattr__ = lambda self, name: _swig_getattr(self, Figure, name)
     __repr__ = _swig_repr
+    def get_min(self):
+        """get_min(Figure self) -> aiv::vctr< 3 >"""
+        return _geom.Figure_get_min(self)
+
+    def get_max(self):
+        """get_max(Figure self) -> aiv::vctr< 3 >"""
+        return _geom.Figure_get_max(self)
+
+    def check(self, *args):
+        """check(Figure self, vctr3 r) -> bool"""
+        return _geom.Figure_check(self, *args)
+
     def transform(self, *args):
         """transform(Figure self, vctr3 ox, vctr3 oy, vctr3 oz) -> Figure"""
         return _geom.Figure_transform(self, *args)
@@ -325,6 +337,14 @@ Figure_swigregister(Figure)
 def cylinder(*args):
   """cylinder(vctr3 bottom_origin_center, vctr3 n, double R, double H) -> Figure"""
   return _geom.cylinder(*args)
+
+def box(*args):
+  """box(vctr3 bottom_origin_center, vctr3 n, double phi, double A, double B, double H) -> Figure"""
+  return _geom.box(*args)
+
+def cube(*args):
+  """cube(vctr3 bottom_origin_center, vctr3 n, double phi, double A) -> Figure"""
+  return _geom.cube(*args)
 
 class indx1(_object):
     """Proxy of C++ aiv::indx<(1)> class"""

@@ -10,7 +10,7 @@ from symbalg.generating import *
 templates_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "magnu_str")
 
 folders = ["magnulib"]
-files = ["model.cpp","model.hpp","model.mk", "magnulib/lattice.hpp", "magnulib/geometry.hpp", "magnulib/diag.hpp"]
+files = ["model.cpp","model.hpp","model.mk", "magnulib/lattice.hpp", "magnulib/geometry.hpp", "magnulib/geometry.cpp", "magnulib/diag.hpp"]
 
 Atom = lambda **kw_args : kw_args
 

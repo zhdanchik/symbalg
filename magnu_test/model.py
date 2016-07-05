@@ -385,7 +385,7 @@ class Model(_object):
     __swig_getmethods__["trans"] = _model.Model_trans_get
     if _newclass:trans = _swig_property(_model.Model_trans_get, _model.Model_trans_set)
     def init(self, *args):
-        """init(Model self, BaseFigure figure, GlobalTrans trans)"""
+        """init(Model self, Figure figure, GlobalTrans trans)"""
         return _model.Model_init(self, *args)
 
     def dump_head(self, *args):
@@ -469,6 +469,221 @@ class Cell(_object):
 Cell_swigregister = _model.Cell_swigregister
 Cell_swigregister(Cell)
 
+class Figure(_object):
+    """Proxy of C++ Figure class"""
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, Figure, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, Figure, name)
+    __repr__ = _swig_repr
+    def get_min(self):
+        """get_min(Figure self) -> aiv::vctr< 3 >"""
+        return _model.Figure_get_min(self)
+
+    def get_max(self):
+        """get_max(Figure self) -> aiv::vctr< 3 >"""
+        return _model.Figure_get_max(self)
+
+    def check(self, *args):
+        """check(Figure self, vctr3 r) -> bool"""
+        return _model.Figure_check(self, *args)
+
+    def transform(self, *args):
+        """transform(Figure self, vctr3 ox, vctr3 oy, vctr3 oz) -> Figure"""
+        return _model.Figure_transform(self, *args)
+
+    def move(self, *args):
+        """move(Figure self, vctr3 offset) -> Figure"""
+        return _model.Figure_move(self, *args)
+
+    def rotate(self, *args):
+        """rotate(Figure self, vctr3 center, vctr3 n_phi) -> Figure"""
+        return _model.Figure_rotate(self, *args)
+
+    def __add__(self, *args):
+        """__add__(Figure self, Figure other) -> Figure"""
+        return _model.Figure___add__(self, *args)
+
+    def __sub__(self, *args):
+        """__sub__(Figure self, Figure other) -> Figure"""
+        return _model.Figure___sub__(self, *args)
+
+    def __mul__(self, *args):
+        """__mul__(Figure self, Figure other) -> Figure"""
+        return _model.Figure___mul__(self, *args)
+
+    def __init__(self): 
+        """__init__(Figure self) -> Figure"""
+        this = _model.new_Figure()
+        try: self.this.append(this)
+        except: self.this = this
+    __swig_destroy__ = _model.delete_Figure
+    __del__ = lambda self : None;
+Figure_swigregister = _model.Figure_swigregister
+Figure_swigregister(Figure)
+
+def cylinder(*args):
+  """cylinder(vctr3 bottom_origin_center, vctr3 n, double R, double H) -> Figure"""
+  return _model.cylinder(*args)
+
+def box(*args):
+  """box(vctr3 bottom_origin_center, vctr3 n, double phi, double A, double B, double H) -> Figure"""
+  return _model.box(*args)
+
+def cube(*args):
+  """cube(vctr3 bottom_origin_center, vctr3 n, double phi, double A) -> Figure"""
+  return _model.cube(*args)
+
+def spheroid(*args):
+  """spheroid(vctr3 center, double R) -> Figure"""
+  return _model.spheroid(*args)
+
+class NbCR(_object):
+    """Proxy of C++ NbCR class"""
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, NbCR, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, NbCR, name)
+    __repr__ = _swig_repr
+    __swig_setmethods__["dpos"] = _model.NbCR_dpos_set
+    __swig_getmethods__["dpos"] = _model.NbCR_dpos_get
+    if _newclass:dpos = _swig_property(_model.NbCR_dpos_get, _model.NbCR_dpos_set)
+    __swig_setmethods__["lattice"] = _model.NbCR_lattice_set
+    __swig_getmethods__["lattice"] = _model.NbCR_lattice_get
+    if _newclass:lattice = _swig_property(_model.NbCR_lattice_get, _model.NbCR_lattice_set)
+    def __init__(self, *args): 
+        """
+        __init__(NbCR self) -> NbCR
+        __init__(NbCR self, indx3 d, int l) -> NbCR
+        """
+        this = _model.new_NbCR(*args)
+        try: self.this.append(this)
+        except: self.this = this
+    __swig_destroy__ = _model.delete_NbCR
+    __del__ = lambda self : None;
+NbCR_swigregister = _model.NbCR_swigregister
+NbCR_swigregister(NbCR)
+
+class latCubic(_object):
+    """Proxy of C++ latCubic class"""
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, latCubic, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, latCubic, name)
+    __repr__ = _swig_repr
+    cell_sz = _model.latCubic_cell_sz
+    max_nb_count = _model.latCubic_max_nb_count
+    __swig_getmethods__["nb_arr"] = _model.latCubic_nb_arr_get
+    if _newclass:nb_arr = _swig_property(_model.latCubic_nb_arr_get)
+    def __init__(self): 
+        """__init__(latCubic self) -> latCubic"""
+        this = _model.new_latCubic()
+        try: self.this.append(this)
+        except: self.this = this
+    __swig_destroy__ = _model.delete_latCubic
+    __del__ = lambda self : None;
+latCubic_swigregister = _model.latCubic_swigregister
+latCubic_swigregister(latCubic)
+latCubic.nb_counts = _model.cvar.latCubic_nb_counts
+latCubic.coords = _model.cvar.latCubic_coords
+latCubic.cell_coord_size = _model.cvar.latCubic_cell_coord_size
+
+class latICC(_object):
+    """Proxy of C++ latICC class"""
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, latICC, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, latICC, name)
+    __repr__ = _swig_repr
+    cell_sz = _model.latICC_cell_sz
+    max_nb_count = _model.latICC_max_nb_count
+    __swig_getmethods__["nb_arr"] = _model.latICC_nb_arr_get
+    if _newclass:nb_arr = _swig_property(_model.latICC_nb_arr_get)
+    def __init__(self): 
+        """__init__(latICC self) -> latICC"""
+        this = _model.new_latICC()
+        try: self.this.append(this)
+        except: self.this = this
+    __swig_destroy__ = _model.delete_latICC
+    __del__ = lambda self : None;
+latICC_swigregister = _model.latICC_swigregister
+latICC_swigregister(latICC)
+latICC.nb_counts = _model.cvar.latICC_nb_counts
+latICC.coords = _model.cvar.latICC_coords
+latICC.cell_coord_size = _model.cvar.latICC_cell_coord_size
+
+class latFCC3(_object):
+    """Proxy of C++ latFCC3 class"""
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, latFCC3, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, latFCC3, name)
+    __repr__ = _swig_repr
+    cell_sz = _model.latFCC3_cell_sz
+    max_nb_count = _model.latFCC3_max_nb_count
+    __swig_getmethods__["nb_arr"] = _model.latFCC3_nb_arr_get
+    if _newclass:nb_arr = _swig_property(_model.latFCC3_nb_arr_get)
+    def __init__(self): 
+        """__init__(latFCC3 self) -> latFCC3"""
+        this = _model.new_latFCC3()
+        try: self.this.append(this)
+        except: self.this = this
+    __swig_destroy__ = _model.delete_latFCC3
+    __del__ = lambda self : None;
+latFCC3_swigregister = _model.latFCC3_swigregister
+latFCC3_swigregister(latFCC3)
+latFCC3.nb_counts = _model.cvar.latFCC3_nb_counts
+latFCC3.coords = _model.cvar.latFCC3_coords
+latFCC3.cell_coord_size = _model.cvar.latFCC3_cell_coord_size
+
+class latFCC4(_object):
+    """Proxy of C++ latFCC4 class"""
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, latFCC4, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, latFCC4, name)
+    __repr__ = _swig_repr
+    cell_sz = _model.latFCC4_cell_sz
+    max_nb_count = _model.latFCC4_max_nb_count
+    __swig_getmethods__["nb_arr"] = _model.latFCC4_nb_arr_get
+    if _newclass:nb_arr = _swig_property(_model.latFCC4_nb_arr_get)
+    def __init__(self): 
+        """__init__(latFCC4 self) -> latFCC4"""
+        this = _model.new_latFCC4()
+        try: self.this.append(this)
+        except: self.this = this
+    __swig_destroy__ = _model.delete_latFCC4
+    __del__ = lambda self : None;
+latFCC4_swigregister = _model.latFCC4_swigregister
+latFCC4_swigregister(latFCC4)
+latFCC4.nb_counts = _model.cvar.latFCC4_nb_counts
+latFCC4.coords = _model.cvar.latFCC4_coords
+latFCC4.cell_coord_size = _model.cvar.latFCC4_cell_coord_size
+
+class latFCC4_trans_1(_object):
+    """Proxy of C++ latFCC4_trans_1 class"""
+    __swig_setmethods__ = {}
+    __setattr__ = lambda self, name, value: _swig_setattr(self, latFCC4_trans_1, name, value)
+    __swig_getmethods__ = {}
+    __getattr__ = lambda self, name: _swig_getattr(self, latFCC4_trans_1, name)
+    __repr__ = _swig_repr
+    cell_sz = _model.latFCC4_trans_1_cell_sz
+    max_nb_count = _model.latFCC4_trans_1_max_nb_count
+    __swig_getmethods__["nb_arr"] = _model.latFCC4_trans_1_nb_arr_get
+    if _newclass:nb_arr = _swig_property(_model.latFCC4_trans_1_nb_arr_get)
+    def __init__(self): 
+        """__init__(latFCC4_trans_1 self) -> latFCC4_trans_1"""
+        this = _model.new_latFCC4_trans_1()
+        try: self.this.append(this)
+        except: self.this = this
+    __swig_destroy__ = _model.delete_latFCC4_trans_1
+    __del__ = lambda self : None;
+latFCC4_trans_1_swigregister = _model.latFCC4_trans_1_swigregister
+latFCC4_trans_1_swigregister(latFCC4_trans_1)
+latFCC4_trans_1.nb_counts = _model.cvar.latFCC4_trans_1_nb_counts
+latFCC4_trans_1.coords = _model.cvar.latFCC4_trans_1_coords
+latFCC4_trans_1.cell_coord_size = _model.cvar.latFCC4_trans_1_cell_coord_size
+
 class GlobalTrans(_object):
     """Proxy of C++ GlobalTrans class"""
     __swig_setmethods__ = {}
@@ -505,211 +720,6 @@ class GlobalTrans(_object):
     __del__ = lambda self : None;
 GlobalTrans_swigregister = _model.GlobalTrans_swigregister
 GlobalTrans_swigregister(GlobalTrans)
-
-
-def internal_trans_vec(*args):
-  """internal_trans_vec(vctr3 r, vctr3 center, vctr3 updirect) -> vctr3"""
-  return _model.internal_trans_vec(*args)
-class BaseFigure(_object):
-    """Proxy of C++ BaseFigure class"""
-    __swig_setmethods__ = {}
-    __setattr__ = lambda self, name, value: _swig_setattr(self, BaseFigure, name, value)
-    __swig_getmethods__ = {}
-    __getattr__ = lambda self, name: _swig_getattr(self, BaseFigure, name)
-    def __init__(self, *args, **kwargs): raise AttributeError("No constructor defined - class is abstract")
-    __repr__ = _swig_repr
-    def get_minxyz(self):
-        """get_minxyz(BaseFigure self) -> aiv::vctr< 3 >"""
-        return _model.BaseFigure_get_minxyz(self)
-
-    def get_maxxyz(self):
-        """get_maxxyz(BaseFigure self) -> aiv::vctr< 3 >"""
-        return _model.BaseFigure_get_maxxyz(self)
-
-    def check(self, *args):
-        """check(BaseFigure self, vctr3 r) -> bool"""
-        return _model.BaseFigure_check(self, *args)
-
-    __swig_destroy__ = _model.delete_BaseFigure
-    __del__ = lambda self : None;
-BaseFigure_swigregister = _model.BaseFigure_swigregister
-BaseFigure_swigregister(BaseFigure)
-
-class Cylinder(BaseFigure):
-    """Proxy of C++ Cylinder class"""
-    __swig_setmethods__ = {}
-    for _s in [BaseFigure]: __swig_setmethods__.update(getattr(_s,'__swig_setmethods__',{}))
-    __setattr__ = lambda self, name, value: _swig_setattr(self, Cylinder, name, value)
-    __swig_getmethods__ = {}
-    for _s in [BaseFigure]: __swig_getmethods__.update(getattr(_s,'__swig_getmethods__',{}))
-    __getattr__ = lambda self, name: _swig_getattr(self, Cylinder, name)
-    __repr__ = _swig_repr
-    __swig_setmethods__["center"] = _model.Cylinder_center_set
-    __swig_getmethods__["center"] = _model.Cylinder_center_get
-    if _newclass:center = _swig_property(_model.Cylinder_center_get, _model.Cylinder_center_set)
-    __swig_setmethods__["R"] = _model.Cylinder_R_set
-    __swig_getmethods__["R"] = _model.Cylinder_R_get
-    if _newclass:R = _swig_property(_model.Cylinder_R_get, _model.Cylinder_R_set)
-    __swig_setmethods__["H"] = _model.Cylinder_H_set
-    __swig_getmethods__["H"] = _model.Cylinder_H_get
-    if _newclass:H = _swig_property(_model.Cylinder_H_get, _model.Cylinder_H_set)
-    __swig_setmethods__["updirect"] = _model.Cylinder_updirect_set
-    __swig_getmethods__["updirect"] = _model.Cylinder_updirect_get
-    if _newclass:updirect = _swig_property(_model.Cylinder_updirect_get, _model.Cylinder_updirect_set)
-    def get_minxyz(self):
-        """get_minxyz(Cylinder self) -> aiv::vctr< 3 >"""
-        return _model.Cylinder_get_minxyz(self)
-
-    def get_maxxyz(self):
-        """get_maxxyz(Cylinder self) -> aiv::vctr< 3 >"""
-        return _model.Cylinder_get_maxxyz(self)
-
-    def check(self, *args):
-        """check(Cylinder self, vctr3 r) -> bool"""
-        return _model.Cylinder_check(self, *args)
-
-    def __init__(self, *args): 
-        """
-        __init__(Cylinder self) -> Cylinder
-        __init__(Cylinder self, aiv::vctr< 3 > c, double r, double h, aiv::vctr< 3 > u) -> Cylinder
-        """
-        this = _model.new_Cylinder(*args)
-        try: self.this.append(this)
-        except: self.this = this
-    __swig_destroy__ = _model.delete_Cylinder
-    __del__ = lambda self : None;
-Cylinder_swigregister = _model.Cylinder_swigregister
-Cylinder_swigregister(Cylinder)
-
-class Cube(BaseFigure):
-    """Proxy of C++ Cube class"""
-    __swig_setmethods__ = {}
-    for _s in [BaseFigure]: __swig_setmethods__.update(getattr(_s,'__swig_setmethods__',{}))
-    __setattr__ = lambda self, name, value: _swig_setattr(self, Cube, name, value)
-    __swig_getmethods__ = {}
-    for _s in [BaseFigure]: __swig_getmethods__.update(getattr(_s,'__swig_getmethods__',{}))
-    __getattr__ = lambda self, name: _swig_getattr(self, Cube, name)
-    __repr__ = _swig_repr
-    __swig_setmethods__["center"] = _model.Cube_center_set
-    __swig_getmethods__["center"] = _model.Cube_center_get
-    if _newclass:center = _swig_property(_model.Cube_center_get, _model.Cube_center_set)
-    __swig_setmethods__["A"] = _model.Cube_A_set
-    __swig_getmethods__["A"] = _model.Cube_A_get
-    if _newclass:A = _swig_property(_model.Cube_A_get, _model.Cube_A_set)
-    __swig_setmethods__["updirect"] = _model.Cube_updirect_set
-    __swig_getmethods__["updirect"] = _model.Cube_updirect_get
-    if _newclass:updirect = _swig_property(_model.Cube_updirect_get, _model.Cube_updirect_set)
-    def get_minxyz(self):
-        """get_minxyz(Cube self) -> aiv::vctr< 3 >"""
-        return _model.Cube_get_minxyz(self)
-
-    def get_maxxyz(self):
-        """get_maxxyz(Cube self) -> aiv::vctr< 3 >"""
-        return _model.Cube_get_maxxyz(self)
-
-    def check(self, *args):
-        """check(Cube self, vctr3 r) -> bool"""
-        return _model.Cube_check(self, *args)
-
-    def __init__(self, *args): 
-        """
-        __init__(Cube self) -> Cube
-        __init__(Cube self, aiv::vctr< 3 > c, double a, aiv::vctr< 3 > u) -> Cube
-        """
-        this = _model.new_Cube(*args)
-        try: self.this.append(this)
-        except: self.this = this
-    __swig_destroy__ = _model.delete_Cube
-    __del__ = lambda self : None;
-Cube_swigregister = _model.Cube_swigregister
-Cube_swigregister(Cube)
-
-class Box(BaseFigure):
-    """Proxy of C++ Box class"""
-    __swig_setmethods__ = {}
-    for _s in [BaseFigure]: __swig_setmethods__.update(getattr(_s,'__swig_setmethods__',{}))
-    __setattr__ = lambda self, name, value: _swig_setattr(self, Box, name, value)
-    __swig_getmethods__ = {}
-    for _s in [BaseFigure]: __swig_getmethods__.update(getattr(_s,'__swig_getmethods__',{}))
-    __getattr__ = lambda self, name: _swig_getattr(self, Box, name)
-    __repr__ = _swig_repr
-    __swig_setmethods__["center"] = _model.Box_center_set
-    __swig_getmethods__["center"] = _model.Box_center_get
-    if _newclass:center = _swig_property(_model.Box_center_get, _model.Box_center_set)
-    __swig_setmethods__["A"] = _model.Box_A_set
-    __swig_getmethods__["A"] = _model.Box_A_get
-    if _newclass:A = _swig_property(_model.Box_A_get, _model.Box_A_set)
-    __swig_setmethods__["B"] = _model.Box_B_set
-    __swig_getmethods__["B"] = _model.Box_B_get
-    if _newclass:B = _swig_property(_model.Box_B_get, _model.Box_B_set)
-    __swig_setmethods__["H"] = _model.Box_H_set
-    __swig_getmethods__["H"] = _model.Box_H_get
-    if _newclass:H = _swig_property(_model.Box_H_get, _model.Box_H_set)
-    __swig_setmethods__["updirect"] = _model.Box_updirect_set
-    __swig_getmethods__["updirect"] = _model.Box_updirect_get
-    if _newclass:updirect = _swig_property(_model.Box_updirect_get, _model.Box_updirect_set)
-    def get_minxyz(self):
-        """get_minxyz(Box self) -> aiv::vctr< 3 >"""
-        return _model.Box_get_minxyz(self)
-
-    def get_maxxyz(self):
-        """get_maxxyz(Box self) -> aiv::vctr< 3 >"""
-        return _model.Box_get_maxxyz(self)
-
-    def check(self, *args):
-        """check(Box self, vctr3 r) -> bool"""
-        return _model.Box_check(self, *args)
-
-    def __init__(self, *args): 
-        """
-        __init__(Box self) -> Box
-        __init__(Box self, aiv::vctr< 3 > c, double a, double b, double h, aiv::vctr< 3 > u) -> Box
-        """
-        this = _model.new_Box(*args)
-        try: self.this.append(this)
-        except: self.this = this
-    __swig_destroy__ = _model.delete_Box
-    __del__ = lambda self : None;
-Box_swigregister = _model.Box_swigregister
-Box_swigregister(Box)
-
-class SetFigures(BaseFigure):
-    """Proxy of C++ SetFigures class"""
-    __swig_setmethods__ = {}
-    for _s in [BaseFigure]: __swig_setmethods__.update(getattr(_s,'__swig_setmethods__',{}))
-    __setattr__ = lambda self, name, value: _swig_setattr(self, SetFigures, name, value)
-    __swig_getmethods__ = {}
-    for _s in [BaseFigure]: __swig_getmethods__.update(getattr(_s,'__swig_getmethods__',{}))
-    __getattr__ = lambda self, name: _swig_getattr(self, SetFigures, name)
-    __repr__ = _swig_repr
-    __swig_setmethods__["Figures"] = _model.SetFigures_Figures_set
-    __swig_getmethods__["Figures"] = _model.SetFigures_Figures_get
-    if _newclass:Figures = _swig_property(_model.SetFigures_Figures_get, _model.SetFigures_Figures_set)
-    def add(self, *args):
-        """add(SetFigures self, BaseFigure figure)"""
-        return _model.SetFigures_add(self, *args)
-
-    def get_minxyz(self):
-        """get_minxyz(SetFigures self) -> aiv::vctr< 3 >"""
-        return _model.SetFigures_get_minxyz(self)
-
-    def get_maxxyz(self):
-        """get_maxxyz(SetFigures self) -> aiv::vctr< 3 >"""
-        return _model.SetFigures_get_maxxyz(self)
-
-    def check(self, *args):
-        """check(SetFigures self, vctr3 r) -> bool"""
-        return _model.SetFigures_check(self, *args)
-
-    def __init__(self): 
-        """__init__(SetFigures self) -> SetFigures"""
-        this = _model.new_SetFigures()
-        try: self.this.append(this)
-        except: self.this = this
-    __swig_destroy__ = _model.delete_SetFigures
-    __del__ = lambda self : None;
-SetFigures_swigregister = _model.SetFigures_swigregister
-SetFigures_swigregister(SetFigures)
 
 class indx1(_object):
     """Proxy of C++ aiv::indx<(1)> class"""

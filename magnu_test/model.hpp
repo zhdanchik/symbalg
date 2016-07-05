@@ -28,7 +28,7 @@ struct Aniso{
 	double K;
 };
 
-class Model: public latFCC4_trans_1{
+class Model: public latFCC4{
     array<Cell, 3> data;               // массив ячеек
 	double arrJ[cell_sz][cell_sz];     // массив обменных интегралов
 	std::vector<Aniso> arrK1[cell_sz],  arrK3[cell_sz];
@@ -68,7 +68,7 @@ public:
 	void step();
         
 	GlobalTrans *trans;
-	void init(BaseFigure &figure, GlobalTrans &trans);
+	void init(Figure *figure, GlobalTrans &trans);
 
 	//Временная диагностика для тестирования
 	void dump_head(aiv::Ostream& S); 

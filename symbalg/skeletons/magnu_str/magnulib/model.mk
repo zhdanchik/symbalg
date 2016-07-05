@@ -1,5 +1,5 @@
 name=geom
-headers=new_geometry.hpp
+headers=geometry.hpp
 modules=geometry.cpp 
 usedims=1 3
 
