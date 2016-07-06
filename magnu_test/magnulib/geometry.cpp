@@ -26,8 +26,26 @@ struct RotatedFigure: public BaseFigure{
     std::shared_ptr<BaseFigure> child;
     aiv::vctr<3> center;
     aiv::vctr<3> n_phi;
-    virtual vctr<3> get_min() const {return rotop(child->get_min()-center)(n_phi).val+center;};
-    virtual vctr<3> get_max() const {return rotop(child->get_max()-center)(n_phi).val+center;};
+    // virtual vctr<3> get_min() const {return rotop(child->get_min()-center)(n_phi).val+center;};
+    // virtual vctr<3> get_max() const {return rotop(child->get_max()-center)(n_phi).val+center;};
+    virtual vctr<3> get_min() const {
+        vctr<3> fcenter = (child->get_max() + child->get_min()) * 0.5;
+        vctr<3> fhdiag  = (child->get_max() - child->get_min()) * 0.5;
+        vctr<3> tmp  = rotop(child->get_min()-center)(n_phi).val+center;
+        for (int ix=-1;ix<=1;ix+=2) for (int iy=-1;iy<=1;iy+=2) for (int iz=-1;iz<=1;iz+=2){
+            tmp <<= rotop(fcenter + (fhdiag ^ Vctr(ix,iy,iz)) - center)(n_phi).val+center;
+        }
+        return tmp;
+    };
+    virtual vctr<3> get_max() const {
+        vctr<3> fcenter = (child->get_max() + child->get_min()) * 0.5;
+        vctr<3> fhdiag  = (child->get_max() - child->get_min()) * 0.5;
+        vctr<3> tmp  = rotop(child->get_max()-center)(n_phi).val+center;
+        for (int ix=-1;ix<=1;ix+=2) for (int iy=-1;iy<=1;iy+=2) for (int iz=-1;iz<=1;iz+=2){
+            tmp >>= rotop(fcenter + (fhdiag ^ Vctr(ix,iy,iz)) - center)(n_phi).val+center;
+        }
+        return tmp;
+    };    
     virtual bool check(const aiv::vctr<3> &r) const {return child->check(rotop(r-center)(-n_phi).val + center);};
 };
 struct TransformedFigure: public BaseFigure{
@@ -37,8 +55,28 @@ struct TransformedFigure: public BaseFigure{
     aiv::vctr<3> oy;
     aiv::vctr<3> oz;
 
-    virtual vctr<3> get_min() const {return trans_vec(child->get_min(), center, ox, oy, oz);};
-    virtual vctr<3> get_max() const {return trans_vec(child->get_max(), center, ox, oy, oz);};
+    // virtual vctr<3> get_min() const {return trans_vec(child->get_min(), center, ox, oy, oz);};
+    // virtual vctr<3> get_max() const {return trans_vec(child->get_max(), center, ox, oy, oz);};
+    virtual vctr<3> get_min() const {
+        vctr<3> fcenter = (child->get_max() + child->get_min()) * 0.5;
+        vctr<3> fhdiag  = (child->get_max() - child->get_min()) * 0.5;
+        vctr<3> tmp  = trans_vec(child->get_min(), center, ox, oy, oz);
+        for (int ix=-1;ix<=1;ix+=2) for (int iy=-1;iy<=1;iy+=2) for (int iz=-1;iz<=1;iz+=2){
+            tmp <<= trans_vec(fcenter + (fhdiag ^ Vctr(ix,iy,iz)), center, ox, oy, oz);
+        }
+        return tmp;
+    };
+        
+    virtual vctr<3> get_max() const {
+        vctr<3> fcenter = (child->get_max() + child->get_min()) * 0.5;
+        vctr<3> fhdiag  = (child->get_max() - child->get_min()) * 0.5;
+        vctr<3> tmp  = trans_vec(child->get_max(), center, ox, oy, oz);
+        for (int ix=-1;ix<=1;ix+=2) for (int iy=-1;iy<=1;iy+=2) for (int iz=-1;iz<=1;iz+=2){
+            tmp >>= trans_vec(fcenter + (fhdiag ^ Vctr(ix,iy,iz)), center, ox, oy, oz);
+        }
+        return tmp;
+    };
+
     virtual bool check(const aiv::vctr<3> &r) const {return child->check(trans_vec_back(r, center, ox, oy, oz));};
 };
 struct MovedFigure: public BaseFigure{

@@ -1,0 +1,97 @@
+\DeclareOption{poster}{
+\setlength{\topmargin}{-1.in}
+\setlength{\oddsidemargin}{0.in}
+\setlength{\evensidemargin}{0.in}
+\setlength{\textwidth}{9.5in}
+\setlength{\textheight}{6.5in}
+\special{landscape}
+}
+\DeclareOption{slide}{
+\setlength{\topmargin}{-35.mm}
+\setlength{\oddsidemargin}{-15.mm}
+\setlength{\evensidemargin}{-15.mm}
+\setlength{\textwidth}{236mm}
+\setlength{\textheight}{172mm}
+\setlength{\paperheight}{192mm}
+\setlength{\paperwidth}{256mm}
+\special{papersize=256mm,192mm}
+\special{landscape}
+}
+\DeclareOption{normal}{
+\setlength{\topmargin}{-0.5 in}
+\setlength{\oddsidemargin}{-0.in}
+\setlength{\evensidemargin}{-0.in}
+\setlength{\textwidth}{6.5 in}
+\setlength{\textheight}{9. in}
+}
+\DeclareOption{TeXdef}{
+\setlength{\topmargin}{-0.5in}
+\setlength{\oddsidemargin}{-5.mm}
+\setlength{\evensidemargin}{-5.mm}
+\setlength{\textwidth}{7.in}
+\setlength{\textheight}{9.in}
+}
+\DeclareOption{LaTeXdef}{
+\setlength{\topmargin}{1.in}
+\setlength{\oddsidemargin}{1.in}
+\setlength{\evensidemargin}{1.in}
+\setlength{\textwidth}{6.in}
+\setlength{\textheight}{8.in}
+}
+\DeclareOption{PosterA1}{
+\setlength{\topmargin}{-20.mm}
+\setlength{\oddsidemargin}{-5.mm}
+%\setlength{\evensidemargin}{-15.mm}
+\setlength{\textwidth}{790mm}
+\setlength{\textheight}{550mm}
+\setlength{\paperwidth}{841mm}
+\setlength{\paperheight}{594mm}
+\special{papersize=841mm,594mm}
+%\setlength{\textwidth}{550mm}
+%\setlength{\textheight}{790mm}
+%\setlength{\paperwidth}{594mm}
+%\setlength{\paperheight}{841mm}
+%\special{papersize=594mm,841mm}
+\special{landscape}
+}
+\ProcessOptions
+\def\@affilation{}
+%\newcommand{\affilation}[1]{\def\@affilation{#1}}
+\def\cpp{{\bf C++{}}}
+\def\eps{\varepsilon}
+\def\pot{\varphi}
+\def\const{\text{const}}
+\def\dfdx#1#2{\frac{\partial #1}{\partial #2}}
+\def\vardfdx#1#2{{\partial #1}/{\partial #2}}
+\def\dfdxdy#1#2#3{\frac{\partial #1}{{\partial #2}{\partial #3}}}
+\def\scob#1{\left({#1}\right)}
+\def\scobsq#1{\left[{#1}\right]}
+\def\scobfig#1{\left\{{#1}\right\}}
+\def\angles#1{\left\langle{#1}\right\rangle}
+\def\intmom#1{\int {#1} d\vec p}
+\def\inpt#1#2{{\left.{#1}\right|_{#2}}}
+
+%\def\bea{\begin{eqnarray}}
+%\def\be{\begin{equation}}
+%\def\eea{\end{eqnarray}}
+%\def\ee{\end{equation}}
+\def\nn{\nonumber}
+%\def\RusNum{ò}
+\def\HalfRowUp#1{\raisebox{1.5ex}[0cm][0cm]{#1}}
+\def\HalfRowDown#1{\raisebox{-1.5ex}[0cm][0cm]{#1}}
+\def\glue#1{\hspace{0pt}#1\hspace{0pt}}
+
+\def\para{\parallel}
+\def\Otr#1{\Omega_{\text{tr}#1}}
+\def\Vtr#1{V_{{\text{tr}}{}{#1}}}
+\def\Vgr#1{V_{{\text{gr}}{}{#1}}}
+\def\Vph#1{V_{{\text{ph}}{}{#1}}}
+\def\VT#1{V_{T_{\scriptstyle #1}}}
+%\def\--{\hspace{0pt}--\hspace{0pt}}
+\def\defis{\nobreak\hspace{0pt}-\hspace{0pt}}
+\def\ddefis{\nobreak\hspace{0pt}--\hspace{0pt}}
+%\def\tire{ \hspace{0pt}---\hspace{0pt}}
+\def\tire{\nobreak{} --- }
+\def\t#1{\nobreak\hspace{0pt}{#1}\hspace{0pt}}
+
+%\newcommand{\debug}[1]{\marginpar{\large \bf ??? \tiny #1 }}

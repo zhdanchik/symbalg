@@ -1,0 +1,28 @@
+\section{Описание модуля}
+Модуль \verb"geometry" представляет из себя подключаемый пакет на языке {\sf C++}. Состоит из двух файлов \verb"geometry.hpp" и \verb"geometry.cpp". В модуле реализован набор классов, отвечающих за базовые пространственные фигуры (примитивы), преобразование фигур (сдвиг, поворот, трансформация) и алгебры битовых операций для комбинирования нескольких фигур (объединение, пересечение, исключение). Модуль использует в качестве подключаемого пакета библиотеку {\sf aivlib}. Проекты с подключенным модулем можно также компилировать с использованием {\sf SWIG 2}.
+
+В основе пакета лежит технология <<Конструктивная сплошная геометрия>> (Constructive Solid Geometry, CSG)~\cite{csg}. 
+НАследник базового типа \verb"BaseFigure".
+
+\section{Примитвы}
+
+\subsection{Сфера}
+\subsection{Цилинлр}
+\subsection{Прямоугольный параллелограмм}
+
+\section{Преобразование фигур}
+
+\subsection{Сдвиг}
+\subsection{Поворот}
+\subsection{Трансформация}
+
+\section{Алгебра битовых операций}
+
+\subsection{Объединение}
+\subsection{Пересечение}
+\subsection{Исключение}
+
+\newpage
+\begin{thebibliography}{9}
+    \bibitem{csg} \textit{Foley, James D.} (1996), "12.7 Constructive Solid Geometry", Computer Graphics: Principles and Practice, Addison-Wesley Professional, pp. 557–558, ISBN 9780201848403.
+\end{thebibliography}

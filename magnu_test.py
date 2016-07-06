@@ -72,7 +72,7 @@ e_fig1 = cube(Vctr(0., 0., 0.), Vctr(0.,0.,1.), 0., 20)
 e_fig2 = spheroid(Vctr(0.,0., 10.), 10 * math.sqrt(2)*0.9)
 e_fig3 = cylinder(Vctr(0.,0.,0.), Vctr(0., 0., 1.), 6, 20 )
 e_fig4 = cylinder(Vctr(-10.,0.,10.), Vctr(1., 0., 0.), 6, 20 )
-e_fig5 = cylinder(Vctr(0.,-11.,10.), Vctr(0., 1., 0.), 6, 21 )
+e_fig5 = cylinder(Vctr(0.,-10.,10.), Vctr(0., 1., 0.), 6, 20 )
 
 
 
@@ -81,13 +81,13 @@ M = Model()
 trans0 = GlobalTrans(Vctr(1.,0.,0.), Vctr(0.,1.,0.), Vctr(0.,0.,1.))
 trans1 = GlobalTrans(Vctr(1.,1.,0.)/math.sqrt(2), Vctr(-1.,1.,0.)/math.sqrt(2), Vctr(0.,0.,1.))
 
-trans111 = GlobalTrans(math.sqrt(12)/12 *Vctr(2.0,-1.0,-1.0),
-                        1./2            *Vctr(0.0,1.0,-1.0),
-                        math.sqrt(6)/3  *Vctr(1.0,1.0,1.0))
+trans111 = GlobalTrans(math.sqrt(12)/12 * Vctr(2.0,-1.0,-1.0),
+                        1./2            * Vctr(0.0, 1.0,-1.0),
+                        math.sqrt(6)/3  * Vctr(1.0, 1.0, 1.0))
 
-transfcc4 = GlobalTrans(math.sqrt(12)/6 * Vctr( 1.0, -1.0, 0.0 ),
-                                          Vctr( 1.0 , 1.0 , 0.0 ),
-                        math.sqrt(6)/3  * Vctr( 1.0, 2.0, 3.0))
+transfcc4 = GlobalTrans(math.sqrt(12)/6 * Vctr( 1.0, -1.0, 0.0),
+                                          Vctr( 1.0,  1.0, 0.0),
+                        math.sqrt(6)/3  * Vctr( 1.0,  2.0, 3.0))
 
 
 
