@@ -21,7 +21,7 @@ include aivlib/Makefile"""
         tmp = os.path.abspath(os.curdir)
         os.chdir(path); os.system("make -f model.mk -j8"); os.chdir(tmp)
 
-def generate_1_module_from_str(D, templates_path, folders, files, path, make = True):
+def generate_1_module_from_str(D, templates_path, folders, files, files_asis, path, make = True):
 
     try: os.makedirs(path)
     except : pass
@@ -34,6 +34,13 @@ def generate_1_module_from_str(D, templates_path, folders, files, path, make = T
         if os.path.isfile(os.path.join(path,fname)):
             if fstr == open(os.path.join(path,fname),'r').read(): continue
         open(os.path.join(path,fname),'w').write(fstr)
+    
+    for fname in files_asis:
+        fstr = open(os.path.join(templates_path,fname), "r").read()
+        if os.path.isfile(os.path.join(path,fname)):
+            if fstr == open(os.path.join(path,fname),'r').read(): continue
+        open(os.path.join(path,fname),'w').write(fstr)
+
     open(os.path.join(path,'__init__.py'),'w').write('from model import *')
     if make:
         tmp = os.path.abspath(os.curdir)

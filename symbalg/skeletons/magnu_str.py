@@ -10,8 +10,8 @@ from symbalg.generating import *
 templates_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "magnu_str")
 
 folders = ["magnulib"]
-files = ["model.cpp","model.hpp","model.mk", "magnulib/lattice.hpp", "magnulib/geometry.hpp", "magnulib/geometry.cpp", "magnulib/diag.hpp"]
-
+files = ["model.cpp","model.hpp","model.mk", "magnulib/lattice.hpp", "magnulib/diag.hpp"]
+files_asis = ["magnulib/geometry.hpp", "magnulib/geometry.cpp"]
 Atom = lambda **kw_args : kw_args
 
 def mk_module(path, lattice_name, atom, atom_m, **kw_args):
@@ -134,6 +134,6 @@ def mk_module(path, lattice_name, atom, atom_m, **kw_args):
     DD["atom_st_m"] = "atom."+atom_st_m
 
     DD["lattice_name"] = lattice_name
-    generate_1_module_from_str(DD, templates_path, folders, files, path, True)
+    generate_1_module_from_str(DD, templates_path, folders, files,files_asis, path, True)
     BaseOp._format = old_format
  

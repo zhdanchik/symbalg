@@ -1,7 +1,7 @@
 #include "geometry.hpp"
 
 vctr<3> trans_vec (const aiv::vctr<3> &r, const aiv::vctr<3> &center, const aiv::vctr<3> &ox, const aiv::vctr<3> &oy, const aiv::vctr<3> &oz){
-    if (fabs(ox * (oy%%oz)) <1e-16){raise("Transformation is incorrect");}
+    if (fabs(ox * (oy%oz)) <1e-16){raise("Transformation is incorrect");}
     double x = r[0]-center[0], y = r[1]-center[1], z = r[2]-center[2];
     double x1 = ox[0], x2 = oy[0], x3 = oz[0];
     double y1 = ox[1], y2 = oy[1], y3 = oz[1];
@@ -11,7 +11,7 @@ vctr<3> trans_vec (const aiv::vctr<3> &r, const aiv::vctr<3> &center, const aiv:
                  ((x2*y1 - x1*y2)*z - (x2*y - x*y2)*z1 + (x1*y - x*y1)*z2) ) / ((x3*y2 - x2*y3)*z1 - (x3*y1 - x1*y3)*z2 + (x2*y1 - x1*y2)*z3) + center;
 }
 vctr<3> trans_vec_back(const aiv::vctr<3> &r, const aiv::vctr<3> &center, const aiv::vctr<3> &ox, const aiv::vctr<3> &oy, const aiv::vctr<3> &oz){
-    if (fabs(ox * (oy%%oz)) <1e-16){raise("Transformation is incorrect");}
+    if (fabs(ox * (oy%oz)) <1e-16){raise("Transformation is incorrect");}
     double x = r[0]-center[0], y = r[1]-center[1], z = r[2]-center[2];
     double x1 = ox[0], x2 = oy[0], x3 = oz[0];
     double y1 = ox[1], y2 = oy[1], y3 = oz[1];
@@ -88,19 +88,19 @@ struct MovedFigure: public BaseFigure{
     virtual bool check(const aiv::vctr<3> &r) const {return child->check(r-offset);};
 };
 
+Figure Figure::move(const aiv::vctr<3> &offset){
+    MovedFigure *f = new MovedFigure; 
+    f->child = figure; f->offset = offset;
+    Figure res; res.figure.reset(f); return res;
+}
 Figure Figure::rotate(const aiv::vctr<3> &center, const aiv::vctr<3> &n_phi){
     RotatedFigure *f = new RotatedFigure; 
     f->child = figure; f->center = center; f->n_phi = n_phi;
     Figure res; res.figure.reset(f); return res;
 }
-Figure Figure::transform(const aiv::vctr<3> &ox, const aiv::vctr<3> &oy, const aiv::vctr<3> &oz){
+Figure Figure::transform(const aiv::vctr<3> &center, const aiv::vctr<3> &ox, const aiv::vctr<3> &oy, const aiv::vctr<3> &oz){
     TransformedFigure *f = new TransformedFigure; 
-    f->child = figure; f->ox = ox; f->oy = oy; f->oz = oz;
-    Figure res; res.figure.reset(f); return res;
-}
-Figure Figure::move(const aiv::vctr<3> &offset){
-    MovedFigure *f = new MovedFigure; 
-    f->child = figure; f->offset = offset;
+    f->child = figure; f->center = center; f->ox = ox; f->oy = oy; f->oz = oz;
     Figure res; res.figure.reset(f); return res;
 }
 

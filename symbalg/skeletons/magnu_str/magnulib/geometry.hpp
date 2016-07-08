@@ -31,9 +31,10 @@ public:
     vctr<3> get_max() const { return figure->get_max(); }
     bool check(const aiv::vctr<3> &r) const { return figure->check(r); }
 
-    Figure transform(const aiv::vctr<3> &ox, const aiv::vctr<3> &oy, const aiv::vctr<3> &oz);
     Figure move(const aiv::vctr<3> &offset);
     Figure rotate(const aiv::vctr<3> &center, const aiv::vctr<3> &n_phi);
+    Figure transform(const aiv::vctr<3> &ox, const aiv::vctr<3> &oy, const aiv::vctr<3> &oz);
+    
 
     Figure operator + (const Figure &other) const;
     Figure operator - (const Figure &other) const;
